@@ -1,0 +1,59 @@
+
+import { Article } from '../types';
+
+export const articles: Article[] = [
+  {
+    id: '1',
+    title: 'Unlock Premium AI Images: 10 Prompts You Never Knew You Needed',
+    excerpt: 'Tired of generic AI art? These 10 secret prompts will transform your creations from bland to breathtaking. See the stunning gallery inside!',
+    content: [
+      'The world of AI-generated art is exploding, but many users are stuck scratching the surface. The key to unlocking truly unique and professional-grade images lies in the art of prompting. It\'s not just about what you ask for, but how you ask for it. Today, we\'re pulling back the curtain on ten powerful prompts that will elevate your art game instantly.',
+      '1. **Cinematic Lighting, Volumetric Haze:** This combination creates an incredible sense of depth and atmosphere. Imagine a lone figure in a neon-lit alleyway, the air thick with mystery. This prompt brings that vision to life with dramatic shadows and light rays cutting through the scene.',
+      '2. **Anamorphic Lens Flare, Bokeh Dreams:** For portraits that pop, this is your go-to. It mimics the look of high-end cinema cameras, creating beautiful, distorted light streaks and a creamy, out-of-focus background that makes your subject the undeniable star.',
+      '3. **Macro Photography, Intricate Details, 8K Resolution:** Get up close and personal. This prompt is perfect for generating hyper-realistic images of insects, flowers, or textures. The level of detail you can achieve is simply mind-boggling, revealing a world often invisible to the naked eye.',
+      '4. **Ukiyo-e Inspired, Modern Metropolis:** Blend classic Japanese art with futuristic cityscapes. The result is a stunning fusion of tradition and modernity, with elegant lines and vibrant colors depicting a bustling, high-tech world.',
+      'This is just the beginning. By experimenting with combinations of artistic styles, camera techniques, and specific descriptive language, you can guide the AI to create images that are not just generated, but genuinely artistic. Happy prompting!'
+    ],
+    imageUrl: 'https://picsum.photos/seed/aiart1/800/600',
+    author: 'Awan Byru',
+    authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
+    date: 'October 26, 2023',
+    claps: 125,
+    tags: ['Prompting', 'AI Art', 'Premium'],
+  },
+  {
+    id: '2',
+    title: 'The Ultimate AI Prompt Collection That Will 10x Your Productivity',
+    excerpt: 'Stop wasting time with trial-and-error. We\'ve curated the ultimate collection of copy-paste prompts for marketing, coding, writing, and more.',
+    content: [
+      'Productivity is the name of the game in today\'s fast-paced world. Generative AI is a powerful ally, but only if you know how to command it effectively. A well-crafted prompt can save you hours of work, while a poor one leads to frustrating and useless results. That\'s why we\'ve built this definitive collection.',
+      '**For the Marketer:** `Generate 5 attention-grabbing headlines for a blog post about [topic]. The target audience is [audience], and the tone should be [tone: e.g., witty, professional, urgent].`',
+      '**For the Developer:** `Write a Python script that connects to the [API name] API, fetches the latest [data type], and stores it in a CSV file. Include error handling for network issues and API rate limits.`',
+      '**For the Writer:** `Take the following paragraph and rewrite it to be more concise and impactful. Improve clarity and remove any jargon: [paste paragraph here].`',
+      'These prompts are designed to be specific and provide the AI with all the context it needs to deliver high-quality results on the first try. Think of them as templates for success. Bookmark this page, because you\'ll be coming back to it again and again.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/aiprod2/800/600',
+    author: 'Awan Byru',
+    authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
+    date: 'October 22, 2023',
+    claps: 240,
+    tags: ['Productivity', 'Prompts', 'Collection'],
+  },
+  {
+    id: '3',
+    title: 'We Built a Mobile App in 1 Hour With This One AI Trick (You Won\'t Believe The Result)',
+    excerpt: 'Think building an app takes months? Think again. We used a revolutionary AI-powered workflow to go from idea to functional prototype in just 60 minutes.',
+    content: [
+      'The barrier to entry for software development has traditionally been high, requiring deep knowledge of programming languages and frameworks. AI is changing that paradigm. We put this to the test with a simple challenge: could we build a functional mobile app for a local coffee shop in one hour using only AI tools?',
+      'The secret weapon was a combination of ChatGPT-4 for logic and code generation, and a visual AI builder for the UI. We started by feeding the AI a simple prompt: `Design a user interface for a coffee shop app. It needs a home screen with specials, a full menu page, and a simple order form. The branding should be modern and minimalist.`',
+      'Within minutes, we had a full UI design. Next, we moved to the logic. `Generate React Native components for the screens designed. The menu should be populated from a simple JSON object. The order form should take the user\'s name and selected items and log them to the console.`',
+      'The AI generated the code with remarkable accuracy. After some minor tweaking and connecting the components, we had a working prototype. While it\'s not a production-ready app, the speed at which we created a tangible, functional product was nothing short of astonishing. This workflow represents the future of rapid prototyping and development.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/aimobile3/800/600',
+    author: 'Awan Byru',
+    authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
+    date: 'October 18, 2023',
+    claps: 512,
+    tags: ['AI Development', 'Mobile App', 'Case Study'],
+  },
+];
