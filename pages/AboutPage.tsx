@@ -7,7 +7,7 @@ const AboutPage: React.FC = () => {
       <MetaTags
         title="Tentang Kami"
         description="Pelajari tentang misi IAMAI untuk mengungkap dunia AI prompting dan memberdayakan para penggemar, seniman, dan pengembang. Didirikan oleh awanbyru."
-        canonicalUrl={`${window.location.origin}/#/about`}
+        canonicalUrl={`${window.location.origin}/about`}
       />
       <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Tentang IAMAI</h1>

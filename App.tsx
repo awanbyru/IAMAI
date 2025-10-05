@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -45,7 +45,7 @@ const App: React.FC = () => {
             "@type": "SearchAction",
             "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": `${window.location.origin}/#/?s={search_term_string}`
+                "urlTemplate": `${window.location.origin}/?s={search_term_string}`
             },
             "query-input": "required name=search_term_string"
         }
@@ -56,7 +56,7 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider>
-      <HashRouter>
+      <BrowserRouter>
         <SearchProvider>
           <div className="flex flex-col min-h-screen bg-background dark:bg-gray-900 text-text-main dark:text-gray-200 font-sans">
             <Header />
@@ -77,7 +77,7 @@ const App: React.FC = () => {
             <CookieBanner />
           </div>
         </SearchProvider>
-      </HashRouter>
+      </BrowserRouter>
     </ThemeProvider>
   );
 };

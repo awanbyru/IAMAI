@@ -232,8 +232,8 @@ const AIStudioPage: React.FC = () => {
         <>
             <MetaTags
                 title="Peralatan AI"
-                description="Pusat kreatif untuk menghasilkan dan mengedit gambar dengan kekuatan AI. Gunakan generator dan editor gambar kami untuk mewujudkan ide-ide Anda."
-                canonicalUrl={`${window.location.origin}/#/aistudio`}
+                description="Pusat kreatif untuk menghasilkan dan mengedit gambar dengan kekuatan AI. Gunakan generator dan editor kami untuk mewujudkan ide-ide Anda."
+                canonicalUrl={`${window.location.origin}/aistudio`}
             />
             <div className="space-y-8">
                 <section className="text-center">
