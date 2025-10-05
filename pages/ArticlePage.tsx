@@ -14,14 +14,16 @@ const ArticlePage: React.FC = () => {
 
   useEffect(() => {
     const foundArticle = articles.find(a => a.slug === slug);
-    setArticle(foundArticle);
     if (foundArticle) {
+      setArticle(foundArticle);
       const storedClaps = localStorage.getItem(`claps_${slug}`);
       const initialClaps = storedClaps ? parseInt(storedClaps, 10) : foundArticle.claps;
       setClaps(initialClaps);
       
       const hasClapped = localStorage.getItem(`clapped_${slug}`) === 'true';
       setClapped(hasClapped);
+    } else {
+      setArticle(null); // Explicitly set to null if not found
     }
   }, [slug]);
   
