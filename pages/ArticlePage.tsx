@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { articles } from '../data/articles';
 import { Article } from '../types';
 import AdsenseBlock from '../components/AdsenseBlock';
 import Sidebar from '../components/Sidebar';
 import CommentSection from '../components/CommentSection';
 import LazyImage from '../components/LazyImage';
+import { useContentManager } from '../hooks/useContentManager';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { getArticleBySlug } = useContentManager();
+  
   const [article, setArticle] = useState<Article | undefined>(undefined);
   const [claps, setClaps] = useState(0);
 
@@ -42,7 +44,9 @@ const ArticlePage: React.FC = () => {
     
     // Ensure URLs are absolute for crawlers
     const canonicalUrl = window.location.href;
-    const absoluteImageUrl = new URL(article.imageUrl, window.location.origin).href;
+    const absoluteImageUrl = article.imageUrl.startsWith('data:')
+        ? article.imageUrl
+        : new URL(article.imageUrl, window.location.origin).href;
 
     // Standard SEO Meta Tags
     setTag('meta', 'name', 'description', 'content', article.excerpt);
@@ -96,7 +100,7 @@ const ArticlePage: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const foundArticle = articles.find(a => a.slug === slug);
+    const foundArticle = getArticleBySlug(slug!);
     if (foundArticle) {
       setArticle(foundArticle);
       setClaps(foundArticle.claps);
@@ -105,7 +109,7 @@ const ArticlePage: React.FC = () => {
       // Redirect to home if article not found, or show a 404 component
       navigate('/');
     }
-  }, [slug, navigate]);
+  }, [slug, navigate, getArticleBySlug]);
 
   const handleClap = () => {
     setClaps(prevClaps => prevClaps + 1);

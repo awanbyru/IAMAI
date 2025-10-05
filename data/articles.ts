@@ -14,7 +14,7 @@ export const articles: Article[] = [
       '4. **Artistic Fusion:** `A bustling futuristic metropolis skyline at night, re-imagined in the style of Ukiyo-e woodblock prints, elegant lines, flat color planes with modern gradients, cherry blossom petals drifting in the foreground.` Blend classic Japanese art with futuristic cityscapes.',
       'This is just the beginning. By experimenting with combinations of artistic styles, camera techniques, and specific descriptive language, you can guide the AI to create images that are not just generated, but genuinely artistic. Happy prompting!'
     ],
-    imageUrl: 'https://picsum.photos/800/600?random=1',
+    imageUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODAwIDYwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJEMzc0OCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFBMjAyQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0Y3RjdGNyI+PHRzcGFuIHg9IjUwJSIgZHk9Ii0xLjVlbSI+VW5sb2NrIFByZW1pdW0gQUk=PC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPkltYWdlczogMTAgUHJvbXB0cw==PC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPllvdSBOZXZlciBLbmV3PC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPllvdSBOZWVkZWQ8L3RzcGFuPjwvdGV4dD48L3N2Zz4=',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 26, 2023',
@@ -33,7 +33,7 @@ export const articles: Article[] = [
       '**For the Writer:** `Rewrite the following text to be more persuasive and engaging for a professional audience. Adopt a confident and authoritative tone. Simplify complex sentences, replace passive voice with active voice, and end with a strong call to action. Original text: [paste text here].`',
       'These prompts are designed to be specific and provide the AI with all the context it needs to deliver high-quality results on the first try. Think of them as templates for success. Bookmark this page, because you\'ll be coming back to it again and again.'
     ],
-    imageUrl: 'https://picsum.photos/800/600?random=2',
+    imageUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODAwIDYwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJEMzc0OCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFBMjAyQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0Y3RjdGNyI+PHRzcGFuIHg9IjUwJSIgZHk9Ii0xLjVlbSI+VGhlIFVsdGltYXRlIEFJ=PC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPlByb21wdCBDb2xsZWN0aW9u=PC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPlRoYXQgV2lsbCAxMHggWW91cjwvdHNwYW4+PHRzcGFuIHg9IjUwJSIgZHk9IjEuMmVtIj5Qcm9kdWN0aXZpdHk8L3RzcGFuPjwvdGV4dD48L3N2Zz4=',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 22, 2023',
@@ -51,7 +51,7 @@ export const articles: Article[] = [
       'Within minutes, we had a full UI design. Next, we moved to the logic. `Generate the React Native code using TypeScript and Expo for the screens designed. Use functional components and hooks. The menu data should be fetched from a mock JSON API. The order form state should be managed with \`useState\`. On submission, compile the order details into a JSON object and log it.`',
       'The AI generated the code with remarkable accuracy. After some minor tweaking, we had a working prototype. While not production-ready, the speed from idea to a tangible product was astonishing. This workflow represents the future of rapid prototyping.'
     ],
-    imageUrl: 'https://picsum.photos/800/600?random=3',
+    imageUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODAwIDYwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJEMzc0OCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFBMjAyQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0Y3RjdGNyI+PHRzcGFuIHg9IjUwJSIgZHk9Ii0xLjVlbSI+V2UgQnVpbHQgYSBNb2JpbGUgQXBwPC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPmluIDEgSG91ciBXaXRoPC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPlRoaXMgT25lIEFJIFRyaWNrPC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPihZb3UgV29uJ3QgQmVsaxxxXZSBUaGUgUmVzdWx0KTwvdHNwYW4+PC90ZXh0Pjwvc3ZnPg==',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 18, 2023',
@@ -70,7 +70,7 @@ export const articles: Article[] = [
       '**Prompt:** `cinematic film still from a 1970s road movie, a woman with feathered hair and sunglasses driving a vintage convertible through the desert at sunset, soft focus, heavy film grain, muted desaturated colors, authentic anamorphic lens flare, shot on Kodak Ektachrome 35mm film stock`',
       'Hasilnya adalah gambar yang tidak hanya terlihat vintage, tetapi juga terasa penuh cerita dan emosi, seolah-olah diambil dari sebuah film klasik yang hilang.'
     ],
-    imageUrl: 'https://picsum.photos/800/600?random=5',
+    imageUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODAwIDYwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJEMzc0OCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFBMjAyQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0Y3RjdGNyI+PHRzcGFuIHg9IjUwJSIgZHk9Ii0xLjVlbSI+TWVuY2lwdGFrYW4gRm90byBCZXJnYXlhPC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPkZpbG0gVmludGFnZSBkZW5nYW4gQUk6PC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPlByb21wdCBSYWhhc2lhPC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPlRlcnVuZ2thcDwv dHNwYW4+PC90ZXh0Pjwvc3ZnPg==',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 05, 2023',
@@ -89,7 +89,7 @@ export const articles: Article[] = [
       '**Prompt:** `3D voxel art character, a cute robot adventurer with a large backpack and a glowing antenna, standing on a floating grassy cube island, isometric view, vibrant colors, detailed pixel texture, soft lighting, MagicaVoxel style`',
       'Dengan memodifikasi deskripsi, Anda dapat dengan mudah membuat berbagai macam karakter dan aset 3D untuk proyek kreatif Anda.'
     ],
-    imageUrl: 'https://picsum.photos/800/600?random=6',
+    imageUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODAwIDYwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJEMzc0OCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFBMjAyQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0Y3RjdGNyI+PHRzcGFuIHg9IjUwJSIgZHk9Ii0wLjZlbSI+RGFyaSAyRCBrZSAzRDogQ2FyYTwvdHNwYW4+PHRzcGFuIHg9IjUwJSIgZHk9IjEuMmVtIj5NZW1idWF0IEthcmFrdGVyIFBpeGVsIEFydCAzRCB5YW5nIEtlcmVuPC90c3Bhbj48L3RleHQ+PC9zdmc+',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 06, 2023',
@@ -108,7 +108,7 @@ export const articles: Article[] = [
       '**Prompt:** `surreal food photography, a cheeseburger where the patty is a swirling galaxy and the bun is made of clouds, floating above a plate, minimalist background, dramatic studio lighting, hyper-realistic, 8k, bokeh`',
       'Eksperimen ini membuka kemungkinan tak terbatas untuk para seniman digital dan pemasar yang ingin tampil beda.'
     ],
-    imageUrl: 'https://picsum.photos/800/600?random=7',
+    imageUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODAwIDYwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJEMzc0OCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFBMjAyQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0Y3RjdGNyI+PHRzcGFuIHg9IjUwJSIgZHk9Ii0xLjVlbSI+Rm90b2dyYWZpIE1ha2FuYW4gTGV2ZWw8L3RzcGFuPjx0c3BhbiB4PSI1MCUiIGR5PSIxLjJlbSI+QmVyaWt1dG55YTogQ2lwdGFrYW4=PC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPkhpZGFuZ2FuIFN1cmVhbA==PC90c3Bhbj48dHNwYW4geD0iNTAlIiBkeT0iMS4yZW0iPmRlbmdhbiBBSTwvdHNwYW4+PC90ZXh0Pjwvc3ZnPg==',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 07, 2023',
@@ -127,7 +127,7 @@ export const articles: Article[] = [
       '**Prompt:** `detailed fantasy world map on ancient, weathered parchment, in the style of Tolkien\'s Lord of the Rings, featuring intricate coastlines, mountain ranges labeled "The Dragon\'s Maw", the Whispering Woods, and a detailed compass rose, sepia tones, hand-drawn feel, ink stains and folds`',
       'Dalam sekejap, Anda akan memiliki dasar visual yang kuat untuk cerita atau game petualangan Anda.'
     ],
-    imageUrl: 'https://picsum.photos/800/600?random=8',
+    imageUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODAwIDYwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJEMzc0OCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFBMjAyQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0Y3RjdGNyI+PHRzcGFuIHg9IjUwJSIgZHk9Ii0wLjZlbSI+QnVhdCBQZXRhIER1bmlhIEZhbnRhc2k8L3RzcGFuPjx0c3BhbiB4PSI1MCUiIGR5PSIxLjJlbSI+SW1waWFubXUgU2VuZGlyaSBNZW5nZ3VuYWthbiBBSTwvdHNwYW4+PC90ZXh0Pjwvc3ZnPg==',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 08, 2023',
@@ -146,7 +146,7 @@ export const articles: Article[] = [
       '**Prompt (digunakan bersama gambar sketsa):** `Transform this sketch into a beautiful anime character illustration. Use vibrant colors, a dynamic pose, and adopt the Ghibli studio art style. Place the character in a detailed background of a magical fantasy forest with glowing particles in the air.`',
       'Teknik ini menjembatani kesenjangan antara ide dan eksekusi, memungkinkan realisasi visi artistik yang lebih cepat dan lebih mudah diakses.'
     ],
-    imageUrl: 'https://picsum.photos/800/600?random=9',
+    imageUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODAwIDYwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJEMzc0OCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFBMjAyQyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI0Y3RjdGNyI+PHRzcGFuIHg9IjUwJSIgZHk9Ii0wLjZlbSI+VWJhaCBTa2V0c2EgS2FzYXJtdTwvdHNwYW4+PHRzcGFuIHg9IjUwJSIgZHk9IjEuMmVtIj5NZW5qYWRpIElsdXN0cmFzaSBQcm9mZXNpb25hbCBkZW5nYW4gQUk8L3RzcGFuPjwvdGV4dD48L3N2Zz4=',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 09, 2023',

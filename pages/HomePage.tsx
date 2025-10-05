@@ -1,14 +1,15 @@
 
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { articles } from '../data/articles';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import { useSearch } from '../context/SearchContext';
 import LazyImage from '../components/LazyImage';
+import { useContentManager } from '../hooks/useContentManager';
 
 const HomePage: React.FC = () => {
   const { searchQuery } = useSearch();
+  const { articles } = useContentManager();
 
   const displayedArticles = useMemo(() => {
     const trimmedQuery = searchQuery.trim();
@@ -20,7 +21,7 @@ const HomePage: React.FC = () => {
       article.title.toLowerCase().includes(lowercasedQuery) ||
       article.tags.some(tag => tag.toLowerCase().includes(lowercasedQuery))
     );
-  }, [searchQuery]);
+  }, [searchQuery, articles]);
 
   const showHero = !searchQuery.trim() && displayedArticles.length > 0;
   const heroArticle = showHero ? displayedArticles[0] : null;
