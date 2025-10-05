@@ -1,7 +1,19 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 const ContactPage: React.FC = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = `Contact Form Submission from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoLink = `mailto:tissue.tessa@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
       <h1 className="text-4xl font-bold mb-6 text-center text-primary">Contact Us</h1>
@@ -9,20 +21,47 @@ const ContactPage: React.FC = () => {
         Have questions, feedback, or want to collaborate? We'd love to hear from you.
       </p>
 
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
-          <input type="text" name="name" id="name" className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm" placeholder="John Doe" />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm"
+            placeholder="John Doe"
+            required
+          />
         </div>
 
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-          <input type="email" name="email" id="email" className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm" placeholder="you@example.com" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm"
+            placeholder="you@example.com"
+            required
+          />
         </div>
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-          <textarea id="message" name="message" rows={4} className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm" placeholder="Your message here..."></textarea>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm"
+            placeholder="Your message here..."
+            required
+          ></textarea>
         </div>
         
         <div className="text-center">

@@ -15,7 +15,7 @@ export const articles: Article[] = [
       'This is just the beginning. By experimenting with combinations of artistic styles, camera techniques, and specific descriptive language, you can guide the AI to create images that are not just generated, but genuinely artistic. Happy prompting!'
     ],
     imageUrl: 'https://picsum.photos/seed/aiart1/800/600',
-    author: 'Awan Byru',
+    author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 26, 2023',
     claps: 125,
@@ -34,7 +34,7 @@ export const articles: Article[] = [
       'These prompts are designed to be specific and provide the AI with all the context it needs to deliver high-quality results on the first try. Think of them as templates for success. Bookmark this page, because you\'ll be coming back to it again and again.'
     ],
     imageUrl: 'https://picsum.photos/seed/aiprod2/800/600',
-    author: 'Awan Byru',
+    author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 22, 2023',
     claps: 240,
@@ -52,7 +52,7 @@ export const articles: Article[] = [
       'The AI generated the code with remarkable accuracy. After some minor tweaking and connecting the components, we had a working prototype. While it\'s not a production-ready app, the speed at which we created a tangible, functional product was nothing short of astonishing. This workflow represents the future of rapid prototyping and development.'
     ],
     imageUrl: 'https://picsum.photos/seed/aimobile3/800/600',
-    author: 'Awan Byru',
+    author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 18, 2023',
     claps: 512,
@@ -73,7 +73,7 @@ export const articles: Article[] = [
       'Aruming jagad bali marang kawicaksanan, titah dadi saksi, yen sapa lali janji nu, Antaboga rawuh nguntal tanpa pamrih murni.',
     ],
     imageUrl: 'https://picsum.photos/seed/mythology4/800/600',
-    author: 'Awan Byru',
+    author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 02, 2023',
     claps: 389,
