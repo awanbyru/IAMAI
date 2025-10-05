@@ -4,6 +4,9 @@ import { GalleryImage } from '../types';
 import LazyImage from '../components/LazyImage';
 
 const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> = ({ image, onClose }) => {
+  const [modalImageUrl, setModalImageUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     if (!image) return;
 
@@ -21,6 +24,21 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [image, onClose]);
+  
+  useEffect(() => {
+    if (image) {
+      setIsLoading(true);
+      const cachedUrl = localStorage.getItem(`gallery-image-${image.id}`);
+      if (cachedUrl) {
+        setModalImageUrl(cachedUrl);
+        setIsLoading(false);
+      } else {
+        // Fallback for rare cases where cache isn't populated yet by the grid view
+        setModalImageUrl(image.imageUrl); 
+        setIsLoading(false);
+      }
+    }
+  }, [image]);
 
   if (!image) return null;
 
@@ -36,14 +54,18 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
         className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-auto flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="md:w-2/3 flex-shrink-0">
-          <img src={image.imageUrl} alt={image.title} className="w-full h-auto object-contain md:rounded-l-lg" />
+        <div className="md:w-2/3 flex-shrink-0 bg-gray-100 dark:bg-gray-900 flex items-center justify-center md:rounded-l-lg">
+          {isLoading ? (
+            <div className="w-full h-full min-h-[300px] bg-gray-300 dark:bg-gray-700 animate-pulse" />
+          ) : (
+             <img src={modalImageUrl!} alt={image.title} className="w-full h-auto object-contain md:rounded-l-lg" />
+          )}
         </div>
         <div className="p-6 flex flex-col">
           <div className="flex-grow">
             <h2 id="image-modal-title" className="text-2xl font-bold text-text-main dark:text-gray-100 mb-4">{image.title}</h2>
             <p className="text-sm text-text-muted dark:text-gray-400 mb-2 font-semibold uppercase tracking-wider">Prompt:</p>
-            <div className="bg-gray-100 dark:bg-gray-900/50 p-4 rounded-md">
+            <div className="bg-gray-100 dark:bg-gray-900/50 p-4 rounded-md max-h-60 overflow-y-auto">
               <p className="text-text-main dark:text-gray-300 text-sm font-mono leading-relaxed">{image.prompt}</p>
             </div>
           </div>
@@ -114,14 +136,20 @@ const GalleryPage: React.FC = () => {
         {filteredImages.map(image => (
           <div
             key={image.id}
-            className="group relative rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300"
+            className="group relative rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300 bg-gray-200 dark:bg-gray-800"
             onClick={() => handleImageClick(image)}
             onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleImageClick(image)}
             tabIndex={0}
             role="button"
             aria-label={`View details for ${image.title}`}
           >
-            <LazyImage src={image.imageUrl} alt={image.title} className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+            <LazyImage
+              src={image.imageUrl}
+              aiPrompt={image.prompt}
+              cacheKey={`gallery-image-${image.id}`}
+              alt={image.title} 
+              className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" 
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4">
               <h3 className="text-white font-bold text-lg">{image.title}</h3>

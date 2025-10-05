@@ -12,7 +12,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
     <div className="bg-surface dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 ease-in-out group">
       <Link to={`/article/${article.slug}`} className="block">
         <div className="relative">
-          <LazyImage className="w-full h-56 object-cover" src={article.imageUrl} alt={article.title} />
+          <LazyImage 
+            src={article.imageUrl}
+            className="w-full h-56 object-cover" 
+            aiPrompt={`A high quality, vibrant, and cinematic photo that visually represents the concept of this article title: "${article.title}"`}
+            cacheKey={`article-image-${article.slug}`}
+            alt={article.title} 
+          />
           <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-opacity duration-300"></div>
         </div>
         <div className="p-6">

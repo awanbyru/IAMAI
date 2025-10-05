@@ -122,7 +122,13 @@ const ArticlePage: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-12">
       <main className="w-full lg:flex-grow bg-surface dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-        <LazyImage className="w-full h-auto max-h-96 object-cover" src={article.imageUrl} alt={article.title} />
+        <LazyImage
+            src={article.imageUrl}
+            className="w-full h-auto max-h-96 object-cover"
+            aiPrompt={`A high quality, vibrant, and cinematic photo that visually represents the concept of this article title: "${article.title}"`}
+            cacheKey={`article-image-${article.slug}`}
+            alt={article.title}
+        />
         <div className="p-4 sm:p-8 lg:p-12">
           <article>
             <header className="mb-8 border-b dark:border-gray-700 pb-8">

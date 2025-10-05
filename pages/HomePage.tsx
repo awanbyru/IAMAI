@@ -36,6 +36,8 @@ const HomePage: React.FC = () => {
               <div className="relative h-64 lg:h-full">
                  <LazyImage
                     src={heroArticle.imageUrl}
+                    aiPrompt={`A high quality, vibrant, and cinematic photo that visually represents the concept of this article title: "${heroArticle.title}"`}
+                    cacheKey={`article-image-${heroArticle.slug}`}
                     alt={heroArticle.title}
                     className="w-full h-full object-cover"
                  />
