@@ -4,6 +4,28 @@ const authorAvatar = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 
 export const articles: Article[] = [
   {
+    id: '10',
+    slug: 'build-photo-restoration-app-google-ai-studio',
+    title: 'Dari Kusam Jadi Keren: Buat Aplikasi Restorasi Foto Sendiri di Google AI Studio (Tanpa Koding!)',
+    excerpt: 'Punya foto kenangan yang rusak? Jangan dibuang! Ikuti tutorial langkah demi langkah ini untuk membangun aplikasi restorasi foto canggih dengan Google AI Studio, lengkap dengan prompt andalan kami.',
+    content: [
+      'Setiap dari kita pasti punya foto lama—kenangan berharga yang tersimpan dalam bentuk cetak, kini mulai kusam, tergores, atau warnanya memudar. Membawanya ke profesional bisa memakan biaya mahal. Tapi bagaimana jika Anda bisa memiliki `ahli restorasi foto` pribadi yang siap membantu kapan saja, gratis, dan hanya dalam hitungan menit? Selamat datang di masa depan. Hari ini, kita akan membangun aplikasi restorasi foto Anda sendiri menggunakan Google AI Studio, tanpa perlu menulis satu baris kode pun.',
+      '**Apa itu Google AI Studio?** Anggap saja ini adalah "dapur" canggih dari Google di mana Anda bisa bereksperimen dengan model AI terbaru mereka (Gemini). Salah satu fitur paling keren adalah kemampuan untuk membuat `Aplikasi Prompt`. Anda cukup memberikan serangkaian instruksi (sebuah prompt), dan AI akan mengubahnya menjadi alat khusus yang bisa digunakan siapa saja.',
+      '**Langkah 1: Buka Google AI Studio & Buat Aplikasi Prompt.** Pertama, kunjungi situs Google AI Studio. Setelah masuk, cari dan klik tombol untuk membuat `Aplikasi Prompt` baru. Ini akan memberi Anda sebuah kanvas kosong untuk mendefinisikan aplikasi impian Anda.',
+      '**Langkah 2: Masukkan Prompt Ajaib.** Di sinilah keajaiban terjadi. Di dalam editor prompt, Anda akan memberikan instruksi kepada AI tentang apa yang harus dilakukannya. Jangan khawatir, kami sudah menyiapkan resep rahasianya. Salin dan tempelkan prompt di bawah ini ke dalam kolom `Instruksi` (atau `system instruction`).',
+      '**Prompt Andalan:** `Anda adalah seorang ahli restorasi foto digital kelas dunia bernama "ChronoLens". Misi Anda adalah menghidupkan kembali kenangan dengan menganalisis dan memulihkan foto-foto lama, rusak, atau pudar yang diunggah oleh pengguna. Ketika Anda menerima sebuah gambar: 1. **Analisis Mendalam:** Periksa gambar dengan cermat untuk menemukan masalah umum seperti goresan, sobekan, noda, warna yang memudar, noise (bintik), dan resolusi rendah. 2. **Lakukan Restorasi:** Terapkan teknik restorasi digital canggih untuk memperbaiki semua masalah yang ditemukan. Ini termasuk koreksi warna yang akurat, penghapusan goresan, pengurangan noise, dan peningkatan detail wajah serta tekstur. 3. **Tingkatkan Kualitas:** Tingkatkan resolusi dan ketajaman gambar secara cerdas tanpa membuatnya terlihat tidak alami. 4. **Sajikan Hasil:** Keluarkan gambar versi final yang telah direstorasi sepenuhnya dengan kualitas terbaik. 5. **Berikan Umpan Balik:** Tepat di bawah gambar hasil restorasi, tambahkan bagian berjudul "**Catatan Restorasi dari ChronoLens:**". Dalam bagian ini, berikan 2-3 poin umpan balik yang positif dan menggembirakan tentang perbaikan utama yang telah Anda lakukan. Gunakan nada yang profesional, positif, dan sedikit magis, seolah-olah Anda benar-benar membawa kenangan berharga kembali ke masa kini.`',
+      '**Langkah 3: Atur Input dan Output.** Google AI Studio sangat intuitif. Di sisi kanan atau di bawah editor, Anda akan melihat area untuk mendefinisikan `Input` dan `Output` aplikasi Anda. Pastikan inputnya adalah **gambar** (Anda bisa menamainya `Foto Unggahan`), dan outputnya adalah **gambar** dan **teks**. Ini akan memungkinkan pengguna mengunggah foto mereka dan menerima kembali foto yang sudah diperbaiki beserta `Catatan Restorasi`.',
+      '**Langkah 4: Uji Coba Aplikasi Anda.** Sekarang bagian yang menyenangkan! Unggah foto lama yang Anda miliki. Coba dengan foto hitam-putih yang tergores, atau foto berwarna dari tahun 80-an yang warnanya sudah agak aneh. Klik `Jalankan` dan saksikan AI melakukan keajaibannya. Anda akan melihat gambar yang telah direstorasi muncul, diikuti oleh umpan balik yang membangun dari `ChronoLens`.',
+      '**Selamat, Anda Telah Menjadi Pengembang Aplikasi AI!** Hanya dengan beberapa langkah sederhana, Anda telah menciptakan alat yang sangat kuat dan bermanfaat. Anda bisa menyimpan dan bahkan membagikan tautan ke aplikasi Anda kepada teman dan keluarga. Jangan ragu untuk bereksperimen dengan prompt di atas. Mungkin Anda ingin menambahkan instruksi untuk mewarnai foto hitam-putih? Kemungkinannya tidak terbatas. Selamat mencoba!'
+    ],
+    imageUrl: 'https://picsum.photos/seed/build-photo-restoration-app-google-ai-studio/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '15 November 2023',
+    claps: 632,
+    tags: ['Tutorial', 'Google AI Studio', 'Restorasi Foto', 'Aplikasi AI'],
+  },
+  {
     id: '1',
     slug: 'unlock-premium-ai-images-10-prompts',
     title: 'Buka Gambar AI Premium: 10 Prompt yang Anda Butuhkan',
