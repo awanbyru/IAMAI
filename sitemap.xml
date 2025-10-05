@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://iamai-awanbyru.vercel.app/#/</loc>
-    <lastmod>2023-11-02</lastmod>
+    <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -43,8 +43,32 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iamai-awanbyru.vercel.app/#/article/serat-antaboga</loc>
-    <lastmod>2023-11-02</lastmod>
+    <loc>https://iamai-awanbyru.vercel.app/#/article/menciptakan-foto-film-vintage-dengan-ai</loc>
+    <lastmod>2023-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iamai-awanbyru.vercel.app/#/article/membuat-karakter-pixel-art-3d-dengan-ai</loc>
+    <lastmod>2023-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iamai-awanbyru.vercel.app/#/article/fotografi-makanan-sureal-dengan-ai</loc>
+    <lastmod>2023-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iamai-awanbyru.vercel.app/#/article/membuat-peta-dunia-fantasi-dengan-ai</loc>
+    <lastmod>2023-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iamai-awanbyru.vercel.app/#/article/mengubah-sketsa-menjadi-ilustrasi-dengan-ai</loc>
+    <lastmod>2023-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
