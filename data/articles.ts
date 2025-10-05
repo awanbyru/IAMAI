@@ -1,4 +1,3 @@
-
 import { Article } from '../types';
 
 export const articles: Article[] = [
@@ -73,7 +72,7 @@ export const articles: Article[] = [
       'Makuto wus wuda ora kagungan drajat, tanpa panguwasa, yen dhasar ora linuwih, mung dadi guyonan sang kala tanpa rasa.',
       'Aruming jagad bali marang kawicaksanan, titah dadi saksi, yen sapa lali janji nu, Antaboga rawuh nguntal tanpa pamrih murni.',
     ],
-    imageUrl: '/serat-antaboga.jpg',
+    imageUrl: 'https://picsum.photos/seed/mythology4/800/600',
     author: 'Awan Byru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 02, 2023',
