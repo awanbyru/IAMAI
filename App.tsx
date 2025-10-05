@@ -8,7 +8,6 @@ import ArticlePage from './pages/ArticlePage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import CookieBanner from './components/CookieBanner';
-import AIStudioPage from './pages/AIStudioPage';
 import { SearchProvider } from './context/SearchContext';
 
 const App: React.FC = () => {
@@ -61,7 +60,6 @@ const App: React.FC = () => {
               <Route path="/article/:slug" element={<ArticlePage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-              <Route path="/ai-studio" element={<AIStudioPage />} />
             </Routes>
           </main>
           <Footer />
