@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Article } from '../types';
+import LazyImage from './LazyImage';
 
 interface ArticleCardProps {
   article: Article;
@@ -11,7 +12,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
     <div className="bg-surface dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 ease-in-out group">
       <Link to={`/article/${article.slug}`} className="block">
         <div className="relative">
-          <img className="w-full h-56 object-cover" src={article.imageUrl} alt={article.title} />
+          <LazyImage className="w-full h-56 object-cover" src={article.imageUrl} alt={article.title} />
           <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-opacity duration-300"></div>
         </div>
         <div className="p-6">
@@ -23,7 +24,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
           <h2 className="text-2xl font-bold text-text-main dark:text-gray-100 mb-2 group-hover:text-secondary transition-colors duration-300">{article.title}</h2>
           <p className="text-text-muted dark:text-gray-400 text-base mb-4 line-clamp-3">{article.excerpt}</p>
           <div className="flex items-center">
-            <img className="w-10 h-10 rounded-full mr-4" src={article.authorAvatar} alt={article.author} />
+            <LazyImage className="w-10 h-10 rounded-full mr-4" src={article.authorAvatar} alt={article.author} />
             <div className="text-sm">
               <p className="text-text-main dark:text-gray-200 font-semibold">{article.author}</p>
               <p className="text-text-muted dark:text-gray-400">{article.date}</p>

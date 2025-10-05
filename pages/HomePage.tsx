@@ -5,6 +5,7 @@ import { articles } from '../data/articles';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import { useSearch } from '../context/SearchContext';
+import LazyImage from '../components/LazyImage';
 
 const HomePage: React.FC = () => {
   const { searchQuery } = useSearch();
@@ -33,7 +34,7 @@ const HomePage: React.FC = () => {
           <Link to={`/article/${heroArticle.slug}`}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-shadow hover:shadow-2xl">
               <div className="relative h-64 lg:h-full">
-                 <img
+                 <LazyImage
                     src={heroArticle.imageUrl}
                     alt={heroArticle.title}
                     className="w-full h-full object-cover"
@@ -47,7 +48,7 @@ const HomePage: React.FC = () => {
                 </h1>
                 <p className="text-text-muted dark:text-gray-400 mb-4 line-clamp-3">{heroArticle.excerpt}</p>
                 <div className="flex items-center mt-6">
-                  <img className="w-10 h-10 rounded-full mr-4" src={heroArticle.authorAvatar} alt={heroArticle.author} />
+                  <LazyImage className="w-10 h-10 rounded-full mr-4" src={heroArticle.authorAvatar} alt={heroArticle.author} />
                   <div>
                     <p className="text-text-main dark:text-gray-200 font-semibold">{heroArticle.author}</p>
                     <p className="text-text-muted dark:text-gray-400 text-sm">{heroArticle.date}</p>

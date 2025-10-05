@@ -5,6 +5,7 @@ import { Article } from '../types';
 import AdsenseBlock from '../components/AdsenseBlock';
 import Sidebar from '../components/Sidebar';
 import CommentSection from '../components/CommentSection';
+import LazyImage from '../components/LazyImage';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -121,7 +122,7 @@ const ArticlePage: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-12">
       <main className="w-full lg:flex-grow bg-surface dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-        <img className="w-full h-auto max-h-96 object-cover" src={article.imageUrl} alt={article.title} />
+        <LazyImage className="w-full h-auto max-h-96 object-cover" src={article.imageUrl} alt={article.title} />
         <div className="p-4 sm:p-8 lg:p-12">
           <article>
             <header className="mb-8 border-b dark:border-gray-700 pb-8">
@@ -132,7 +133,7 @@ const ArticlePage: React.FC = () => {
               </div>
               <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-gray-100 leading-tight mb-4">{article.title}</h1>
               <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                <img className="w-12 h-12 rounded-full mr-4" src={article.authorAvatar} alt={article.author} />
+                <LazyImage className="w-12 h-12 rounded-full mr-4" src={article.authorAvatar} alt={article.author} />
                 <div>
                   <p className="font-semibold text-gray-800 dark:text-gray-200">{article.author}</p>
                   <p>{article.date}</p>

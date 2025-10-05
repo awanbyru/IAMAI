@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { galleryImages } from '../data/galleryImages';
 import { GalleryImage } from '../types';
+import LazyImage from '../components/LazyImage';
 
 const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> = ({ image, onClose }) => {
   useEffect(() => {
@@ -120,7 +121,7 @@ const GalleryPage: React.FC = () => {
             role="button"
             aria-label={`View details for ${image.title}`}
           >
-            <img src={image.imageUrl} alt={image.title} className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
+            <LazyImage src={image.imageUrl} alt={image.title} className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4">
               <h3 className="text-white font-bold text-lg">{image.title}</h3>
