@@ -14,7 +14,7 @@ export const articles: Article[] = [
       '4. **Ukiyo-e Inspired, Modern Metropolis:** Blend classic Japanese art with futuristic cityscapes. The result is a stunning fusion of tradition and modernity, with elegant lines and vibrant colors depicting a bustling, high-tech world.',
       'This is just the beginning. By experimenting with combinations of artistic styles, camera techniques, and specific descriptive language, you can guide the AI to create images that are not just generated, but genuinely artistic. Happy prompting!'
     ],
-    imageUrl: 'https://source.unsplash.com/800x600/?AI,art,digital,prompts',
+    imageUrl: 'https://picsum.photos/seed/unlock-premium-ai-images-10-prompts/800/600',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 26, 2023',
@@ -33,7 +33,7 @@ export const articles: Article[] = [
       '**For the Writer:** `Take the following paragraph and rewrite it to be more concise and impactful. Improve clarity and remove any jargon: [paste paragraph here].`',
       'These prompts are designed to be specific and provide the AI with all the context it needs to deliver high-quality results on the first try. Think of them as templates for success. Bookmark this page, because you\'ll be coming back to it again and again.'
     ],
-    imageUrl: 'https://source.unsplash.com/800x600/?AI,productivity,code,writing',
+    imageUrl: 'https://picsum.photos/seed/ultimate-ai-prompt-collection-10x-productivity/800/600',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 22, 2023',
@@ -51,7 +51,7 @@ export const articles: Article[] = [
       'Within minutes, we had a full UI design. Next, we moved to the logic. `Generate React Native components for the screens designed. The menu should be populated from a simple JSON object. The order form should take the user\'s name and selected items and log them to the console.`',
       'The AI generated the code with remarkable accuracy. After some minor tweaking and connecting the components, we had a working prototype. While it\'s not a production-ready app, the speed at which we created a tangible, functional product was nothing short of astonishing. This workflow represents the future of rapid prototyping and development.'
     ],
-    imageUrl: 'https://source.unsplash.com/800x600/?mobile,app,development,AI',
+    imageUrl: 'https://picsum.photos/seed/mobile-app-in-1-hour-ai-trick/800/600',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 18, 2023',
@@ -70,7 +70,7 @@ export const articles: Article[] = [
       '**Prompt:** `cinematic film still from the 1970s, a woman with feathered hair looking out a rainy window in a dimly lit cafe, soft focus, grainy texture, muted colors, anamorphic lens flare, 35mm film stock`',
       'Hasilnya adalah gambar yang tidak hanya terlihat vintage, tetapi juga terasa penuh cerita dan emosi, seolah-olah diambil dari sebuah film klasik yang hilang.'
     ],
-    imageUrl: 'https://source.unsplash.com/800x600/?vintage,film,photo,70s',
+    imageUrl: 'https://picsum.photos/seed/menciptakan-foto-film-vintage-dengan-ai/800/600',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 05, 2023',
@@ -89,7 +89,7 @@ export const articles: Article[] = [
       '**Prompt:** `3D voxel art character, a cute robot adventurer with a backpack and a glowing antenna, standing on a grassy cube, isometric view, vibrant colors, detailed pixel texture, soft lighting`',
       'Dengan memodifikasi deskripsi, Anda dapat dengan mudah membuat berbagai macam karakter dan aset 3D untuk proyek kreatif Anda.'
     ],
-    imageUrl: 'https://source.unsplash.com/800x600/?pixel,art,3D,voxel,robot',
+    imageUrl: 'https://picsum.photos/seed/membuat-karakter-pixel-art-3d-dengan-ai/800/600',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 06, 2023',
@@ -108,7 +108,7 @@ export const articles: Article[] = [
       '**Prompt:** `surreal food photography, a cheeseburger made of colorful geometric shapes, floating above a plate, minimalist background, studio lighting, hyper-realistic, 8k, bokeh`',
       'Eksperimen ini membuka kemungkinan tak terbatas untuk para seniman digital dan pemasar yang ingin tampil beda.'
     ],
-    imageUrl: 'https://source.unsplash.com/800x600/?surreal,food,photography,cheeseburger',
+    imageUrl: 'https://picsum.photos/seed/fotografi-makanan-sureal-dengan-ai/800/600',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 07, 2023',
@@ -127,7 +127,7 @@ export const articles: Article[] = [
       '**Prompt:** `detailed fantasy world map, ancient parchment style, Lord of the Rings inspired, with intricate coastlines, mountain ranges labeled "The Dragon\'s Tooth", mysterious forests, and a compass rose, sepia tones, hand-drawn feel`',
       'Dalam sekejap, Anda akan memiliki dasar visual yang kuat untuk cerita atau game petualangan Anda.'
     ],
-    imageUrl: 'https://source.unsplash.com/800x600/?fantasy,map,world,ancient',
+    imageUrl: 'https://picsum.photos/seed/membuat-peta-dunia-fantasi-dengan-ai/800/600',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 08, 2023',
@@ -146,7 +146,7 @@ export const articles: Article[] = [
       '**Prompt (digunakan bersama gambar sketsa):** `a beautiful anime character illustration, vibrant colors, dynamic pose, Ghibli studio art style, detailed background of a fantasy forest, magical glowing particles`',
       'Teknik ini menjembatani kesenjangan antara ide dan eksekusi, memungkinkan realisasi visi artistik yang lebih cepat dan lebih mudah diakses.'
     ],
-    imageUrl: 'https://source.unsplash.com/800x600/?sketch,illustration,anime,art',
+    imageUrl: 'https://picsum.photos/seed/mengubah-sketsa-menjadi-ilustrasi-dengan-ai/800/600',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 09, 2023',
