@@ -1,18 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> { }
+interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+    rootMargin?: string;
+}
 
-const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, ...props }) => {
+const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, rootMargin = '200px', ...props }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
+    const [imageSrc, setImageSrc] = useState<string | undefined>(undefined);
+    const imageRef = useRef<HTMLDivElement>(null);
 
-    // Reset state when src changes. This handles cases where the same
-    // component instance is re-rendered with a new image source.
     useEffect(() => {
+        // Reset state for new src
         setIsLoaded(false);
         setHasError(false);
+        setImageSrc(undefined);
     }, [src]);
 
+    useEffect(() => {
+        let observer: IntersectionObserver;
+        const currentRef = imageRef.current;
+
+        if (currentRef && !imageSrc) { // Only observe if we haven't started loading
+            observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setImageSrc(src);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { rootMargin }
+            );
+            observer.observe(currentRef);
+        }
+
+        return () => {
+            if (observer && currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, [src, imageSrc, rootMargin]);
+    
     const handleLoad = () => {
         setIsLoaded(true);
     };
@@ -22,17 +52,18 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, ...props }) 
     };
 
     return (
-        <div className={`${className} relative bg-gray-200 dark:bg-gray-700 overflow-hidden`}>
-            {/* The image is always in the DOM to receive load/error events */}
-            <img
-                src={src}
-                alt={alt}
-                loading="lazy"
-                onLoad={handleLoad}
-                onError={handleError}
-                className={`w-full h-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded && !hasError ? 'opacity-100' : 'opacity-0'}`}
-                {...props}
-            />
+        <div ref={imageRef} className={`${className} relative bg-gray-200 dark:bg-gray-700 overflow-hidden`}>
+            {imageSrc && (
+                <img
+                    src={imageSrc}
+                    alt={alt}
+                    onLoad={handleLoad}
+                    onError={handleError}
+                    className={`w-full h-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded && !hasError ? 'opacity-100' : 'opacity-0'}`}
+                    {...props}
+                />
+            )}
+            
             {/* Show a placeholder/skeleton while loading */}
             {!isLoaded && !hasError && (
                  <div className="absolute inset-0 bg-gray-300 dark:bg-gray-600 animate-pulse"></div>
