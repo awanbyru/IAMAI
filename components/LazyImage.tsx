@@ -5,11 +5,14 @@ const LazyImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = ({ src, a
   const imgRef = useRef<HTMLImageElement>(null);
 
   // This effect handles images that might already be cached by the browser
+  // and resets the loading state if the image src changes.
   useEffect(() => {
     if (imgRef.current?.complete) {
       setIsLoaded(true);
+    } else {
+      setIsLoaded(false);
     }
-  }, []);
+  }, [src]);
 
   return (
     <img
