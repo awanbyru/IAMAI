@@ -1,4 +1,3 @@
-
 export interface Article {
   id: string;
   slug: string;
@@ -18,4 +17,12 @@ export interface Comment {
   name: string;
   message: string;
   date: string; // Stored as ISO string
+}
+
+export interface GalleryImage {
+  id: string;
+  title: string;
+  imageUrl: string;
+  category: string;
+  prompt: string;
 }

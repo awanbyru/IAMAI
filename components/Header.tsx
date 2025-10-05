@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSearch } from '../context/SearchContext';
@@ -47,6 +46,9 @@ const Header: React.FC = () => {
             <div className="ml-10 flex items-center space-x-4">
               <NavLink to="/" className={navLinkClasses}>
                 Home
+              </NavLink>
+              <NavLink to="/gallery" className={navLinkClasses}>
+                Gallery
               </NavLink>
               <NavLink to="/about" className={navLinkClasses}>
                 About
@@ -116,6 +118,9 @@ const Header: React.FC = () => {
             </div>
             <NavLink to="/" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Home
+            </NavLink>
+            <NavLink to="/gallery" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
+              Gallery
             </NavLink>
             <NavLink to="/about" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               About
