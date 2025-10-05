@@ -2,41 +2,23 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const LazyImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = ({ src, alt, className, ...props }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const imgRef = useRef<HTMLImageElement | null>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
+  // This effect handles images that might already be cached by the browser
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: '200px 0px' } // Start loading 200px before it's in view
-    );
-
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
+    if (imgRef.current?.complete) {
+      setIsLoaded(true);
     }
-
-    return () => {
-      if (imgRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        observer.unobserve(imgRef.current);
-      }
-    };
   }, []);
 
   return (
     <img
       ref={imgRef}
-      src={isInView ? src : undefined}
+      src={src}
       alt={alt}
+      loading="lazy"
       onLoad={() => setIsLoaded(true)}
-      className={`${className} transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} bg-gray-200 dark:bg-gray-700`}
+      className={`${className} transition-opacity duration-500 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'} bg-gray-200 dark:bg-gray-700`}
       {...props}
     />
   );
