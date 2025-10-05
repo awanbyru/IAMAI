@@ -12,3 +12,10 @@ export interface Article {
   claps: number;
   tags: string[];
 }
+
+export interface Comment {
+  id: string;
+  name: string;
+  message: string;
+  date: string; // Stored as ISO string
+}

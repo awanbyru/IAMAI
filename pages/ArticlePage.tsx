@@ -4,6 +4,7 @@ import { articles } from '../data/articles';
 import { Article } from '../types';
 import AdsenseBlock from '../components/AdsenseBlock';
 import Sidebar from '../components/Sidebar';
+import CommentSection from '../components/CommentSection';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -158,6 +159,9 @@ const ArticlePage: React.FC = () => {
                 <span>Clap ({claps})</span>
               </button>
             </div>
+            
+            <CommentSection articleSlug={article.slug} />
+
             <div className="text-center">
               <Link to="/" className="text-secondary hover:underline font-semibold">
                 &larr; Back to all articles
