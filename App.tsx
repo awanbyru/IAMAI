@@ -19,39 +19,44 @@ const AIStudioPage = lazy(() => import('./pages/AIStudioPage'));
 const App: React.FC = () => {
 
   useEffect(() => {
-    const scriptId = 'website-schema';
-    let script = document.getElementById(scriptId) as HTMLScriptElement;
-    if (!script) {
-        script = document.createElement('script');
-        script.id = scriptId;
-        script.type = 'application/ld+json';
-        document.head.appendChild(script);
-    }
+    // Defer non-critical schema injection to improve initial load performance
+    const timerId = setTimeout(() => {
+      const scriptId = 'website-schema';
+      let script = document.getElementById(scriptId) as HTMLScriptElement;
+      if (!script) {
+          script = document.createElement('script');
+          script.id = scriptId;
+          script.type = 'application/ld+json';
+          document.head.appendChild(script);
+      }
 
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": window.location.origin,
-        "name": "IAMAI - awanbyru",
-        "description": "Sebuah blog web modern yang berfokus pada AI dan prompting, menampilkan artikel menarik, koleksi gambar AI premium, dan panduan prompt ahli. Dirancang untuk komunitas penggemar AI.",
-        "publisher": {
-            "@type": "Organization",
-            "name": "IAMAI - awanbyru",
-            "logo": {
-                "@type": "ImageObject",
-                "url": `${window.location.origin}/logo.png`
-            }
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": `${window.location.origin}/?s={search_term_string}`
-            },
-            "query-input": "required name=search_term_string"
-        }
-    };
-    script.textContent = JSON.stringify(schema);
+      const schema = {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": window.location.origin,
+          "name": "IAMAI - awanbyru",
+          "description": "Sebuah blog web modern yang berfokus pada AI dan prompting, menampilkan artikel menarik, koleksi gambar AI premium, dan panduan prompt ahli. Dirancang untuk komunitas penggemar AI.",
+          "publisher": {
+              "@type": "Organization",
+              "name": "IAMAI - awanbyru",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": `${window.location.origin}/logo.png`
+              }
+          },
+          "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": `${window.location.origin}/?s={search_term_string}`
+              },
+              "query-input": "required name=search_term_string"
+          }
+      };
+      script.textContent = JSON.stringify(schema);
+    }, 500);
+
+    return () => clearTimeout(timerId);
   }, []);
 
 
