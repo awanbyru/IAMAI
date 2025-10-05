@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
@@ -55,7 +55,7 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <HashRouter>
         <SearchProvider>
           <div className="flex flex-col min-h-screen bg-background dark:bg-gray-900 text-text-main dark:text-gray-200 font-sans">
             <Header />
@@ -74,7 +74,7 @@ const App: React.FC = () => {
             <CookieBanner />
           </div>
         </SearchProvider>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 };

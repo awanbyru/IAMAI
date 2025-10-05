@@ -31,7 +31,7 @@ const GalleryPage: React.FC = () => {
       <MetaTags
         title="Galeri Gambar AI"
         description="Koleksi gambar premium yang dikurasi yang dihasilkan oleh AI. Jelajahi seni, fotografi, 3D, dan lainnya. Klik untuk melihat prompt yang digunakan."
-        canonicalUrl={`${window.location.origin}/gallery`}
+        canonicalUrl={`${window.location.origin}/#/gallery`}
         imageUrl={galleryImages[0]?.imageUrl}
       />
       <div className="space-y-8">
