@@ -73,7 +73,6 @@ export const articles: Article[] = [
       'Aruming jagad bali marang kawicaksanan, titah dadi saksi, yen sapa lali janji nu, Antaboga rawuh nguntal tanpa pamrih murni.',
     ],
     imageUrl: 'https://picsum.photos/seed/mythology4/800/600',
-    iframeUrl: 'https://drive.google.com/file/d/1xq3cQ2_VLzq20AQDAJQtPeriBAqDA8f4/preview',
     author: 'Awan Byru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 02, 2023',
