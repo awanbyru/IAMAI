@@ -50,9 +50,6 @@ const Header: React.FC = () => {
               <NavLink to="/gallery" className={navLinkClasses}>
                 Galeri
               </NavLink>
-              <NavLink to="/aistudio" className={navLinkClasses}>
-                Peralatan AI
-              </NavLink>
               <NavLink to="/about" className={navLinkClasses}>
                 Tentang
               </NavLink>
@@ -124,9 +121,6 @@ const Header: React.FC = () => {
             </NavLink>
             <NavLink to="/gallery" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Galeri
-            </NavLink>
-            <NavLink to="/aistudio" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
-              Peralatan AI
             </NavLink>
             <NavLink to="/about" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Tentang
