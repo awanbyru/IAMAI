@@ -25,7 +25,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
               <span key={tag} className="inline-block bg-secondary/10 text-secondary text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">{tag}</span>
             ))}
           </div>
-          <h2 className="text-2xl font-bold text-text-main dark:text-gray-100 mb-2 group-hover:text-secondary transition-colors duration-300">{article.title}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-text-main dark:text-gray-100 mb-2 group-hover:text-secondary transition-colors duration-300">{article.title}</h2>
           <p className="text-text-muted dark:text-gray-400 text-base mb-4 line-clamp-3">{article.excerpt}</p>
           <div className="flex items-center">
             <LazyImage className="w-10 h-10 rounded-full mr-4" src={article.authorAvatar} alt={article.author} />

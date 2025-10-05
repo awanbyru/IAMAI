@@ -10,7 +10,7 @@ const AboutPage: React.FC = () => {
         canonicalUrl={`${window.location.origin}/about`}
       />
       <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Tentang IAMAI</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Tentang IAMAI</h1>
         
         <div className="prose prose-lg dark:prose-invert max-w-none space-y-6">
           <p className="text-center text-xl text-gray-600 dark:text-gray-300">

@@ -103,7 +103,7 @@ const ArticlePage: React.FC = () => {
         const formattedParagraph = paragraph
             .replace(/`([^`]+)`/g, '<code class="bg-gray-200 dark:bg-gray-700 rounded px-1 py-0.5 text-sm font-mono text-secondary">$1</code>')
             .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-        return <p key={index} className="text-justify" dangerouslySetInnerHTML={{ __html: formattedParagraph }} />;
+        return <p key={index} dangerouslySetInnerHTML={{ __html: formattedParagraph }} />;
     });
   };
 

@@ -22,7 +22,7 @@ const ContactPage: React.FC = () => {
         canonicalUrl={`${window.location.origin}/contact`}
       />
       <div className="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Hubungi Kami</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Hubungi Kami</h1>
         <p className="text-gray-600 dark:text-gray-300 mb-8 text-center">
           Punya pertanyaan, masukan, atau ingin berkolaborasi? Kami ingin mendengar dari Anda.
         </p>

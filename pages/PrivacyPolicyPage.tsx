@@ -10,7 +10,7 @@ const PrivacyPolicyPage: React.FC = () => {
         canonicalUrl={`${window.location.origin}/privacy-policy`}
       />
       <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg prose prose-lg dark:prose-invert">
-        <h1 className="text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Kebijakan Privasi</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Kebijakan Privasi</h1>
         
         <p className="text-sm text-gray-500 dark:text-gray-400 text-center">Terakhir diperbarui: 26 Oktober 2023</p>
 

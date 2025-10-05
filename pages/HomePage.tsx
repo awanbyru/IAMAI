@@ -69,7 +69,7 @@ const HomePage: React.FC = () => {
         {/* Main Content */}
         <section className="flex flex-col lg:flex-row gap-12">
           <main className="w-full lg:flex-grow">
-            <h2 className="text-3xl font-bold mb-8 text-text-main dark:text-gray-100 border-b-4 border-secondary pb-2 inline-block">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-text-main dark:text-gray-100 border-b-4 border-secondary pb-2 inline-block">
               {searchQuery.trim() ? `Hasil untuk "${searchQuery.trim()}"` : 'Artikel Terbaru'}
             </h2>
             {articlesForGrid.length > 0 ? (

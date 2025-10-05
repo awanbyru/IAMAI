@@ -237,10 +237,10 @@ const AIStudioPage: React.FC = () => {
             />
             <div className="space-y-8">
                 <section className="text-center">
-                    <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary mb-2">
+                    <h1 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary mb-2">
                         Peralatan AI
                     </h1>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                         Pusat kreatif Anda untuk membuat dan mengedit gambar dengan kekuatan AI.
                     </p>
                 </section>
