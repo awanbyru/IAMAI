@@ -22,7 +22,7 @@ const ArticleCard: React.FC<ArticleCardProps> = memo(({ article }) => {
         <div className="p-6">
           <div className="flex items-center mb-3">
             {article.tags.map(tag => (
-              <span key={tag} className="inline-block bg-secondary/10 text-secondary text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">{tag}</span>
+              <span key={tag} className="inline-block bg-orange-200 text-orange-800 dark:bg-orange-700 dark:text-orange-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">{tag}</span>
             ))}
           </div>
           <h2 className="text-xl sm:text-2xl font-bold text-text-main dark:text-gray-100 mb-2 group-hover:text-secondary transition-colors duration-300">{article.title}</h2>

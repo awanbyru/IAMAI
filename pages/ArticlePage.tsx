@@ -149,7 +149,7 @@ const ArticlePage: React.FC = () => {
             <div className="p-6 md:p-10">
               <div className="flex items-center space-x-2 mb-4">
                 {article.tags.map(tag => (
-                  <span key={tag} className="bg-secondary/10 text-secondary text-xs font-semibold px-2.5 py-1 rounded-full">{tag}</span>
+                  <span key={tag} className="bg-orange-200 text-orange-800 dark:bg-orange-700 dark:text-orange-200 text-xs font-semibold px-2.5 py-1 rounded-full">{tag}</span>
                 ))}
               </div>
               <h1 className="text-3xl md:text-5xl font-extrabold text-text-main dark:text-gray-100 mb-4 leading-tight">{article.title}</h1>

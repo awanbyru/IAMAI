@@ -60,6 +60,8 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, rootMargin =
                     onLoad={handleLoad}
                     onError={handleError}
                     className={`w-full h-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded && !hasError ? 'opacity-100' : 'opacity-0'}`}
+                    loading="lazy"
+                    decoding="async"
                     {...props}
                 />
             )}

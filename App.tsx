@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
+import LoadingSpinner from './components/LoadingSpinner';
 
 // Lazy load page components for code splitting
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -14,13 +15,6 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const AIStudioPage = lazy(() => import('./pages/AIStudioPage'));
-
-// A fallback component to show while pages are loading
-const LoadingSpinner: React.FC = () => (
-  <div className="flex justify-center items-center py-20">
-    <div className="animate-spin rounded-full h-24 w-24 border-t-2 border-b-2 border-secondary"></div>
-  </div>
-);
 
 const App: React.FC = () => {
 
