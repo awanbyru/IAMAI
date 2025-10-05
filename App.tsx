@@ -11,6 +11,7 @@ import GalleryPage from './pages/GalleryPage';
 import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
+import AIStudioPage from './pages/AIStudioPage';
 
 const App: React.FC = () => {
 
@@ -65,6 +66,7 @@ const App: React.FC = () => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/aistudio" element={<AIStudioPage />} />
               </Routes>
             </main>
             <Footer />
