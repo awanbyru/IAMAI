@@ -19,7 +19,7 @@ const ContactPage: React.FC = () => {
       <MetaTags
         title="Hubungi Kami"
         description="Punya pertanyaan, masukan, atau ingin berkolaborasi? Hubungi tim IAMAI. Kami ingin mendengar dari Anda."
-        canonicalUrl={`${window.location.origin}/#/contact`}
+        canonicalUrl={`${window.location.origin}/contact`}
       />
       <div className="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
         <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Hubungi Kami</h1>

@@ -56,7 +56,7 @@ const ArticlePage: React.FC = () => {
             "@type": "BlogPosting",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `${window.location.origin}/#/article/${article.slug}`
+                "@id": `${window.location.origin}/article/${article.slug}`
             },
             "headline": article.title,
             "description": article.excerpt,
@@ -134,7 +134,7 @@ const ArticlePage: React.FC = () => {
       <MetaTags
         title={article.title}
         description={article.excerpt}
-        canonicalUrl={`${window.location.origin}/#/article/${article.slug}`}
+        canonicalUrl={`${window.location.origin}/article/${article.slug}`}
         imageUrl={article.imageUrl}
       />
       <div className="flex flex-col lg:flex-row gap-12">

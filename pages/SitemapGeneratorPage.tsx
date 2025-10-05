@@ -28,17 +28,17 @@ const SitemapGeneratorPage: React.FC = () => {
         const today = new Date().toISOString().split('T')[0];
       
         const staticPages = [
-          { loc: '/#/', lastmod: today, changefreq: 'weekly', priority: '1.0' },
-          { loc: '/#/gallery', lastmod: today, changefreq: 'weekly', priority: '0.8' },
-          { loc: '/#/about', lastmod: '2024-05-21', changefreq: 'yearly', priority: '0.6' },
-          { loc: '/#/contact', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.5' },
-          { loc: '/#/privacy-policy', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.3' },
+          { loc: '/', lastmod: today, changefreq: 'weekly', priority: '1.0' },
+          { loc: '/gallery', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+          { loc: '/about', lastmod: '2024-05-21', changefreq: 'yearly', priority: '0.6' },
+          { loc: '/contact', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.5' },
+          { loc: '/privacy-policy', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.3' },
         ];
       
         const articlePages = [...articles]
           .sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime())
           .map(article => ({
-              loc: `/#/article/${article.slug}`,
+              loc: `/article/${article.slug}`,
               lastmod: formatDateForSitemap(parseDate(article.date)),
               changefreq: 'monthly',
               priority: '0.9',

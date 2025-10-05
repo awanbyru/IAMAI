@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
       <MetaTags
         title="Beranda"
         description="Jelajahi dunia AI dan rekayasa prompt. Temukan artikel menarik, koleksi gambar AI premium, dan panduan ahli untuk meningkatkan kreativitas dan produktivitas Anda."
-        canonicalUrl={`${window.location.origin}/#/`}
+        canonicalUrl={`${window.location.origin}/`}
       />
       <div className="space-y-12">
         {/* Hero Section */}
