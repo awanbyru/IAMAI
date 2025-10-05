@@ -89,7 +89,7 @@ const ArticlePage: React.FC = () => {
       },
       "datePublished": new Date(article.date).toISOString(),
       "dateModified": new Date(article.date).toISOString(),
-      "articleBody": article.content.join('\\n\\n')
+      "articleBody": article.content.join('\n\n')
     };
     setJsonLd(articleSchema);
   };
