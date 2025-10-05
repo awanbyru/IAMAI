@@ -4,6 +4,27 @@ import { useContentManager } from '../hooks/useContentManager';
 
 const ADMIN_PASSWORD = 'password123'; // Simple hardcoded password
 
+// Helper function to parse Indonesian dates
+const parseIndonesianDate = (dateString: string): Date => {
+  const monthMap: { [key: string]: string } = {
+    'Januari': 'January', 'Februari': 'February', 'Maret': 'March', 'April': 'April',
+    'Mei': 'May', 'Juni': 'June', 'Juli': 'July', 'Agustus': 'August',
+    'September': 'September', 'Oktober': 'October', 'November': 'November', 'Desember': 'December',
+  };
+  const parts = dateString.split(' ');
+  if (parts.length === 3) {
+    const day = parts[0];
+    const month = monthMap[parts[1]];
+    const year = parts[2];
+    if (month) {
+      return new Date(`${month} ${day}, ${year}`);
+    }
+  }
+  const d = new Date(dateString);
+  if (!isNaN(d.getTime())) return d;
+  return new Date();
+};
+
 const AdminPage: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const { articles } = useContentManager();
@@ -39,7 +60,7 @@ const AdminPage: React.FC = () => {
       <p className="text-gray-600 dark:text-gray-300 mb-8 text-center">Kelola artikel blog Anda di sini.</p>
       
       <div className="space-y-4">
-        {articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map(article => (
+        {articles.sort((a, b) => parseIndonesianDate(b.date).getTime() - parseIndonesianDate(a.date).getTime()).map(article => (
           <div key={article.id} className="flex justify-between items-center p-4 border dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-900/50">
             <div>
               <h2 className="font-bold text-lg text-text-main dark:text-gray-200">{article.title}</h2>

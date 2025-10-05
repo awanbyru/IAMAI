@@ -7,6 +7,32 @@ import CommentSection from '../components/CommentSection';
 import LazyImage from '../components/LazyImage';
 import { articles as allArticles } from '../data/articles';
 
+// Helper function to parse Indonesian dates
+const parseIndonesianDate = (dateString: string): Date => {
+  const monthMap: { [key: string]: string } = {
+    'Januari': 'January', 'Februari': 'February', 'Maret': 'March', 'April': 'April',
+    'Mei': 'May', 'Juni': 'June', 'Juli': 'July', 'Agustus': 'August',
+    'September': 'September', 'Oktober': 'October', 'November': 'November', 'Desember': 'December',
+  };
+  const parts = dateString.split(' ');
+  if (parts.length === 3) {
+    const day = parts[0];
+    const month = monthMap[parts[1]];
+    const year = parts[2];
+    if (month) {
+      // Use a format that is universally understood, e.g., "Month Day, Year"
+      return new Date(`${month} ${day}, ${year}`);
+    }
+  }
+  // Fallback for any date string that doesn't match
+  const d = new Date(dateString);
+  if (!isNaN(d.getTime())) return d;
+
+  // Final fallback
+  return new Date();
+};
+
+
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -68,6 +94,7 @@ const ArticlePage: React.FC = () => {
     setTag('meta', 'name', 'twitter:image', 'content', absoluteImageUrl);
 
     // JSON-LD Structured Data for Rich Snippets
+    const articleDate = parseIndonesianDate(article.date);
     const articleSchema = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -90,8 +117,8 @@ const ArticlePage: React.FC = () => {
           "url": new URL('/logo.png', window.location.origin).href
         }
       },
-      "datePublished": new Date(article.date).toISOString(),
-      "dateModified": new Date(article.date).toISOString(),
+      "datePublished": articleDate.toISOString(),
+      "dateModified": articleDate.toISOString(),
       "articleBody": article.content.join('\n\n')
     };
     setJsonLd(articleSchema);
@@ -112,6 +139,13 @@ const ArticlePage: React.FC = () => {
 
   const handleClap = () => {
     setClaps(prevClaps => prevClaps + 1);
+  };
+
+  const processMarkdown = (text: string) => {
+    const html = text
+      .replace(/`([^`]+)`/g, '<code class="bg-gray-200 dark:bg-gray-700 rounded-md px-1 py-0.5 font-mono text-sm">$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    return { __html: html };
   };
 
   if (!article) {
@@ -150,7 +184,7 @@ const ArticlePage: React.FC = () => {
             
             <div className="prose prose-lg max-w-none text-gray-800 dark:prose-invert space-y-6 mt-8">
               {article.content.map((paragraph, index) => (
-                <p key={index}>{paragraph.replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')}</p>
+                <p key={index} dangerouslySetInnerHTML={processMarkdown(paragraph)} />
               ))}
             </div>
           </article>
