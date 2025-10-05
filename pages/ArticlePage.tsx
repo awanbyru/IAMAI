@@ -4,12 +4,14 @@ import { articles } from '../data/articles';
 import { Article } from '../types';
 import AdsenseBlock from '../components/AdsenseBlock';
 import Sidebar from '../components/Sidebar';
+import { useTheme } from '../context/ThemeContext';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [article, setArticle] = useState<Article | undefined>(undefined);
   const [claps, setClaps] = useState(0);
+  const { fontSize } = useTheme();
 
   // Helper function to update meta tags for SEO
   const updateMetaTags = (article: Article) => {
@@ -145,40 +147,46 @@ const ArticlePage: React.FC = () => {
       });
     }
   };
+  
+  const proseClass = {
+    'base': 'prose-lg',
+    'lg': 'prose-xl',
+    'xl': 'prose-2xl',
+  }[fontSize];
 
 
   return (
     <div className="flex flex-col lg:flex-row gap-12">
-      <main className="w-full lg:flex-grow bg-surface rounded-lg shadow-xl overflow-hidden">
+      <main className="w-full lg:flex-grow bg-surface dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden">
         <img className="w-full h-auto max-h-96 object-cover" src={article.imageUrl} alt={article.title} />
         <div className="p-4 sm:p-8 lg:p-12">
           <article>
-            <header className="mb-8 border-b pb-8">
+            <header className="mb-8 border-b dark:border-gray-700 pb-8">
               <div className="flex items-center mb-4">
                 {article.tags.map(tag => (
                   <span key={tag} className="inline-block bg-secondary/10 text-secondary text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">{tag}</span>
                 ))}
               </div>
-              <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">{article.title}</h1>
-              <div className="flex items-center text-sm text-gray-600">
+              <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-gray-100 leading-tight mb-4">{article.title}</h1>
+              <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                 <img className="w-12 h-12 rounded-full mr-4" src={article.authorAvatar} alt={article.author} />
                 <div>
-                  <p className="font-semibold text-gray-800">{article.author}</p>
+                  <p className="font-semibold text-gray-800 dark:text-gray-200">{article.author}</p>
                   <p>{article.date}</p>
                 </div>
               </div>
             </header>
             
             {showToc && (
-              <div className="my-8 p-6 bg-gray-50 border-l-4 border-secondary rounded-r-lg" role="navigation" aria-label="Table of contents">
-                <h2 className="text-xl font-bold mb-4 text-text-main">In This Article</h2>
+              <div className="my-8 p-6 bg-gray-50 dark:bg-gray-900/50 border-l-4 border-secondary rounded-r-lg" role="navigation" aria-label="Table of contents">
+                <h2 className="text-xl font-bold mb-4 text-text-main dark:text-gray-200">In This Article</h2>
                 <ul className="space-y-2">
                   {article.content.map((paragraph, index) => (
                     <li key={`toc-${index}`}>
                       <a 
                         href={`#paragraph-${index}`} 
                         onClick={(e) => handleTocClick(e, `paragraph-${index}`)}
-                        className="text-text-muted hover:text-secondary hover:underline transition-colors duration-200"
+                        className="text-text-muted dark:text-gray-400 hover:text-secondary dark:hover:text-secondary hover:underline transition-colors duration-200"
                       >
                         {createSnippet(paragraph)}
                       </a>
@@ -188,17 +196,17 @@ const ArticlePage: React.FC = () => {
               </div>
             )}
 
-            <div className="prose prose-lg max-w-none text-gray-800 space-y-6">
+            <div className={`prose max-w-none text-gray-800 dark:prose-invert ${proseClass} space-y-6`}>
               {article.content.map((paragraph, index) => (
                 <p key={index} id={`paragraph-${index}`}>{paragraph}</p>
               ))}
             </div>
           </article>
 
-          <div className="mt-12 border-t pt-8 space-y-8">
+          <div className="mt-12 border-t dark:border-gray-700 pt-8 space-y-8">
             <AdsenseBlock />
-            <div className="text-center p-4 border rounded-lg max-w-sm mx-auto">
-              <p className="font-semibold mb-2">Did you enjoy this article?</p>
+            <div className="text-center p-4 border dark:border-gray-700 rounded-lg max-w-sm mx-auto">
+              <p className="font-semibold mb-2 dark:text-gray-200">Did you enjoy this article?</p>
               <button
                 onClick={handleClap}
                 className="w-full bg-secondary text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-secondary/90 transition-transform transform hover:scale-105"

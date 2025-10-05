@@ -8,7 +8,7 @@ interface ArticleCardProps {
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   return (
-    <div className="bg-surface rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 ease-in-out group">
+    <div className="bg-surface dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 ease-in-out group">
       <Link to={`/article/${article.slug}`} className="block">
         <div className="relative">
           <img className="w-full h-56 object-cover" src={article.imageUrl} alt={article.title} />
@@ -20,13 +20,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
               <span key={tag} className="inline-block bg-secondary/10 text-secondary text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">{tag}</span>
             ))}
           </div>
-          <h2 className="text-2xl font-bold text-text-main mb-2 group-hover:text-secondary transition-colors duration-300">{article.title}</h2>
-          <p className="text-text-muted text-base mb-4 line-clamp-3">{article.excerpt}</p>
+          <h2 className="text-2xl font-bold text-text-main dark:text-gray-100 mb-2 group-hover:text-secondary transition-colors duration-300">{article.title}</h2>
+          <p className="text-text-muted dark:text-gray-400 text-base mb-4 line-clamp-3">{article.excerpt}</p>
           <div className="flex items-center">
             <img className="w-10 h-10 rounded-full mr-4" src={article.authorAvatar} alt={article.author} />
             <div className="text-sm">
-              <p className="text-text-main font-semibold">{article.author}</p>
-              <p className="text-text-muted">{article.date}</p>
+              <p className="text-text-main dark:text-gray-200 font-semibold">{article.author}</p>
+              <p className="text-text-muted dark:text-gray-400">{article.date}</p>
             </div>
           </div>
         </div>

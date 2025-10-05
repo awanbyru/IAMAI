@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSearch } from '../context/SearchContext';
+import ThemeControls from './ThemeControls';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,18 +22,18 @@ const Header: React.FC = () => {
     `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
       isActive
         ? 'bg-secondary text-white'
-        : 'text-text-main hover:text-secondary'
+        : 'text-text-main dark:text-gray-300 hover:text-secondary dark:hover:text-secondary'
     }`;
     
   const mobileNavLinkClasses = ({ isActive }: { isActive: boolean }) =>
     `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
       isActive
         ? 'bg-secondary text-white'
-        : 'text-text-main hover:bg-secondary/10 hover:text-secondary'
+        : 'text-text-main dark:text-gray-300 hover:bg-secondary/10 hover:text-secondary'
     }`;
 
   return (
-    <header className="bg-surface/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+    <header className="bg-surface/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md sticky top-0 z-50">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -47,10 +48,13 @@ const Header: React.FC = () => {
               <NavLink to="/" className={navLinkClasses}>
                 Home
               </NavLink>
+              <NavLink to="/ai-studio" className={navLinkClasses}>
+                AI Studio
+              </NavLink>
               <NavLink to="/contact" className={navLinkClasses}>
                 Contact
               </NavLink>
-              <div className="relative ml-4">
+              <div className="relative ml-2">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
                     <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -61,17 +65,19 @@ const Header: React.FC = () => {
                   placeholder="Search articles..."
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="w-full py-2 pl-10 pr-4 text-text-main bg-gray-100 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300 sm:w-40 md:w-56"
+                  className="w-full py-2 pl-10 pr-4 text-text-main dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300 sm:w-32 md:w-40"
                   aria-label="Search articles"
                 />
               </div>
+              <ThemeControls />
             </div>
           </div>
-          <div className="-mr-2 flex md:hidden">
+          <div className="-mr-2 flex md:hidden items-center space-x-2">
+            <ThemeControls />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               type="button"
-              className="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-white hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-white"
+              className="bg-gray-100 dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-white hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-gray-800 focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded={isMenuOpen}
             >
@@ -104,12 +110,15 @@ const Header: React.FC = () => {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={handleSearchChange}
-                className="w-full py-2 pl-10 pr-4 text-text-main bg-gray-100 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                className="w-full py-2 pl-10 pr-4 text-text-main dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
                 aria-label="Search articles"
               />
             </div>
             <NavLink to="/" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Home
+            </NavLink>
+            <NavLink to="/ai-studio" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
+              AI Studio
             </NavLink>
             <NavLink to="/contact" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Contact

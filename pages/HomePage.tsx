@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
       {heroArticle && (
         <section className="group">
           <Link to={`/article/${heroArticle.slug}`}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center bg-surface rounded-xl shadow-lg overflow-hidden transition-shadow hover:shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-shadow hover:shadow-2xl">
               <div className="relative h-64 lg:h-full">
                  <img
                     src={heroArticle.imageUrl}
@@ -42,15 +42,15 @@ const HomePage: React.FC = () => {
               </div>
               <div className="p-8">
                 <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Featured Article</span>
-                <h1 className="text-3xl md:text-4xl font-bold text-text-main my-3 group-hover:text-secondary transition-colors">
+                <h1 className="text-3xl md:text-4xl font-bold text-text-main dark:text-gray-100 my-3 group-hover:text-secondary transition-colors">
                   {heroArticle.title}
                 </h1>
-                <p className="text-text-muted mb-4 line-clamp-3">{heroArticle.excerpt}</p>
+                <p className="text-text-muted dark:text-gray-400 mb-4 line-clamp-3">{heroArticle.excerpt}</p>
                 <div className="flex items-center mt-6">
                   <img className="w-10 h-10 rounded-full mr-4" src={heroArticle.authorAvatar} alt={heroArticle.author} />
                   <div>
-                    <p className="text-text-main font-semibold">{heroArticle.author}</p>
-                    <p className="text-text-muted text-sm">{heroArticle.date}</p>
+                    <p className="text-text-main dark:text-gray-200 font-semibold">{heroArticle.author}</p>
+                    <p className="text-text-muted dark:text-gray-400 text-sm">{heroArticle.date}</p>
                   </div>
                 </div>
               </div>
@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
       {/* Main Content */}
       <section className="flex flex-col lg:flex-row gap-12">
         <main className="w-full lg:flex-grow">
-          <h2 className="text-3xl font-bold mb-8 text-text-main border-b-4 border-secondary pb-2 inline-block">
+          <h2 className="text-3xl font-bold mb-8 text-text-main dark:text-gray-100 border-b-4 border-secondary pb-2 inline-block">
             {searchQuery.trim() ? `Results for "${searchQuery.trim()}"` : 'Latest Articles'}
           </h2>
           {articlesForGrid.length > 0 ? (
@@ -72,12 +72,12 @@ const HomePage: React.FC = () => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-16 px-6 bg-surface rounded-lg shadow-md">
+            <div className="text-center py-16 px-6 bg-surface dark:bg-gray-800 rounded-lg shadow-md">
               <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-              <h3 className="mt-2 text-2xl font-semibold text-text-main">No Articles Found</h3>
-              <p className="mt-1 text-base text-text-muted">Sorry, we couldn’t find any articles matching your search. Try a different keyword.</p>
+              <h3 className="mt-2 text-2xl font-semibold text-text-main dark:text-gray-100">No Articles Found</h3>
+              <p className="mt-1 text-base text-text-muted dark:text-gray-400">Sorry, we couldn’t find any articles matching your search. Try a different keyword.</p>
             </div>
           )}
         </main>

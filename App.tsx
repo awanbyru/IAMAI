@@ -7,8 +7,10 @@ import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import AIStudioPage from './pages/AIStudioPage';
 import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 const App: React.FC = () => {
 
@@ -50,23 +52,26 @@ const App: React.FC = () => {
 
 
   return (
-    <HashRouter>
-      <SearchProvider>
-        <div className="flex flex-col min-h-screen bg-white text-text-main font-sans">
-          <Header />
-          <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/article/:slug" element={<ArticlePage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-            </Routes>
-          </main>
-          <Footer />
-          <CookieBanner />
-        </div>
-      </SearchProvider>
-    </HashRouter>
+    <ThemeProvider>
+      <HashRouter>
+        <SearchProvider>
+          <div className="flex flex-col min-h-screen bg-background dark:bg-gray-900 text-text-main dark:text-gray-200 font-sans">
+            <Header />
+            <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/article/:slug" element={<ArticlePage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                <Route path="/ai-studio" element={<AIStudioPage />} />
+              </Routes>
+            </main>
+            <Footer />
+            <CookieBanner />
+          </div>
+        </SearchProvider>
+      </HashRouter>
+    </ThemeProvider>
   );
 };
 

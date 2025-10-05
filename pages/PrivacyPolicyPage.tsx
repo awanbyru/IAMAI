@@ -3,10 +3,10 @@ import React from 'react';
 
 const PrivacyPolicyPage: React.FC = () => {
   return (
-    <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg prose prose-lg">
-      <h1 className="text-4xl font-bold mb-6 text-center text-primary">Privacy Policy</h1>
+    <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg prose prose-lg dark:prose-invert">
+      <h1 className="text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Privacy Policy</h1>
       
-      <p className="text-sm text-gray-500 text-center">Last updated: October 26, 2023</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400 text-center">Last updated: October 26, 2023</p>
 
       <p>
         Welcome to IAMAI - awanbyru. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.
