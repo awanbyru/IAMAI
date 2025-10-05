@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -12,6 +12,44 @@ import AIStudioPage from './pages/AIStudioPage';
 import { SearchProvider } from './context/SearchContext';
 
 const App: React.FC = () => {
+
+  useEffect(() => {
+    const scriptId = 'website-schema';
+    let script = document.getElementById(scriptId) as HTMLScriptElement;
+    if (!script) {
+        script = document.createElement('script');
+        script.id = scriptId;
+        script.type = 'application/ld+json';
+        document.head.appendChild(script);
+    }
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": window.location.origin,
+        "name": "IAMAI - awanbyru",
+        "description": "A modern web blog focused on AI and prompting, featuring engaging articles, premium AI image collections, and expert prompt guides. Designed for the AI enthusiast community.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "IAMAI - awanbyru",
+            "logo": {
+                "@type": "ImageObject",
+                "url": `${window.location.origin}/logo.png`
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": `${window.location.origin}/#/?s={search_term_string}`
+            },
+            "query-input": "required name=search_term_string"
+        }
+    };
+    script.textContent = JSON.stringify(schema);
+  }, []);
+
+
   return (
     <HashRouter>
       <SearchProvider>

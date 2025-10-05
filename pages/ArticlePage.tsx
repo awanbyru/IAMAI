@@ -35,15 +35,40 @@ const ArticlePage: React.FC = () => {
       element.content = content;
     };
 
-    const imageUrl = window.location.origin + article.imageUrl;
+    const setLink = (rel: string, href: string) => {
+      let element = document.querySelector(`link[rel='${rel}']`) as HTMLLinkElement;
+      if (!element) {
+        element = document.createElement('link');
+        element.rel = rel;
+        document.head.appendChild(element);
+      }
+      element.href = href;
+    };
+
+    const setJsonLd = (schema: object) => {
+      const scriptId = 'article-schema';
+      let element = document.getElementById(scriptId) as HTMLScriptElement;
+      if (!element) {
+          element = document.createElement('script');
+          element.id = scriptId;
+          element.type = 'application/ld+json';
+          document.head.appendChild(element);
+      }
+      element.textContent = JSON.stringify(schema);
+    };
+
+    const imageUrl = article.imageUrl; // Use the absolute URL from data
+    const canonicalUrl = window.location.href;
 
     setMeta('description', article.excerpt);
+    setLink('canonical', canonicalUrl);
     
     // Open Graph / Facebook
+    setProperty('og:site_name', 'IAMAI - awanbyru');
     setProperty('og:title', article.title);
     setProperty('og:description', article.excerpt);
     setProperty('og:image', imageUrl);
-    setProperty('og:url', window.location.href);
+    setProperty('og:url', canonicalUrl);
     setProperty('og:type', 'article');
     
     // Twitter
@@ -51,6 +76,35 @@ const ArticlePage: React.FC = () => {
     setProperty('twitter:title', article.title);
     setProperty('twitter:description', article.excerpt);
     setProperty('twitter:image', imageUrl);
+
+    // JSON-LD Structured Data
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": canonicalUrl
+      },
+      "headline": article.title,
+      "description": article.excerpt,
+      "image": imageUrl,
+      "author": {
+        "@type": "Person",
+        "name": article.author
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "IAMAI - awanbyru",
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${window.location.origin}/logo.png`
+        }
+      },
+      "datePublished": new Date(article.date).toISOString(),
+      "dateModified": new Date(article.date).toISOString(),
+      "articleBody": article.content.join('\\n\\n')
+    };
+    setJsonLd(articleSchema);
   };
 
   useEffect(() => {
