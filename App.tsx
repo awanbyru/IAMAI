@@ -11,7 +11,6 @@ import GalleryPage from './pages/GalleryPage';
 import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
-import AIStudioPage from './pages/AIStudioPage';
 import AdminPage from './pages/AdminPage';
 import EditArticlePage from './pages/EditArticlePage';
 
@@ -65,7 +64,6 @@ const App: React.FC = () => {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/article/:slug" element={<ArticlePage />} />
                 <Route path="/gallery" element={<GalleryPage />} />
-                <Route path="/ai-studio" element={<AIStudioPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="/about" element={<AboutPage />} />

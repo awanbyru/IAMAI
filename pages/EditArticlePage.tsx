@@ -94,7 +94,6 @@ const EditArticlePage: React.FC = () => {
         <div>
             <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700 dark:text-gray-300">URL Gambar atau Data URI</label>
             <textarea name="imageUrl" id="imageUrl" rows={5} value={formData.imageUrl || ''} onChange={handleChange} className={`${inputStyle} font-mono`} required />
-            <Link to="/ai-studio" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:underline mt-1 inline-block">Buat gambar baru dengan AI Studio &rarr;</Link>
         </div>
         <div>
           <label htmlFor="tags" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Tag (dipisahkan koma)</label>

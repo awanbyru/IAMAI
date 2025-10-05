@@ -16,7 +16,7 @@ export const articles: Article[] = [
       '4. **Fusi Artistik:** `A bustling futuristic metropolis skyline at night, re-imagined in the style of Ukiyo-e woodblock prints, elegant lines, flat color planes with modern gradients, cherry blossom petals drifting in the foreground.` Padukan seni klasik Jepang dengan pemandangan kota futuristik.',
       'Ini baru permulaan. Dengan bereksperimen dengan kombinasi gaya artistik, teknik kamera, dan bahasa deskriptif yang spesifik, Anda dapat memandu AI untuk membuat gambar yang tidak hanya dihasilkan, tetapi benar-benar artistik. Selamat mencoba!'
     ],
-    imageUrl: 'https://awanbyru.com/images/articles/unlock-premium-ai-images.webp',
+    imageUrl: 'https://picsum.photos/seed/unlock-premium-ai-images-10-prompts/800/400',
     author: 'awanbyru',
     authorAvatar,
     date: '26 Oktober 2023',
@@ -35,7 +35,7 @@ export const articles: Article[] = [
       '**Untuk Penulis:** `Rewrite the following text to be more persuasive and engaging for a professional audience. Adopt a confident and authoritative tone. Simplify complex sentences, replace passive voice with active voice, and end with a strong call to action. Original text: [paste text here].`',
       'Prompt ini dirancang untuk menjadi spesifik dan memberikan AI semua konteks yang dibutuhkannya untuk memberikan hasil berkualitas tinggi pada percobaan pertama. Anggap saja ini sebagai templat untuk sukses. Tandai halaman ini, karena Anda akan sering kembali ke sini.'
     ],
-    imageUrl: 'https://awanbyru.com/images/articles/ultimate-ai-prompt-collection.webp',
+    imageUrl: 'https://picsum.photos/seed/ultimate-ai-prompt-collection-10x-productivity/800/400',
     author: 'awanbyru',
     authorAvatar,
     date: '22 Oktober 2023',
@@ -53,7 +53,7 @@ export const articles: Article[] = [
       'Dalam beberapa menit, kami memiliki desain UI lengkap. Selanjutnya, kami beralih ke logika. `Generate the React Native code using TypeScript and Expo for the screens designed. Use functional components and hooks. The menu data should be fetched from a mock JSON API. The order form state should be managed with \`useState\`. On submission, compile the order details into a JSON object and log it.`',
       'AI menghasilkan kode dengan akurasi yang luar biasa. Setelah beberapa penyesuaian kecil, kami memiliki prototipe yang berfungsi. Meskipun belum siap produksi, kecepatan dari ide ke produk nyata sangat mencengangkan. Alur kerja ini mewakili masa depan prototipe cepat.'
     ],
-    imageUrl: 'https://awanbyru.com/images/articles/mobile-app-in-1-hour.webp',
+    imageUrl: 'https://picsum.photos/seed/mobile-app-in-1-hour-ai-trick/800/400',
     author: 'awanbyru',
     authorAvatar,
     date: '18 Oktober 2023',
@@ -72,7 +72,7 @@ export const articles: Article[] = [
       '**Prompt:** `cinematic film still from a 1970s road movie, a woman with feathered hair and sunglasses driving a vintage convertible through the desert at sunset, soft focus, heavy film grain, muted desaturated colors, authentic anamorphic lens flare, shot on Kodak Ektachrome 35mm film stock`',
       'Hasilnya adalah gambar yang tidak hanya terlihat vintage, tetapi juga terasa penuh cerita dan emosi, seolah-olah diambil dari sebuah film klasik yang hilang.'
     ],
-    imageUrl: 'https://awanbyru.com/images/articles/vintage-film-photo.webp',
+    imageUrl: 'https://picsum.photos/seed/menciptakan-foto-film-vintage-dengan-ai/800/400',
     author: 'awanbyru',
     authorAvatar,
     date: '05 November 2023',
@@ -91,7 +91,7 @@ export const articles: Article[] = [
       '**Prompt:** `3D voxel art character, a cute robot adventurer with a large backpack and a glowing antenna, standing on a floating grassy cube island, isometric view, vibrant colors, detailed pixel texture, soft lighting, MagicaVoxel style`',
       'Dengan memodifikasi deskripsi, Anda dapat dengan mudah membuat berbagai macam karakter dan aset 3D untuk proyek kreatif Anda.'
     ],
-    imageUrl: 'https://awanbyru.com/images/articles/pixel-art-3d.webp',
+    imageUrl: 'https://picsum.photos/seed/membuat-karakter-pixel-art-3d-dengan-ai/800/400',
     author: 'awanbyru',
     authorAvatar,
     date: '06 November 2023',
@@ -110,7 +110,7 @@ export const articles: Article[] = [
       '**Prompt:** `surreal food photography, a cheeseburger where the patty is a swirling galaxy and the bun is made of clouds, floating above a plate, minimalist background, dramatic studio lighting, hyper-realistic, 8k, bokeh`',
       'Eksperimen ini membuka kemungkinan tak terbatas untuk para seniman digital dan pemasar yang ingin tampil beda.'
     ],
-    imageUrl: 'https://awanbyru.com/images/articles/surreal-food-photography.webp',
+    imageUrl: 'https://picsum.photos/seed/fotografi-makanan-sureal-dengan-ai/800/400',
     author: 'awanbyru',
     authorAvatar,
     date: '07 November 2023',
@@ -129,7 +129,7 @@ export const articles: Article[] = [
       '**Prompt:** `detailed fantasy world map on ancient, weathered parchment, in the style of Tolkien\'s Lord of the Rings, featuring intricate coastlines, mountain ranges labeled "The Dragon\'s Maw", the Whispering Woods, and a detailed compass rose, sepia tones, hand-drawn feel, ink stains and folds`',
       'Dalam sekejap, Anda akan memiliki dasar visual yang kuat untuk cerita atau game petualangan Anda.'
     ],
-    imageUrl: 'https://awanbyru.com/images/articles/fantasy-world-map.webp',
+    imageUrl: 'https://picsum.photos/seed/membuat-peta-dunia-fantasi-dengan-ai/800/400',
     author: 'awanbyru',
     authorAvatar,
     date: '08 November 2023',
@@ -148,7 +148,7 @@ export const articles: Article[] = [
       '**Prompt (digunakan bersama gambar sketsa):** `Transform this sketch into a beautiful anime character illustration. Use vibrant colors, a dynamic pose, and adopt the Ghibli studio art style. Place the character in a detailed background of a magical fantasy forest with glowing particles in the air.`',
       'Teknik ini menjembatani kesenjangan antara ide dan eksekusi, memungkinkan realisasi visi artistik yang lebih cepat dan lebih mudah diakses.'
     ],
-    imageUrl: 'https://awanbyru.com/images/articles/sketch-to-illustration.webp',
+    imageUrl: 'https://picsum.photos/seed/mengubah-sketsa-menjadi-ilustrasi-dengan-ai/800/400',
     author: 'awanbyru',
     authorAvatar,
     date: '09 November 2023',
