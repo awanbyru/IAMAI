@@ -4,7 +4,6 @@ import { articles } from '../data/articles';
 import { Article } from '../types';
 import Sidebar from '../components/Sidebar';
 import MetaTags from '../components/MetaTags';
-import LazyImage from '../components/LazyImage';
 import CommentSection from '../components/CommentSection';
 
 const ArticlePage: React.FC = () => {
@@ -141,12 +140,10 @@ const ArticlePage: React.FC = () => {
       <div className="flex flex-col lg:flex-row gap-12">
         <article className="w-full lg:flex-grow bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
           <header>
-            <LazyImage 
+            <img 
               src={article.imageUrl} 
               alt={article.title} 
-              className="w-full h-64 md:h-96 object-cover"
-              loading="eager"
-              fetchPriority="high" 
+              className="w-full h-64 md:h-96 object-cover bg-gray-200 dark:bg-gray-700"
             />
             <div className="p-6 md:p-10">
               <div className="flex items-center space-x-2 mb-4">
@@ -157,7 +154,7 @@ const ArticlePage: React.FC = () => {
               <h1 className="text-3xl md:text-5xl font-extrabold text-text-main dark:text-gray-100 mb-4 leading-tight">{article.title}</h1>
               <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-text-muted dark:text-gray-400">
                 <div className="flex items-center">
-                  <LazyImage className="w-12 h-12 rounded-full mr-4" src={article.authorAvatar} alt={article.author} />
+                  <img className="w-12 h-12 rounded-full mr-4 bg-gray-200 dark:bg-gray-700" src={article.authorAvatar} alt={article.author} loading="lazy" />
                   <div>
                     <p className="font-semibold text-text-main dark:text-gray-200">{article.author}</p>
                     <p>{article.date}</p>

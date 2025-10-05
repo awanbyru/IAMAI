@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { galleryImages } from '../data/galleryImages';
 import { GalleryImage } from '../types';
-import LazyImage from '../components/LazyImage';
 import MetaTags from '../components/MetaTags';
 
 const ImageModal = lazy(() => import('../components/ImageModal'));
@@ -74,10 +73,11 @@ const GalleryPage: React.FC = () => {
               role="button"
               aria-label={`Lihat detail untuk ${image.title}`}
             >
-              <LazyImage
+              <img
                 src={image.imageUrl}
                 alt={image.title} 
-                className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" 
+                className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 bg-gray-200 dark:bg-gray-700"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-4">
