@@ -1,31 +1,12 @@
+
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const ThemeControls: React.FC = () => {
-  const { theme, toggleTheme, increaseFontSize, decreaseFontSize } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="flex items-center space-x-1 sm:space-x-2">
-      {/* Font Size Controls */}
-      <button
-        onClick={decreaseFontSize}
-        className="p-2 rounded-full text-text-main dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-        aria-label="Decrease font size"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
-        </svg>
-      </button>
-      <button
-        onClick={increaseFontSize}
-        className="p-2 rounded-full text-text-main dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-        aria-label="Increase font size"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
-        </svg>
-      </button>
-
+    <div className="flex items-center">
       {/* Theme Toggle */}
       <button
         onClick={toggleTheme}

@@ -1,17 +1,16 @@
+
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { articles } from '../data/articles';
 import { Article } from '../types';
 import AdsenseBlock from '../components/AdsenseBlock';
 import Sidebar from '../components/Sidebar';
-import { useTheme } from '../context/ThemeContext';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [article, setArticle] = useState<Article | undefined>(undefined);
   const [claps, setClaps] = useState(0);
-  const { fontSize } = useTheme();
 
   // Helper function to update meta tags for SEO
   const updateMetaTags = (article: Article) => {
@@ -147,12 +146,6 @@ const ArticlePage: React.FC = () => {
       });
     }
   };
-  
-  const proseClass = {
-    'base': 'prose-lg',
-    'lg': 'prose-xl',
-    'xl': 'prose-2xl',
-  }[fontSize];
 
 
   return (
@@ -196,7 +189,7 @@ const ArticlePage: React.FC = () => {
               </div>
             )}
 
-            <div className={`prose max-w-none text-gray-800 dark:prose-invert ${proseClass} space-y-6`}>
+            <div className="prose prose-lg max-w-none text-gray-800 dark:prose-invert space-y-6">
               {article.content.map((paragraph, index) => (
                 <p key={index} id={`paragraph-${index}`}>{paragraph}</p>
               ))}
