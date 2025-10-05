@@ -6,21 +6,64 @@ import { Article } from '../types';
 import AdsenseBlock from '../components/AdsenseBlock';
 
 const ArticlePage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [article, setArticle] = useState<Article | undefined>(undefined);
   const [claps, setClaps] = useState(0);
 
+  // Helper function to update meta tags
+  const updateMetaTags = (article: Article) => {
+    document.title = `${article.title} | IAMAI - awanbyru`;
+    
+    const setMeta = (name: string, content: string) => {
+      let element = document.querySelector(`meta[name='${name}']`) as HTMLMetaElement;
+      if (!element) {
+        element = document.createElement('meta');
+        element.name = name;
+        document.head.appendChild(element);
+      }
+      element.content = content;
+    };
+    
+    const setProperty = (property: string, content: string) => {
+      let element = document.querySelector(`meta[property='${property}']`) as HTMLMetaElement;
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute('property', property);
+        document.head.appendChild(element);
+      }
+      element.content = content;
+    };
+
+    const imageUrl = window.location.origin + article.imageUrl;
+
+    setMeta('description', article.excerpt);
+    
+    // Open Graph / Facebook
+    setProperty('og:title', article.title);
+    setProperty('og:description', article.excerpt);
+    setProperty('og:image', imageUrl);
+    setProperty('og:url', window.location.href);
+    setProperty('og:type', 'article');
+    
+    // Twitter
+    setProperty('twitter:card', 'summary_large_image');
+    setProperty('twitter:title', article.title);
+    setProperty('twitter:description', article.excerpt);
+    setProperty('twitter:image', imageUrl);
+  };
+
   useEffect(() => {
-    const foundArticle = articles.find(a => a.id === id);
+    const foundArticle = articles.find(a => a.slug === slug);
     if (foundArticle) {
       setArticle(foundArticle);
       setClaps(foundArticle.claps);
+      updateMetaTags(foundArticle);
     } else {
       // Redirect to home if article not found, or show a 404 component
       navigate('/');
     }
-  }, [id, navigate]);
+  }, [slug, navigate]);
 
   const handleClap = () => {
     setClaps(prevClaps => prevClaps + 1);

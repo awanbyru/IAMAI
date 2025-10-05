@@ -4,6 +4,7 @@ import { Article } from '../types';
 export const articles: Article[] = [
   {
     id: '1',
+    slug: 'unlock-premium-ai-images-10-prompts',
     title: 'Unlock Premium AI Images: 10 Prompts You Never Knew You Needed',
     excerpt: 'Tired of generic AI art? These 10 secret prompts will transform your creations from bland to breathtaking. See the stunning gallery inside!',
     content: [
@@ -23,6 +24,7 @@ export const articles: Article[] = [
   },
   {
     id: '2',
+    slug: 'ultimate-ai-prompt-collection-10x-productivity',
     title: 'The Ultimate AI Prompt Collection That Will 10x Your Productivity',
     excerpt: 'Stop wasting time with trial-and-error. We\'ve curated the ultimate collection of copy-paste prompts for marketing, coding, writing, and more.',
     content: [
@@ -41,6 +43,7 @@ export const articles: Article[] = [
   },
   {
     id: '3',
+    slug: 'mobile-app-in-1-hour-ai-trick',
     title: 'We Built a Mobile App in 1 Hour With This One AI Trick (You Won\'t Believe The Result)',
     excerpt: 'Think building an app takes months? Think again. We used a revolutionary AI-powered workflow to go from idea to functional prototype in just 60 minutes.',
     content: [
@@ -55,5 +58,26 @@ export const articles: Article[] = [
     date: 'October 18, 2023',
     claps: 512,
     tags: ['AI Development', 'Mobile App', 'Case Study'],
+  },
+  {
+    id: '4',
+    slug: 'serat-antaboga',
+    title: 'Serat Antaboga',
+    excerpt: 'A mystical Javanese poem telling the tale of a once-powerful queen, a lost crown, and the mythical dragon Antaboga who awaits to claim it.',
+    content: [
+      'Ratu linuwih mung wening ati sejati, tan tanpa daya, yen lali marang titahu, Antaboga mangan makuto ilang tahta.',
+      'Swara sesanti ngliwati langit suwung, ora geguyon ana, yen titah dilarani ku, sapa nglanggar kasirna sirna tan kuasa.',
+      'Ratu tan welas kothong dampar kang suci, wayang tanpa dalang, tanpa nyawa kang nyawiji, pangrebut kuasa tiba dadi reregeta.',
+      'Naga ngidham getih nyusup jero bumi, ngenteni tumiba, ratu lali pangayomu, makuto dilepeh dadi rereged donya.',
+      'Titah ngendika lumantar angin suci, kawulo manembah, sapa ngiyanati iku, sirna kadya mega kapethuk surya purna.',
+      'Makuto wus wuda ora kagungan drajat, tanpa panguwasa, yen dhasar ora linuwih, mung dadi guyonan sang kala tanpa rasa.',
+      'Aruming jagad bali marang kawicaksanan, titah dadi saksi, yen sapa lali janji nu, Antaboga rawuh nguntal tanpa pamrih murni.',
+    ],
+    imageUrl: '/serat-antaboga.jpg',
+    author: 'Awan Byru',
+    authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
+    date: 'November 02, 2023',
+    claps: 389,
+    tags: ['Javanese', 'Mythology', 'Poetry', 'Antaboga'],
   },
 ];

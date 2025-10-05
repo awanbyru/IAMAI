@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/article/:id" element={<ArticlePage />} />
+            <Route path="/article/:slug" element={<ArticlePage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           </Routes>
