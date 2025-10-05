@@ -122,7 +122,7 @@ const GalleryPage: React.FC = () => {
           {filteredImages.map(image => (
             <div
               key={image.id}
-              className="group relative rounded-lg overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300 bg-gray-200 dark:bg-gray-800"
+              className="group relative rounded-lg overflow-hidden cursor-pointer shadow-lg transition-transform duration-300 hover:-translate-y-1.5 bg-gray-200 dark:bg-gray-800"
               onClick={() => handleImageClick(image)}
               onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleImageClick(image)}
               tabIndex={0}

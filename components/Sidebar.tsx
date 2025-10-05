@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import AdsenseBlock from './AdsenseBlock';
 import { articles } from '../data/articles';
 
 const Sidebar: React.FC = () => {
   
-  // Sort articles by claps to find the most popular ones
-  const popularArticles = [...articles]
-    .sort((a, b) => b.claps - a.claps)
-    .slice(0, 4);
+  // Memoize the popular articles list to prevent recalculation on every render
+  const popularArticles = useMemo(() => 
+    [...articles]
+      .sort((a, b) => b.claps - a.claps)
+      .slice(0, 4)
+  , []);
 
   return (
     <aside className="w-full lg:w-1/3 xl:w-1/4 space-y-8 flex-shrink-0">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { Article } from '../types';
 import LazyImage from './LazyImage';
@@ -7,14 +7,14 @@ interface ArticleCardProps {
   article: Article;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+const ArticleCard: React.FC<ArticleCardProps> = memo(({ article }) => {
   return (
-    <div className="bg-surface dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 ease-in-out group">
+    <div className="bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group transition-transform duration-300 ease-in-out hover:-translate-y-1.5">
       <Link to={`/article/${article.slug}`} className="block">
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <LazyImage 
             src={article.imageUrl}
-            className="w-full h-56 object-cover" 
+            className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out" 
             alt={article.title} 
           />
           <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-opacity duration-300"></div>
@@ -38,6 +38,6 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
       </Link>
     </div>
   );
-};
+});
 
 export default ArticleCard;
