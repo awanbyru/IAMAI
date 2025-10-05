@@ -98,7 +98,18 @@ const ArticlePage: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-3/4">
-            <img className="w-full h-auto object-cover rounded-lg mb-8 shadow-md" src={article.imageUrl} alt={article.title} />
+            {article.iframeUrl ? (
+              <div className="relative w-full mb-8 shadow-md rounded-lg overflow-hidden" style={{ paddingTop: '75%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full border-0"
+                  src={article.iframeUrl}
+                  allow="autoplay"
+                  title={article.title}
+                ></iframe>
+              </div>
+            ) : (
+              <img className="w-full h-auto object-cover rounded-lg mb-8 shadow-md" src={article.imageUrl} alt={article.title} />
+            )}
             
             <div className="prose prose-lg max-w-none text-gray-800 space-y-6">
               {article.content.map((paragraph, index) => (

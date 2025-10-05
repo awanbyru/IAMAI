@@ -6,6 +6,7 @@ export interface Article {
   excerpt: string;
   content: string[];
   imageUrl: string;
+  iframeUrl?: string;
   author: string;
   authorAvatar: string;
   date: string;
