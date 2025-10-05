@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { articles } from '../data/articles';
@@ -118,36 +117,6 @@ const ArticlePage: React.FC = () => {
     );
   }
 
-  const showToc = article.content.length > 3;
-
-  const createSnippet = (text: string): string => {
-    if (text.length <= 90) {
-      return text;
-    }
-    const snippet = text.substring(0, 90);
-    const lastSpace = snippet.lastIndexOf(' ');
-    if (lastSpace > 0) {
-      return snippet.substring(0, lastSpace) + '...';
-    }
-    return snippet + '...';
-  };
-
-  const handleTocClick = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    event.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 80; // Approximate height of the sticky header + some space
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-
   return (
     <div className="flex flex-col lg:flex-row gap-12">
       <main className="w-full lg:flex-grow bg-surface dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden">
@@ -170,28 +139,9 @@ const ArticlePage: React.FC = () => {
               </div>
             </header>
             
-            {showToc && (
-              <div className="my-8 p-6 bg-gray-50 dark:bg-gray-900/50 border-l-4 border-secondary rounded-r-lg" role="navigation" aria-label="Table of contents">
-                <h2 className="text-xl font-bold mb-4 text-text-main dark:text-gray-200">In This Article</h2>
-                <ul className="space-y-2">
-                  {article.content.map((paragraph, index) => (
-                    <li key={`toc-${index}`}>
-                      <a 
-                        href={`#paragraph-${index}`} 
-                        onClick={(e) => handleTocClick(e, `paragraph-${index}`)}
-                        className="text-text-muted dark:text-gray-400 hover:text-secondary dark:hover:text-secondary hover:underline transition-colors duration-200"
-                      >
-                        {createSnippet(paragraph)}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div className="prose prose-lg max-w-none text-gray-800 dark:prose-invert space-y-6">
+            <div className="prose prose-lg max-w-none text-gray-800 dark:prose-invert space-y-6 mt-8">
               {article.content.map((paragraph, index) => (
-                <p key={index} id={`paragraph-${index}`}>{paragraph}</p>
+                <p key={index}>{paragraph}</p>
               ))}
             </div>
           </article>
