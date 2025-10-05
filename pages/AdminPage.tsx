@@ -13,7 +13,7 @@ const AdminPage: React.FC = () => {
     if (sessionStorage.getItem('isAdminAuthenticated') === 'true') {
       setIsAuthenticated(true);
     } else {
-      const password = prompt('Please enter the admin password:');
+      const password = prompt('Silakan masukkan kata sandi admin:');
       if (password === ADMIN_PASSWORD) {
         sessionStorage.setItem('isAdminAuthenticated', 'true');
         setIsAuthenticated(true);
@@ -24,10 +24,10 @@ const AdminPage: React.FC = () => {
   if (!isAuthenticated) {
     return (
       <div className="text-center py-20 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-        <h1 className="text-2xl font-bold text-red-600 dark:text-red-400">Access Denied</h1>
-        <p className="text-gray-600 dark:text-gray-300 mt-4">You need to enter the correct password to view this page.</p>
+        <h1 className="text-2xl font-bold text-red-600 dark:text-red-400">Akses Ditolak</h1>
+        <p className="text-gray-600 dark:text-gray-300 mt-4">Anda harus memasukkan kata sandi yang benar untuk melihat halaman ini.</p>
         <button onClick={() => window.location.reload()} className="mt-6 bg-secondary text-white font-bold py-2 px-4 rounded-lg hover:bg-secondary/80 transition-colors">
-          Retry
+          Coba Lagi
         </button>
       </div>
     );
@@ -35,8 +35,8 @@ const AdminPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-      <h1 className="text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Admin Panel</h1>
-      <p className="text-gray-600 dark:text-gray-300 mb-8 text-center">Manage your blog articles here.</p>
+      <h1 className="text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Panel Admin</h1>
+      <p className="text-gray-600 dark:text-gray-300 mb-8 text-center">Kelola artikel blog Anda di sini.</p>
       
       <div className="space-y-4">
         {articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map(article => (

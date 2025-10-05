@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
   return (
     <aside className="w-full lg:w-1/3 xl:w-1/4 space-y-8 flex-shrink-0">
       <div className="bg-surface dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        <h3 className="text-xl font-bold text-text-main dark:text-gray-100 mb-4 border-b dark:border-gray-700 pb-2">Most Popular</h3>
+        <h3 className="text-xl font-bold text-text-main dark:text-gray-100 mb-4 border-b dark:border-gray-700 pb-2">Paling Populer</h3>
         <ul className="space-y-4">
           {popularArticles.map((article, index) => (
             <li key={article.id}>

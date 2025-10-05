@@ -11,6 +11,9 @@ import GalleryPage from './pages/GalleryPage';
 import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
+import AIStudioPage from './pages/AIStudioPage';
+import AdminPage from './pages/AdminPage';
+import EditArticlePage from './pages/EditArticlePage';
 
 const App: React.FC = () => {
 
@@ -29,7 +32,7 @@ const App: React.FC = () => {
         "@type": "WebSite",
         "url": window.location.origin,
         "name": "IAMAI - awanbyru",
-        "description": "A modern web blog focused on AI and prompting, featuring engaging articles, premium AI image collections, and expert prompt guides. Designed for the AI enthusiast community.",
+        "description": "Sebuah blog web modern yang berfokus pada AI dan prompting, menampilkan artikel menarik, koleksi gambar AI premium, dan panduan prompt ahli. Dirancang untuk komunitas penggemar AI.",
         "publisher": {
             "@type": "Organization",
             "name": "IAMAI - awanbyru",
@@ -62,9 +65,12 @@ const App: React.FC = () => {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/article/:slug" element={<ArticlePage />} />
                 <Route path="/gallery" element={<GalleryPage />} />
+                <Route path="/ai-studio" element={<AIStudioPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/admin" element={<AdminPage />} />
+                <Route path="/admin/edit/:slug" element={<EditArticlePage />} />
               </Routes>
             </main>
             <Footer />

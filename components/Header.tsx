@@ -45,16 +45,19 @@ const Header: React.FC = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
               <NavLink to="/" className={navLinkClasses}>
-                Home
+                Beranda
               </NavLink>
               <NavLink to="/gallery" className={navLinkClasses}>
-                Gallery
+                Galeri
+              </NavLink>
+              <NavLink to="/ai-studio" className={navLinkClasses}>
+                AI Studio
               </NavLink>
               <NavLink to="/about" className={navLinkClasses}>
-                About
+                Tentang
               </NavLink>
               <NavLink to="/contact" className={navLinkClasses}>
-                Contact
+                Kontak
               </NavLink>
               <div className="relative ml-2">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -64,11 +67,11 @@ const Header: React.FC = () => {
                 </span>
                 <input
                   type="search"
-                  placeholder="Search articles..."
+                  placeholder="Cari artikel..."
                   value={searchQuery}
                   onChange={handleSearchChange}
                   className="w-full py-2 pl-10 pr-4 text-text-main dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300 sm:w-32 md:w-40"
-                  aria-label="Search articles"
+                  aria-label="Cari artikel"
                 />
               </div>
               <ThemeControls />
@@ -83,7 +86,7 @@ const Header: React.FC = () => {
               aria-controls="mobile-menu"
               aria-expanded={isMenuOpen}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">Buka menu utama</span>
               {isMenuOpen ? (
                 <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -109,24 +112,27 @@ const Header: React.FC = () => {
                 </span>
               <input
                 type="search"
-                placeholder="Search articles..."
+                placeholder="Cari artikel..."
                 value={searchQuery}
                 onChange={handleSearchChange}
                 className="w-full py-2 pl-10 pr-4 text-text-main dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
-                aria-label="Search articles"
+                aria-label="Cari artikel"
               />
             </div>
             <NavLink to="/" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
-              Home
+              Beranda
             </NavLink>
             <NavLink to="/gallery" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
-              Gallery
+              Galeri
+            </NavLink>
+            <NavLink to="/ai-studio" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
+                AI Studio
             </NavLink>
             <NavLink to="/about" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
-              About
+              Tentang
             </NavLink>
             <NavLink to="/contact" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
-              Contact
+              Kontak
             </NavLink>
           </div>
         </div>

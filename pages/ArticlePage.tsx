@@ -59,7 +59,7 @@ const ArticlePage: React.FC = () => {
     setTag('meta', 'property', 'og:url', 'content', canonicalUrl);
     setTag('meta', 'property', 'og:site_name', 'content', 'IAMAI - awanbyru');
     setTag('meta', 'property', 'og:type', 'content', 'article');
-    setTag('meta', 'property', 'og:locale', 'content', 'en_US');
+    setTag('meta', 'property', 'og:locale', 'content', 'id_ID');
     
     // Twitter Card
     setTag('meta', 'name', 'twitter:card', 'content', 'summary_large_image');
@@ -117,7 +117,7 @@ const ArticlePage: React.FC = () => {
   if (!article) {
     return (
       <div className="text-center py-20">
-        <h1 className="text-2xl font-bold">Loading article...</h1>
+        <h1 className="text-2xl font-bold">Memuat artikel...</h1>
       </div>
     );
   }
@@ -150,7 +150,7 @@ const ArticlePage: React.FC = () => {
             
             <div className="prose prose-lg max-w-none text-gray-800 dark:prose-invert space-y-6 mt-8">
               {article.content.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p key={index}>{paragraph.replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')}</p>
               ))}
             </div>
           </article>
@@ -158,13 +158,13 @@ const ArticlePage: React.FC = () => {
           <div className="mt-12 border-t dark:border-gray-700 pt-8 space-y-8">
             <AdsenseBlock />
             <div className="text-center p-4 border dark:border-gray-700 rounded-lg max-w-sm mx-auto">
-              <p className="font-semibold mb-2 dark:text-gray-200">Did you enjoy this article?</p>
+              <p className="font-semibold mb-2 dark:text-gray-200">Apakah Anda menikmati artikel ini?</p>
               <button
                 onClick={handleClap}
                 className="w-full bg-secondary text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center space-x-2 hover:bg-secondary/90 transition-transform transform hover:scale-105"
               >
                 <span>👏</span>
-                <span>Clap ({claps})</span>
+                <span>Tepuk Tangan ({claps})</span>
               </button>
             </div>
             
@@ -172,7 +172,7 @@ const ArticlePage: React.FC = () => {
 
             <div className="text-center">
               <Link to="/" className="text-secondary hover:underline font-semibold">
-                &larr; Back to all articles
+                &larr; Kembali ke semua artikel
               </Link>
             </div>
           </div>

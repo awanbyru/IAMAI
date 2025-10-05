@@ -20,7 +20,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
         setComments(allComments[articleSlug] || []);
       }
     } catch (e) {
-      console.error("Failed to parse comments from localStorage", e);
+      console.error("Gagal mem-parsing komentar dari localStorage", e);
       setComments([]);
     }
   }, [articleSlug]);
@@ -30,7 +30,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
     if (isSubmitting) return;
 
     if (!name.trim() || !message.trim()) {
-      setError('Name and message cannot be empty.');
+      setError('Nama dan pesan tidak boleh kosong.');
       return;
     }
 
@@ -59,8 +59,8 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
             setMessage('');
             setError('');
           } catch (e) {
-            console.error("Failed to save comment to localStorage", e);
-            setError("Could not save your comment. Please try again.");
+            console.error("Gagal menyimpan komentar ke localStorage", e);
+            setError("Tidak dapat menyimpan komentar Anda. Silakan coba lagi.");
           } finally {
             setIsSubmitting(false);
           }
@@ -68,7 +68,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
   };
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+    return new Date(dateString).toLocaleDateString('id-ID', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -79,32 +79,32 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
 
   return (
     <div className="border-t dark:border-gray-700 pt-8">
-      <h2 className="text-2xl font-bold text-text-main dark:text-gray-100 mb-6">Join the Discussion</h2>
+      <h2 className="text-2xl font-bold text-text-main dark:text-gray-100 mb-6">Bergabung dalam Diskusi</h2>
 
       {/* Comment Form */}
       <form onSubmit={handleSubmit} className="mb-8 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-lg border dark:border-gray-700 space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Name</label>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nama Anda</label>
           <input
             type="text"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm dark:text-white dark:placeholder-gray-400"
-            placeholder="e.g., Jane Doe"
+            placeholder="contoh, Jane Doe"
             required
             aria-required="true"
           />
         </div>
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Comment</label>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Komentar Anda</label>
           <textarea
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={4}
             className="w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm dark:text-white dark:placeholder-gray-400"
-            placeholder="Share your thoughts..."
+            placeholder="Bagikan pemikiran Anda..."
             required
             aria-required="true"
           ></textarea>
@@ -116,7 +116,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
             disabled={isSubmitting}
             className="inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-secondary hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition-colors disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? 'Posting...' : 'Post Comment'}
+            {isSubmitting ? 'Mengirim...' : 'Kirim Komentar'}
           </button>
         </div>
       </form>
@@ -124,7 +124,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
       {/* Comments List */}
       <div className="space-y-6">
         <h3 className="text-xl font-semibold text-text-main dark:text-gray-200">
-          {comments.length} {comments.length === 1 ? 'Comment' : 'Comments'}
+          {comments.length} {comments.length === 1 ? 'Komentar' : 'Komentar'}
         </h3>
         {comments.length > 0 ? (
           comments.map((comment) => (
@@ -138,7 +138,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
           ))
         ) : (
           <div className="text-center py-8 px-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg border dark:border-gray-700">
-            <p className="text-text-muted dark:text-gray-400">No comments yet. Be the first to share your thoughts!</p>
+            <p className="text-text-muted dark:text-gray-400">Belum ada komentar. Jadilah yang pertama membagikan pemikiran Anda!</p>
           </div>
         )}
       </div>

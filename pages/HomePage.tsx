@@ -1,4 +1,3 @@
-
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import ArticleCard from '../components/ArticleCard';
@@ -20,7 +19,7 @@ const HomePage: React.FC = () => {
       article.title.toLowerCase().includes(lowercasedQuery) ||
       article.tags.some(tag => tag.toLowerCase().includes(lowercasedQuery))
     );
-  }, [searchQuery, articles]);
+  }, [searchQuery]);
 
   const showHero = !searchQuery.trim() && displayedArticles.length > 0;
   const heroArticle = showHero ? displayedArticles[0] : null;
@@ -42,7 +41,7 @@ const HomePage: React.FC = () => {
                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-r"></div>
               </div>
               <div className="p-8">
-                <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Featured Article</span>
+                <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Artikel Unggulan</span>
                 <h1 className="text-3xl md:text-4xl font-bold text-text-main dark:text-gray-100 my-3 group-hover:text-secondary transition-colors">
                   {heroArticle.title}
                 </h1>
@@ -64,7 +63,7 @@ const HomePage: React.FC = () => {
       <section className="flex flex-col lg:flex-row gap-12">
         <main className="w-full lg:flex-grow">
           <h2 className="text-3xl font-bold mb-8 text-text-main dark:text-gray-100 border-b-4 border-secondary pb-2 inline-block">
-            {searchQuery.trim() ? `Results for "${searchQuery.trim()}"` : 'Latest Articles'}
+            {searchQuery.trim() ? `Hasil untuk "${searchQuery.trim()}"` : 'Artikel Terbaru'}
           </h2>
           {articlesForGrid.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -77,8 +76,8 @@ const HomePage: React.FC = () => {
               <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-              <h3 className="mt-2 text-2xl font-semibold text-text-main dark:text-gray-100">No Articles Found</h3>
-              <p className="mt-1 text-base text-text-muted dark:text-gray-400">Sorry, we couldn’t find any articles matching your search. Try a different keyword.</p>
+              <h3 className="mt-2 text-2xl font-semibold text-text-main dark:text-gray-100">Artikel Tidak Ditemukan</h3>
+              <p className="mt-1 text-base text-text-muted dark:text-gray-400">Maaf, kami tidak dapat menemukan artikel yang cocok dengan pencarian Anda. Coba kata kunci lain.</p>
             </div>
           )}
         </main>

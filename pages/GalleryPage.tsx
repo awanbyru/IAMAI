@@ -50,9 +50,9 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
           <button
             onClick={onClose}
             className="mt-6 ml-auto bg-secondary text-white font-bold py-2 px-4 rounded-lg hover:bg-secondary/80 transition-colors"
-            aria-label="Close image viewer"
+            aria-label="Tutup penampil gambar"
           >
-            Close
+            Tutup
           </button>
         </div>
       </div>
@@ -61,13 +61,13 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
 };
 
 const GalleryPage: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState('Semua');
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  const categories = useMemo(() => ['All', ...new Set(galleryImages.map(img => img.category))], []);
+  const categories = useMemo(() => ['Semua', ...new Set(galleryImages.map(img => img.category))], []);
 
   const filteredImages = useMemo(() => {
-    if (activeFilter === 'All') {
+    if (activeFilter === 'Semua') {
       return galleryImages;
     }
     return galleryImages.filter(image => image.category === activeFilter);
@@ -85,10 +85,10 @@ const GalleryPage: React.FC = () => {
     <div className="space-y-8">
       <section className="text-center">
         <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary mb-2">
-          AI Image Gallery
+          Galeri Gambar AI
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          A curated collection of premium AI-generated images. Click on any image to view details and the prompt used.
+          Koleksi gambar premium hasil buatan AI yang telah dikurasi. Klik pada gambar mana pun untuk melihat detail dan prompt yang digunakan.
         </p>
       </section>
 
@@ -119,7 +119,7 @@ const GalleryPage: React.FC = () => {
             onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleImageClick(image)}
             tabIndex={0}
             role="button"
-            aria-label={`View details for ${image.title}`}
+            aria-label={`Lihat detail untuk ${image.title}`}
           >
             <LazyImage
               src={image.imageUrl}

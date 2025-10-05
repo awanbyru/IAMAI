@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -11,7 +10,7 @@ const ThemeControls: React.FC = () => {
       <button
         onClick={toggleTheme}
         className="p-2 rounded-full text-text-main dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+        aria-label={`Beralih ke mode ${theme === 'light' ? 'gelap' : 'terang'}`}
       >
         {theme === 'light' ? (
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
