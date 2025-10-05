@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AdsenseBlock from './AdsenseBlock';
-import { useContentManager } from '../hooks/useContentManager';
+import { articles } from '../data/articles';
 
 const Sidebar: React.FC = () => {
-  const { articles } = useContentManager();
   
   // Sort articles by claps to find the most popular ones
   const popularArticles = [...articles]

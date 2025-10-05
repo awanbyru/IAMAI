@@ -5,11 +5,10 @@ import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import { useSearch } from '../context/SearchContext';
 import LazyImage from '../components/LazyImage';
-import { useContentManager } from '../hooks/useContentManager';
+import { articles } from '../data/articles';
 
 const HomePage: React.FC = () => {
   const { searchQuery } = useSearch();
-  const { articles } = useContentManager();
 
   const displayedArticles = useMemo(() => {
     const trimmedQuery = searchQuery.trim();

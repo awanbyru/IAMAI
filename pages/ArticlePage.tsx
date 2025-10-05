@@ -5,12 +5,11 @@ import AdsenseBlock from '../components/AdsenseBlock';
 import Sidebar from '../components/Sidebar';
 import CommentSection from '../components/CommentSection';
 import LazyImage from '../components/LazyImage';
-import { useContentManager } from '../hooks/useContentManager';
+import { articles as allArticles } from '../data/articles';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const { getArticleBySlug } = useContentManager();
   
   const [article, setArticle] = useState<Article | undefined>(undefined);
   const [claps, setClaps] = useState(0);
@@ -100,7 +99,7 @@ const ArticlePage: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const foundArticle = getArticleBySlug(slug!);
+    const foundArticle = allArticles.find(a => a.slug === slug);
     if (foundArticle) {
       setArticle(foundArticle);
       setClaps(foundArticle.claps);
@@ -109,7 +108,7 @@ const ArticlePage: React.FC = () => {
       // Redirect to home if article not found, or show a 404 component
       navigate('/');
     }
-  }, [slug, navigate, getArticleBySlug]);
+  }, [slug, navigate]);
 
   const handleClap = () => {
     setClaps(prevClaps => prevClaps + 1);
