@@ -125,8 +125,6 @@ const ArticlePage: React.FC = () => {
         <LazyImage
             src={article.imageUrl}
             className="w-full h-auto max-h-96 object-cover"
-            aiPrompt={`A high quality, vibrant, and cinematic photo that visually represents the concept of this article title: "${article.title}"`}
-            cacheKey={`article-image-${article.slug}`}
             alt={article.title}
         />
         <div className="p-4 sm:p-8 lg:p-12">

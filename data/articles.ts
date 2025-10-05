@@ -14,7 +14,7 @@ export const articles: Article[] = [
       '4. **Artistic Fusion:** `A bustling futuristic metropolis skyline at night, re-imagined in the style of Ukiyo-e woodblock prints, elegant lines, flat color planes with modern gradients, cherry blossom petals drifting in the foreground.` Blend classic Japanese art with futuristic cityscapes.',
       'This is just the beginning. By experimenting with combinations of artistic styles, camera techniques, and specific descriptive language, you can guide the AI to create images that are not just generated, but genuinely artistic. Happy prompting!'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1698241372134-c2725585f340?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=600&fit=crop',
+    imageUrl: 'https://picsum.photos/800/600?random=1',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 26, 2023',
@@ -33,7 +33,7 @@ export const articles: Article[] = [
       '**For the Writer:** `Rewrite the following text to be more persuasive and engaging for a professional audience. Adopt a confident and authoritative tone. Simplify complex sentences, replace passive voice with active voice, and end with a strong call to action. Original text: [paste text here].`',
       'These prompts are designed to be specific and provide the AI with all the context it needs to deliver high-quality results on the first try. Think of them as templates for success. Bookmark this page, because you\'ll be coming back to it again and again.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=600&fit=crop',
+    imageUrl: 'https://picsum.photos/800/600?random=2',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 22, 2023',
@@ -51,7 +51,7 @@ export const articles: Article[] = [
       'Within minutes, we had a full UI design. Next, we moved to the logic. `Generate the React Native code using TypeScript and Expo for the screens designed. Use functional components and hooks. The menu data should be fetched from a mock JSON API. The order form state should be managed with \`useState\`. On submission, compile the order details into a JSON object and log it.`',
       'The AI generated the code with remarkable accuracy. After some minor tweaking, we had a working prototype. While not production-ready, the speed from idea to a tangible product was astonishing. This workflow represents the future of rapid prototyping.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1559028006-44a0d9b5a452?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=600&fit=crop',
+    imageUrl: 'https://picsum.photos/800/600?random=3',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'October 18, 2023',
@@ -70,7 +70,7 @@ export const articles: Article[] = [
       '**Prompt:** `cinematic film still from a 1970s road movie, a woman with feathered hair and sunglasses driving a vintage convertible through the desert at sunset, soft focus, heavy film grain, muted desaturated colors, authentic anamorphic lens flare, shot on Kodak Ektachrome 35mm film stock`',
       'Hasilnya adalah gambar yang tidak hanya terlihat vintage, tetapi juga terasa penuh cerita dan emosi, seolah-olah diambil dari sebuah film klasik yang hilang.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1501426026826-31c667bdf23d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=600&fit=crop',
+    imageUrl: 'https://picsum.photos/800/600?random=5',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 05, 2023',
@@ -89,7 +89,7 @@ export const articles: Article[] = [
       '**Prompt:** `3D voxel art character, a cute robot adventurer with a large backpack and a glowing antenna, standing on a floating grassy cube island, isometric view, vibrant colors, detailed pixel texture, soft lighting, MagicaVoxel style`',
       'Dengan memodifikasi deskripsi, Anda dapat dengan mudah membuat berbagai macam karakter dan aset 3D untuk proyek kreatif Anda.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1619233130436-1e7d045c7d24?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=600&fit=crop',
+    imageUrl: 'https://picsum.photos/800/600?random=6',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 06, 2023',
@@ -108,7 +108,7 @@ export const articles: Article[] = [
       '**Prompt:** `surreal food photography, a cheeseburger where the patty is a swirling galaxy and the bun is made of clouds, floating above a plate, minimalist background, dramatic studio lighting, hyper-realistic, 8k, bokeh`',
       'Eksperimen ini membuka kemungkinan tak terbatas untuk para seniman digital dan pemasar yang ingin tampil beda.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1606130636171-8a7a275395e9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=600&fit=crop',
+    imageUrl: 'https://picsum.photos/800/600?random=7',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 07, 2023',
@@ -127,7 +127,7 @@ export const articles: Article[] = [
       '**Prompt:** `detailed fantasy world map on ancient, weathered parchment, in the style of Tolkien\'s Lord of the Rings, featuring intricate coastlines, mountain ranges labeled "The Dragon\'s Maw", the Whispering Woods, and a detailed compass rose, sepia tones, hand-drawn feel, ink stains and folds`',
       'Dalam sekejap, Anda akan memiliki dasar visual yang kuat untuk cerita atau game petualangan Anda.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=600&fit=crop',
+    imageUrl: 'https://picsum.photos/800/600?random=8',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 08, 2023',
@@ -146,7 +146,7 @@ export const articles: Article[] = [
       '**Prompt (digunakan bersama gambar sketsa):** `Transform this sketch into a beautiful anime character illustration. Use vibrant colors, a dynamic pose, and adopt the Ghibli studio art style. Place the character in a detailed background of a magical fantasy forest with glowing particles in the air.`',
       'Teknik ini menjembatani kesenjangan antara ide dan eksekusi, memungkinkan realisasi visi artistik yang lebih cepat dan lebih mudah diakses.'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1581093450021-4a7360aa9a23?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&h=600&fit=crop',
+    imageUrl: 'https://picsum.photos/800/600?random=9',
     author: 'awanbyru',
     authorAvatar: 'https://i.pravatar.cc/150?u=awanbyru',
     date: 'November 09, 2023',

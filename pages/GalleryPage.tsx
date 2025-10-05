@@ -4,9 +4,6 @@ import { GalleryImage } from '../types';
 import LazyImage from '../components/LazyImage';
 
 const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> = ({ image, onClose }) => {
-  const [modalImageUrl, setModalImageUrl] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     if (!image) return;
 
@@ -24,21 +21,6 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [image, onClose]);
-  
-  useEffect(() => {
-    if (image) {
-      setIsLoading(true);
-      const cachedUrl = localStorage.getItem(`gallery-image-${image.id}`);
-      if (cachedUrl) {
-        setModalImageUrl(cachedUrl);
-        setIsLoading(false);
-      } else {
-        // Fallback for rare cases where cache isn't populated yet by the grid view
-        setModalImageUrl(image.imageUrl); 
-        setIsLoading(false);
-      }
-    }
-  }, [image]);
 
   if (!image) return null;
 
@@ -55,11 +37,7 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
         onClick={(e) => e.stopPropagation()}
       >
         <div className="md:w-2/3 flex-shrink-0 bg-gray-100 dark:bg-gray-900 flex items-center justify-center md:rounded-l-lg">
-          {isLoading ? (
-            <div className="w-full h-full min-h-[300px] bg-gray-300 dark:bg-gray-700 animate-pulse" />
-          ) : (
-             <img src={modalImageUrl!} alt={image.title} className="w-full h-auto object-contain md:rounded-l-lg" />
-          )}
+           <img src={image.imageUrl} alt={image.title} className="w-full h-auto object-contain md:rounded-l-lg" />
         </div>
         <div className="p-6 flex flex-col">
           <div className="flex-grow">
@@ -145,8 +123,6 @@ const GalleryPage: React.FC = () => {
           >
             <LazyImage
               src={image.imageUrl}
-              aiPrompt={image.prompt}
-              cacheKey={`gallery-image-${image.id}`}
               alt={image.title} 
               className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300" 
             />

@@ -15,8 +15,6 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
           <LazyImage 
             src={article.imageUrl}
             className="w-full h-56 object-cover" 
-            aiPrompt={`A high quality, vibrant, and cinematic photo that visually represents the concept of this article title: "${article.title}"`}
-            cacheKey={`article-image-${article.slug}`}
             alt={article.title} 
           />
           <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-opacity duration-300"></div>
