@@ -1,17 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import ArticlePage from './pages/ArticlePage';
-import ContactPage from './pages/ContactPage';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import AboutPage from './pages/AboutPage';
-import GalleryPage from './pages/GalleryPage';
 import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
-import AIStudioPage from './pages/AIStudioPage';
+
+// Lazy load page components for code splitting
+const HomePage = lazy(() => import('./pages/HomePage'));
+const ArticlePage = lazy(() => import('./pages/ArticlePage'));
+const GalleryPage = lazy(() => import('./pages/GalleryPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const AIStudioPage = lazy(() => import('./pages/AIStudioPage'));
+
+// A fallback component to show while pages are loading
+const LoadingSpinner: React.FC = () => (
+  <div className="flex justify-center items-center py-20">
+    <div className="animate-spin rounded-full h-24 w-24 border-t-2 border-b-2 border-secondary"></div>
+  </div>
+);
 
 const App: React.FC = () => {
 
@@ -59,15 +68,17 @@ const App: React.FC = () => {
           <div className="flex flex-col min-h-screen bg-background dark:bg-gray-900 text-text-main dark:text-gray-200 font-sans">
             <Header />
             <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/article/:slug" element={<ArticlePage />} />
-                <Route path="/gallery" element={<GalleryPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/aistudio" element={<AIStudioPage />} />
-              </Routes>
+              <Suspense fallback={<LoadingSpinner />}>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/article/:slug" element={<ArticlePage />} />
+                  <Route path="/gallery" element={<GalleryPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/aistudio" element={<AIStudioPage />} />
+                </Routes>
+              </Suspense>
             </main>
             <Footer />
             <CookieBanner />
