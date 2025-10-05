@@ -44,6 +44,8 @@ const HomePage: React.FC = () => {
                       src={heroArticle.imageUrl}
                       alt={heroArticle.title}
                       className="w-full h-full object-cover"
+                      loading="eager"
+                      fetchPriority="high"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-r"></div>
                 </div>

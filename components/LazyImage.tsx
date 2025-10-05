@@ -2,26 +2,32 @@ import React, { useState, useEffect, useRef } from 'react';
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     rootMargin?: string;
+    loading?: 'lazy' | 'eager';
+    fetchPriority?: 'high' | 'low' | 'auto';
 }
 
-const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, rootMargin = '200px', ...props }) => {
+const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, rootMargin = '200px', loading = 'lazy', fetchPriority = 'auto', ...props }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
-    const [imageSrc, setImageSrc] = useState<string | undefined>(undefined);
+    const [imageSrc, setImageSrc] = useState<string | undefined>(loading === 'eager' ? src : undefined);
     const imageRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Reset state for new src
+        // Reset state for new src and handle eager loading
         setIsLoaded(false);
         setHasError(false);
-        setImageSrc(undefined);
-    }, [src]);
+        setImageSrc(loading === 'eager' ? src : undefined);
+    }, [src, loading]);
 
     useEffect(() => {
+        if (loading === 'eager' || imageSrc) {
+            return;
+        }
+
         let observer: IntersectionObserver;
         const currentRef = imageRef.current;
 
-        if (currentRef && !imageSrc) { // Only observe if we haven't started loading
+        if (currentRef) {
             observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach(entry => {
@@ -41,7 +47,7 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, rootMargin =
                 observer.unobserve(currentRef);
             }
         };
-    }, [src, imageSrc, rootMargin]);
+    }, [src, imageSrc, rootMargin, loading]);
     
     const handleLoad = () => {
         setIsLoaded(true);
@@ -60,8 +66,9 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, rootMargin =
                     onLoad={handleLoad}
                     onError={handleError}
                     className={`w-full h-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded && !hasError ? 'opacity-100' : 'opacity-0'}`}
-                    loading="lazy"
+                    loading={loading}
                     decoding="async"
+                    fetchPriority={fetchPriority}
                     {...props}
                 />
             )}

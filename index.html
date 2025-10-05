@@ -18,15 +18,15 @@
           extend: {
             colors: {
               'primary': '#1A1A1A',
-              'secondary': '#D24400', // Changed for better contrast
+              'secondary': '#C2410C', // Improved contrast
               'background': '#F7F7F7',
               'surface': '#FFFFFF',
               'text-main': '#1A1A1A',
-              'text-muted': '#6B7280',
-              'accent': '#D24400', // Changed for better contrast
+              'text-muted': '#475569', // Improved contrast
+              'accent': '#C2410C', // Improved contrast
               'light': '#FFFFFF',
-              'gray-light': '#F2F2F2', // Kept for compatibility if used elsewhere
-              'gray-dark': '#CCCCCC', // Kept for compatibility
+              'gray-light': '#F2F2F2',
+              'gray-dark': '#CCCCCC',
               'orange-200': '#FED7AA',
               'orange-700': '#C2410C',
               'orange-800': '#9A3412',
@@ -40,7 +40,8 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"></noscript>
   <script type="importmap">
 {
   "imports": {

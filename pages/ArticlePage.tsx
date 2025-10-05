@@ -144,7 +144,9 @@ const ArticlePage: React.FC = () => {
             <LazyImage 
               src={article.imageUrl} 
               alt={article.title} 
-              className="w-full h-64 md:h-96 object-cover" 
+              className="w-full h-64 md:h-96 object-cover"
+              loading="eager"
+              fetchPriority="high" 
             />
             <div className="p-6 md:p-10">
               <div className="flex items-center space-x-2 mb-4">
