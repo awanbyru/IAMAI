@@ -32,32 +32,22 @@ export const useContentManager = () => {
   }, []);
 
   const getArticleBySlug = useCallback((slug: string): Article | undefined => {
-    try {
-      const storedArticles = localStorage.getItem(ARTICLES_STORAGE_KEY);
-      const allArticles: Article[] = storedArticles ? JSON.parse(storedArticles) : [];
-      return allArticles.find(a => a.slug === slug);
-    } catch (error) {
-      console.error('Failed to get article by slug:', error);
-      return initialArticles.find(a => a.slug === slug); // Fallback
-    }
-  }, []);
+    return articles.find(a => a.slug === slug);
+  }, [articles]);
 
   const updateArticle = useCallback((updatedArticle: Article): boolean => {
     try {
-      const storedArticles = localStorage.getItem(ARTICLES_STORAGE_KEY);
-      let allArticles: Article[] = storedArticles ? JSON.parse(storedArticles) : [];
-      const articleIndex = allArticles.findIndex(a => a.id === updatedArticle.id);
+      const articleIndex = articles.findIndex(a => a.id === updatedArticle.id);
       
       if (articleIndex === -1) {
         console.error('Article not found for update');
         return false;
       }
-
-      allArticles[articleIndex] = updatedArticle;
-      localStorage.setItem(ARTICLES_STORAGE_KEY, JSON.stringify(allArticles));
       
-      // Trigger state update for all components using the hook
-      const newArticles = [...allArticles];
+      const newArticles = [...articles];
+      newArticles[articleIndex] = updatedArticle;
+      
+      localStorage.setItem(ARTICLES_STORAGE_KEY, JSON.stringify(newArticles));
       setArticles(newArticles);
       
       return true;
@@ -65,7 +55,7 @@ export const useContentManager = () => {
       console.error('Failed to update article:', error);
       return false;
     }
-  }, []);
+  }, [articles]);
 
   return { articles, getArticleBySlug, updateArticle };
 };
