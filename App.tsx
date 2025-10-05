@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import AboutPage from './pages/AboutPage';
 import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -62,6 +63,7 @@ const App: React.FC = () => {
                 <Route path="/article/:slug" element={<ArticlePage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                <Route path="/about" element={<AboutPage />} />
               </Routes>
             </main>
             <Footer />

@@ -48,6 +48,9 @@ const Header: React.FC = () => {
               <NavLink to="/" className={navLinkClasses}>
                 Home
               </NavLink>
+              <NavLink to="/about" className={navLinkClasses}>
+                About
+              </NavLink>
               <NavLink to="/contact" className={navLinkClasses}>
                 Contact
               </NavLink>
@@ -113,6 +116,9 @@ const Header: React.FC = () => {
             </div>
             <NavLink to="/" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Home
+            </NavLink>
+            <NavLink to="/about" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
+              About
             </NavLink>
             <NavLink to="/contact" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Contact
