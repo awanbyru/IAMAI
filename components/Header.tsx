@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -8,17 +7,24 @@ const Header: React.FC = () => {
   const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
     `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
       isActive
-        ? 'bg-secondary text-text-light'
+        ? 'bg-secondary text-white'
+        : 'text-text-main hover:text-secondary'
+    }`;
+    
+  const mobileNavLinkClasses = ({ isActive }: { isActive: boolean }) =>
+    `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+      isActive
+        ? 'bg-secondary text-white'
         : 'text-text-main hover:bg-secondary/10 hover:text-secondary'
     }`;
 
   return (
-    <header className="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+    <header className="bg-surface/80 backdrop-blur-md shadow-md sticky top-0 z-50">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0">
-              <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">
+              <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">
                 IAMAI - awanbyru
               </h1>
             </Link>
@@ -62,13 +68,13 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink to="/" className={navLinkClasses + ' block'} onClick={() => setIsMenuOpen(false)}>
+            <NavLink to="/" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Home
             </NavLink>
-            <NavLink to="/ai-studio" className={navLinkClasses + ' block'} onClick={() => setIsMenuOpen(false)}>
+            <NavLink to="/ai-studio" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               AI Studio
             </NavLink>
-            <NavLink to="/contact" className={navLinkClasses + ' block'} onClick={() => setIsMenuOpen(false)}>
+            <NavLink to="/contact" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Contact
             </NavLink>
           </div>
