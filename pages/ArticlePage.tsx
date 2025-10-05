@@ -11,38 +11,19 @@ const ArticlePage: React.FC = () => {
   const [article, setArticle] = useState<Article | undefined>(undefined);
   const [claps, setClaps] = useState(0);
 
-  // Helper function to update meta tags
+  // Helper function to update meta tags for SEO
   const updateMetaTags = (article: Article) => {
     document.title = `${article.title} | IAMAI - awanbyru`;
-    
-    const setMeta = (name: string, content: string) => {
-      let element = document.querySelector(`meta[name='${name}']`) as HTMLMetaElement;
-      if (!element) {
-        element = document.createElement('meta');
-        element.name = name;
-        document.head.appendChild(element);
-      }
-      element.content = content;
-    };
-    
-    const setProperty = (property: string, content: string) => {
-      let element = document.querySelector(`meta[property='${property}']`) as HTMLMetaElement;
-      if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute('property', property);
-        document.head.appendChild(element);
-      }
-      element.content = content;
-    };
 
-    const setLink = (rel: string, href: string) => {
-      let element = document.querySelector(`link[rel='${rel}']`) as HTMLLinkElement;
+    // A generic function to create or update meta/link tags
+    const setTag = (tag: 'meta' | 'link', keyName: 'name' | 'property' | 'rel', key: string, valueName: 'content' | 'href', value: string) => {
+      let element = document.querySelector(`${tag}[${keyName}='${key}']`) as HTMLMetaElement | HTMLLinkElement;
       if (!element) {
-        element = document.createElement('link');
-        element.rel = rel;
+        element = document.createElement(tag);
+        element.setAttribute(keyName, key);
         document.head.appendChild(element);
       }
-      element.href = href;
+      element.setAttribute(valueName, value);
     };
 
     const setJsonLd = (schema: object) => {
@@ -56,28 +37,32 @@ const ArticlePage: React.FC = () => {
       }
       element.textContent = JSON.stringify(schema);
     };
-
-    const imageUrl = article.imageUrl; // Use the absolute URL from data
+    
+    // Ensure URLs are absolute for crawlers
     const canonicalUrl = window.location.href;
+    const absoluteImageUrl = new URL(article.imageUrl, window.location.origin).href;
 
-    setMeta('description', article.excerpt);
-    setLink('canonical', canonicalUrl);
+    // Standard SEO Meta Tags
+    setTag('meta', 'name', 'description', 'content', article.excerpt);
+    setTag('meta', 'name', 'author', 'content', article.author);
+    setTag('link', 'rel', 'canonical', 'href', canonicalUrl);
     
     // Open Graph / Facebook
-    setProperty('og:site_name', 'IAMAI - awanbyru');
-    setProperty('og:title', article.title);
-    setProperty('og:description', article.excerpt);
-    setProperty('og:image', imageUrl);
-    setProperty('og:url', canonicalUrl);
-    setProperty('og:type', 'article');
+    setTag('meta', 'property', 'og:title', 'content', article.title);
+    setTag('meta', 'property', 'og:description', 'content', article.excerpt);
+    setTag('meta', 'property', 'og:image', 'content', absoluteImageUrl);
+    setTag('meta', 'property', 'og:url', 'content', canonicalUrl);
+    setTag('meta', 'property', 'og:site_name', 'content', 'IAMAI - awanbyru');
+    setTag('meta', 'property', 'og:type', 'content', 'article');
+    setTag('meta', 'property', 'og:locale', 'content', 'en_US');
     
-    // Twitter
-    setProperty('twitter:card', 'summary_large_image');
-    setProperty('twitter:title', article.title);
-    setProperty('twitter:description', article.excerpt);
-    setProperty('twitter:image', imageUrl);
+    // Twitter Card
+    setTag('meta', 'name', 'twitter:card', 'content', 'summary_large_image');
+    setTag('meta', 'name', 'twitter:title', 'content', article.title);
+    setTag('meta', 'name', 'twitter:description', 'content', article.excerpt);
+    setTag('meta', 'name', 'twitter:image', 'content', absoluteImageUrl);
 
-    // JSON-LD Structured Data
+    // JSON-LD Structured Data for Rich Snippets
     const articleSchema = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -87,7 +72,7 @@ const ArticlePage: React.FC = () => {
       },
       "headline": article.title,
       "description": article.excerpt,
-      "image": imageUrl,
+      "image": absoluteImageUrl,
       "author": {
         "@type": "Person",
         "name": article.author
@@ -97,7 +82,7 @@ const ArticlePage: React.FC = () => {
         "name": "IAMAI - awanbyru",
         "logo": {
           "@type": "ImageObject",
-          "url": `${window.location.origin}/logo.png`
+          "url": new URL('/logo.png', window.location.origin).href
         }
       },
       "datePublished": new Date(article.date).toISOString(),
@@ -132,6 +117,36 @@ const ArticlePage: React.FC = () => {
     );
   }
 
+  const showToc = article.content.length > 3;
+
+  const createSnippet = (text: string): string => {
+    if (text.length <= 90) {
+      return text;
+    }
+    const snippet = text.substring(0, 90);
+    const lastSpace = snippet.lastIndexOf(' ');
+    if (lastSpace > 0) {
+      return snippet.substring(0, lastSpace) + '...';
+    }
+    return snippet + '...';
+  };
+
+  const handleTocClick = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    event.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80; // Approximate height of the sticky header + some space
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+
   return (
     <div className="flex flex-col lg:flex-row gap-12">
       <main className="w-full lg:flex-grow bg-surface rounded-lg shadow-xl overflow-hidden">
@@ -154,9 +169,28 @@ const ArticlePage: React.FC = () => {
               </div>
             </header>
             
+            {showToc && (
+              <div className="my-8 p-6 bg-gray-50 border-l-4 border-secondary rounded-r-lg" role="navigation" aria-label="Table of contents">
+                <h2 className="text-xl font-bold mb-4 text-text-main">In This Article</h2>
+                <ul className="space-y-2">
+                  {article.content.map((paragraph, index) => (
+                    <li key={`toc-${index}`}>
+                      <a 
+                        href={`#paragraph-${index}`} 
+                        onClick={(e) => handleTocClick(e, `paragraph-${index}`)}
+                        className="text-text-muted hover:text-secondary hover:underline transition-colors duration-200"
+                      >
+                        {createSnippet(paragraph)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <div className="prose prose-lg max-w-none text-gray-800 space-y-6">
               {article.content.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p key={index} id={`paragraph-${index}`}>{paragraph}</p>
               ))}
             </div>
           </article>
