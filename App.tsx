@@ -12,7 +12,7 @@ import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import AboutPage from './pages/AboutPage';
-import SitemapPage from './pages/SitemapPage';
+import SitemapGeneratorPage from './pages/SitemapGeneratorPage';
 
 const Layout: React.FC = () => {
   return (
@@ -80,10 +80,14 @@ const App: React.FC = () => {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/sitemap-generator" element={<SitemapGeneratorPage />} />
             </Route>
 
-            {/* Route without layout */}
-            <Route path="/sitemap.xml" element={<SitemapPage />} />
+            {/*
+              The sitemap.xml route has been removed.
+              This allows the static sitemap.xml file in the project root to be served directly,
+              which is the correct behavior for search engine crawlers.
+            */}
           </Routes>
         </SearchProvider>
       </BrowserRouter>
