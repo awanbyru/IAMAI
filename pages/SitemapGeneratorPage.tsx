@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { articles } from '../data/articles';
 import MetaTags from '../components/MetaTags';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const SitemapGeneratorPage: React.FC = () => {
     // FIX: Ensure parseDate always returns a Date object to fix TypeScript errors.
@@ -24,7 +25,7 @@ const SitemapGeneratorPage: React.FC = () => {
     }
 
     const generateSitemap = () => {
-        const baseUrl = 'https://www.awanbyru.com';
+        const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://www.awanbyru.com';
         const today = new Date().toISOString().split('T')[0];
       
         const staticPages = [
@@ -70,6 +71,11 @@ const SitemapGeneratorPage: React.FC = () => {
         });
     };
 
+    const breadcrumbItems = [
+      { label: 'Beranda', href: '/' },
+      { label: 'Sitemap Generator' },
+    ];
+
     return (
         <>
             <MetaTags
@@ -77,6 +83,7 @@ const SitemapGeneratorPage: React.FC = () => {
                 description="Alat untuk menghasilkan sitemap.xml secara dinamis untuk situs ini."
                 noIndex={true}
             />
+            <Breadcrumbs items={breadcrumbItems} />
             <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
                 <h1 className="text-3xl font-bold mb-4 text-primary dark:text-gray-100">Sitemap Generator</h1>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">

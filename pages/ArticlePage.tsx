@@ -5,6 +5,7 @@ import { Article } from '../types';
 import Sidebar from '../components/Sidebar';
 import MetaTags from '../components/MetaTags';
 import CommentSection from '../components/CommentSection';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -166,6 +167,11 @@ const ArticlePage: React.FC = () => {
     );
   }
 
+  const breadcrumbItems = [
+    { label: 'Beranda', href: '/' },
+    { label: article.title },
+  ];
+
   return (
     <>
       <MetaTags
@@ -175,47 +181,50 @@ const ArticlePage: React.FC = () => {
         imageUrl={article.imageUrl}
       />
       <div className="flex flex-col lg:flex-row gap-12">
-        <article className="w-full lg:flex-grow bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-          <header>
-            <img 
-              src={article.imageUrl} 
-              alt={article.title} 
-              className="w-full h-64 md:h-96 object-cover bg-gray-200 dark:bg-gray-700"
-            />
-            <div className="p-6 md:p-10">
-              <div className="flex items-center space-x-2 mb-4">
-                {article.tags.map(tag => (
-                  <span key={tag} className="bg-orange-200 text-orange-800 dark:bg-orange-700 dark:text-orange-200 text-xs font-semibold px-2.5 py-1 rounded-full">{tag}</span>
-                ))}
-              </div>
-              <h1 className="text-3xl md:text-5xl font-extrabold text-text-main dark:text-gray-100 mb-4 leading-tight">{article.title}</h1>
-              <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-text-muted dark:text-gray-400">
-                <div className="flex items-center">
-                  <img className="w-12 h-12 rounded-full mr-4 bg-gray-200 dark:bg-gray-700" src={article.authorAvatar} alt={article.author} loading="lazy" />
-                  <div>
-                    <p className="font-semibold text-text-main dark:text-gray-200">{article.author}</p>
-                    <p>{article.date}</p>
+        <main className="w-full lg:flex-grow">
+          <Breadcrumbs items={breadcrumbItems} />
+          <article className="bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+            <header>
+              <img 
+                src={article.imageUrl} 
+                alt={article.title} 
+                className="w-full h-64 md:h-96 object-cover bg-gray-200 dark:bg-gray-700"
+              />
+              <div className="p-6 md:p-10">
+                <div className="flex items-center space-x-2 mb-4">
+                  {article.tags.map(tag => (
+                    <span key={tag} className="bg-orange-200 text-orange-800 dark:bg-orange-700 dark:text-orange-200 text-xs font-semibold px-2.5 py-1 rounded-full">{tag}</span>
+                  ))}
+                </div>
+                <h1 className="text-3xl md:text-5xl font-extrabold text-text-main dark:text-gray-100 mb-4 leading-tight">{article.title}</h1>
+                <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-text-muted dark:text-gray-400">
+                  <div className="flex items-center">
+                    <img className="w-12 h-12 rounded-full mr-4 bg-gray-200 dark:bg-gray-700" src={article.authorAvatar} alt={article.author} loading="lazy" />
+                    <div>
+                      <p className="font-semibold text-text-main dark:text-gray-200">{article.author}</p>
+                      <p>{article.date}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                     <button onClick={handleClap} className={`flex items-center space-x-2 p-2 rounded-full transition-colors duration-200 ${clapped ? 'text-secondary bg-secondary/10' : 'text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700'}`} aria-label="Tepuk tangan untuk artikel ini" disabled={clapped}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill={clapped ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9A2 2 0 0020 4h-4" /></svg>
+                        <span className="font-semibold">{claps}</span>
+                     </button>
                   </div>
                 </div>
-                <div className="flex items-center space-x-2">
-                   <button onClick={handleClap} className={`flex items-center space-x-2 p-2 rounded-full transition-colors duration-200 ${clapped ? 'text-secondary bg-secondary/10' : 'text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700'}`} aria-label="Tepuk tangan untuk artikel ini" disabled={clapped}>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill={clapped ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9A2 2 0 0020 4h-4" /></svg>
-                      <span className="font-semibold">{claps}</span>
-                   </button>
-                </div>
               </div>
+            </header>
+
+            <div className="prose prose-lg dark:prose-invert max-w-none px-6 md:px-10 py-8 border-t dark:border-gray-700">
+               {renderContent(article.content)}
             </div>
-          </header>
+            
+            <div className="p-6 md:px-10 pb-10">
+              <CommentSection articleSlug={article.slug} />
+            </div>
 
-          <div className="prose prose-lg dark:prose-invert max-w-none px-6 md:px-10 py-8 border-t dark:border-gray-700">
-             {renderContent(article.content)}
-          </div>
-          
-          <div className="p-6 md:px-10 pb-10">
-            <CommentSection articleSlug={article.slug} />
-          </div>
-
-        </article>
+          </article>
+        </main>
         <Sidebar />
       </div>
     </>

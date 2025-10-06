@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect, lazy, Suspense } from 'react';
 import { galleryImages } from '../data/galleryImages';
 import { GalleryImage } from '../types';
 import MetaTags from '../components/MetaTags';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const ImageModal = lazy(() => import('../components/ImageModal'));
 
@@ -26,6 +27,11 @@ const GalleryPage: React.FC = () => {
     setSelectedImage(null);
   };
 
+  const breadcrumbItems = [
+    { label: 'Beranda', href: '/' },
+    { label: 'Galeri' },
+  ];
+
   return (
     <>
       <MetaTags
@@ -34,6 +40,7 @@ const GalleryPage: React.FC = () => {
         canonicalUrl={`${window.location.origin}/gallery`}
         imageUrl={galleryImages[0]?.imageUrl}
       />
+      <Breadcrumbs items={breadcrumbItems} />
       <div className="space-y-8">
         <section className="text-center">
           <h1 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary mb-2">
