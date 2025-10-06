@@ -6,6 +6,8 @@ import Sidebar from '../components/Sidebar';
 import MetaTags from '../components/MetaTags';
 import CommentSection from '../components/CommentSection';
 import Breadcrumbs from '../components/Breadcrumbs';
+import LazyImage from '../components/LazyImage';
+import { parseIndonesianDate } from '../utils/dateUtils';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -39,22 +41,6 @@ const ArticlePage: React.FC = () => {
             document.head.appendChild(script);
         }
 
-        const parseDate = (dateStr: string) => {
-            const months: { [key: string]: number } = {
-                'Januari': 0, 'Februari': 1, 'Maret': 2, 'April': 3, 'Mei': 4, 'Juni': 5,
-                'Juli': 6, 'Agustus': 7, 'September': 8, 'Oktober': 9, 'November': 10, 'Desember': 11
-            };
-            const parts = dateStr.split(' ');
-            if (parts.length < 3) return new Date();
-            const day = parseInt(parts[0], 10);
-            const monthName = parts[1];
-            const year = parseInt(parts[2], 10);
-            // FIX: Define `month` by looking up the month name in the `months` object to resolve 'Cannot find name' errors.
-            const month = months[monthName];
-            if (isNaN(day) || isNaN(year) || month === undefined) return new Date();
-            return new Date(year, month, day);
-        }
-
         const articleSchema = {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
@@ -77,8 +63,8 @@ const ArticlePage: React.FC = () => {
                     "url": `${window.location.origin}/icon-512.png`
                 }
             },
-            "datePublished": parseDate(article.date).toISOString(),
-            "dateModified": parseDate(article.date).toISOString()
+            "datePublished": parseIndonesianDate(article.date).toISOString(),
+            "dateModified": parseIndonesianDate(article.date).toISOString()
         };
         script.textContent = JSON.stringify(articleSchema);
 
@@ -185,10 +171,12 @@ const ArticlePage: React.FC = () => {
           <Breadcrumbs items={breadcrumbItems} />
           <article className="bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
             <header>
-              <img 
+              <LazyImage 
                 src={article.imageUrl} 
                 alt={article.title} 
-                className="w-full h-64 md:h-96 object-cover bg-gray-200 dark:bg-gray-700"
+                className="w-full h-64 md:h-96 object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
               <div className="p-6 md:p-10">
                 <div className="flex items-center space-x-2 mb-4">

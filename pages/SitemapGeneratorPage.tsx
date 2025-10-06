@@ -2,28 +2,9 @@ import React, { useState, useMemo } from 'react';
 import { articles } from '../data/articles';
 import MetaTags from '../components/MetaTags';
 import Breadcrumbs from '../components/Breadcrumbs';
+import { parseIndonesianDate, formatDateForSitemap } from '../utils/dateUtils';
 
 const SitemapGeneratorPage: React.FC = () => {
-    // FIX: Ensure parseDate always returns a Date object to fix TypeScript errors.
-    const parseDate = (dateStr: string): Date => {
-        const months: { [key: string]: string } = {
-            'Januari': '01', 'Februari': '02', 'Maret': '03', 'April': '04', 'Mei': '05', 'Juni': '06',
-            'Juli': '07', 'Agustus': '08', 'September': '09', 'Oktober': '10', 'November': '11', 'Desember': '12'
-        };
-        const parts = dateStr.split(' ');
-        if (parts.length < 3) return new Date();
-        const day = parts[0].padStart(2, '0');
-        const month = months[parts[1]];
-        const year = parts[2];
-        if (!day || !month || !year) return new Date();
-        // Create a date object to correctly sort across years and months
-        return new Date(`${year}-${month}-${day}`);
-    };
-
-    const formatDateForSitemap = (date: Date) => {
-        return date.toISOString().split('T')[0];
-    }
-
     const generateSitemap = () => {
         const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://www.awanbyru.com';
         const today = new Date().toISOString().split('T')[0];
@@ -37,10 +18,10 @@ const SitemapGeneratorPage: React.FC = () => {
         ];
       
         const articlePages = [...articles]
-          .sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime())
+          .sort((a, b) => parseIndonesianDate(b.date).getTime() - parseIndonesianDate(a.date).getTime())
           .map(article => ({
               loc: `/article/${article.slug}`,
-              lastmod: formatDateForSitemap(parseDate(article.date)),
+              lastmod: formatDateForSitemap(parseIndonesianDate(article.date)),
               changefreq: 'monthly',
               priority: '0.9',
           }));

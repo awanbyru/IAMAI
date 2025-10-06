@@ -3,6 +3,7 @@ import { galleryImages } from '../data/galleryImages';
 import { GalleryImage } from '../types';
 import MetaTags from '../components/MetaTags';
 import Breadcrumbs from '../components/Breadcrumbs';
+import LazyImage from '../components/LazyImage';
 
 const ImageModal = lazy(() => import('../components/ImageModal'));
 
@@ -73,18 +74,17 @@ const GalleryPage: React.FC = () => {
           {filteredImages.map(image => (
             <div
               key={image.id}
-              className="group relative rounded-lg overflow-hidden cursor-pointer shadow-lg transition-transform duration-300 hover:-translate-y-1.5 bg-gray-200 dark:bg-gray-800"
+              className="group relative rounded-lg overflow-hidden cursor-pointer shadow-lg transition-transform duration-300 hover:-translate-y-1.5"
               onClick={() => handleImageClick(image)}
               onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleImageClick(image)}
               tabIndex={0}
               role="button"
               aria-label={`Lihat detail untuk ${image.title}`}
             >
-              <img
+              <LazyImage
                 src={image.imageUrl}
                 alt={image.title} 
-                className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 bg-gray-200 dark:bg-gray-700"
-                loading="lazy"
+                className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-4">

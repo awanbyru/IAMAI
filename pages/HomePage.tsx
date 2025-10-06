@@ -1,10 +1,13 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import { useSearch } from '../context/SearchContext';
 import { articles } from '../data/articles';
 import MetaTags from '../components/MetaTags';
+import LazyImage from '../components/LazyImage';
+import { parseIndonesianDate } from '../utils/dateUtils';
+
 
 const HomePage: React.FC = () => {
   const { searchQuery } = useSearch();
@@ -25,6 +28,50 @@ const HomePage: React.FC = () => {
   const heroArticle = showHero ? displayedArticles[0] : null;
   const articlesForGrid = showHero ? displayedArticles.slice(1) : displayedArticles;
 
+  useEffect(() => {
+    if (heroArticle) {
+      const scriptId = 'hero-article-schema';
+      let script = document.getElementById(scriptId) as HTMLScriptElement;
+      if (!script) {
+          script = document.createElement('script');
+          script.id = scriptId;
+          script.type = 'application/ld+json';
+          document.head.appendChild(script);
+      }
+
+      const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": heroArticle.title,
+        "author": {
+            "@type": "Person",
+            "name": heroArticle.author
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "IAMAI - awanbyru",
+          "logo": {
+              "@type": "ImageObject",
+              "url": `${window.location.origin}/icon-512.png`
+          }
+        },
+        "image": heroArticle.imageUrl,
+        "datePublished": parseIndonesianDate(heroArticle.date).toISOString(),
+        "description": heroArticle.excerpt,
+        "mainEntityOfPage": `${window.location.origin}/article/${heroArticle.slug}`
+      };
+
+      script.textContent = JSON.stringify(articleSchema);
+
+      return () => {
+        const scriptElement = document.getElementById(scriptId);
+        if (scriptElement) {
+            scriptElement.remove();
+        }
+      }
+    }
+  }, [heroArticle]);
+
   return (
     <>
       <MetaTags
@@ -39,24 +86,30 @@ const HomePage: React.FC = () => {
             <Link to={`/article/${heroArticle.slug}`}>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-shadow hover:shadow-2xl">
                 <div className="relative h-64 lg:h-full">
-                  <img
-                      src={heroArticle.imageUrl}
-                      alt={heroArticle.title}
-                      className="w-full h-full object-cover bg-gray-200 dark:bg-gray-700"
+                  <LazyImage 
+                    src={heroArticle.imageUrl} 
+                    alt={heroArticle.title} 
+                    className="absolute h-full w-full"
+                    loading="eager"
+                    fetchPriority="high"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-r"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
                 </div>
-                <div className="p-8">
-                  <span className="text-secondary font-semibold text-sm uppercase tracking-wider">Artikel Unggulan</span>
-                  <h1 className="text-3xl md:text-4xl font-bold text-text-main dark:text-gray-100 my-3 group-hover:text-secondary transition-colors">
+                <div className="p-6 md:p-10 order-first lg:order-last">
+                  <span className="inline-block bg-secondary text-white text-xs font-semibold mb-2 px-2.5 py-1 rounded-full">
+                    Unggulan
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl font-bold text-text-main dark:text-gray-100 group-hover:text-secondary transition-colors duration-300 mb-4">
                     {heroArticle.title}
-                  </h1>
-                  <p className="text-text-muted dark:text-gray-400 mb-4 line-clamp-3">{heroArticle.excerpt}</p>
-                  <div className="flex items-center mt-6">
-                    <img className="w-10 h-10 rounded-full mr-4 bg-gray-200 dark:bg-gray-700" src={heroArticle.authorAvatar} alt={heroArticle.author} loading="lazy" />
+                  </h2>
+                  <p className="text-text-muted dark:text-gray-400 text-lg line-clamp-3 mb-6">
+                    {heroArticle.excerpt}
+                  </p>
+                  <div className="flex items-center">
+                    <img className="w-12 h-12 rounded-full mr-4 bg-gray-200" src={heroArticle.authorAvatar} alt={heroArticle.author} loading="lazy" />
                     <div>
-                      <p className="text-text-main dark:text-gray-200 font-semibold">{heroArticle.author}</p>
-                      <p className="text-text-muted dark:text-gray-400 text-sm">{heroArticle.date}</p>
+                      <p className="font-semibold text-text-main dark:text-gray-200">{heroArticle.author}</p>
+                      <p className="text-sm text-text-muted dark:text-gray-400">{heroArticle.date}</p>
                     </div>
                   </div>
                 </div>
@@ -65,30 +118,26 @@ const HomePage: React.FC = () => {
           </section>
         )}
 
-        {/* Main Content */}
-        <section className="flex flex-col lg:flex-row gap-12">
-          <main className="w-full lg:flex-grow">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-text-main dark:text-gray-100 border-b-4 border-secondary pb-2 inline-block">
-              {searchQuery.trim() ? `Hasil untuk "${searchQuery.trim()}"` : 'Artikel Terbaru'}
-            </h2>
-            {articlesForGrid.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {articlesForGrid.map((article) => (
-                  <ArticleCard article={article} key={article.id} />
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-16 px-6 bg-surface dark:bg-gray-800 rounded-lg shadow-md">
-                <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <h3 className="mt-2 text-2xl font-semibold text-text-main dark:text-gray-100">Artikel Tidak Ditemukan</h3>
-                <p className="mt-1 text-base text-text-muted dark:text-gray-400">Maaf, kami tidak dapat menemukan artikel yang cocok dengan pencarian Anda. Coba kata kunci lain.</p>
-              </div>
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {articlesForGrid.map(article => (
+                <ArticleCard key={article.id} article={article} />
+              ))}
+            </div>
+             {displayedArticles.length === 0 && (
+                <div className="md:col-span-2 text-center py-16 px-6 bg-surface dark:bg-gray-800 rounded-lg shadow-md">
+                    <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <h3 className="mt-2 text-xl font-medium text-text-main dark:text-gray-100">Tidak Ada Artikel yang Ditemukan</h3>
+                    <p className="mt-1 text-sm text-text-muted dark:text-gray-400">Coba kata kunci pencarian yang berbeda.</p>
+                </div>
             )}
-          </main>
+          </div>
           <Sidebar />
-        </section>
+        </div>
       </div>
     </>
   );
