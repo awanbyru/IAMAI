@@ -4,6 +4,51 @@ const authorAvatar = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 
 export const articles: Article[] = [
   {
+    id: '27',
+    slug: 'meta-llama-3-1-konteks-dan-visi',
+    title: 'Meta Llama 3.1: Lompatan Kuantum dalam Pemahaman Konteks dan Visi Komputer',
+    excerpt: 'Meta kembali menaikkan standar dengan Llama 3.1. Bukan sekadar peningkatan, model ini membawa kemampuan pemahaman konteks yang sangat panjang dan integrasi visi komputer yang canggih, menjadikannya pesaing serius di arena AI.',
+    summary: 'Artikel ini membahas rilis terbaru Meta, Llama 3.1, yang menonjolkan jendela konteks masif, kemampuan visi komputer canggih, dan efisiensi yang ditingkatkan. Ini menjadikannya alat yang sangat kuat untuk analisis dokumen panjang dan aplikasi multi-modal.',
+    type: 'standard',
+    content: [
+      'Persaingan di puncak dunia AI semakin memanas. Meta baru saja meluncurkan Llama 3.1, pembaruan signifikan yang menunjukkan fokus mereka pada dua area kritis: pemahaman konteks yang dalam dan kemampuan visi yang canggih. Ini bukan hanya tentang menjawab pertanyaan; ini tentang memahami dunia digital dan visual dengan cara yang belum pernah ada sebelumnya.',
+      '**Jendela Konteks Raksasa** Fitur utama Llama 3.1 adalah jendela konteksnya yang diperluas secara besar-besaran, yang dilaporkan mampu menangani jutaan token. Ini berarti AI dapat "mengingat" dan menganalisis seluruh buku, laporan keuangan yang panjang, atau basis kode yang kompleks dalam satu permintaan. Kemampuan ini mengubah permainan untuk analisis dokumen, penelitian hukum, dan tugas-tugas lain yang membutuhkan pemahaman konteks yang mendalam.',
+      'IMG:https://picsum.photos/seed/llama-context-window/800/350|Visualisasi yang membandingkan jendela konteks Llama 3.1 dengan model sebelumnya.',
+      '**Mata yang Lebih Tajam** Selain teks, Llama 3.1 hadir dengan kemampuan visi komputer (computer vision) yang telah ditingkatkan secara dramatis. Model ini tidak hanya dapat "melihat" gambar, tetapi juga menafsirkan bagan, diagram alur, dan bahkan antarmuka pengguna perangkat lunak. Bayangkan meminta AI untuk menjelaskan grafik penjualan yang kompleks atau menulis dokumentasi hanya dengan memberinya tangkapan layar.',
+      'Dengan Llama 3.1, Meta tidak hanya mengejar para pesaingnya; mereka menetapkan standar baru untuk AI sebagai alat analisis yang komprehensif. Bagi pengembang dan bisnis, ini berarti kemampuan untuk membangun aplikasi yang lebih cerdas dan sadar konteks, menjembatani kesenjangan antara data tekstual dan wawasan visual.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/meta-llama-3-1-launch/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '25 Juli 2024',
+    claps: 50,
+    tags: ['Llama 3', 'Meta AI', 'Visi Komputer', 'Berita AI'],
+  },
+  {
+    id: '26',
+    slug: 'gemini-2-5-flash-kecepatan-dan-kecerdasan',
+    title: 'Gemini 2.5 Flash Telah Hadir: Kecepatan Kilat dan Kecerdasan Generasi Berikutnya',
+    excerpt: 'Google baru saja mengguncang dunia AI dengan peluncuran Gemini 2.5 Flash. Model terbaru ini menjanjikan kecepatan luar biasa tanpa mengorbankan kualitas, membuka pintu untuk aplikasi real-time yang sebelumnya tidak mungkin.',
+    summary: 'Artikel ini mengulas peluncuran Gemini 2.5 Flash oleh Google. Model ini dirancang untuk kecepatan dan efisiensi, menjadikannya ideal untuk aplikasi AI real-time, chatbot responsif, dan analisis data skala besar sambil mempertahankan kemampuan penalaran multi-modal yang canggih.',
+    type: 'standard',
+    content: [
+      'Dunia Kecerdasan Buatan bergerak dengan kecepatan yang menakjubkan, dan Google sekali lagi menekan pedal gas. Peluncuran Gemini 2.5 Flash menandai tonggak penting, menawarkan model yang dioptimalkan untuk satu hal: kecepatan. Ini bukan sekadar peningkatan bertahap; ini adalah jawaban bagi pengembang yang membutuhkan respons AI dalam sekejap mata.',
+      '**Apa yang Membuat Flash Berbeda?** Gemini 2.5 Flash dirancang untuk menjadi sangat efisien. Google telah menggunakan teknik distilasi canggih, di mana pengetahuan dari model yang lebih besar dan lebih kuat (seperti Gemini 2.5 Pro) "diajarkan" ke model yang lebih kecil dan lebih ramping. Hasilnya adalah model yang mempertahankan sebagian besar kecerdasan pendahulunya tetapi dengan latensi yang jauh lebih rendah dan biaya yang lebih murah.',
+      'IMG:https://picsum.photos/seed/gemini-flash-diagram/800/350|Diagram yang mengilustrasikan kecepatan Gemini 2.5 Flash dibandingkan model lain.',
+      '**Kemampuan Unggulan:**',
+      '1.  **Latensi Sangat Rendah:** Ideal untuk aplikasi percakapan real-time, seperti chatbot layanan pelanggan yang canggih atau asisten suara yang merespons secara alami.',
+      '2.  **Efisiensi Biaya:** Menjalankan kueri pada Flash secara signifikan lebih murah, memungkinkan bisnis untuk mengintegrasikan AI ke lebih banyak produk tanpa menguras anggaran.',
+      '3.  **Penalaran Multi-Modal:** Meskipun cepat, Flash tidak kehilangan kemampuan andalan Gemini. Ia masih dapat memahami dan memproses teks, gambar, dan bahkan klip audio pendek secara bersamaan.',
+      'Peluncuran Gemini 2.5 Flash bukanlah tentang menciptakan AI yang paling kuat, tetapi tentang menciptakan AI yang paling *bermanfaat* dan *dapat diakses*. Dengan menghilangkan hambatan kecepatan dan biaya, Google membuka pintu bagi gelombang inovasi baru dalam aplikasi bertenaga AI yang terintegrasi secara mulus ke dalam kehidupan kita sehari-hari.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/gemini-2-5-flash-launch/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '20 Juli 2024',
+    claps: 95,
+    tags: ['Gemini', 'Google AI', 'Model Terbaru', 'Berita AI'],
+  },
+  {
     id: '25',
     slug: 'prompt-chaining-untuk-hasil-kompleks',
     title: 'Prompt Chaining: Cara Membuat AI Bekerja dalam Beberapa Langkah untuk Hasil Kompleks',
