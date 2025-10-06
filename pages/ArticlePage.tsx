@@ -48,6 +48,7 @@ const ArticlePage: React.FC = () => {
             const day = parseInt(parts[0], 10);
             const monthName = parts[1];
             const year = parseInt(parts[2], 10);
+            // FIX: Define `month` by looking up the month name in the `months` object to resolve 'Cannot find name' errors.
             const month = months[monthName];
             if (isNaN(day) || isNaN(year) || month === undefined) return new Date();
             return new Date(year, month, day);
@@ -79,11 +80,45 @@ const ArticlePage: React.FC = () => {
             "dateModified": parseDate(article.date).toISOString()
         };
         script.textContent = JSON.stringify(articleSchema);
+
+        // Add Breadcrumb schema
+        const breadcrumbScriptId = 'breadcrumb-schema';
+        let breadcrumbScript = document.getElementById(breadcrumbScriptId) as HTMLScriptElement;
+        if (!breadcrumbScript) {
+            breadcrumbScript = document.createElement('script');
+            breadcrumbScript.id = breadcrumbScriptId;
+            breadcrumbScript.type = 'application/ld+json';
+            document.head.appendChild(breadcrumbScript);
+        }
+
+        const breadcrumbSchema = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Beranda",
+                    "item": `${window.location.origin}/`
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": article.title,
+                    "item": `${window.location.origin}/article/${article.slug}`
+                }
+            ]
+        };
+        breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
         
         return () => {
             const scriptElement = document.getElementById(scriptId);
             if (scriptElement) {
                 scriptElement.remove();
+            }
+            const breadcrumbElement = document.getElementById(breadcrumbScriptId);
+            if (breadcrumbElement) {
+                breadcrumbElement.remove();
             }
         }
     }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
@@ -12,7 +12,21 @@ import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import AboutPage from './pages/AboutPage';
-import SitemapGeneratorPage from './pages/SitemapGeneratorPage';
+import SitemapPage from './pages/SitemapPage';
+
+const Layout: React.FC = () => {
+  return (
+    <div className="flex flex-col min-h-screen bg-background dark:bg-gray-900 text-text-main dark:text-gray-200 font-sans">
+      <Header />
+      <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <Outlet />
+      </main>
+      <Footer />
+      <CookieBanner />
+    </div>
+  );
+};
+
 
 const App: React.FC = () => {
 
@@ -57,22 +71,20 @@ const App: React.FC = () => {
     <ThemeProvider>
       <BrowserRouter>
         <SearchProvider>
-          <div className="flex flex-col min-h-screen bg-background dark:bg-gray-900 text-text-main dark:text-gray-200 font-sans">
-            <Header />
-            <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/article/:slug" element={<ArticlePage />} />
-                <Route path="/gallery" element={<GalleryPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/sitemap-generator" element={<SitemapGeneratorPage />} />
-              </Routes>
-            </main>
-            <Footer />
-            <CookieBanner />
-          </div>
+          <Routes>
+            {/* Routes with layout */}
+            <Route element={<Layout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/article/:slug" element={<ArticlePage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="/about" element={<AboutPage />} />
+            </Route>
+
+            {/* Route without layout */}
+            <Route path="/sitemap.xml" element={<SitemapPage />} />
+          </Routes>
         </SearchProvider>
       </BrowserRouter>
     </ThemeProvider>
