@@ -52,7 +52,7 @@ const App: React.FC = () => {
             "name": "IAMAI - awanbyru",
             "logo": {
                 "@type": "ImageObject",
-                "url": `${window.location.origin}/logo.png`
+                "url": `${window.location.origin}/icon-512.png`
             }
         },
         "potentialAction": {
@@ -62,6 +62,14 @@ const App: React.FC = () => {
                 "urlTemplate": `${window.location.origin}/?s={search_term_string}`
             },
             "query-input": "required name=search_term_string"
+        },
+        "about": {
+            "@type": "AboutPage",
+            "url": `${window.location.origin}/about`
+        },
+        "contactPoint": {
+            "@type": "ContactPage",
+            "url": `${window.location.origin}/contact`
         }
     };
     script.textContent = JSON.stringify(schema);

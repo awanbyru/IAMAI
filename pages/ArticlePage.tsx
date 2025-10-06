@@ -135,6 +135,33 @@ const ArticlePage: React.FC = () => {
             ]
         };
         breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
+
+        // FAQ Schema (if applicable)
+        const faqScriptId = 'faq-schema';
+        let faqScript = document.getElementById(faqScriptId) as HTMLScriptElement;
+        if (article.faq && article.faq.length > 0) {
+            if (!faqScript) {
+                faqScript = document.createElement('script');
+                faqScript.id = faqScriptId;
+                faqScript.type = 'application/ld+json';
+                document.head.appendChild(faqScript);
+            }
+            const faqSchema = {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": article.faq.map(item => ({
+                  "@type": "Question",
+                  "name": item.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item.answer
+                  }
+                }))
+              };
+              faqScript.textContent = JSON.stringify(faqSchema);
+        } else if (faqScript) {
+            faqScript.remove();
+        }
         
         return () => {
             const scriptElement = document.getElementById(scriptId);
@@ -143,6 +170,8 @@ const ArticlePage: React.FC = () => {
             if (breadcrumbElement) breadcrumbElement.remove();
             const howtoElement = document.getElementById(howtoScriptId);
             if (howtoElement) howtoElement.remove();
+            const faqElement = document.getElementById(faqScriptId);
+            if (faqElement) faqElement.remove();
         }
     }
   }, [article]);

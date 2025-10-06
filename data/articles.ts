@@ -114,6 +114,20 @@ export const articles: Article[] = [
     date: '28 Juni 2024',
     claps: 231,
     tags: ['Few-Shot Prompting', 'Contoh Prompt', 'Akurasi AI', 'Tutorial'],
+    faq: [
+      {
+        question: "Apa itu zero-shot prompting?",
+        answer: "Zero-shot prompting adalah pendekatan di mana Anda memberikan instruksi langsung kepada AI untuk melakukan tugas tanpa memberikan contoh sebelumnya. AI diharapkan memahami tugas hanya dari deskripsi."
+      },
+      {
+        question: "Apa itu few-shot prompting?",
+        answer: "Few-shot prompting adalah teknik di mana Anda memberikan AI beberapa contoh pasangan input-output sebelum memberikan tugas yang sebenarnya. Ini membantu 'mengajari' AI format atau gaya yang Anda inginkan secara instan."
+      },
+      {
+        question: "Kapan sebaiknya menggunakan few-shot prompting?",
+        answer: "Gunakan few-shot prompting ketika Anda membutuhkan format output yang sangat spesifik, ketika tugasnya ambigu atau baru bagi AI, atau ketika Anda ingin AI meniru gaya penulisan atau nada tertentu. Mulailah dengan zero-shot, dan beralihlah ke few-shot jika hasilnya tidak akurat."
+      }
+    ]
   },
   {
     id: '23',
@@ -469,7 +483,7 @@ export const articles: Article[] = [
     summary: 'Ciptakan gambar AI sinematik dengan menentukan framing (low angle shot), pencahayaan dramatis (volumetric lighting), dan efek lensa (anamorphic lens flare). Menggabungkan istilah-istilah ini mengubah Anda dari pengguna menjadi sutradara.',
     type: 'standard',
     content: [
-      'Pernahkah Anda melihat sebuah gambar AI dan merasa seolah-olah itu adalah sebuah cuplikan dari film blockbuster? Efek ini tidak terjadi secara kebetulan. Ini dicapai melalui penggunaan prompt yang secara spesifik meniru teknik sinematografi. Dengan beberapa kata kunci yang tepat, Anda dapat mengubah gambar biasa menjadi sebuah karya sinematik.',
+      'Pernahkah Anda melihat sebuah gambar AI dan merasa seolah-olah itu adalah sebuah cuplikan dari sebuah film blockbuster? Efek ini tidak terjadi secara kebetulan. Ini dicapai melalui penggunaan prompt yang secara spesifik meniru teknik sinematografi. Dengan beberapa kata kunci yang tepat, Anda dapat mengubah gambar biasa menjadi sebuah karya sinematik.',
       '**1. Framing dan Sudut Kamera:** Komposisi adalah segalanya. Daripada membiarkan AI menebak, arahkan kameranya. Gunakan istilah seperti `low angle shot` untuk membuat subjek terlihat kuat dan megah, atau `dutch angle` untuk menciptakan perasaan tegang atau tidak nyaman. `Extreme close-up` akan menarik perhatian ke detail emosional, sementara `wide shot` akan menampilkan skala lingkungan yang epik.',
       '**2. Pencahayaan yang Bercerita:** Pencahayaan adalah jiwa dari sebuah gambar sinematik. Gunakan prompt ini untuk menciptakan suasana:',
       '  - `Cinematic lighting`: Istilah umum yang bagus untuk memulai.',

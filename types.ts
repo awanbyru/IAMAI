@@ -12,6 +12,10 @@ export interface Article {
   date: string;
   claps: number;
   tags: string[];
+  faq?: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 export interface Comment {
