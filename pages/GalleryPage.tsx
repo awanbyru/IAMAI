@@ -71,7 +71,7 @@ const GalleryPage: React.FC = () => {
 
         {/* Image Grid */}
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          {filteredImages.map(image => (
+          {filteredImages.map((image, index) => (
             <div
               key={image.id}
               className="group relative rounded-lg overflow-hidden cursor-pointer shadow-lg transition-transform duration-300 hover:-translate-y-1.5"
@@ -85,6 +85,8 @@ const GalleryPage: React.FC = () => {
                 src={image.imageUrl}
                 alt={image.title} 
                 className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+                loading={index < 4 ? 'eager' : 'lazy'}
+                fetchPriority={index < 4 ? 'high' : 'auto'}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-4">

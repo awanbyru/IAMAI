@@ -8,6 +8,7 @@ import CommentSection from '../components/CommentSection';
 import Breadcrumbs from '../components/Breadcrumbs';
 import LazyImage from '../components/LazyImage';
 import { parseIndonesianDate } from '../utils/dateUtils';
+import ShareButtons from '../components/ShareButtons';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -123,6 +124,19 @@ const ArticlePage: React.FC = () => {
   
   const renderContent = (content: string[]) => {
     return content.map((paragraph, index) => {
+        if (paragraph.startsWith('IMG:')) {
+            const [src, alt] = paragraph.substring(4).split('|');
+            return (
+                <figure key={index}>
+                    <LazyImage
+                        src={src}
+                        alt={alt || 'Gambar artikel'}
+                    />
+                    {alt && <figcaption>{alt}</figcaption>}
+                </figure>
+            );
+        }
+
         const formattedParagraph = paragraph
             .replace(/`([^`]+)`/g, '<code class="bg-gray-200 dark:bg-gray-700 rounded px-1 py-0.5 text-sm font-mono text-secondary">$1</code>')
             .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
@@ -208,6 +222,13 @@ const ArticlePage: React.FC = () => {
             </div>
             
             <div className="p-6 md:px-10 pb-10">
+               <div className="mb-8">
+                <ShareButtons
+                  url={`${window.location.origin}/article/${article.slug}`}
+                  title={article.title}
+                  shareText="Bagikan Artikel Ini:"
+                />
+              </div>
               <CommentSection articleSlug={article.slug} />
             </div>
 

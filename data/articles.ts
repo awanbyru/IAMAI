@@ -11,6 +11,7 @@ export const articles: Article[] = [
     content: [
       'Saat menghadapi tugas yang rumit, memberikan satu prompt raksasa kepada AI sering kali menghasilkan jawaban yang dangkal atau tidak fokus. Di sinilah "prompt chaining" atau rantai prompt berperan. Ini adalah teknik di mana Anda memecah masalah besar menjadi beberapa langkah, menggunakan output dari satu prompt sebagai input untuk prompt berikutnya.',
       '**Mengapa Prompt Chaining Efektif?** Dengan memandu AI langkah demi langkah, Anda menciptakan alur kerja yang terstruktur. Ini memungkinkan model untuk fokus pada satu tugas kecil pada satu waktu, yang secara dramatis meningkatkan kualitas dan koherensi hasil akhir. Anggap saja Anda tidak meminta seorang koki untuk "membuat makan malam", tetapi Anda memberinya instruksi berurutan: "1. Pilih resep", "2. Siapkan bahan", "3. Masak hidangan utama".',
+      'IMG:https://picsum.photos/seed/prompt-chaining-example/800/350|Diagram alur kerja prompt chaining yang sederhana.',
       '**Contoh 1: Menulis Artikel Blog**',
       'Alih-alih: `Tulis artikel blog tentang manfaat meditasi.`',
       'Coba rantai ini:',
@@ -22,7 +23,7 @@ export const articles: Article[] = [
       'Coba rantai ini:',
       '1.  **Prompt 1 (Rencana):** `Saya ingin membuat fungsi Python yang mengambil data cuaca dari API OpenWeatherMap. Rencanakan langkah-langkahnya, termasuk library yang dibutuhkan, cara menangani API key, dan struktur data yang akan dikembalikan.`',
       '2.  **Prompt 2 (Kode):** `Berdasarkan rencana ini, tulis kode Python untuk fungsi tersebut. Pastikan untuk menyertakan komentar dan penanganan error jika API gagal merespons.`',
-      'Dengan mengadopsi pendekatan ini, Anda beralih dari sekadar pemberi perintah menjadi seorang manajer proyek untuk AI Anda. Hasilnya adalah output yang lebih terkontrol, mendalam, dan jauh lebih berguna.'
+      'Dengan mengadopsi pendekatan ini, Anda beralih dari sekadar pemberi perintah menjadi seorang manajer proyek untuk AI Anda. Hasilnya adalah output yang terkontrol, mendalam, dan jauh lebih berguna.'
     ],
     imageUrl: 'https://picsum.photos/seed/prompt-chaining-untuk-hasil-kompleks/800/400',
     author: 'awanbyru',
@@ -42,6 +43,7 @@ export const articles: Article[] = [
       '  - **Contoh:** `Ekstrak nama perusahaan dari teks berikut: "Apple mengumumkan iPhone terbaru kemarin."`',
       '  - **Kapan Digunakan:** Bagus untuk tugas-tugas umum dan lugas di mana AI sudah memiliki pemahaman yang kuat tentang konsep tersebut.',
       '**2. Few-Shot Prompting:** Di sinilah Anda "mengajari" AI dengan contoh. Sebelum memberikan tugas akhir, Anda menyajikan beberapa contoh pasangan input dan output yang diinginkan. Ini memberikan konteks yang sangat jelas kepada AI tentang format, gaya, atau logika yang Anda harapkan.',
+      'IMG:https://picsum.photos/seed/few-shot-example/800/300|Ilustrasi yang membandingkan zero-shot prompting (instruksi langsung) dengan few-shot prompting (instruksi dengan contoh).',
       '  - **Contoh:**',
       '  `Teks: "Google meluncurkan produk AI baru bernama Gemini."`',
       '  `Perusahaan: Google`',

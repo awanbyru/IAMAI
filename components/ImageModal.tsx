@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GalleryImage } from '../types';
+import ShareButtons from './ShareButtons';
 
 const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> = ({ image, onClose }) => {
   const [activeImage, setActiveImage] = useState<GalleryImage | null>(null);
@@ -70,13 +71,22 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
               <p className="text-text-main dark:text-gray-300 text-sm font-mono leading-relaxed">{activeImage.prompt}</p>
             </div>
           </div>
-          <button
-            onClick={onClose}
-            className="mt-6 ml-auto bg-secondary text-white font-bold py-2 px-4 rounded-lg hover:bg-secondary/80 transition-colors"
-            aria-label="Tutup penampil gambar"
-          >
-            Tutup
-          </button>
+          <div className="mt-6 pt-4 border-t dark:border-gray-700 space-y-4">
+            <ShareButtons
+              url={window.location.href}
+              title={`Lihat gambar AI "${activeImage.title}" dari Galeri IAMAI`}
+              shareText="Bagikan Gambar Ini:"
+            />
+            <div className="flex justify-end">
+              <button
+                onClick={onClose}
+                className="bg-secondary text-white font-bold py-2 px-4 rounded-lg hover:bg-secondary/80 transition-colors"
+                aria-label="Tutup penampil gambar"
+              >
+                Tutup
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
