@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
-import ScrollToTop from './components/ScrollToTop'; // <- opsional tapi direkomendasikan
 
 import HomePage from './pages/HomePage';
 import ArticlePage from './pages/ArticlePage';
@@ -53,11 +52,11 @@ const App: React.FC = () => {
     script.textContent = JSON.stringify(schema);
   }, []);
 
+
   return (
     <ThemeProvider>
       <BrowserRouter>
         <SearchProvider>
-          <ScrollToTop /> {/* <- bikin navigasi lebih mulus saat pindah halaman */}
           <div className="flex flex-col min-h-screen bg-background dark:bg-gray-900 text-text-main dark:text-gray-200 font-sans">
             <Header />
             <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
