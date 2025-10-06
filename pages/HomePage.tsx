@@ -7,6 +7,7 @@ import { articles } from '../data/articles';
 import MetaTags from '../components/MetaTags';
 import LazyImage from '../components/LazyImage';
 import { parseIndonesianDate } from '../utils/dateUtils';
+import { generatePlaceholderSrc } from '../utils/imageUtils';
 
 
 const HomePage: React.FC = () => {
@@ -89,9 +90,10 @@ const HomePage: React.FC = () => {
                   <LazyImage 
                     src={heroArticle.imageUrl} 
                     alt={heroArticle.title} 
-                    className="absolute h-full w-full"
+                    className="absolute h-full w-full object-cover"
                     loading="eager"
                     fetchPriority="high"
+                    placeholderSrc={generatePlaceholderSrc(heroArticle.imageUrl)}
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
                 </div>

@@ -9,6 +9,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import LazyImage from '../components/LazyImage';
 import { parseIndonesianDate } from '../utils/dateUtils';
 import ShareButtons from '../components/ShareButtons';
+import { generatePlaceholderSrc } from '../utils/imageUtils';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -127,12 +128,14 @@ const ArticlePage: React.FC = () => {
         if (paragraph.startsWith('IMG:')) {
             const [src, alt] = paragraph.substring(4).split('|');
             return (
-                <figure key={index}>
+                <figure key={index} className="my-6">
                     <LazyImage
                         src={src}
                         alt={alt || 'Gambar artikel'}
+                        className="rounded-lg shadow-md"
+                        placeholderSrc={generatePlaceholderSrc(src)}
                     />
-                    {alt && <figcaption>{alt}</figcaption>}
+                    {alt && <figcaption className="text-center text-sm text-gray-500 mt-2">{alt}</figcaption>}
                 </figure>
             );
         }
@@ -199,6 +202,7 @@ const ArticlePage: React.FC = () => {
                 className="w-full h-64 md:h-96 object-cover"
                 loading="eager"
                 fetchPriority="high"
+                placeholderSrc={generatePlaceholderSrc(article.imageUrl)}
               />
               <div className="p-6 md:p-10">
                 <div className="flex items-center space-x-2 mb-4">
