@@ -6,12 +6,20 @@ import { articles } from '../data/articles';
 const Sidebar: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
 
-  // Memoize the popular articles list to prevent recalculation on every render
-  const popularArticles = useMemo(() =>
-    [...articles]
+  // Memoize the popular articles list and make it dynamic based on claps in localStorage
+  const popularArticles = useMemo(() => {
+    const articlesWithUpdatedClaps = articles.map(article => {
+        const storedClaps = localStorage.getItem(`claps_${article.slug}`);
+        return {
+            ...article,
+            claps: storedClaps ? parseInt(storedClaps, 10) : article.claps,
+        };
+    });
+    
+    return articlesWithUpdatedClaps
       .sort((a, b) => b.claps - a.claps)
-      .slice(0, 4)
-  , []);
+      .slice(0, 4);
+  }, [slug]); // Re-calculate when slug changes (on navigation)
 
   return (
     <aside className="w-full lg:w-1/3 xl:w-1/4 space-y-8 flex-shrink-0">
