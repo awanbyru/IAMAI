@@ -10,6 +10,7 @@ import LazyImage from '../components/LazyImage';
 import { parseIndonesianDate } from '../utils/dateUtils';
 import ShareButtons from '../components/ShareButtons';
 import { generatePlaceholderSrc } from '../utils/imageUtils';
+import RelatedArticles from '../components/RelatedArticles';
 
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -18,6 +19,7 @@ const ArticlePage: React.FC = () => {
   const [clapped, setClapped] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const foundArticle = articles.find(a => a.slug === slug);
     if (foundArticle) {
       setArticle(foundArticle);
@@ -186,28 +188,79 @@ const ArticlePage: React.FC = () => {
     }
   }, [clapped, slug, claps]);
   
-  const renderContent = (content: string[]) => {
-    return content.map((paragraph, index) => {
-        if (paragraph.startsWith('IMG:')) {
-            const [src, alt] = paragraph.substring(4).split('|');
-            return (
-                <figure key={index} className="my-6">
-                    <LazyImage
-                        src={src}
-                        alt={alt || 'Gambar artikel'}
-                        className="rounded-lg shadow-md"
-                        placeholderSrc={generatePlaceholderSrc(src)}
-                    />
-                    {alt && <figcaption className="text-center text-sm text-gray-500 mt-2">{alt}</figcaption>}
-                </figure>
-            );
-        }
+  const renderContent = (content: string[]): React.ReactNode => {
+    const elements: React.ReactNode[] = [];
+    let listBuffer: { type: 'ol' | 'ul'; items: string[] } | null = null;
 
-        const formattedParagraph = paragraph
-            .replace(/`([^`]+)`/g, '<code class="bg-gray-200 dark:bg-gray-700 rounded px-1 py-0.5 text-sm font-mono text-secondary">$1</code>')
-            .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-        return <p key={index} dangerouslySetInnerHTML={{ __html: formattedParagraph }} />;
+    const formatText = (text: string) =>
+      text
+        .replace(/`([^`]+)`/g, '<code class="bg-gray-200 dark:bg-gray-700 rounded px-1 py-0.5 text-sm font-mono text-secondary">$1</code>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+    const flushList = () => {
+      if (listBuffer) {
+        const ListTag = listBuffer.type;
+        elements.push(
+          <ListTag key={`${listBuffer.type}-${elements.length}`}>
+            {listBuffer.items.map((item, idx) => (
+              <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
+            ))}
+          </ListTag>
+        );
+        listBuffer = null;
+      }
+    };
+
+    content.forEach((paragraph, index) => {
+      const olMatch = paragraph.match(/^\s*\d+\.\s+(.*)/s);
+      if (olMatch) {
+        if (listBuffer?.type !== 'ol') flushList();
+        if (!listBuffer) listBuffer = { type: 'ol', items: [] };
+        listBuffer.items.push(formatText(olMatch[1]));
+        return;
+      }
+
+      const ulMatch = paragraph.match(/^\s*-\s+(.*)/s);
+      if (ulMatch) {
+        if (listBuffer?.type !== 'ul') flushList();
+        if (!listBuffer) listBuffer = { type: 'ul', items: [] };
+        listBuffer.items.push(formatText(ulMatch[1]));
+        return;
+      }
+
+      flushList();
+
+      if (paragraph.startsWith('IMG:')) {
+        const [src, alt] = paragraph.substring(4).split('|');
+        elements.push(
+          <figure key={`fig-${index}`} className="my-6">
+            <LazyImage
+              src={src}
+              alt={alt || 'Gambar artikel'}
+              className="rounded-lg shadow-md"
+              placeholderSrc={generatePlaceholderSrc(src)}
+            />
+            {alt && <figcaption>{alt}</figcaption>}
+          </figure>
+        );
+        return;
+      }
+
+      const headingMatch = paragraph.match(/^\*\*(.*?)\*\*(.*)/s);
+      if (headingMatch) {
+        const [, headingText, restOfParagraph] = headingMatch;
+        elements.push(<h2 key={`h2-${index}`}>{headingText.trim()}</h2>);
+        if (restOfParagraph.trim()) {
+          elements.push(<p key={`p-after-h2-${index}`} dangerouslySetInnerHTML={{ __html: formatText(restOfParagraph.trim()) }} />);
+        }
+        return;
+      }
+
+      elements.push(<p key={`p-${index}`} dangerouslySetInnerHTML={{ __html: formatText(paragraph) }} />);
     });
+
+    flushList();
+    return elements;
   };
 
   if (article === undefined) {
@@ -310,14 +363,18 @@ const ArticlePage: React.FC = () => {
             </div>
             
             <div className="p-6 md:px-10 pb-10">
-               <div className="mb-8">
+               <RelatedArticles currentArticleSlug={article.slug} tags={article.tags} />
+
+               <div className="mt-8">
                 <ShareButtons
                   url={`${window.location.origin}/article/${article.slug}`}
                   title={article.title}
                   shareText="Bagikan Artikel Ini:"
                 />
               </div>
-              <CommentSection articleSlug={article.slug} />
+              <div className="mt-8">
+                 <CommentSection articleSlug={article.slug} />
+              </div>
             </div>
 
           </article>

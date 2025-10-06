@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /sitemap-generator
 
 Sitemap: https://www.awanbyru.com/sitemap.xml

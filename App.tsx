@@ -14,7 +14,6 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import AboutPage from './pages/AboutPage';
 import SitemapGeneratorPage from './pages/SitemapGeneratorPage';
 import PromptLibraryPage from './pages/PromptLibraryPage';
-import SitemapPage from './pages/SitemapPage';
 
 const Layout: React.FC = () => {
   return (
@@ -93,9 +92,6 @@ const App: React.FC = () => {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/sitemap-generator" element={<SitemapGeneratorPage />} />
             </Route>
-
-            {/* Route for dynamically generating sitemap.xml to fix 404 error */}
-            <Route path="/sitemap.xml" element={<SitemapPage />} />
           </Routes>
         </SearchProvider>
       </BrowserRouter>

@@ -84,9 +84,15 @@ const ChatbotPage: React.FC = () => {
         canonicalUrl={`${window.location.origin}/chatbot`}
       />
       <Breadcrumbs items={breadcrumbItems} />
-      <div className="flex flex-col h-[calc(100vh-12rem)] max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+      <div className="text-center mb-6">
+        <h1 className="text-3xl sm:text-4xl font-bold text-primary dark:text-gray-100">Asisten AI</h1>
+        <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
+            Bertanya pada Awan, asisten AI kami, tentang rekayasa prompt atau artikel di blog ini.
+        </p>
+      </div>
+      <div className="flex flex-col h-[calc(100vh-20rem)] max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg">
         <header className="p-4 border-b dark:border-gray-700">
-          <h1 className="text-xl font-bold text-center text-primary dark:text-gray-100">Asisten AI - Awan</h1>
+          <p className="text-lg font-semibold text-center text-primary dark:text-gray-100">Chat dengan Awan</p>
         </header>
 
         <main ref={chatContainerRef} className="flex-1 p-6 space-y-4 overflow-y-auto">
