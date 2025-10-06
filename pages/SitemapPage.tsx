@@ -3,7 +3,7 @@ import { articles } from '../data/articles';
 
 const SitemapPage: React.FC = () => {
     const sitemapContent = useMemo(() => {
-        const baseUrl = 'https://iamai-awanbyru.vercel.app';
+        const baseUrl = 'https://www.awanbyru.com';
         const today = new Date().toISOString().split('T')[0];
         
         const parseDate = (dateStr: string): Date => {

@@ -24,7 +24,7 @@ const SitemapGeneratorPage: React.FC = () => {
     }
 
     const generateSitemap = () => {
-        const baseUrl = 'https://iamai-awanbyru.vercel.app';
+        const baseUrl = 'https://www.awanbyru.com';
         const today = new Date().toISOString().split('T')[0];
       
         const staticPages = [
