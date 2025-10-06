@@ -13,6 +13,7 @@ import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import AboutPage from './pages/AboutPage';
 import SitemapGeneratorPage from './pages/SitemapGeneratorPage';
+import PromptLibraryPage from './pages/PromptLibraryPage';
 
 const Layout: React.FC = () => {
   return (
@@ -77,6 +78,7 @@ const App: React.FC = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/article/:slug" element={<ArticlePage />} />
               <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/prompts" element={<PromptLibraryPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/about" element={<AboutPage />} />

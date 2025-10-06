@@ -8,6 +8,8 @@ export const articles: Article[] = [
     slug: 'prompt-chaining-untuk-hasil-kompleks',
     title: 'Prompt Chaining: Cara Membuat AI Bekerja dalam Beberapa Langkah untuk Hasil Kompleks',
     excerpt: 'Hentikan penggunaan prompt tunggal. Pelajari teknik \'prompt chaining\' untuk memecah tugas kompleks menjadi langkah-langkah yang dapat dikelola AI, menghasilkan output yang lebih akurat dan mendalam.',
+    summary: 'Prompt chaining adalah teknik memecah tugas AI yang kompleks menjadi beberapa langkah berurutan. Output dari satu prompt digunakan sebagai input untuk prompt berikutnya, yang secara signifikan meningkatkan akurasi dan kedalaman hasil.',
+    type: 'howto',
     content: [
       'Saat menghadapi tugas yang rumit, memberikan satu prompt raksasa kepada AI sering kali menghasilkan jawaban yang dangkal atau tidak fokus. Di sinilah "prompt chaining" atau rantai prompt berperan. Ini adalah teknik di mana Anda memecah masalah besar menjadi beberapa langkah, menggunakan output dari satu prompt sebagai input untuk prompt berikutnya.',
       '**Mengapa Prompt Chaining Efektif?** Dengan memandu AI langkah demi langkah, Anda menciptakan alur kerja yang terstruktur. Ini memungkinkan model untuk fokus pada satu tugas kecil pada satu waktu, yang secara dramatis meningkatkan kualitas dan koherensi hasil akhir. Anggap saja Anda tidak meminta seorang koki untuk "membuat makan malam", tetapi Anda memberinya instruksi berurutan: "1. Pilih resep", "2. Siapkan bahan", "3. Masak hidangan utama".',
@@ -37,6 +39,8 @@ export const articles: Article[] = [
     slug: 'zero-shot-vs-few-shot-prompting',
     title: 'Zero-Shot vs. Few-Shot Prompting: Memberi Contoh pada AI untuk Kualitas Jawaban Terbaik',
     excerpt: 'Mengapa AI Anda terkadang salah paham? Temukan perbedaan antara \'zero-shot\' dan \'few-shot\' prompting. Dengan memberikan beberapa contoh, Anda bisa \'mengajari\' AI secara instan untuk meniru format atau gaya yang Anda inginkan.',
+    summary: 'Zero-shot prompting memberikan instruksi langsung ke AI tanpa contoh, sedangkan few-shot prompting menyertakan beberapa contoh input-output untuk memandu AI. Few-shot sangat efektif untuk format output spesifik dan tugas yang ambigu.',
+    type: 'standard',
     content: [
       'Dalam interaksi dengan AI, cara kita menyusun permintaan sangat menentukan kualitas jawaban. Dua pendekatan fundamental dalam rekayasa prompt adalah "zero-shot" dan "few-shot" prompting. Memahami perbedaannya adalah kunci untuk mendapatkan hasil yang presisi.',
       '**1. Zero-Shot Prompting:** Ini adalah pendekatan yang paling umum digunakan. Anda memberikan instruksi langsung kepada AI tanpa memberikan contoh apa pun. AI diharapkan memahami tugas hanya dari deskripsi yang Anda berikan.',
@@ -71,6 +75,8 @@ export const articles: Article[] = [
     slug: 'pola-persona-untuk-jawaban-ahli',
     title: 'Pola Persona: Cara \'Memerankan\' Ahli untuk Mendapatkan Jawaban Tingkat Pakar dari AI',
     excerpt: 'Jangan hanya bertanya. Perintahkan AI untuk \'bertindak sebagai\' seorang ahli. Kami akan menunjukkan cara menggunakan pola persona—seperti \'Act as a senior copywriter\'—untuk mengubah jawaban generik menjadi wawasan kelas dunia.',
+    summary: 'Pola Persona adalah teknik meminta AI untuk bertindak sebagai seorang ahli di bidang tertentu (misalnya, "Bertindaklah sebagai ahli biologi"). Ini memberikan konteks yang kaya pada AI, menghasilkan jawaban yang lebih spesifik, bernuansa, dan berkualitas tinggi.',
+    type: 'standard',
     content: [
       'Salah satu cara tercepat untuk meningkatkan kualitas jawaban AI adalah dengan berhenti memperlakukannya sebagai mesin pencari dan mulai memberinya peran. Teknik ini dikenal sebagai "Pola Persona", di mana Anda mengawali prompt Anda dengan instruksi agar AI bertindak sebagai seorang ahli di bidang tertentu.',
       '**Mengapa Ini Berhasil?** Dengan menetapkan persona, Anda memberikan konteks yang kaya kepada model AI. Ini membantu AI untuk menyaring pengetahuannya yang luas dan fokus pada informasi, gaya bahasa, dan jargon yang relevan dengan peran tersebut. Hasilnya bukan lagi jawaban umum, melainkan nasihat yang spesifik dan bernuansa, seolah-olah datang dari seorang profesional sejati.',
@@ -91,11 +97,38 @@ export const articles: Article[] = [
     claps: 310,
     tags: ['Pola Persona', 'Prompt Engineering', 'Jawaban Ahli', 'Role-Playing'],
   },
+    {
+    id: '10',
+    slug: 'build-photo-restoration-app-google-ai-studio',
+    title: 'Dari Kusam Jadi Keren: Buat Aplikasi Restorasi Foto Sendiri di Google AI Studio (Tanpa Koding!)',
+    excerpt: 'Punya foto kenangan yang rusak? Jangan dibuang! Ikuti tutorial langkah demi langkah ini untuk membangun aplikasi restorasi foto canggih dengan Google AI Studio, lengkap dengan prompt andalan kami.',
+    summary: 'Tutorial ini menunjukkan cara membuat aplikasi restorasi foto menggunakan Google AI Studio tanpa coding. Dengan memberikan prompt yang terperinci, AI dapat diinstruksikan untuk menganalisis, memperbaiki, dan meningkatkan kualitas foto lama secara otomatis.',
+    type: 'howto',
+    content: [
+      'Setiap dari kita pasti punya foto lama—kenangan berharga yang tersimpan dalam bentuk cetak, kini mulai kusam, tergores, atau warnanya memudar. Membawanya ke profesional bisa memakan biaya mahal. Tapi bagaimana jika Anda bisa memiliki `ahli restorasi foto` pribadi yang siap membantu kapan saja, gratis, dan hanya dalam hitungan menit? Selamat datang di masa depan. Hari ini, kita akan membangun aplikasi restorasi foto Anda sendiri menggunakan Google AI Studio, tanpa perlu menulis satu baris kode pun.',
+      '**Apa itu Google AI Studio?** Anggap saja ini adalah "dapur" canggih dari Google di mana Anda bisa bereksperimen dengan model AI terbaru mereka (Gemini). Salah satu fitur paling keren adalah kemampuan untuk membuat `Aplikasi Prompt`. Anda cukup memberikan serangkaian instruksi (sebuah prompt), dan AI akan mengubahnya menjadi alat khusus yang bisa digunakan siapa saja.',
+      '1. **Langkah 1: Buka Google AI Studio & Buat Aplikasi Prompt.** Pertama, kunjungi situs Google AI Studio. Setelah masuk, cari dan klik tombol untuk membuat `Aplikasi Prompt` baru. Ini akan memberi Anda sebuah kanvas kosong untuk mendefinisikan aplikasi impian Anda.',
+      '2. **Langkah 2: Masukkan Prompt Ajaib.** Di sinilah keajaiban terjadi. Di dalam editor prompt, Anda akan memberikan instruksi kepada AI tentang apa yang harus dilakukannya. Jangan khawatir, kami sudah menyiapkan resep rahasianya. Salin dan tempelkan prompt di bawah ini ke dalam kolom `Instruksi` (atau `system instruction`).',
+      '**Prompt Andalan:** `Anda adalah seorang ahli restorasi foto digital kelas dunia bernama "ChronoLens". Misi Anda adalah menghidupkan kembali kenangan dengan menganalisis dan memulihkan foto-foto lama, rusak, atau pudar yang diunggah oleh pengguna. Ketika Anda menerima sebuah gambar: 1. **Analisis Mendalam:** Periksa gambar dengan cermat untuk menemukan masalah umum seperti goresan, sobekan, noda, warna yang memudar, noise (bintik), dan resolusi rendah. 2. **Lakukan Restorasi:** Terapkan teknik restorasi digital canggih untuk memperbaiki semua masalah yang ditemukan. Ini termasuk koreksi warna yang akurat, penghapusan goresan, pengurangan noise, dan peningkatan detail wajah serta tekstur. 3. **Tingkatkan Kualitas:** Tingkatkan resolusi dan ketajaman gambar secara cerdas tanpa membuatnya terlihat tidak alami. 4. **Sajikan Hasil:** Keluarkan gambar versi final yang telah direstorasi sepenuhnya dengan kualitas terbaik. 5. **Berikan Umpan Balik:** Tepat di bawah gambar hasil restorasi, tambahkan bagian berjudul "**Catatan Restorasi dari ChronoLens:**". Dalam bagian ini, berikan 2-3 poin umpan balik yang positif dan menggembirakan tentang perbaikan utama yang telah Anda lakukan. Gunakan nada yang profesional, positif, dan sedikit magis, seolah-olah Anda benar-benar membawa kenangan berharga kembali ke masa kini.`',
+      '3. **Langkah 3: Atur Input dan Output.** Google AI Studio sangat intuitif. Di sisi kanan atau di bawah editor, Anda akan melihat area untuk mendefinisikan `Input` dan `Output` aplikasi Anda. Pastikan inputnya adalah **gambar** (Anda bisa menamainya `Foto Unggahan`), dan outputnya adalah **gambar** dan **teks**. Ini akan memungkinkan pengguna mengunggah foto mereka dan menerima kembali foto yang sudah diperbaiki beserta `Catatan Restorasi`.',
+      '4. **Langkah 4: Uji Coba Aplikasi Anda.** Sekarang bagian yang menyenangkan! Unggah foto lama yang Anda miliki. Coba dengan foto hitam-putih yang tergores, atau foto berwarna dari tahun 80-an yang warnanya sudah agak aneh. Klik `Jalankan` dan saksikan AI melakukan keajaibannya. Anda akan melihat gambar yang telah direstorasi muncul, diikuti oleh umpan balik yang membangun dari `ChronoLens`.',
+      '**Selamat, Anda Telah Menjadi Pengembang Aplikasi AI!** Hanya dengan beberapa langkah sederhana, Anda telah menciptakan alat yang sangat kuat dan bermanfaat. Anda bisa menyimpan dan bahkan membagikan tautan ke aplikasi Anda kepada teman dan keluarga. Jangan ragu untuk bereksperimen dengan prompt di atas. Mungkin Anda ingin menambahkan instruksi untuk mewarnai foto hitam-putih? Kemungkinannya tidak terbatas. Selamat mencoba!'
+    ],
+    imageUrl: 'https://picsum.photos/seed/build-photo-restoration-app-google-ai-studio/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '28 November 2023',
+    claps: 632,
+    tags: ['Tutorial', 'Google AI Studio', 'Restorasi Foto', 'Aplikasi AI'],
+  },
+  // ... (sisa artikel dengan penambahan summary dan type)
   {
     id: '22',
     slug: 'mengontrol-kreativitas-ai-temperature-top-p',
     title: 'Mengontrol Kreativitas AI: Panduan Praktis Menggunakan \'Temperature\' dan \'Top-P\'',
     excerpt: 'Pernah merasa hasil AI terlalu acak atau terlalu kaku? Kuasai dua \'kenop\' paling penting: Temperature dan Top-P. Panduan ini menjelaskan cara menggunakannya untuk menyeimbangkan antara kreativitas dan konsistensi.',
+    summary: 'Parameter "Temperature" mengontrol keacakan output AI (rendah untuk konsistensi, tinggi untuk kreativitas), sementara "Top-P" membatasi pilihan kata. Menguasai keduanya memungkinkan kontrol presisi atas keseimbangan antara kreativitas dan akurasi model.',
+    type: 'standard',
     content: [
       'Saat berinteraksi dengan model bahasa besar, Anda mungkin memperhatikan bahwa terkadang jawabannya sangat kreatif, sementara di lain waktu sangat dapat diprediksi. Kontrol di balik perilaku ini seringkali terletak pada dua parameter misterius: `Temperature` dan `Top-P`. Memahaminya memberi Anda kendali seperti seorang sutradara atas output AI.',
       '**1. Temperature (Suhu): Mengatur Tingkat Kejutan**',
@@ -124,6 +157,8 @@ export const articles: Article[] = [
     slug: 'chain-of-thought-prompting-untuk-penalaran',
     title: 'Mendorong AI untuk \'Berpikir\': Teknik \'Chain of Thought\' untuk Soal Logika dan Matematika',
     excerpt: 'AI sering gagal dalam soal penalaran? Triknya adalah memintanya untuk \'berpikir langkah demi langkah\'. Pelajari teknik \'Chain of Thought\' (CoT) yang secara dramatis meningkatkan kemampuan AI dalam memecahkan masalah kompleks.',
+    summary: 'Chain of Thought (CoT) adalah teknik prompt di mana AI diminta untuk menjelaskan proses berpikirnya langkah demi langkah sebelum memberikan jawaban akhir. Ini secara signifikan meningkatkan kemampuannya dalam soal logika dan matematika.',
+    type: 'standard',
     content: [
       'Model bahasa besar sangat hebat dalam tugas-tugas yang berhubungan dengan bahasa, tetapi seringkali kesulitan dengan masalah yang membutuhkan penalaran logis, seperti soal cerita matematika atau teka-teki logika. Mereka mungkin memberikan jawaban yang salah dengan penuh percaya diri. Solusinya? Minta AI untuk menunjukkan "jalan pikirannya".',
       '**Apa itu Chain of Thought (CoT) Prompting?** CoT adalah teknik sederhana namun sangat kuat di mana Anda secara eksplisit meminta AI untuk memecah masalah dan menjelaskan penalarannya langkah demi langkah sebelum memberikan jawaban akhir. Frasa ajaibnya seringkali sesederhana: `"Mari kita berpikir langkah demi langkah."`',
@@ -154,6 +189,8 @@ export const articles: Article[] = [
     slug: 'menguasai-cahaya-dan-bayangan-di-seni-ai',
     title: 'Menguasai Cahaya dan Bayangan: Prompt untuk Pencahayaan Dramatis di Seni AI',
     excerpt: 'Cahaya adalah jiwa dari sebuah gambar. Pelajari cara menggunakan prompt pencahayaan tingkat lanjut seperti "volumetric lighting" dan "rim lighting" untuk menciptakan kedalaman, emosi, dan drama dalam karya seni AI Anda.',
+    summary: 'Artikel ini membahas teknik prompt untuk mengontrol pencahayaan dalam seni AI. Istilah seperti "volumetric lighting," "rim lighting," dan "golden hour" dapat digunakan untuk menciptakan gambar yang lebih dramatis, atmosferik, dan profesional.',
+    type: 'standard',
     content: [
       'Dalam seni visual, cahaya adalah segalanya. Ia membentuk subjek, menciptakan suasana, dan memandu mata pemirsa. Dengan AI generatif, Anda memiliki kendali penuh atas pencahayaan, seolah-olah Anda adalah seorang sinematografer di lokasi syuting digital. Kuncinya adalah mengetahui istilah yang tepat untuk digunakan.',
       '**1. Pencahayaan Sinematik (Cinematic Lighting):** Ini adalah istilah umum yang bagus untuk meminta AI menciptakan suasana yang dramatis dan berkualitas film. Ini sering kali menghasilkan kontras yang lebih tinggi dan palet warna yang lebih terarah.',
@@ -176,6 +213,8 @@ export const articles: Article[] = [
     slug: 'kekuatan-prompt-negatif-untuk-gambar-ai',
     title: 'Kekuatan Prompt Negatif: Cara Menghilangkan Elemen yang Tidak Diinginkan di Gambar AI',
     excerpt: 'Gambar AI Anda punya terlalu banyak jari atau elemen aneh? Kuasai seni prompt negatif untuk memberi tahu AI apa yang TIDAK boleh digambar, menghasilkan gambar yang lebih bersih, akurat, dan profesional.',
+    summary: 'Prompt negatif adalah instruksi yang memberi tahu AI apa yang harus dihindari saat membuat gambar. Teknik ini sangat efektif untuk memperbaiki anatomi yang salah, meningkatkan kualitas gambar, dan menghilangkan elemen yang tidak diinginkan.',
+    type: 'standard',
     content: [
       'Membuat prompt yang bagus bukan hanya tentang memberi tahu AI apa yang harus dibuat, tetapi juga apa yang harus dihindari. Di sinilah prompt negatif berperan. Prompt negatif adalah instruksi yang Anda berikan kepada model AI untuk mengecualikan konsep, gaya, atau objek tertentu dari gambar yang dihasilkan.',
       '**Mengapa Prompt Negatif Penting?** Model AI terkadang menghasilkan artefak atau detail yang tidak diinginkan, seperti anatomi yang salah (misalnya, 6 jari), teks yang tidak jelas, atau objek yang mengganggu. Dengan prompt negatif, Anda dapat secara proaktif "membersihkan" gambar sebelum dibuat.',
@@ -201,6 +240,8 @@ export const articles: Article[] = [
     slug: 'menciptakan-karakter-konsisten-dengan-ai',
     title: 'Menciptakan Karakter Konsisten: Trik Menggunakan ‘Seed’ dan Deskripsi Detail',
     excerpt: 'Kesulitan membuat karakter yang sama di berbagai adegan? Panduan ini mengungkap metode untuk menjaga konsistensi karakter menggunakan nomor seed, deskripsi yang sangat detail, dan referensi gaya.',
+    summary: 'Untuk menciptakan karakter AI yang konsisten di berbagai gambar, gunakan kombinasi nomor seed yang sama, deskripsi fisik yang sangat detail dan spesifik, nama karakter yang unik, dan referensi gaya visual yang konsisten.',
+    type: 'standard',
     content: [
       'Salah satu tantangan terbesar dalam seni AI adalah menciptakan karakter yang sama berulang kali dalam pose atau adegan yang berbeda. Tanpa konsistensi, sulit untuk menceritakan sebuah kisah visual. Untungnya, ada beberapa teknik yang bisa Anda gunakan untuk "mengingatkan" AI tentang karakter yang ingin Anda buat.',
       '**1. Nomor Seed (Seed Number):** Seed adalah titik awal acak yang digunakan AI untuk memulai proses pembuatan gambar. Jika Anda menggunakan prompt yang sama dengan seed yang sama, AI akan selalu menghasilkan gambar yang identik. Ini berguna untuk membuat variasi kecil. Anda dapat membuat gambar awal, mengunci seed-nya, lalu sedikit mengubah prompt (misalnya, mengubah ekspresi wajah) untuk melihat variasinya.',
@@ -227,6 +268,8 @@ export const articles: Article[] = [
     slug: 'melepaskan-seni-abstrak-dengan-ai',
     title: 'Melepaskan Seni Abstrak: Prompt untuk Visualisasi Konsep dan Emosi',
     excerpt: 'AI tidak hanya untuk gambar realistis. Jelajahi cara menerjemahkan ide-ide abstrak seperti "kesepian" atau "euforia" menjadi karya seni visual yang menakjubkan menggunakan prompt yang berfokus pada warna, bentuk, dan tekstur.',
+    summary: 'Untuk menghasilkan seni abstrak dengan AI, gunakan prompt yang memvisualisasikan emosi melalui warna dan bentuk, manfaatkan bahasa sensorik dan metafora, fokus pada interaksi material, dan sebutkan gaya seni abstrak tertentu (misalnya, Kandinsky).',
+    type: 'standard',
     content: [
       'AI generatif adalah alat yang luar biasa untuk melampaui batas-batas realitas dan memvisualisasikan hal-hal yang tidak terlihat, seperti emosi, ide, atau suara. Seni abstrak adalah taman bermain kreativitas Anda, dan berikut cara memandu AI untuk menciptakannya.',
       '**1. Visualisasikan Emosi:** Mulailah dengan sebuah emosi. Pikirkan tentang warna, bentuk, dan tekstur yang Anda asosiasikan dengannya. Daripada hanya mengatakan `sadness`, coba `an abstract representation of melancholy, depicted as swirling, dark blue and grey smoke-like forms with a single, faint point of light, fragile and ethereal texture`.',
@@ -250,6 +293,8 @@ export const articles: Article[] = [
     slug: 'teknik-kamera-tingkat-lanjut-untuk-ai',
     title: 'Teknik Kamera Tingkat Lanjut untuk AI: Mengontrol Lensa, Sudut, dan Komposisi',
     excerpt: 'Jadilah sutradara bagi AI Anda. Pelajari cara menggunakan prompt untuk meniru berbagai jenis lensa kamera (telephoto, fisheye), sudut pandang (drone shot), dan aturan komposisi untuk hasil yang lebih dinamis dan profesional.',
+    summary: 'Tingkatkan kualitas gambar AI dengan menggunakan prompt fotografi spesifik. Tentukan jenis lensa (macro, telephoto), sudut kamera (low-angle, drone shot), dan aturan komposisi (rule of thirds) untuk mengontrol hasil secara presisi.',
+    type: 'standard',
     content: [
       'Untuk meningkatkan kualitas gambar AI Anda dari sekadar "bagus" menjadi "luar biasa", mulailah berpikir seperti seorang fotografer atau sutradara. Dengan menentukan parameter kamera yang spesifik, Anda dapat mengontrol komposisi, perspektif, dan fokus gambar Anda secara presisi.',
       '**1. Pilih Lensa Anda:** Jenis lensa yang berbeda secara drastis mengubah tampilan dan nuansa sebuah gambar.',
@@ -278,8 +323,10 @@ export const articles: Article[] = [
   {
     id: '15',
     slug: 'merancang-arsitektur-fantasi-dengan-ai',
-    title: 'Arsitektur Fantasi: Cara Merancang Bangunan Mustahil dan Kota Impian dengan AI',
+    title: 'Arsitektur Fantasi: Cara Merancang Bangunan Mustil dan Kota Impian dengan AI',
     excerpt: 'Bangun dunia impian Anda dari nol. Panduan ini memberikan prompt untuk menciptakan arsitektur fantasi yang megah, mulai dari kastil di atas awan hingga kota bawah laut yang bercahaya.',
+    summary: 'Untuk merancang arsitektur fantasi dengan AI, gunakan prompt yang merinci gaya arsitektur (misalnya, gothic-futuristic), material unik (kristal bercahaya), lingkungan yang mustahil (pulau melayang), serta skala dan detail yang megah.',
+    type: 'standard',
     content: [
       'Pernahkah Anda bermimpi merancang sebuah kota di atas awan atau kastil yang terbuat dari kristal? Dengan AI, imajinasi arsitektur Anda tidak lagi memiliki batas. AI dapat menjadi alat konseptual yang luar biasa untuk para arsitek, desainer game, dan seniman dalam memvisualisasikan bangunan dan lingkungan yang mustahil.',
       'Kunci untuk merancang arsitektur fantasi adalah dengan menjadi sangat deskriptif tentang gaya, material, dan lingkungan. Prompt yang baik akan memberikan AI sebuah cetak biru yang jelas untuk diikuti.',
@@ -302,6 +349,8 @@ export const articles: Article[] = [
     slug: 'meniru-gaya-seniman-legendaris-dengan-ai',
     title: 'Meniru Gaya Seniman Legendaris: Prompt untuk Gambar ala Van Gogh, Hokusai, dan Lainnya',
     excerpt: 'Jadikan AI sebagai kuas Anda untuk melukis dengan gaya para master. Pelajari cara menggabungkan subjek modern dengan gaya artistik legendaris seperti Van Gogh, Hokusai, atau Ghibli.',
+    summary: 'AI dapat meniru gaya seniman terkenal dengan menggunakan prompt "[subjek] dalam gaya [seniman]". Teknik ini memungkinkan penggabungan subjek modern dengan estetika klasik, seperti robot cyberpunk dalam gaya Rembrandt, untuk hasil yang unik.',
+    type: 'standard',
     content: [
       'Salah satu kemampuan paling menarik dari AI generatif adalah kemampuannya untuk meniru gaya artistik yang ada. Ini membuka pintu untuk eksperimen kreatif yang tak terbatas, di mana Anda dapat melihat dunia melalui mata seniman favorit Anda. Kuncinya adalah struktur prompt yang sederhana namun kuat: `[subjek] in the style of [seniman/gaya seni]`.',
       '**1. Memahami Struktur Prompt:** AI telah dilatih dengan jutaan gambar yang diberi label, termasuk karya-karya seniman terkenal dan berbagai gaya seni. Dengan memanggil nama mereka, Anda menginstruksikan AI untuk menerapkan karakteristik visual yang terkait dengan karya mereka—seperti palet warna, goresan kuas, komposisi, dan subjek.',
@@ -325,6 +374,8 @@ export const articles: Article[] = [
     slug: 'rahasia-detail-fotorealistik-dengan-ai',
     title: 'Rahasia Detail Fotorealistik: Prompt untuk Tekstur, Kulit, dan Lingkungan yang Hidup',
     excerpt: 'Ingin gambar AI yang tak bisa dibedakan dari foto asli? Kuasai prompt untuk detail mikro seperti tekstur kulit, permukaan benda, dan lingkungan yang hidup untuk hasil hiperrealistis.',
+    summary: 'Untuk mencapai fotorealisme dalam gambar AI, gunakan prompt yang menekankan resolusi tinggi ("8K"), detail mikro ("tekstur kulit realistis"), pencahayaan alami ("soft natural lighting"), dan ketidaksempurnaan yang halus ("debu di udara").',
+    type: 'standard',
     content: [
       'Membuat gambar yang fotorealistis dengan AI bukan hanya tentang komposisi dan pencahayaan, tetapi tentang meyakinkan mata pemirsa dengan detail-detail kecil yang seringkali tidak disadari. Inilah rahasia untuk meningkatkan realisme gambar Anda ke level berikutnya.',
       '**1. Resolusi adalah Raja:** Mulailah dengan kata kunci yang paling dasar namun paling penting: `8K resolution`, `hyper-detailed`, `ultra-realistic`. Ini memberi sinyal pada AI untuk menghasilkan gambar dengan kualitas setinggi mungkin dan tidak mengabaikan detail kecil.',
@@ -347,6 +398,8 @@ export const articles: Article[] = [
     slug: 'panduan-seni-sureal-abstrak-dengan-ai',
     title: 'Beyond Reality: Panduan Lengkap Membuat Seni Sureal dan Abstrak dengan AI',
     excerpt: 'Bebaskan imajinasi Anda dan ciptakan karya yang mustahil. Panduan ini mengungkap prompt untuk seni sureal dan abstrak, dari geometri aneh hingga perpaduan objek yang tak terduga.',
+    summary: 'Buat seni sureal dengan AI menggunakan teknik juxtapositon (menggabungkan hal tak terduga), geometri mustahil, visualisasi konsep abstrak, dan permainan material atau tekstur yang tidak biasa untuk hasil yang unik.',
+    type: 'standard',
     content: [
       'Seni AI tidak hanya tentang menciptakan kembali realitas; ini tentang menciptakan realitas baru. Seni sureal dan abstrak adalah tempat di mana AI benar-benar dapat bersinar, mengubah konsep aneh menjadi visual yang menakjubkan. Mari kita jelajahi cara membuat gambar yang keluar dari nalar.',
       '**1. Juxtaposition: Menggabungkan yang Tidak Mungkin:** Inti dari surealisme adalah juxtapositon—menempatkan dua atau lebih objek yang tidak berhubungan dalam satu adegan. Ini menciptakan ketegangan dan keajaiban. Kuncinya adalah menjadi spesifik. Jangan hanya mengatakan "mimpi", katakan `a colossal astronaut helmet overgrown with vibrant jungle plants, half-submerged in a calm ocean at sunset`.',
@@ -368,6 +421,8 @@ export const articles: Article[] = [
     slug: 'menguasai-komposisi-sinematik-dengan-ai',
     title: 'Menguasai Komposisi Sinematik dengan AI: Teknik Framing, Pencahayaan, dan Lensa',
     excerpt: 'Ubah gambar AI Anda menjadi sebuah adegan film. Pelajari cara menggunakan prompt untuk mengontrol framing, pencahayaan dramatis, dan efek lensa sinematik untuk hasil yang menakjubkan.',
+    summary: 'Ciptakan gambar AI sinematik dengan menentukan framing (low angle shot), pencahayaan dramatis (volumetric lighting), dan efek lensa (anamorphic lens flare). Menggabungkan istilah-istilah ini mengubah Anda dari pengguna menjadi sutradara.',
+    type: 'standard',
     content: [
       'Pernahkah Anda melihat sebuah gambar AI dan merasa seolah-olah itu adalah sebuah cuplikan dari film blockbuster? Efek ini tidak terjadi secara kebetulan. Ini dicapai melalui penggunaan prompt yang secara spesifik meniru teknik sinematografi. Dengan beberapa kata kunci yang tepat, Anda dapat mengubah gambar biasa menjadi sebuah karya sinematik.',
       '**1. Framing dan Sudut Kamera:** Komposisi adalah segalanya. Daripada membiarkan AI menebak, arahkan kameranya. Gunakan istilah seperti `low angle shot` untuk membuat subjek terlihat kuat dan megah, atau `dutch angle` untuk menciptakan perasaan tegang atau tidak nyaman. `Extreme close-up` akan menarik perhatian ke detail emosional, sementara `wide shot` akan menampilkan skala lingkungan yang epik.',
@@ -391,32 +446,12 @@ export const articles: Article[] = [
     tags: ['Sinematik', 'Komposisi', 'Pencahayaan', 'Prompting'],
   },
   {
-    id: '10',
-    slug: 'build-photo-restoration-app-google-ai-studio',
-    title: 'Dari Kusam Jadi Keren: Buat Aplikasi Restorasi Foto Sendiri di Google AI Studio (Tanpa Koding!)',
-    excerpt: 'Punya foto kenangan yang rusak? Jangan dibuang! Ikuti tutorial langkah demi langkah ini untuk membangun aplikasi restorasi foto canggih dengan Google AI Studio, lengkap dengan prompt andalan kami.',
-    content: [
-      'Setiap dari kita pasti punya foto lama—kenangan berharga yang tersimpan dalam bentuk cetak, kini mulai kusam, tergores, atau warnanya memudar. Membawanya ke profesional bisa memakan biaya mahal. Tapi bagaimana jika Anda bisa memiliki `ahli restorasi foto` pribadi yang siap membantu kapan saja, gratis, dan hanya dalam hitungan menit? Selamat datang di masa depan. Hari ini, kita akan membangun aplikasi restorasi foto Anda sendiri menggunakan Google AI Studio, tanpa perlu menulis satu baris kode pun.',
-      '**Apa itu Google AI Studio?** Anggap saja ini adalah "dapur" canggih dari Google di mana Anda bisa bereksperimen dengan model AI terbaru mereka (Gemini). Salah satu fitur paling keren adalah kemampuan untuk membuat `Aplikasi Prompt`. Anda cukup memberikan serangkaian instruksi (sebuah prompt), dan AI akan mengubahnya menjadi alat khusus yang bisa digunakan siapa saja.',
-      '**Langkah 1: Buka Google AI Studio & Buat Aplikasi Prompt.** Pertama, kunjungi situs Google AI Studio. Setelah masuk, cari dan klik tombol untuk membuat `Aplikasi Prompt` baru. Ini akan memberi Anda sebuah kanvas kosong untuk mendefinisikan aplikasi impian Anda.',
-      '**Langkah 2: Masukkan Prompt Ajaib.** Di sinilah keajaiban terjadi. Di dalam editor prompt, Anda akan memberikan instruksi kepada AI tentang apa yang harus dilakukannya. Jangan khawatir, kami sudah menyiapkan resep rahasianya. Salin dan tempelkan prompt di bawah ini ke dalam kolom `Instruksi` (atau `system instruction`).',
-      '**Prompt Andalan:** `Anda adalah seorang ahli restorasi foto digital kelas dunia bernama "ChronoLens". Misi Anda adalah menghidupkan kembali kenangan dengan menganalisis dan memulihkan foto-foto lama, rusak, atau pudar yang diunggah oleh pengguna. Ketika Anda menerima sebuah gambar: 1. **Analisis Mendalam:** Periksa gambar dengan cermat untuk menemukan masalah umum seperti goresan, sobekan, noda, warna yang memudar, noise (bintik), dan resolusi rendah. 2. **Lakukan Restorasi:** Terapkan teknik restorasi digital canggih untuk memperbaiki semua masalah yang ditemukan. Ini termasuk koreksi warna yang akurat, penghapusan goresan, pengurangan noise, dan peningkatan detail wajah serta tekstur. 3. **Tingkatkan Kualitas:** Tingkatkan resolusi dan ketajaman gambar secara cerdas tanpa membuatnya terlihat tidak alami. 4. **Sajikan Hasil:** Keluarkan gambar versi final yang telah direstorasi sepenuhnya dengan kualitas terbaik. 5. **Berikan Umpan Balik:** Tepat di bawah gambar hasil restorasi, tambahkan bagian berjudul "**Catatan Restorasi dari ChronoLens:**". Dalam bagian ini, berikan 2-3 poin umpan balik yang positif dan menggembirakan tentang perbaikan utama yang telah Anda lakukan. Gunakan nada yang profesional, positif, dan sedikit magis, seolah-olah Anda benar-benar membawa kenangan berharga kembali ke masa kini.`',
-      '**Langkah 3: Atur Input dan Output.** Google AI Studio sangat intuitif. Di sisi kanan atau di bawah editor, Anda akan melihat area untuk mendefinisikan `Input` dan `Output` aplikasi Anda. Pastikan inputnya adalah **gambar** (Anda bisa menamainya `Foto Unggahan`), dan outputnya adalah **gambar** dan **teks**. Ini akan memungkinkan pengguna mengunggah foto mereka dan menerima kembali foto yang sudah diperbaiki beserta `Catatan Restorasi`.',
-      '**Langkah 4: Uji Coba Aplikasi Anda.** Sekarang bagian yang menyenangkan! Unggah foto lama yang Anda miliki. Coba dengan foto hitam-putih yang tergores, atau foto berwarna dari tahun 80-an yang warnanya sudah agak aneh. Klik `Jalankan` dan saksikan AI melakukan keajaibannya. Anda akan melihat gambar yang telah direstorasi muncul, diikuti oleh umpan balik yang membangun dari `ChronoLens`.',
-      '**Selamat, Anda Telah Menjadi Pengembang Aplikasi AI!** Hanya dengan beberapa langkah sederhana, Anda telah menciptakan alat yang sangat kuat dan bermanfaat. Anda bisa menyimpan dan bahkan membagikan tautan ke aplikasi Anda kepada teman dan keluarga. Jangan ragu untuk bereksperimen dengan prompt di atas. Mungkin Anda ingin menambahkan instruksi untuk mewarnai foto hitam-putih? Kemungkinannya tidak terbatas. Selamat mencoba!'
-    ],
-    imageUrl: 'https://picsum.photos/seed/build-photo-restoration-app-google-ai-studio/800/400',
-    author: 'awanbyru',
-    authorAvatar,
-    date: '28 November 2023',
-    claps: 632,
-    tags: ['Tutorial', 'Google AI Studio', 'Restorasi Foto', 'Aplikasi AI'],
-  },
-  {
     id: '9',
     slug: 'mengubah-sketsa-menjadi-ilustrasi-dengan-ai',
     title: 'Ubah Sketsa Kasarmu Menjadi Ilustrasi Profesional dengan AI',
     excerpt: 'Jangan biarkan sketsa Anda hanya tersimpan di buku. Pelajari teknik image-to-image di mana AI mengambil gambar dasar Anda dan mengubahnya menjadi karya seni dengan gaya yang Anda inginkan.',
+    summary: 'Teknik image-to-image memungkinkan AI untuk mengubah sketsa atau gambar dasar menjadi ilustrasi profesional. Pengguna mengunggah gambar sebagai komposisi dasar dan menggunakan prompt teks untuk menentukan gaya, warna, dan detail akhir.',
+    type: 'standard',
     content: [
       'Salah satu fitur paling kuat dari AI generatif adalah kemampuan image-to-image. Anda dapat mengunggah gambar sederhana—bahkan sketsa kasar—dan meminta AI untuk "menyelesaikannya" dalam gaya artistik tertentu. Ini adalah pengubah permainan bagi seniman dan desainer.',
       'Prosesnya melibatkan dua bagian: gambar input dan prompt teks. Gambar input memberikan komposisi dasar, sementara prompt teks mengarahkan gaya, warna, dan detail akhir. Anda bisa meminta AI untuk meniru gaya studio terkenal atau seniman favorit Anda.',
@@ -436,6 +471,8 @@ export const articles: Article[] = [
     slug: 'membuat-peta-dunia-fantasi-dengan-ai',
     title: 'Buat Peta Dunia Fantasi Impianmu Sendiri Menggunakan AI',
     excerpt: 'Bagi penulis atau game master, menciptakan peta adalah sebuah tantangan. Kini AI bisa membantu Anda membuat peta fantasi yang detail dan bergaya kuno hanya dengan beberapa kata.',
+    summary: 'AI dapat digunakan untuk membuat peta dunia fantasi yang detail. Dengan menggunakan prompt yang spesifik mengenai gaya (misalnya, "gaya perkamen kuno"), fitur geografis, dan inspirasi (seperti Tolkien), AI dapat menghasilkan peta yang unik.',
+    type: 'standard',
     content: [
       'Membangun dunia (world-building) adalah bagian penting dari cerita fantasi. Sebuah peta yang baik dapat membuat dunia fiksi terasa nyata. AI dapat menjadi asisten yang luar biasa untuk membuat peta kustom dengan cepat.',
       'Untuk hasil terbaik, sebutkan gaya yang diinginkan seperti "ancient parchment style". Berikan detail spesifik tentang fitur geografi untuk membuat peta Anda unik. Mengambil inspirasi dari karya terkenal seperti "Lord of the Rings" juga membantu AI memahami estetika yang Anda cari.',
@@ -455,6 +492,8 @@ export const articles: Article[] = [
     slug: 'fotografi-makanan-sureal-dengan-ai',
     title: 'Fotografi Makanan Level Berikutnya: Ciptakan Hidangan Sureal dengan AI',
     excerpt: 'Lupakan foto makanan yang membosankan. Dengan AI, Anda bisa menciptakan visual yang mustahil, seperti burger yang terbuat dari bentuk geometris. Jelajahi dunia surealisme dalam fotografi kuliner.',
+    summary: 'AI dapat digunakan untuk menciptakan fotografi makanan sureal dengan menggabungkan konsep yang tidak biasa (burger galaksi) dengan istilah fotografi profesional (studio lighting, hyper-realistic) untuk hasil yang unik dan menarik perhatian.',
+    type: 'standard',
     content: [
       'AI tidak hanya untuk membuat gambar fantasi, tetapi juga untuk mendorong batas-batas kreativitas dalam genre yang lebih tradisional seperti fotografi makanan. Dengan menggabungkan objek sehari-hari dengan konsep sureal, Anda bisa menghasilkan iklan atau karya seni yang sangat menarik perhatian.',
       'Kunci dari prompt ini adalah kata "surreal". Selanjutnya, deskripsikan elemen yang tidak biasa. Jangan lupa tambahkan istilah fotografi profesional seperti "studio lighting" dan "hyper-realistic" untuk memastikan kualitas gambar yang tinggi.',
@@ -474,6 +513,8 @@ export const articles: Article[] = [
     slug: 'membuat-karakter-pixel-art-3d-dengan-ai',
     title: 'Dari 2D ke 3D: Cara Membuat Karakter Pixel Art 3D yang Keren',
     excerpt: 'Tren seni voxel (pixel 3D) sedang naik daun. Lihat bagaimana sebuah prompt sederhana dapat mengubah ide Anda menjadi karakter 3D yang siap untuk game atau sebagai karya seni digital yang unik.',
+    summary: 'AI dapat menghasilkan seni voxel (pixel art 3D) dengan cepat. Prompt yang efektif harus menyertakan kata kunci seperti "3D voxel art" dan "isometric view" untuk mendefinisikan gaya dan perspektif, serta deskripsi karakter yang detail.',
+    type: 'standard',
     content: [
       'Seni Voxel, atau pixel art dalam bentuk 3D, memiliki pesona yang unik dan banyak digunakan dalam game seperti Minecraft. Membuatnya secara manual bisa memakan waktu, tetapi AI memungkinkan kita untuk membuat konsep karakter voxel dalam hitungan detik.',
       'Prompt yang efektif untuk gaya ini harus mencakup kata kunci seperti "3D voxel art" dan "isometric view" untuk mengatur gaya dan perspektif. Mendeskripsikan karakter dan lingkungannya secara detail akan memberikan hasil yang lebih kaya dan menarik.',
@@ -493,6 +534,8 @@ export const articles: Article[] = [
     slug: 'menciptakan-foto-film-vintage-dengan-ai',
     title: 'Menciptakan Foto Bergaya Film Vintage dengan AI: Prompt Rahasia Terungkap',
     excerpt: 'Kembali ke masa lalu dan ciptakan foto dengan nuansa sinematik tahun 70-an. Pelajari cara menggunakan prompt AI untuk menghasilkan gambar dengan tekstur grainy, warna pudar, dan flare lensa anamorphic yang otentik.',
+    summary: 'Ciptakan estetika foto film vintage dengan AI menggunakan prompt yang menyertakan konteks historis ("1970s"), karakteristik film ("grainy texture"), dan istilah teknis kamera ("anamorphic lens flare") untuk hasil yang otentik.',
+    type: 'standard',
     content: [
       'Estetika film analog kembali populer, namun tidak semua orang memiliki kamera film. Berkat AI generatif, Anda bisa menciptakan kembali tampilan klasik ini dengan detail yang menakjubkan. Kuncinya adalah menggunakan kata kunci yang tepat untuk mensimulasikan karakteristik kamera dan stok film lama.',
       'Prompt ini berfokus pada penciptaan atmosfer. Dengan menyebutkan tahun spesifik seperti "1970s", kita memberi AI konteks historis yang kuat. Istilah seperti "grainy texture", "muted colors", dan "anamorphic lens flare" adalah instruksi teknis yang meniru ketidaksempurnaan indah dari fotografi film.',
@@ -512,6 +555,8 @@ export const articles: Article[] = [
     slug: 'mobile-app-in-1-hour-ai-trick',
     title: 'Kami Membuat Aplikasi Seluler dalam 1 Jam dengan Trik AI Ini',
     excerpt: 'Pikir membangun aplikasi butuh berbulan-bulan? Pikirkan lagi. Kami menggunakan alur kerja bertenaga AI yang revolusioner untuk beralih dari ide ke prototipe fungsional hanya dalam 60 menit.',
+    summary: 'Studi kasus ini menunjukkan bagaimana aplikasi seluler dapat dibuat prototipenya dalam satu jam menggunakan AI. Kombinasi model bahasa besar untuk logika dan kode, serta pembuat UI visual AI, digunakan untuk mempercepat proses pengembangan secara drastis.',
+    type: 'standard',
     content: [
       'Hambatan untuk masuk ke pengembangan perangkat lunak secara tradisional tinggi. AI sedang mengubah paradigma itu. Kami mengujinya: bisakah kami membangun aplikasi seluler fungsional untuk kedai kopi dalam satu jam hanya dengan menggunakan alat AI?',
       'Senjata rahasianya adalah kombinasi model bahasa besar untuk logika dan pembuatan kode, dan pembangun visual AI untuk UI. Kami memulai dengan memberikan prompt sederhana kepada AI: `Design a clean, modern, and intuitive UI for a coffee shop\'s mobile ordering app. The color palette should be earthy tones (browns, greens, creams). Key screens: a welcoming home screen featuring a hero image of artisan coffee, a scrollable menu, and a simple checkout process. Use a sans-serif font like Inter. Provide a component breakdown in Figma style.`',
@@ -530,6 +575,8 @@ export const articles: Article[] = [
     slug: 'ultimate-ai-prompt-collection-10x-productivity',
     title: 'Koleksi Prompt AI Terbaik yang Akan 10x Lipat Produktivitas Anda',
     excerpt: 'Berhenti membuang waktu dengan coba-coba. Kami telah mengkurasi koleksi pamungkas prompt siap pakai untuk pemasaran, coding, menulis, dan lainnya.',
+    summary: 'Artikel ini menyediakan koleksi prompt AI yang telah direkayasa untuk berbagai tugas profesional seperti pemasaran, pengembangan perangkat lunak, dan penulisan. Prompt ini dirancang untuk memberikan hasil berkualitas tinggi dengan memberikan konteks yang spesifik.',
+    type: 'standard',
     content: [
       'Produktivitas adalah kunci dalam dunia yang serba cepat saat ini. AI generatif adalah sekutu yang kuat, tetapi hanya jika Anda tahu cara memerintahnya secara efektif. Prompt yang dibuat dengan baik dapat menghemat jam kerja Anda, sementara prompt yang buruk menghasilkan hasil yang membuat frustrasi dan tidak berguna. Itulah mengapa kami membangun koleksi definitif ini.',
       '**Untuk Pemasar:** `Act as a senior marketing strategist. Generate 5 A/B testable headlines for a landing page selling [product]. The target audience is [audience]. One set should focus on [benefit_1], and the other on solving [pain_point]. The tone should be [tone].`',
@@ -549,6 +596,8 @@ export const articles: Article[] = [
     slug: 'unlock-premium-ai-images-10-prompts',
     title: 'Buka Gambar AI Premium: 10 Prompt yang Anda Butuhkan',
     excerpt: 'Bosan dengan seni AI generik? 10 prompt rahasia ini akan mengubah kreasi Anda dari hambar menjadi menakjubkan. Lihat galeri yang memukau di dalamnya!',
+    summary: 'Tingkatkan kualitas seni AI dengan 10 prompt canggih yang berfokus pada suasana sinematik, potret melamun, detail hiper-realistis, dan fusi artistik. Prompt ini menggabungkan teknik pencahayaan, lensa, dan gaya untuk hasil premium.',
+    type: 'standard',
     content: [
       'Dunia seni yang dihasilkan AI sedang meledak, tetapi banyak pengguna masih berada di permukaan. Kunci untuk membuka gambar yang benar-benar unik dan berkualitas profesional terletak pada seni membuat prompt. Ini bukan hanya tentang apa yang Anda minta, tetapi bagaimana Anda memintanya. Hari ini, kami akan membocorkan sepuluh prompt kuat yang akan meningkatkan level seni Anda secara instan.',
       '1. **Suasana Sinematik:** `A lone cyberpunk detective in a rain-slicked neon alleyway, cinematic lighting, volumetric haze creating god rays through the steam, anamorphic lens flare, photorealistic, 8K.` Kombinasi ini menciptakan rasa kedalaman dan misteri yang luar biasa.',

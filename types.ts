@@ -3,6 +3,8 @@ export interface Article {
   slug: string;
   title: string;
   excerpt: string;
+  summary: string; // Ringkasan singkat yang ramah AI
+  type: 'standard' | 'howto'; // Tipe artikel untuk skema yang berbeda
   content: string[];
   imageUrl: string;
   author: string;
@@ -25,4 +27,12 @@ export interface GalleryImage {
   imageUrl: string;
   category: string;
   prompt: string;
+}
+
+export interface Prompt {
+  id: string;
+  title: string;
+  description: string;
+  prompt: string;
+  category: string;
 }

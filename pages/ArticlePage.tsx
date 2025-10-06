@@ -32,8 +32,20 @@ const ArticlePage: React.FC = () => {
     }
   }, [slug]);
   
+  const extractStepsFromContent = (content: string[]) => {
+    return content
+        .filter(p => /^\d+\.\s/.test(p) || /^\d+\.\s\*\*/.test(p))
+        .map(p => {
+            return {
+                "@type": "HowToStep",
+                "text": p.replace(/^\d+\.\s(\*\*.*?\*\*:\s)?/, '').replace(/`([^`]+)`/g, '$1').replace(/\*\*([^*]+)\*\*/g, '$1')
+            };
+        });
+  };
+
   useEffect(() => {
     if (article) {
+        // Main Article Schema (BlogPosting)
         const scriptId = 'article-schema';
         let script = document.getElementById(scriptId) as HTMLScriptElement;
         if (!script) {
@@ -42,7 +54,6 @@ const ArticlePage: React.FC = () => {
             script.type = 'application/ld+json';
             document.head.appendChild(script);
         }
-
         const articleSchema = {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
@@ -55,7 +66,8 @@ const ArticlePage: React.FC = () => {
             "image": article.imageUrl,
             "author": {
                 "@type": "Person",
-                "name": article.author
+                "name": article.author,
+                "sameAs": "https://www.linkedin.com/in/awanbyru" // Tautan Otoritas
             },
             "publisher": {
                 "@type": "Organization",
@@ -70,7 +82,32 @@ const ArticlePage: React.FC = () => {
         };
         script.textContent = JSON.stringify(articleSchema);
 
-        // Add Breadcrumb schema
+        // HowTo Schema (if applicable)
+        const howtoScriptId = 'howto-schema';
+        let howtoScript = document.getElementById(howtoScriptId) as HTMLScriptElement;
+        if (article.type === 'howto') {
+            if (!howtoScript) {
+                howtoScript = document.createElement('script');
+                howtoScript.id = howtoScriptId;
+                howtoScript.type = 'application/ld+json';
+                document.head.appendChild(howtoScript);
+            }
+            const steps = extractStepsFromContent(article.content);
+            if (steps.length > 0) {
+              const howtoSchema = {
+                  "@context": "https://schema.org",
+                  "@type": "HowTo",
+                  "name": article.title,
+                  "description": article.excerpt,
+                  "step": steps,
+              };
+              howtoScript.textContent = JSON.stringify(howtoSchema);
+            }
+        } else if (howtoScript) {
+            howtoScript.remove();
+        }
+
+        // Breadcrumb schema
         const breadcrumbScriptId = 'breadcrumb-schema';
         let breadcrumbScript = document.getElementById(breadcrumbScriptId) as HTMLScriptElement;
         if (!breadcrumbScript) {
@@ -79,7 +116,6 @@ const ArticlePage: React.FC = () => {
             breadcrumbScript.type = 'application/ld+json';
             document.head.appendChild(breadcrumbScript);
         }
-
         const breadcrumbSchema = {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
@@ -102,13 +138,11 @@ const ArticlePage: React.FC = () => {
         
         return () => {
             const scriptElement = document.getElementById(scriptId);
-            if (scriptElement) {
-                scriptElement.remove();
-            }
+            if (scriptElement) scriptElement.remove();
             const breadcrumbElement = document.getElementById(breadcrumbScriptId);
-            if (breadcrumbElement) {
-                breadcrumbElement.remove();
-            }
+            if (breadcrumbElement) breadcrumbElement.remove();
+            const howtoElement = document.getElementById(howtoScriptId);
+            if (howtoElement) howtoElement.remove();
         }
     }
   }, [article]);
@@ -229,8 +263,21 @@ const ArticlePage: React.FC = () => {
               </div>
             </header>
 
-            <div className="prose prose-lg dark:prose-invert max-w-none px-6 md:px-10 py-8 border-t dark:border-gray-700">
-               {renderContent(article.content)}
+            <div className="px-6 md:px-10 py-8 border-t dark:border-gray-700">
+               {/* Ringkasan AI */}
+                <aside className="mb-8 p-4 bg-gray-100 dark:bg-gray-900/50 rounded-lg border-l-4 border-secondary">
+                  <h3 className="font-bold text-lg text-text-main dark:text-gray-100 mb-2 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>
+                    Ringkasan AI
+                  </h3>
+                  <p className="text-text-muted dark:text-gray-300 italic">
+                    {article.summary}
+                  </p>
+                </aside>
+
+               <div className="prose prose-lg dark:prose-invert max-w-none">
+                 {renderContent(article.content)}
+               </div>
             </div>
             
             <div className="p-6 md:px-10 pb-10">
