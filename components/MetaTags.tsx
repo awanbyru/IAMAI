@@ -6,6 +6,12 @@ interface MetaTagsProps {
   imageUrl?: string;
   canonicalUrl?: string;
   noIndex?: boolean;
+  ogType?: 'website' | 'article';
+  articleData?: {
+    publishedTime: string; // ISO string
+    authorName: string;
+    tags: string[];
+  };
 }
 
 // Helper to create/update meta/link tags
@@ -35,7 +41,7 @@ const removeTag = (tag: 'meta' | 'link', keyName: 'name' | 'property' | 'rel', k
     }
 };
 
-const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canonicalUrl, noIndex = false }) => {
+const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canonicalUrl, noIndex = false, ogType = 'website', articleData }) => {
   useEffect(() => {
     const siteName = 'IAMAI - awanbyru';
     const fullTitle = `${title} | ${siteName}`;
@@ -56,7 +62,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
     setTag('meta', 'property', 'og:image', 'content', absoluteImageUrl);
     setTag('meta', 'property', 'og:url', 'content', finalCanonicalUrl);
     setTag('meta', 'property', 'og:site_name', 'content', siteName);
-    setTag('meta', 'property', 'og:type', 'content', 'website');
+    setTag('meta', 'property', 'og:type', 'content', ogType);
     setTag('meta', 'property', 'og:locale', 'content', 'id_ID');
 
     // Twitter
@@ -65,6 +71,21 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
     setTag('meta', 'name', 'twitter:description', 'content', description);
     setTag('meta', 'name', 'twitter:image', 'content', absoluteImageUrl);
     
+    // Article specific tags
+    const existingArticleTags = document.querySelectorAll("meta[property^='article:']");
+    existingArticleTags.forEach(tag => tag.remove());
+
+    if (ogType === 'article' && articleData) {
+      setTag('meta', 'property', 'article:published_time', 'content', articleData.publishedTime);
+      setTag('meta', 'property', 'article:author', 'content', articleData.authorName);
+      articleData.tags.forEach(tag => {
+        const tagElement = document.createElement('meta');
+        tagElement.setAttribute('property', 'article:tag');
+        tagElement.setAttribute('content', tag);
+        document.head.appendChild(tagElement);
+      });
+    }
+
     // NoIndex for admin pages
     if (noIndex) {
         setTag('meta', 'name', 'robots', 'content', 'noindex, nofollow');
@@ -79,7 +100,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
             removeTag('meta', 'name', 'robots');
         }
     };
-  }, [title, description, imageUrl, canonicalUrl, noIndex]);
+  }, [title, description, imageUrl, canonicalUrl, noIndex, ogType, articleData]);
 
   return null; // This component doesn't render anything
 };

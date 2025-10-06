@@ -172,6 +172,12 @@ const ArticlePage: React.FC = () => {
     { label: article.title },
   ];
 
+  const articleDataForMeta = {
+    publishedTime: parseIndonesianDate(article.date).toISOString(),
+    authorName: article.author,
+    tags: article.tags,
+  };
+
   return (
     <>
       <MetaTags
@@ -179,6 +185,8 @@ const ArticlePage: React.FC = () => {
         description={article.excerpt}
         canonicalUrl={`${window.location.origin}/article/${article.slug}`}
         imageUrl={article.imageUrl}
+        ogType="article"
+        articleData={articleDataForMeta}
       />
       <div className="flex flex-col lg:flex-row gap-12">
         <main className="w-full lg:flex-grow">
