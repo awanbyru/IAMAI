@@ -12,6 +12,7 @@ const SitemapGeneratorPage: React.FC = () => {
         const staticPages = [
           { loc: '/', lastmod: today, changefreq: 'weekly', priority: '1.0' },
           { loc: '/gallery', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+          { loc: '/prompts', lastmod: today, changefreq: 'weekly', priority: '0.8' },
           { loc: '/about', lastmod: '2024-05-21', changefreq: 'yearly', priority: '0.6' },
           { loc: '/contact', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.5' },
           { loc: '/privacy-policy', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.3' },
