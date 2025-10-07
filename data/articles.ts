@@ -4,6 +4,38 @@ const authorAvatar = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 
 export const articles: Article[] = [
   {
+    id: '28',
+    slug: 'review-ruangriung-ai-image-generator',
+    title: 'Review Ruangriung AI Image Generator: Kreasi Visual Tanpa Batas di Ujung Jari Anda',
+    excerpt: 'Di tengah gempuran alat AI global, muncul sebuah permata lokal: Ruangriung AI Image Generator. Kami mengulas platform gratis dan mudah digunakan ini yang dirancang khusus untuk audiens Indonesia. Apakah ini alat yang Anda butuhkan?',
+    summary: 'Ulasan mendalam tentang Ruangriung AI Image Generator, sebuah platform pembuatan gambar berbasis AI yang gratis dan dirancang untuk pengguna Indonesia. Artikel ini membahas fitur-fitur utamanya, termasuk antarmuka yang intuitif, kecepatan, dan pemahaman konteks Bahasa Indonesia yang unggul.',
+    type: 'standard',
+    content: [
+      'Dunia kreativitas digital sedang mengalami revolusi, dan AI generatif adalah mesin penggeraknya. Dari ilustrasi kompleks hingga foto produk yang realistis, AI kini mampu mengubah teks sederhana menjadi visual yang menakjubkan. Di antara raksasa global, muncul inisiatif lokal yang menarik perhatian: Ruangriung AI Image Generator.',
+      'Ruangriung hadir dengan misi sederhana: membuat teknologi AI generatif dapat diakses oleh semua orang, terutama di Indonesia. Platform berbasis web ini memungkinkan siapa saja untuk menciptakan gambar berkualitas tinggi hanya dengan mengetikkan deskripsi, tanpa perlu perangkat lunak mahal atau keahlian teknis yang mendalam.',
+      '**Fitur Unggulan yang Membuat Ruangriung Menonjol**',
+      'Setelah mencoba platform ini, beberapa fitur kunci membuatnya layak untuk dicoba:',
+      '1.  **Antarmuka Minimalis dan Intuitif:** Lupakan pengaturan yang membingungkan. Halaman utama Ruangriung langsung menyajikan area prompt yang jelas. Anda hanya perlu mengetikkan imajinasi Anda dan menekan tombol "Generate". Pendekatan ini menghilangkan hambatan bagi pengguna pemula.',
+      'IMG:https://picsum.photos/seed/ruangriung-ui/800/350|Antarmuka Ruangriung AI Image Generator yang bersih dan mudah digunakan.',
+      '2.  **Kecepatan dan Akses Gratis:** Salah satu daya tarik terbesarnya adalah model penggunaannya. Saat ini, Ruangriung sepenuhnya gratis untuk digunakan. Proses generasi gambarnya juga terbilang cepat, menghasilkan visual dalam hitungan detik hingga menit, tergantung pada kerumitan permintaan.',
+      '3.  **Pemahaman Konteks Bahasa Indonesia:** Ini adalah pembeda utama. Meskipun banyak model AI global dapat memproses Bahasa Indonesia, Ruangriung terasa lebih "nyetel" dengan nuansa lokal. Prompt yang mengandung elemen budaya atau istilah khas Indonesia tampaknya dapat diinterpretasikan dengan lebih baik.',
+      '4.  **Kualitas Hasil yang Kompetitif:** Untuk sebuah alat gratis, kualitas gambar yang dihasilkan sangat mengesankan. AI ini mampu menciptakan berbagai gaya, mulai dari fotorealistik, seni digital, hingga ilustrasi kartun, memberikan fleksibilitas kreatif yang luas bagi penggunanya.',
+      '**Siapa yang Akan Mendapat Manfaat?**',
+      'Ruangriung AI Image Generator adalah alat yang sangat berguna untuk berbagai kalangan:',
+      '  - **Kreator Konten:** Untuk membuat gambar thumbnail, ilustrasi postingan blog, atau konten media sosial yang unik.',
+      '  - **Pelajar dan Pendidik:** Sebagai alat bantu visual untuk presentasi atau materi pembelajaran.',
+      '  - **Pemasar Digital:** Untuk membuat prototipe visual iklan atau materi promosi dengan cepat.',
+      '  - **Siapa Saja yang Penasaran:** Cara yang menyenangkan dan tanpa risiko untuk bereksperimen dengan kekuatan AI generatif.',
+      'Secara keseluruhan, Ruangriung AI Image Generator adalah tambahan yang disambut baik dalam ekosistem digital Indonesia. Dengan fokus pada kemudahan penggunaan, aksesibilitas, dan konteks lokal, platform ini berhasil mendemokratisasi salah satu teknologi paling menarik saat ini. Jika Anda ingin mengubah ide menjadi gambar tanpa repot, Ruangriung layak untuk Anda kunjungi.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/review-ruangriung/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '30 Juli 2024',
+    claps: 25,
+    tags: ['AI Image Generator', 'Ruangriung', 'Ulasan', 'Tools AI'],
+  },
+  {
     id: '27',
     slug: 'meta-llama-3-1-konteks-dan-visi',
     title: 'Meta Llama 3.1: Lompatan Kuantum dalam Pemahaman Konteks dan Visi Komputer',
