@@ -31,7 +31,7 @@ export const articles: Article[] = [
     imageUrl: 'https://picsum.photos/seed/review-ruangriung/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '30 Juli 2024',
+    date: '07 Oktober 2025',
     claps: 25,
     tags: ['AI Image Generator', 'Ruangriung', 'Ulasan', 'Tools AI'],
   },

@@ -69,7 +69,7 @@ const SitemapGeneratorPage: React.FC = () => {
             <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
                 <h1 className="text-3xl font-bold mb-4 text-primary dark:text-gray-100">Sitemap Generator</h1>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    Berikut adalah konten sitemap.xml yang dibuat secara otomatis berdasarkan artikel saat ini. Salin konten ini dan tempelkan ke dalam file <code className="bg-gray-200 dark:bg-gray-700 rounded px-1 py-0.5 text-sm font-mono">sitemap.xml</code> Anda untuk memperbaruinya.
+                    Berikut adalah konten sitemap.xml yang dibuat secara otomatis berdasarkan artikel saat ini. Salin konten ini dan tempelkan ke dalam file <code className="bg-gray-200 dark:bg-gray-700 rounded px-1 py-0.5 text-sm font-mono">public/sitemap.xml</code> Anda untuk memperbaruinya.
                 </p>
                 <div className="relative">
                     <textarea
