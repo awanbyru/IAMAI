@@ -253,4 +253,32 @@ export const prompts: Prompt[] = [
     prompt: 'a whimsical giant rastafarian jellyfish in human body, tired and hungover after a night out. ashtray, guitar laying around, smoke. rasta symbol at background. strong psychedelic vibrant color. image washes with glossy and shiny alcohol ink.',
     category: 'Surealisme',
   },
+  {
+    id: 'p37',
+    title: 'Fotografi Produk Profesional',
+    description: 'Menghasilkan foto produk yang bersih dan profesional untuk e-commerce, dengan pencahayaan studio dan latar belakang minimalis.',
+    prompt: 'Professional e-commerce product photography of [product name, e.g., a luxury leather watch]. The product is placed on a minimalist white marble surface. Clean, soft studio lighting from the side to create subtle shadows and highlight textures. The background is a solid, neutral color [e.g., light grey, #F2F2F2]. Shot with a 100mm macro lens, sharp focus, high resolution, 8K.',
+    category: 'Fotografi',
+  },
+  {
+    id: 'p38',
+    title: 'Kalender Konten Media Sosial',
+    description: 'Membuat rencana konten media sosial selama seminggu untuk merek fiksi, lengkap dengan ide postingan dan hashtag.',
+    prompt: 'Act as a social media manager for a brand called "Kopi Senja", a cozy coffee shop targeting young professionals. Create a one-week content calendar for Instagram. Include post types (e.g., photo, reel, story), captions, and relevant hashtags for each day. The content should focus on community, quality coffee, and a relaxing atmosphere.',
+    category: 'Pemasaran',
+  },
+  {
+    id: 'p39',
+    title: 'Penjelasan Kode Kompleks',
+    description: 'Meminta AI untuk menjelaskan potongan kode yang kompleks dengan analogi sederhana, seolah-olah untuk pemula.',
+    prompt: 'Act as an expert programmer and teacher. Explain the following [language, e.g., JavaScript] code snippet as if you were teaching a beginner. Use simple terms and analogies to explain what each part does and why it is useful. Code: [paste your code snippet here]',
+    category: 'Pengembangan',
+  },
+  {
+    id: 'p40',
+    title: 'Konsep Seni Makhluk Fantasi',
+    description: 'Merancang konsep seni yang detail untuk makhluk fantasi orisinal, cocok untuk inspirasi game atau cerita.',
+    prompt: 'Detailed concept art of a majestic "Griffin of the Sun". Its front half is a giant eagle with feathers made of golden light, and its back half is a powerful lion with a mane of fire. The creature is perched on a mountaintop at sunrise. Dynamic pose, epic scale, cinematic lighting, style of fantasy concept art, hyper-detailed, ArtStation HQ.',
+    category: 'Seni',
+  }
 ];
