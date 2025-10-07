@@ -2,115 +2,115 @@ import { GalleryImage } from '../types';
 
 export const galleryImages: GalleryImage[] = [
   {
-    id: 'g1',
-    title: 'Leviathan Kosmik',
-    imageUrl: 'https://picsum.photos/seed/g1/600/600',
+    id: 'g17',
+    title: 'Kesatria Kristal di Reruntuhan Langit',
+    imageUrl: 'https://picsum.photos/seed/new-art-1/600/600',
     category: 'Seni',
-    prompt: 'Epic fantasy art of a colossal bioluminescent leviathan swimming through a vibrant cosmic nebula. Stars, galaxies, and planetary rings are visible in the background. The style is a highly detailed digital painting, trending on ArtStation, with volumetric lighting and a sense of immense scale.'
+    prompt: 'Masterpiece concept art of a stoic knight whose armor is crafted from luminous, translucent crystal, standing amidst ancient floating ruins in the sky. Ethereal volumetric light rays pierce through the clouds. Style of a modern fantasy digital painting, intricate detail, epic scale, ArtStation HQ.'
   },
   {
-    id: 'g2',
-    title: 'Perpustakaan Hutan Ajaib',
-    imageUrl: 'https://picsum.photos/seed/g2/600/600',
+    id: 'g18',
+    title: 'Pasar Rempah-Rempah Intergalaksi',
+    imageUrl: 'https://picsum.photos/seed/new-art-2/600/600',
     category: 'Seni',
-    prompt: 'An ancient, mystical library built inside a giant, hollowed-out tree in an enchanted forest. Sunbeams filter through the canopy, illuminating dust motes and glowing runes on the endless wooden bookshelves. Inspired by Studio Ghibli and Lord of the Rings, fantasy illustration, cozy and magical atmosphere.'
+    prompt: 'A vibrant and bustling alien marketplace on a foreign planet, filled with exotic creatures and strange glowing spices. The architecture is a fusion of organic and futuristic designs. Multiple moons hang in the sky. Digital painting, rich textures, narrative scene, Blade Runner meets Star Wars.'
   },
   {
-    id: 'g3',
-    title: 'Penemu Steampunk',
-    imageUrl: 'https://picsum.photos/seed/g3/600/600',
+    id: 'g19',
+    title: 'Simfoni Bawah Laut',
+    imageUrl: 'https://picsum.photos/seed/new-art-3/600/600',
     category: 'Seni',
-    prompt: 'An intricate oil painting portrait of a determined female inventor in her Victorian workshop. The room is filled with brass gears, copper pipes, and complex contraptions. She wears steampunk goggles on her forehead and leather gloves. The lighting is warm and focused on her workbench. Detailed character design.'
+    prompt: 'Surreal digital painting of a grand orchestra playing instruments made of glowing coral and seashells in a magnificent underwater cavern. Bioluminescent fish swim around like musical notes. Magical, ethereal, fantasy art, glowing, intricate details.'
   },
   {
-    id: 'g4',
-    title: 'Naga Terakhir',
-    imageUrl: 'https://picsum.photos/seed/g4/600/600',
+    id: 'g20',
+    title: 'Robot Penjaga Taman Zen',
+    imageUrl: 'https://picsum.photos/seed/new-art-4/600/600',
     category: 'Seni',
-    prompt: 'A majestic, iridescent dragon with shimmering scales perched atop a snowy mountain peak at sunrise. The landscape is epic and vast. Cinematic lighting casts long shadows. The style is a realistic matte painting, conveying power and solitude.'
+    prompt: 'A solitary, ancient robot covered in moss, peacefully meditating in the center of a meticulously raked Japanese zen garden. A single cherry blossom tree is in full bloom beside it. The atmosphere is serene and contemplative. Style of a quiet Ghibli film, soft lighting.'
   },
   {
-    id: 'g5',
-    title: 'Jalanan Neo-Tokyo Hujan',
-    imageUrl: 'https://picsum.photos/seed/g5/600/600',
+    id: 'g21',
+    title: 'Potret Penjelajah Waktu',
+    imageUrl: 'https://picsum.photos/seed/new-photo-1/600/600',
     category: 'Fotografi',
-    prompt: 'Cinematic photograph of a rain-slicked street in a futuristic Neo-Tokyo. Towering skyscrapers with holographic advertisements are reflected in the puddles. The atmosphere is moody and atmospheric, with cinematic lighting and authentic anamorphic lens flare. Shot with a 35mm lens, visible film grain, Blade Runner aesthetic.'
+    prompt: 'Authentic cinematic film still from a 1980s sci-fi movie. A close-up portrait of a weary time traveler, face illuminated by the complex dials of his temporal device. Heavy film grain, muted neon colors, shallow depth of field, shot on 35mm film stock, moody and atmospheric.'
   },
   {
-    id: 'g6',
-    title: 'Potret Film Vintage',
-    imageUrl: 'https://picsum.photos/seed/g6/600/600',
+    id: 'g22',
+    title: 'Pagi Berkabut di Pegunungan',
+    imageUrl: 'https://picsum.photos/seed/new-photo-2/600/600',
     category: 'Fotografi',
-    prompt: 'Authentic cinematic film still from a 1970s drama. A pensive woman with feathered hair looks out a rainy cafe window. The focus is soft, with heavy, beautiful film grain. The colors are muted and desaturated. Captured on 35mm Kodak Portra 400 film stock.'
+    prompt: 'Breathtaking National Geographic style landscape photograph. Early morning sun breaking through thick fog in a vast mountain valley. Silhouettes of pine trees are visible. The light is golden and dramatic. Captured with a wide-angle lens to emphasize the scale. HDR, ultra-detailed.'
   },
   {
-    id: 'g7',
-    title: 'Makanan Hiperrealistis',
-    imageUrl: 'https://picsum.photos/seed/g7/600/600',
+    id: 'g23',
+    title: 'Pasta Buatan Tangan',
+    imageUrl: 'https://picsum.photos/seed/new-photo-3/600/600',
     category: 'Fotografi',
-    prompt: 'Ultra-realistic food photography of a juicy gourmet wagyu burger with melted cheddar cheese and a side of crispy truffle fries. The image is a macro shot with an extremely shallow depth of field, highlighting every texture. The setup uses professional studio lighting against a dark, moody background. 8K resolution, bokeh.'
+    prompt: 'Ultra-realistic food photography, top-down view of freshly made pasta dough being dusted with flour on a dark rustic wooden table. Ingredients like fresh basil, cherry tomatoes, and garlic are scattered around. Professional studio lighting, creating deep shadows and highlighting textures. 8K, macro details.'
   },
   {
-    id: 'g8',
-    title: 'Rubah Arktik di Salju',
-    imageUrl: 'https://picsum.photos/seed/g8/600/600',
+    id: 'g24',
+    title: 'Keajaiban Arsitektur Brutalis',
+    imageUrl: 'https://picsum.photos/seed/new-photo-4/600/600',
     category: 'Fotografi',
-    prompt: 'A breathtaking National Geographic style wildlife photograph. A fluffy white arctic fox is curled up in pristine snow, almost camouflaged. Shot with a long telephoto lens, creating a compressed perspective and soft, blurred background. The light is soft and diffused from an overcast sky. Minimalist composition, incredibly high detail.'
+    prompt: 'Striking black and white architectural photograph of a brutalist concrete building, featuring strong geometric lines and dramatic shadows (chiaroscuro). The sky is stark and clear. Shot with a tilt-shift lens for a perfectly straight perspective. High contrast, fine art photography.'
   },
   {
-    id: 'g9',
-    title: 'Petualang Seni Voxel',
-    imageUrl: 'https://picsum.photos/seed/g9/600/600',
+    id: 'g25',
+    title: 'Laboratorium Alkemis Isometrik',
+    imageUrl: 'https://picsum.photos/seed/new-3d-1/600/600',
     category: '3D',
-    prompt: 'A charming 3D voxel art character of a small robot adventurer with a large backpack and a glowing blue antenna. The robot is standing on a floating grassy cube island against a clear sky. Rendered in an isometric view with vibrant colors, detailed pixel textures, and soft, clean lighting. MagicaVoxel style.'
+    prompt: 'A charming and highly detailed 3D isometric cutaway of an alchemist\'s laboratory. Filled with bubbling potions, ancient books, glowing crystals, and intricate machinery. Rendered in a cute, low-poly style with vibrant colors and soft lighting. Blender 3D, detailed diorama.'
   },
   {
-    id: 'g10',
-    title: 'Mobil Terbang Cyberpunk',
-    imageUrl: 'https://picsum.photos/seed/g10/600/600',
+    id: 'g26',
+    title: 'Kendaraan Gurun Sci-Fi',
+    imageUrl: 'https://picsum.photos/seed/new-3d-2/600/600',
     category: '3D',
-    prompt: 'Dynamic sci-fi concept art of a sleek, aerodynamic hovercar speeding through a subterranean, neon-lit city tunnel. Motion blur and light trails convey a sense of extreme speed. The angle is low and dramatic. Highly detailed 3D model, photorealistic render in Octane, cyberpunk aesthetic.'
+    prompt: 'Photorealistic 3D render of a rugged, futuristic sci-fi rover traversing a vast desert landscape on an alien planet with twin suns. Dust kicks up from the wheels. The vehicle design is industrial and practical. Rendered in Octane, cinematic lighting, 8K, concept design.'
   },
   {
-    id: 'g11',
-    title: 'Kastil Pulau Terapung',
-    imageUrl: 'https://picsum.photos/seed/g11/600/600',
+    id: 'g27',
+    title: 'Kamar Tidur Impian Lofi',
+    imageUrl: 'https://picsum.photos/seed/new-3d-3/600/600',
     category: '3D',
-    prompt: 'A beautiful 3D environment render of a magical castle built upon a floating island high in the sky. Waterfalls cascade from the edges of the island into the clouds below. The architecture is fantastical and integrated with lush vegetation. Volumetric clouds drift by. The lighting is golden and ethereal.'
+    prompt: 'Cozy 3D render of a lofi-style bedroom at night. Rain streaks down the window, a cat sleeps on the bed, and a computer screen casts a soft glow. The room is filled with plants and personal items. Warm, moody lighting, anime aesthetic, Blender Cycles render.'
   },
   {
-    id: 'g12',
-    title: 'Interior Minimalis',
-    imageUrl: 'https://picsum.photos/seed/g12/600/600',
+    id: 'g28',
+    title: 'Makhluk Kristal Ajaib',
+    imageUrl: 'https://picsum.photos/seed/new-3d-4/600/600',
     category: '3D',
-    prompt: 'Photorealistic architectural visualization of a modern minimalist living room. The space features a neutral color palette of beige, white, and light wood. Natural light streams in from large floor-to-ceiling windows, casting soft shadows. The furniture is high-end and contemporary. Rendered with Corona Renderer, clean and serene.'
+    prompt: 'Beautiful 3D character design of a small, fox-like creature made entirely of glowing amethyst crystals. The creature is sitting in an enchanted, dark forest. The crystals refract light in a captivating way. Photorealistic render, subsurface scattering, magical fantasy.'
   },
   {
-    id: 'g13',
-    title: 'Marmer Cair',
-    imageUrl: 'https://picsum.photos/seed/g13/600/600',
+    id: 'g29',
+    title: 'Ledakan Cat Akrilik',
+    imageUrl: 'https://picsum.photos/seed/new-abstract-1/600/600',
     category: 'Abstrak',
-    prompt: 'Abstract macro photograph capturing colorful liquid ink and shimmering metallic gold paint swirling together in a fluid dynamic dance. The image reveals beautiful, intricate patterns and textures resembling polished marble. High resolution, suitable for a wallpaper.'
+    prompt: 'Ultra high-speed macro photograph of colorful acrylic paints exploding in water. Creates beautiful, swirling, cloud-like patterns. The background is pure black to emphasize the colors. Abstract, dynamic, chaotic yet elegant.'
   },
   {
-    id: 'g14',
-    title: 'Kekacauan Geometris',
-    imageUrl: 'https://picsum.photos/seed/g14/600/600',
+    id: 'g30',
+    title: 'Topografi Holografik',
+    imageUrl: 'https://picsum.photos/seed/new-abstract-2/600/600',
     category: 'Abstrak',
-    prompt: 'A vibrant abstract background featuring a chaotic explosion of 3D geometric shapes. Spheres, cubes, and pyramids with vibrant gradient colors float in zero gravity. This piece is an example of generative art, with dynamic composition and a feeling of motion.'
+    prompt: 'Abstract 3D render of a futuristic holographic terrain map. Glowing neon lines form mountains and valleys on a dark grid. Data points and digital artifacts float around. Sci-fi, data visualization, HUD display, generative art.'
   },
   {
-    id: 'g15',
-    title: 'Jaringan Saraf',
-    imageUrl: 'https://picsum.photos/seed/g15/600/600',
+    id: 'g31',
+    title: 'Tekstur Kertas Sobek',
+    imageUrl: 'https://picsum.photos/seed/new-abstract-3/600/600',
     category: 'Abstrak',
-    prompt: 'A futuristic, abstract visualization of a deep learning artificial neural network. Glowing nodes and interconnected lines represent the flow of data. The background is dark and technological. This is a conceptual representation of AI, data visualization, and machine learning.'
+    prompt: 'Minimalist abstract art featuring layers of torn, textured paper in shades of beige, white, and black. The composition is clean and focuses on the raw edges and subtle shadows. Wabi-sabi aesthetic, high detail scan.'
   },
   {
-    id: 'g16',
-    title: 'Pertumbuhan Kristal',
-    imageUrl: 'https://picsum.photos/seed/g16/600/600',
+    id: 'g32',
+    title: 'Aliran Energi Plasma',
+    imageUrl: 'https://picsum.photos/seed/new-abstract-4/600/600',
     category: 'Abstrak',
-    prompt: 'An abstract, hyper-detailed macro shot of iridescent bismuth crystal formations growing. The geometric structures refract light beautifully, creating a rainbow of colors. The textures are sharp and intricate. Rendered in Unreal Engine 5, demonstrating advanced material shaders.'
+    prompt: 'A mesmerizing digital abstract artwork depicting flowing streams of vibrant plasma energy. The colors shift between hot pink, electric blue, and bright orange. The texture is smooth and glassy. High resolution, suitable for a futuristic wallpaper.'
   },
 ];
