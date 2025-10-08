@@ -4,6 +4,54 @@ const authorAvatar = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 
 export const articles: Article[] = [
   {
+    id: '29',
+    slug: 'bedah-prompt-json-legenda-roro-mendhut',
+    title: 'Bedah Prompt JSON: Membangkitkan Legenda Roro Mendhut dengan Struktur dan Surealisme',
+    excerpt: 'Sebuah prompt bukan hanya kalimat. Ia bisa menjadi cetak biru yang kompleks. Kita akan membedah sebuah prompt JSON canggih yang menghidupkan kembali legenda Roro Mendhut, menggabungkan sketsa 2D, realisme 3D, dan simbolisme budaya dalam satu perintah yang presisi.',
+    summary: 'Tutorial mendalam yang membedah sebuah prompt AI berformat JSON untuk menciptakan karya seni kompleks. Artikel ini menganalisis bagaimana struktur JSON digunakan untuk mengontrol subjek, latar belakang, dan mood secara terpisah, menciptakan visual yang kaya makna tentang legenda Roro Mendhut.',
+    type: 'howto',
+    content: [
+      'Ketika kita berbicara tentang *prompt engineering*, kita sering membayangkan kalimat-kalimat deskriptif. Namun, untuk visi yang benar-benar kompleks dan berlapis, kita memerlukan struktur. Di sinilah prompt berbasis JSON (JavaScript Object Notation) bersinar. Alih-alih satu aliran instruksi, kita memberikan AI sebuah dokumen terorganisir—sebuah cetak biru yang presisi.',
+      'Hari ini, kita akan membedah sebuah prompt JSON yang ambisius: menghidupkan kembali legenda Roro Mendhut dalam gaya sureal yang penuh makna. Prompt ini tidak hanya meminta gambar, tetapi juga merekayasa sebuah narasi visual yang kaya akan ketegangan dan simbolisme.',
+      '**Mengapa JSON? Kekuatan Struktur**',
+      'Sebelum kita masuk ke detailnya, mari kita pahami mengapa menggunakan format seperti JSON sangat kuat. Ini memungkinkan kita untuk:',
+      '- **Memisahkan Konsep:** Kita dapat mendefinisikan subjek, latar belakang, dan gaya secara independen.',
+      '- **Kontrol Granular:** Memberikan instruksi yang sangat spesifik untuk setiap elemen.',
+      '- **Menciptakan Kontras:** Menerapkan gaya yang berbeda (misalnya, 2D vs. 3D) pada elemen yang berbeda dalam gambar yang sama.',
+      '- **Mengurangi Ambiguitas:** AI menerima instruksi yang jelas dan terorganisir, bukan satu paragraf panjang yang bisa disalahartikan.',
+      'Sekarang, mari kita bedah prompt tersebut bagian per bagian.',
+      '**Bagian 1: Pengaturan Dasar (`size` dan `medium`)**',
+      'Prompt ini dimulai dengan dasar-dasar teknis: `size: "9:16"` langsung menetapkan rasio aspek vertikal, ideal untuk tampilan seluler. Kemudian, `medium: "Surreal gouache sketch..."` tidak hanya mendefinisikan media (sketsa guas), tetapi juga nuansa sureal dan abstraknya. Ini adalah fondasi visual kita.',
+      '**Bagian 2: Inti Cerita (`subject`)**',
+      'Di sinilah keajaiban sesungguhnya dimulai. Objek `subject` dibagi menjadi dua bagian yang sengaja dibuat kontras: `central_figure` (Roro Mendhut) dan `emerging_heads` (kerumunan).',
+      '  - **Sang Tokoh Utama:** Untuk Roro Mendhut, perhatikan presisinya: `style: "rough, naive pencil..."`, `pose: "relaxed confidence"`, `attire: "simple brown... no jewelry"`, `expression: "playful challenge... breaking the fourth wall"`. Ini bukan lagi deskripsi, ini adalah arahan karakter. AI diperintahkan untuk menggambarkannya dalam sketsa 2D yang mentah, menonjolkan kesederhanaan dan kekuatan pemberontakannya.',
+      '  - **Kerumunan yang Menghakimi:** Kemudian, kontras yang tajam: `emerging_heads` diperintahkan untuk dirender dalam `realistic 3D`, terinspirasi dari teater `kethoprak` Jawa. Ini menciptakan **tegangan visual**—tokoh utama yang digambar sederhana dikelilingi oleh kerumunan hiper-realistis yang mewakili penilaian masyarakat. Inilah kekuatan struktur: kita bisa mendefinisikan gaya yang berbeda untuk elemen yang berbeda dalam satu gambar.',
+      'IMG:https://picsum.photos/seed/roro-mendhut-contrast/800/350|Visualisasi kontras antara gaya sketsa 2D Roro Mendhut dan kepala 3D kerumunan.',
+      '**Bagian 3: Membangun Atmosfer (`background`)**',
+      'Latar belakangnya tidak pasif. Ia diperintahkan untuk menjadi `"dense, no empty space"`, diisi dengan `"chaotic abstract forms"`, motif `wayang` dan `batik`, serta `"floating piles of shredded tobacco leaves"`. Ini bukan sekadar latar, ini adalah visualisasi dari dunia Roro Mendhut yang riuh dan penuh tekanan, sekaligus kaya akan budaya.',
+      '**Bagian 4: Menyutradarai Perasaan (`overall_feeling` & `visual_tension`)**',
+      'Inilah kunci pamungkasnya. `overall_feeling: "dreamlike, oppressive, emotionally intense"` adalah instruksi emosional tingkat tinggi. Puncaknya adalah `visual_tension`, yang secara eksplisit menjelaskan kepada AI *tujuan artistik* di balik semua instruksi sebelumnya. Prompt ini tidak hanya mendeskripsikan *apa* yang harus digambar, tetapi *mengapa* dan *bagaimana* perasaan yang harus ditimbulkannya.',
+      '**Kesimpulan: Dari Deskripsi ke Arsitektur**',
+      'Prompt Roro Mendhut ini mengajarkan kita pelajaran penting: *prompt engineering* tingkat lanjut adalah tentang arsitektur informasi. Dengan menggunakan struktur seperti JSON, kita beralih dari sekadar pemberi deskripsi menjadi arsitek visual. Kita dapat mengontrol setiap elemen secara independen, menciptakan kontras yang disengaja, dan menyutradarai emosi dengan presisi yang menakjubkan. Ini adalah langkah menuju kemitraan kreatif sejati dengan AI.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/bedah-prompt-json-legenda-roro-mendhut/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '15 Oktober 2025',
+    claps: 155,
+    tags: ['Prompt Engineering', 'JSON', 'Struktur Prompt', 'Seni AI', 'Tutorial'],
+    faq: [
+      {
+        question: "Apa itu prompt JSON?",
+        answer: "Prompt JSON adalah instruksi untuk AI yang diformat menggunakan struktur JSON (JavaScript Object Notation). Ini memungkinkan pembuat prompt untuk mengatur instruksi secara hierarkis dengan pasangan kunci-nilai, memberikan kontrol yang lebih detail dan terorganisir atas berbagai elemen gambar dibandingkan dengan prompt berbasis kalimat biasa."
+      },
+      {
+        question: "Mengapa menggunakan JSON untuk prompt AI?",
+        answer: "Menggunakan JSON memungkinkan kontrol yang sangat presisi. Anda dapat mendefinisikan gaya, subjek, dan latar belakang secara terpisah, bahkan menerapkan gaya visual yang berbeda untuk objek yang berbeda dalam satu adegan. Ini membantu AI memahami instruksi yang kompleks dan berlapis, mengurangi ambiguitas, dan menghasilkan output yang lebih sesuai dengan visi kreatif."
+      }
+    ]
+  },
+  {
     id: '28',
     slug: 'review-ruangriung-ai-image-generator',
     title: 'Review Ruangriung AI Image Generator: Kreasi Visual Tanpa Batas di Ujung Jari Anda',
