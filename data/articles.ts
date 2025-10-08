@@ -78,7 +78,7 @@ export const articles: Article[] = [
     imageUrl: 'https://picsum.photos/seed/bedah-prompt-json-legenda-roro-mendhut/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '15 Oktober 2025',
+    date: '15 Oktober 2024',
     claps: 155,
     tags: ['Prompt Engineering', 'JSON', 'Struktur Prompt', 'Seni AI', 'Tutorial'],
     faq: [
@@ -120,7 +120,7 @@ export const articles: Article[] = [
     imageUrl: 'https://picsum.photos/seed/review-ruangriung/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '07 Oktober 2025',
+    date: '07 Oktober 2024',
     claps: 25,
     tags: ['AI Image Generator', 'Ruangriung', 'Ulasan', 'Tools AI'],
   },
@@ -476,7 +476,7 @@ export const articles: Article[] = [
       '  - **Untuk Suara:** `the sound of a cello, visualized as smooth, flowing ribbons of deep burgundy and polished wood grain texture.`',
       '  - **Untuk Ide:** `a visual metaphor for "innovation", represented by a complex, glowing crystalline structure growing and branching out in unexpected directions.`',
       '**3. Fokus pada Material dan Dinamika Fluida:** Seni abstrak sering kali tentang interaksi material. Gunakan prompt yang berfokus pada dinamika ini untuk hasil yang menakjubkan. `Macro shot of iridescent liquid metal and colorful ink swirling together in a chaotic yet beautiful dance`, atau `an explosion of geometric shapes made of shattered glass and glowing energy`.',
-      '**4. Sebutkan Gaya Seni Abstrak:** Jika Anda memiliki gaya tertentu dalam pikiran, sebutkan. `An abstract oil painting in the style of Wassily Kandinsky, focusing on geometric harmony and chaotic color`, atau `a minimalist abstract sculpture in the style of Constantin Brâncuși, smooth, clean lines, organic form`.',
+      '**4. Sebutkan Gaya Seni Abstrak:** Jika Anda memiliki gaya tertentu dalam pikiran, sebutkan. `An abstract oil painting in the style of Wassily Kandinsky, focusing on geometric harmony and chaotic color`, atau `a minimalist abstract sculpture in the style of Constantin Brân-cuși, smooth, clean lines, organic form`.',
       '**Prompt Contoh:** `Vibrant, abstract generative art representing the feeling of "euphoria". A dynamic explosion of warm, glowing colors like gold, magenta, and orange. The forms are fluid, energetic, and expanding outwards. A sense of weightlessness and pure joy. High resolution, intricate details.`',
       'Jangan takut untuk menjadi puitis dan eksperimental. Dalam dunia seni abstrak dengan AI, tidak ada prompt yang salah. Semakin unik visi Anda, semakin orisinal hasilnya.'
     ],
