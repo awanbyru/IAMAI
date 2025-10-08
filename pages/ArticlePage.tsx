@@ -318,6 +318,7 @@ const ArticlePage: React.FC = () => {
         imageUrl={article.imageUrl}
         ogType="article"
         articleData={articleDataForMeta}
+        imageDimensions={{ width: 800, height: 400 }}
       />
       <div className="flex flex-col lg:flex-row gap-12">
         <main className="w-full lg:flex-grow">

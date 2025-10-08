@@ -12,6 +12,10 @@ interface MetaTagsProps {
     authorName: string;
     tags: string[];
   };
+  imageDimensions?: {
+    width: number;
+    height: number;
+  };
 }
 
 // Helper to create/update meta/link tags
@@ -41,7 +45,7 @@ const removeTag = (tag: 'meta' | 'link', keyName: 'name' | 'property' | 'rel', k
     }
 };
 
-const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canonicalUrl, noIndex = false, ogType = 'website', articleData }) => {
+const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canonicalUrl, noIndex = false, ogType = 'website', articleData, imageDimensions }) => {
   useEffect(() => {
     const siteName = 'IAMAI - awanbyru';
     const fullTitle = `${title} | ${siteName}`;
@@ -49,9 +53,15 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
 
     const finalCanonicalUrl = canonicalUrl || window.location.href;
     const defaultImage = `${window.location.origin}/icon-512.png`;
-    const absoluteImageUrl = imageUrl 
-      ? (imageUrl.startsWith('http') ? imageUrl : new URL(imageUrl, window.location.origin).href)
-      : defaultImage;
+    const finalImageUrl = imageUrl || defaultImage;
+    const absoluteImageUrl = finalImageUrl.startsWith('http') ? finalImageUrl : new URL(finalImageUrl, window.location.origin).href;
+    
+    let finalImageDimensions = imageDimensions;
+    let imageType = 'image/jpeg'; // Default for articles/picsum
+    if (!imageUrl) {
+      finalImageDimensions = { width: 512, height: 512 };
+      imageType = 'image/png';
+    }
 
     setTag('meta', 'name', 'description', 'content', description);
     setTag('link', 'rel', 'canonical', 'href', finalCanonicalUrl);
@@ -60,6 +70,14 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
     setTag('meta', 'property', 'og:title', 'content', fullTitle);
     setTag('meta', 'property', 'og:description', 'content', description);
     setTag('meta', 'property', 'og:image', 'content', absoluteImageUrl);
+    setTag('meta', 'property', 'og:image:type', 'content', imageType);
+    if (finalImageDimensions) {
+        setTag('meta', 'property', 'og:image:width', 'content', finalImageDimensions.width.toString());
+        setTag('meta', 'property', 'og:image:height', 'content', finalImageDimensions.height.toString());
+    } else {
+        removeTag('meta', 'property', 'og:image:width');
+        removeTag('meta', 'property', 'og:image:height');
+    }
     setTag('meta', 'property', 'og:url', 'content', finalCanonicalUrl);
     setTag('meta', 'property', 'og:site_name', 'content', siteName);
     setTag('meta', 'property', 'og:type', 'content', ogType);
@@ -70,6 +88,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
     setTag('meta', 'name', 'twitter:title', 'content', fullTitle);
     setTag('meta', 'name', 'twitter:description', 'content', description);
     setTag('meta', 'name', 'twitter:image', 'content', absoluteImageUrl);
+    setTag('meta', 'name', 'twitter:image:alt', 'content', title);
     
     // Article specific tags
     const existingArticleTags = document.querySelectorAll("meta[property^='article:']");
@@ -100,7 +119,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
             removeTag('meta', 'name', 'robots');
         }
     };
-  }, [title, description, imageUrl, canonicalUrl, noIndex, ogType, articleData]);
+  }, [title, description, imageUrl, canonicalUrl, noIndex, ogType, articleData, imageDimensions]);
 
   return null; // This component doesn't render anything
 };

@@ -40,6 +40,7 @@ const GalleryPage: React.FC = () => {
         description="Koleksi gambar premium yang dikurasi yang dihasilkan oleh AI. Jelajahi seni, fotografi, 3D, dan lainnya. Klik untuk melihat prompt yang digunakan."
         canonicalUrl={`${window.location.origin}/gallery`}
         imageUrl={galleryImages[0]?.imageUrl}
+        imageDimensions={{ width: 600, height: 600 }}
       />
       <Breadcrumbs items={breadcrumbItems} />
       <div className="space-y-8">

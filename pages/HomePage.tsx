@@ -76,9 +76,11 @@ const HomePage: React.FC = () => {
   return (
     <>
       <MetaTags
-        title="Beranda"
-        description="Jelajahi dunia AI dan rekayasa prompt. Temukan artikel menarik, koleksi gambar AI premium, dan panduan ahli untuk meningkatkan kreativitas dan produktivitas Anda."
+        title={heroArticle ? heroArticle.title : "IAMAI - awanbyru"}
+        description={heroArticle ? heroArticle.excerpt : "Jelajahi dunia AI dan rekayasa prompt. Temukan artikel menarik, koleksi gambar AI premium, dan panduan ahli untuk meningkatkan kreativitas dan produktivitas Anda."}
         canonicalUrl={`${window.location.origin}/`}
+        imageUrl={heroArticle?.imageUrl}
+        imageDimensions={heroArticle ? { width: 800, height: 400 } : undefined}
       />
       <div className="space-y-12">
         {/* Hero Section */}
