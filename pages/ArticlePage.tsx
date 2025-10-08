@@ -230,6 +230,18 @@ const ArticlePage: React.FC = () => {
 
       flushList();
 
+      if (paragraph.startsWith('JSON_PROMPT:')) {
+        const jsonString = paragraph.substring('JSON_PROMPT:'.length);
+        elements.push(
+          <div key={`json-prompt-${index}`} className="my-6 relative bg-gray-100 dark:bg-gray-900/50 p-4 rounded-md border dark:border-gray-700 max-h-96 overflow-auto">
+            <pre className="text-text-main dark:text-gray-300 text-sm font-mono whitespace-pre-wrap">
+              <code>{jsonString}</code>
+            </pre>
+          </div>
+        );
+        return;
+      }
+
       if (paragraph.startsWith('IMG:')) {
         const [src, alt] = paragraph.substring(4).split('|');
         elements.push(

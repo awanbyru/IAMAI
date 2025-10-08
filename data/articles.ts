@@ -20,6 +20,47 @@ export const articles: Article[] = [
       '- **Menciptakan Kontras:** Menerapkan gaya yang berbeda (misalnya, 2D vs. 3D) pada elemen yang berbeda dalam gambar yang sama.',
       '- **Mengurangi Ambiguitas:** AI menerima instruksi yang jelas dan terorganisir, bukan satu paragraf panjang yang bisa disalahartikan.',
       'Sekarang, mari kita bedah prompt tersebut bagian per bagian.',
+      `JSON_PROMPT:${`{
+  "size": "9:16",
+  "medium": "Surreal gouache sketch with strong abstract influence",
+  "subject": {
+    "central_figure": {
+      "type": "Roro Mendhut — 17th century Javanese commoner woman",
+      "style": "rough, naive pencil or gouache sketch lines — raw, unfinished, intentionally imperfect",
+      "form": "healthy but slightly rugged village body, subtly sensual without exaggeration",
+      "pose": "sitting or leaning with relaxed confidence, body slightly tilted, one arm resting while the other holds a hand-rolled kretek cigarette",
+      "attire": "simple brown or earthy-toned kemben wrapping the torso, no jewelry or accessories whatsoever, hair in plain sanggul bun without ornaments",
+      "expression": "eyes offering playful challenge, faint teasing smile, gaze directly breaking the fourth wall",
+      "extra_detail": "thin smoke from the kretek drifting upward in elegant curve"
+    },
+    "emerging_heads": {
+      "count": "dozens",
+      "rendering": "realistic 3D",
+      "inspiration": "traditional Javanese kethoprak theater",
+      "types": [
+        "village women in simple kebaya and kemben",
+        "farmers with iket headwraps",
+        "foot soldiers in early Mataram-style attire",
+        "merchants in loose lurik cloth",
+        "clowns and storytellers with exaggerated expressions"
+      ],
+      "variation": "distinct gender, age, Javanese hairstyles (simple sanggul, iket, loose hair), with expressions ranging from mocking, amused, envious, reverent, scornful"
+    }
+  },
+  "background": {
+    "style": "dense, no empty space",
+    "elements": [
+      "chaotic abstract forms",
+      "wayang-inspired motifs",
+      "batik parang and kawung textures",
+      "floating piles of shredded tobacco leaves and clove flowers scattered like confetti",
+      "surreal symbols of smoke spirals morphing into faces"
+    ],
+    "effect": "flowing and clashing in layered, dreamlike energy"
+  },
+  "overall_feeling": "dreamlike, oppressive, emotionally intense — with a rebellious undertone",
+  "visual_tension": "between naive 2D-sketch village woman, hyperreal theatrical heads, fragrant tobacco-and-clove chaos, and overwhelming abstract environment"
+}`}`,
       '**Bagian 1: Pengaturan Dasar (`size` dan `medium`)**',
       'Prompt ini dimulai dengan dasar-dasar teknis: `size: "9:16"` langsung menetapkan rasio aspek vertikal, ideal untuk tampilan seluler. Kemudian, `medium: "Surreal gouache sketch..."` tidak hanya mendefinisikan media (sketsa guas), tetapi juga nuansa sureal dan abstraknya. Ini adalah fondasi visual kita.',
       '**Bagian 2: Inti Cerita (`subject`)**',
@@ -91,7 +132,7 @@ export const articles: Article[] = [
     summary: 'Artikel ini membahas rilis terbaru Meta, Llama 3.1, yang menonjolkan jendela konteks masif 128K token, kemampuan penalaran visual canggih, dan efisiensi yang ditingkatkan. Ini menjadikannya alat yang sangat kuat untuk analisis dokumen panjang dan aplikasi multi-modal.',
     type: 'standard',
     content: [
-      'Dalam perlombaan AI yang tak kenal lelah, Meta tidak hanya bermain untuk mengejar ketertinggalan; mereka secara strategis menargetkan perbatasan berikutnya dari kegunaan AI: pemahaman skala masif. Peluncuran Llama 3.1 bukanlah pembaruan biasa, melainkan sebuah pernyataan. Meta secara agresif berfokus pada dua area yang secara fundamental akan mengubah cara kita berinteraksi dengan AI: memori konteks yang hampir tak terbatas dan kemampuan untuk "menalar" secara visual.',
+      'Dalam perlombaan AI yang tak kenal lelah, Meta tidak hanya bermain untuk mengejar ketinggalan; mereka secara strategis menargetkan perbatasan berikutnya dari kegunaan AI: pemahaman skala masif. Peluncuran Llama 3.1 bukanlah pembaruan biasa, melainkan sebuah pernyataan. Meta secara agresif berfokus pada dua area yang secara fundamental akan mengubah cara kita berinteraksi dengan AI: memori konteks yang hampir tak terbatas dan kemampuan untuk "menalar" secara visual.',
       '**1. Evolusi Memori AI: Jendela Konteks 128K Token**',
       'Fitur utama Llama 3.1 adalah jendela konteksnya yang diperluas hingga 128.000 token. Sederhananya, "token" adalah potongan kata (misalnya, kata "AI" adalah satu token, "kecerdasan" bisa jadi dua token). Jendela 128K berarti model ini dapat "mengingat" dan menganalisis setara dengan sebuah novel tebal dalam satu interaksi.',
       'Ini adalah pergeseran paradigma. Kita beralih dari sekadar "tanya-jawab" menjadi "percakapan dengan seluruh kumpulan data Anda". Kemampuan ini membuka pintu untuk kasus penggunaan yang sebelumnya tidak praktis:',
