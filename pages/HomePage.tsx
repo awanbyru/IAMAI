@@ -32,32 +32,7 @@ const HomePage: React.FC = () => {
         imageUrl="/icon-512.png"
         imageDimensions={{ width: 512, height: 512 }}
       />
-      <div className="space-y-12">
-        {/* New Hero Section */}
-        {!searchQuery.trim() && (
-          <section className="relative rounded-xl shadow-lg overflow-hidden text-white text-center py-20 px-6">
-              <div className="absolute inset-0">
-                  <LazyImage 
-                      src="/icon-512.png" 
-                      alt="awanbyru Blog AI & Prompting" 
-                      className="w-full h-full object-cover"
-                      loading="eager"
-                      fetchPriority="high"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-              </div>
-              <div className="relative z-10">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                      IAMAI - awanbyru
-                  </h1>
-                  <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-                      Menjelajahi batas-batas Kecerdasan Buatan, satu prompt pada satu waktu.
-                  </p>
-              </div>
-          </section>
-        )}
-
-
+      <div>
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
