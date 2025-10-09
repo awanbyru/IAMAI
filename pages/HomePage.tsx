@@ -1,17 +1,25 @@
-
-
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import { useSearch } from '../context/SearchContext';
-import { articles } from '../data/articles';
+import { Article } from '../types';
 import MetaTags from '../components/MetaTags';
 import LazyImage from '../components/LazyImage';
 
 const HomePage: React.FC = () => {
   const { searchQuery } = useSearch();
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    import('../data/articles').then(module => {
+      setArticles(module.articles);
+    });
+  }, []);
 
   const displayedArticles = useMemo(() => {
+    if (articles.length === 0) {
+      return [];
+    }
     const trimmedQuery = searchQuery.trim();
     if (!trimmedQuery) {
       return articles;
@@ -21,7 +29,7 @@ const HomePage: React.FC = () => {
       article.title.toLowerCase().includes(lowercasedQuery) ||
       article.tags.some(tag => tag.toLowerCase().includes(lowercasedQuery))
     );
-  }, [searchQuery]);
+  }, [searchQuery, articles]);
 
   return (
     <>
@@ -45,7 +53,7 @@ const HomePage: React.FC = () => {
                 />
               ))}
             </div>
-             {displayedArticles.length === 0 && (
+             {articles.length > 0 && displayedArticles.length === 0 && (
                 <div className="md:col-span-2 text-center py-16 px-6 bg-surface dark:bg-gray-800 rounded-lg shadow-md">
                     <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

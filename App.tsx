@@ -1,26 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
+import LoadingSpinner from './components/LoadingSpinner';
 
-import HomePage from './pages/HomePage';
-import ArticlePage from './pages/ArticlePage';
-import GalleryPage from './pages/GalleryPage';
-import ContactPage from './pages/ContactPage';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import AboutPage from './pages/AboutPage';
-import SitemapGeneratorPage from './pages/SitemapGeneratorPage';
-import PromptLibraryPage from './pages/PromptLibraryPage';
+// Lazy load page components
+const HomePage = lazy(() => import('./pages/HomePage'));
+const ArticlePage = lazy(() => import('./pages/ArticlePage'));
+const GalleryPage = lazy(() => import('./pages/GalleryPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const SitemapGeneratorPage = lazy(() => import('./pages/SitemapGeneratorPage'));
+const PromptLibraryPage = lazy(() => import('./pages/PromptLibraryPage'));
+const ChatbotPage = lazy(() => import('./pages/ChatbotPage'));
 
 const Layout: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background dark:bg-gray-900 text-text-main dark:text-gray-200 font-sans">
       <Header />
       <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Outlet />
+        <Suspense fallback={<LoadingSpinner />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
       <CookieBanner />
@@ -87,6 +92,7 @@ const App: React.FC = () => {
               <Route path="/article/:slug" element={<ArticlePage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/prompts" element={<PromptLibraryPage />} />
+              <Route path="/chatbot" element={<ChatbotPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/about" element={<AboutPage />} />

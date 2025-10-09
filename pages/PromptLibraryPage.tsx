@@ -1,7 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import MetaTags from '../components/MetaTags';
 import Breadcrumbs from '../components/Breadcrumbs';
-import { prompts } from '../data/prompts';
 import { Prompt } from '../types';
 
 const PromptCard: React.FC<{ prompt: Prompt }> = ({ prompt }) => {
@@ -53,15 +52,26 @@ const PromptCard: React.FC<{ prompt: Prompt }> = ({ prompt }) => {
 
 
 const PromptLibraryPage: React.FC = () => {
+    const [prompts, setPrompts] = useState<Prompt[]>([]);
     const [activeFilter, setActiveFilter] = useState('Semua');
-    const categories = useMemo(() => ['Semua', ...new Set(prompts.map(p => p.category))], []);
+
+    useEffect(() => {
+        import('../data/prompts').then(module => {
+            setPrompts(module.prompts);
+        });
+    }, []);
+
+    const categories = useMemo(() => {
+        if (prompts.length === 0) return [];
+        return ['Semua', ...new Set(prompts.map(p => p.category))];
+    }, [prompts]);
 
     const filteredPrompts = useMemo(() => {
         if (activeFilter === 'Semua') {
             return prompts;
         }
         return prompts.filter(p => p.category === activeFilter);
-    }, [activeFilter]);
+    }, [activeFilter, prompts]);
 
     const breadcrumbItems = [
         { label: 'Beranda', href: '/' },

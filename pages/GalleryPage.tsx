@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useEffect, lazy, Suspense } from 'react';
-import { galleryImages } from '../data/galleryImages';
 import { GalleryImage } from '../types';
 import MetaTags from '../components/MetaTags';
 import Breadcrumbs from '../components/Breadcrumbs';
@@ -8,17 +7,27 @@ import LazyImage from '../components/LazyImage';
 const ImageModal = lazy(() => import('../components/ImageModal'));
 
 const GalleryPage: React.FC = () => {
+  const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
   const [activeFilter, setActiveFilter] = useState('Semua');
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  const categories = useMemo(() => ['Semua', ...new Set(galleryImages.map(img => img.category))], []);
+  useEffect(() => {
+    import('../data/galleryImages').then(module => {
+      setGalleryImages(module.galleryImages);
+    });
+  }, []);
+
+  const categories = useMemo(() => {
+    if (galleryImages.length === 0) return [];
+    return ['Semua', ...new Set(galleryImages.map(img => img.category))];
+  }, [galleryImages]);
 
   const filteredImages = useMemo(() => {
     if (activeFilter === 'Semua') {
       return galleryImages;
     }
     return galleryImages.filter(image => image.category === activeFilter);
-  }, [activeFilter]);
+  }, [activeFilter, galleryImages]);
 
   const handleImageClick = (image: GalleryImage) => {
     setSelectedImage(image);

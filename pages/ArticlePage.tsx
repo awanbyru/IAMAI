@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { articles } from '../data/articles';
 import { Article } from '../types';
 import Sidebar from '../components/Sidebar';
 import MetaTags from '../components/MetaTags';
@@ -20,18 +19,23 @@ const ArticlePage: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const foundArticle = articles.find(a => a.slug === slug);
-    if (foundArticle) {
-      setArticle(foundArticle);
-      const storedClaps = localStorage.getItem(`claps_${slug}`);
-      const initialClaps = storedClaps ? parseInt(storedClaps, 10) : foundArticle.claps;
-      setClaps(initialClaps);
-      
-      const hasClapped = localStorage.getItem(`clapped_${slug}`) === 'true';
-      setClapped(hasClapped);
-    } else {
-      setArticle(null); // Explicitly set to null if not found
-    }
+    
+    import('../data/articles').then(module => {
+      const articles = module.articles;
+      const foundArticle = articles.find(a => a.slug === slug);
+      if (foundArticle) {
+        setArticle(foundArticle);
+        const storedClaps = localStorage.getItem(`claps_${slug}`);
+        const initialClaps = storedClaps ? parseInt(storedClaps, 10) : foundArticle.claps;
+        setClaps(initialClaps);
+        
+        const hasClapped = localStorage.getItem(`clapped_${slug}`) === 'true';
+        setClapped(hasClapped);
+      } else {
+        setArticle(null); // Explicitly set to null if not found
+      }
+    });
+
   }, [slug]);
   
   const extractStepsFromContent = (content: string[]) => {
@@ -287,7 +291,7 @@ const ArticlePage: React.FC = () => {
     return (
       <div className="text-center py-16 px-6 bg-surface dark:bg-gray-800 rounded-lg shadow-md">
         <svg className="mx-auto h-16 w-16 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6-938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
         </svg>
         <h3 className="mt-4 text-3xl font-semibold text-text-main dark:text-gray-100">Artikel Tidak Ditemukan</h3>
         <p className="mt-2 text-base text-text-muted dark:text-gray-400">Maaf, kami tidak dapat menemukan artikel yang Anda cari.</p>

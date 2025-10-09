@@ -53,6 +53,9 @@ const Header: React.FC = () => {
               <NavLink to="/prompts" className={navLinkClasses}>
                 Prompt
               </NavLink>
+              <NavLink to="/chatbot" className={navLinkClasses}>
+                Chatbot
+              </NavLink>
               <NavLink to="/about" className={navLinkClasses}>
                 Tentang
               </NavLink>
@@ -127,6 +130,9 @@ const Header: React.FC = () => {
             </NavLink>
             <NavLink to="/prompts" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Prompt
+            </NavLink>
+            <NavLink to="/chatbot" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
+              Chatbot
             </NavLink>
             <NavLink to="/about" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Tentang
