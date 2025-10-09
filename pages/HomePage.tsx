@@ -54,12 +54,12 @@ const HomePage: React.FC = () => {
               ))}
             </div>
              {articles.length > 0 && displayedArticles.length === 0 && (
-                <div className="md:col-span-2 text-center py-16 px-6 bg-surface dark:bg-gray-800 rounded-lg shadow-md">
-                    <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <div className="md:col-span-2 text-center py-16 px-6 bg-app-surface rounded-lg shadow-md border border-app-default">
+                    <svg className="mx-auto h-12 w-12 text-app-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                    <h3 className="mt-2 text-xl font-medium text-text-main dark:text-gray-100">Tidak Ada Artikel yang Ditemukan</h3>
-                    <p className="mt-1 text-sm text-text-muted dark:text-gray-400">Coba kata kunci pencarian yang berbeda.</p>
+                    <h3 className="mt-2 text-xl font-medium text-app-main">Tidak Ada Artikel yang Ditemukan</h3>
+                    <p className="mt-1 text-sm text-app-muted">Coba kata kunci pencarian yang berbeda.</p>
                 </div>
             )}
           </div>

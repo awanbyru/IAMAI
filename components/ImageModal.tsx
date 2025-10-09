@@ -80,30 +80,30 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
       aria-labelledby="image-modal-title"
     >
       <div
-        className={`bg-white dark:bg-gray-800 rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-auto flex flex-col md:flex-row transition-all duration-300 ease-in-out ${show ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+        className={`bg-app-surface rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-auto flex flex-col md:flex-row transition-all duration-300 ease-in-out ${show ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="md:w-2/3 flex-shrink-0 bg-gray-100 dark:bg-gray-900 flex items-center justify-center md:rounded-l-lg">
+        <div className="md:w-2/3 flex-shrink-0 bg-app-background flex items-center justify-center md:rounded-l-lg">
            <img src={activeImage.imageUrl} alt={activeImage.title} className="w-full h-auto object-contain md:rounded-l-lg" />
         </div>
         <div className="p-6 flex flex-col">
           <div className="flex-grow">
-            <h2 id="image-modal-title" className="text-2xl font-bold text-text-main dark:text-gray-100 mb-4">{activeImage.title}</h2>
-            <p className="text-sm text-text-muted dark:text-gray-400 mb-2 font-semibold uppercase tracking-wider">Prompt:</p>
-            <div className="relative bg-gray-100 dark:bg-gray-900/50 p-4 rounded-md max-h-60 overflow-y-auto">
-              <pre className="text-text-main dark:text-gray-300 text-sm font-mono whitespace-pre-wrap overflow-x-auto">
+            <h2 id="image-modal-title" className="text-2xl font-bold text-app-main mb-4">{activeImage.title}</h2>
+            <p className="text-sm text-app-muted mb-2 font-semibold uppercase tracking-wider">Prompt:</p>
+            <div className="relative bg-app-subtle p-4 rounded-md max-h-60 overflow-y-auto border border-app-default">
+              <pre className="text-app-main text-sm font-mono whitespace-pre-wrap overflow-x-auto">
                 <code>{activeImage.prompt}</code>
               </pre>
               <button
                 onClick={handleCopy}
-                className="absolute top-2 right-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-secondary/20 hover:text-secondary transition-colors"
+                className="absolute top-2 right-2 p-2 rounded-full bg-app-surface text-app-muted hover:bg-brand-subtle hover:text-brand transition-colors"
                 aria-label={copyStatus === 'idle' ? 'Salin prompt' : 'Prompt disalin'}
               >
                 {copyStatus === 'idle' ? copyIcon : checkIcon}
               </button>
             </div>
           </div>
-          <div className="mt-6 pt-4 border-t dark:border-gray-700 space-y-4">
+          <div className="mt-6 pt-4 border-t border-app-default space-y-4">
             <ShareButtons
               url={window.location.href}
               title={`Lihat gambar AI "${activeImage.title}" dari Galeri IAMAI`}
@@ -112,7 +112,7 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
             <div className="flex justify-end">
               <button
                 onClick={onClose}
-                className="bg-secondary text-white font-bold py-2 px-4 rounded-lg hover:bg-secondary/80 transition-colors"
+                className="bg-brand text-white font-bold py-2 px-4 rounded-lg hover:bg-brand-hover transition-colors"
                 aria-label="Tutup penampil gambar"
               >
                 Tutup

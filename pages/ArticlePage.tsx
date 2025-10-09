@@ -198,7 +198,7 @@ const ArticlePage: React.FC = () => {
 
     const formatText = (text: string) =>
       text
-        .replace(/`([^`]+)`/g, '<code class="bg-gray-200 dark:bg-gray-700 rounded px-1 py-0.5 text-sm font-mono text-secondary">$1</code>')
+        .replace(/`([^`]+)`/g, '<code class="bg-gray-200 dark:bg-gray-700 rounded px-1 py-0.5 text-sm font-mono text-brand">$1</code>')
         .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 
     const flushList = () => {
@@ -237,8 +237,8 @@ const ArticlePage: React.FC = () => {
       if (paragraph.startsWith('JSON_PROMPT:')) {
         const jsonString = paragraph.substring('JSON_PROMPT:'.length);
         elements.push(
-          <div key={`json-prompt-${index}`} className="my-6 relative bg-gray-100 dark:bg-gray-900/50 p-4 rounded-md border dark:border-gray-700 max-h-96 overflow-auto">
-            <pre className="text-text-main dark:text-gray-300 text-sm font-mono whitespace-pre-wrap">
+          <div key={`json-prompt-${index}`} className="my-6 relative bg-app-subtle p-4 rounded-md border border-app-default max-h-96 overflow-auto">
+            <pre className="text-app-main text-sm font-mono whitespace-pre-wrap">
               <code>{jsonString}</code>
             </pre>
           </div>
@@ -282,20 +282,20 @@ const ArticlePage: React.FC = () => {
   if (article === undefined) {
     return (
       <div className="flex justify-center items-center py-20">
-        <div className="animate-spin rounded-full h-24 w-24 border-t-2 border-b-2 border-secondary"></div>
+        <div className="animate-spin rounded-full h-24 w-24 border-t-2 border-b-2 border-brand"></div>
       </div>
     );
   }
 
   if (!article) {
     return (
-      <div className="text-center py-16 px-6 bg-surface dark:bg-gray-800 rounded-lg shadow-md">
+      <div className="text-center py-16 px-6 bg-app-surface rounded-lg shadow-md border border-app-default">
         <svg className="mx-auto h-16 w-16 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6-938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
         </svg>
-        <h3 className="mt-4 text-3xl font-semibold text-text-main dark:text-gray-100">Artikel Tidak Ditemukan</h3>
-        <p className="mt-2 text-base text-text-muted dark:text-gray-400">Maaf, kami tidak dapat menemukan artikel yang Anda cari.</p>
-        <Link to="/" className="mt-6 inline-block bg-secondary text-white font-bold py-3 px-6 rounded-lg hover:bg-secondary/80 transition-colors">
+        <h3 className="mt-4 text-3xl font-semibold text-app-main">Artikel Tidak Ditemukan</h3>
+        <p className="mt-2 text-base text-app-muted">Maaf, kami tidak dapat menemukan artikel yang Anda cari.</p>
+        <Link to="/" className="mt-6 inline-block bg-brand text-white font-bold py-3 px-6 rounded-lg hover:bg-brand-hover transition-colors">
             Kembali ke Beranda
         </Link>
       </div>
@@ -327,7 +327,7 @@ const ArticlePage: React.FC = () => {
       <div className="flex flex-col lg:flex-row gap-12">
         <main className="w-full lg:flex-grow">
           <Breadcrumbs items={breadcrumbItems} />
-          <article className="bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+          <article className="bg-app-surface rounded-xl shadow-lg overflow-hidden border border-app-default">
             <header>
               <LazyImage 
                 src={article.imageUrl}
@@ -342,20 +342,20 @@ const ArticlePage: React.FC = () => {
               <div className="p-6 md:p-10">
                 <div className="flex items-center space-x-2 mb-4">
                   {article.tags.map(tag => (
-                    <span key={tag} className="bg-orange-200 text-orange-800 dark:bg-orange-700 dark:text-orange-200 text-xs font-semibold px-2.5 py-1 rounded-full">{tag}</span>
+                    <span key={tag} className="bg-brand-subtle text-brand-subtle text-xs font-medium px-2.5 py-1 rounded-full">{tag}</span>
                   ))}
                 </div>
-                <h1 className="text-3xl md:text-5xl font-extrabold text-text-main dark:text-gray-100 mb-4 leading-tight">{article.title}</h1>
-                <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-text-muted dark:text-gray-400">
+                <h1 className="text-3xl md:text-5xl font-extrabold text-app-main mb-4 leading-tight">{article.title}</h1>
+                <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-app-muted">
                   <div className="flex items-center">
-                    <img className="w-12 h-12 rounded-full mr-4 bg-gray-200 dark:bg-gray-700" src={article.authorAvatar} alt={article.author} loading="lazy" />
+                    <img className="w-12 h-12 rounded-full mr-4 bg-app-subtle" src={article.authorAvatar} alt={article.author} loading="lazy" />
                     <div>
-                      <p className="font-semibold text-text-main dark:text-gray-200">{article.author}</p>
+                      <p className="font-semibold text-app-main">{article.author}</p>
                       <p>{article.date}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-2">
-                     <button onClick={handleClap} className={`flex items-center space-x-2 p-2 rounded-full transition-colors duration-200 ${clapped ? 'text-secondary bg-secondary/10' : 'text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700'}`} aria-label="Tepuk tangan untuk artikel ini" disabled={clapped}>
+                     <button onClick={handleClap} className={`flex items-center space-x-2 p-2 rounded-full transition-colors duration-200 ${clapped ? 'text-brand bg-brand-subtle' : 'text-app-muted hover:bg-app-subtle'}`} aria-label="Tepuk tangan untuk artikel ini" disabled={clapped}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill={clapped ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9A2 2 0 0020 4h-4" /></svg>
                         <span className="font-semibold">{claps}</span>
                      </button>
@@ -364,19 +364,19 @@ const ArticlePage: React.FC = () => {
               </div>
             </header>
 
-            <div className="px-6 md:px-10 py-8 border-t dark:border-gray-700">
+            <div className="px-6 md:px-10 py-8 border-t border-app-default">
                {/* Ringkasan AI */}
-                <aside className="mb-8 p-4 bg-gray-100 dark:bg-gray-900/50 rounded-lg border-l-4 border-secondary">
-                  <h3 className="font-bold text-lg text-text-main dark:text-gray-100 mb-2 flex items-center">
+                <aside className="mb-8 p-4 bg-app-subtle rounded-lg border-l-4 border-brand">
+                  <h3 className="font-bold text-lg text-app-main mb-2 flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" /></svg>
                     Ringkasan AI
                   </h3>
-                  <p className="text-text-muted dark:text-gray-300 italic">
+                  <p className="text-app-muted italic">
                     {article.summary}
                   </p>
                 </aside>
 
-               <div className="prose prose-lg dark:prose-invert max-w-none">
+               <div className="prose prose-lg max-w-none">
                  {renderContent(article.content)}
                </div>
             </div>

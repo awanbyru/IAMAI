@@ -18,26 +18,26 @@ const Header: React.FC = () => {
   };
 
   const navLinkClasses = ({ isActive }: { isActive: boolean }) =>
-    `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+    `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
       isActive
-        ? 'bg-secondary text-white'
-        : 'text-text-main dark:text-gray-300 hover:text-secondary dark:hover:text-secondary'
+        ? 'bg-brand text-white'
+        : 'text-app-muted hover:text-app-main'
     }`;
     
   const mobileNavLinkClasses = ({ isActive }: { isActive: boolean }) =>
-    `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+    `block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
       isActive
-        ? 'bg-secondary text-white'
-        : 'text-text-main dark:text-gray-300 hover:bg-secondary/10 hover:text-secondary'
+        ? 'bg-brand text-white'
+        : 'text-app-main hover:bg-app-subtle'
     }`;
 
   return (
-    <header className="bg-surface dark:bg-gray-800 shadow-md">
+    <header className="bg-app-surface border-b border-app-default sticky top-0 z-40">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0">
-              <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-500">
+              <h1 className="text-xl font-bold text-brand">
                 IAMAI - awanbyru
               </h1>
             </Link>
@@ -70,10 +70,10 @@ const Header: React.FC = () => {
                 </span>
                 <input
                   type="search"
-                  placeholder="Cari artikel..."
+                  placeholder="Cari..."
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="w-full py-2 pl-10 pr-4 text-text-main dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300 sm:w-32 md:w-40"
+                  className="w-full py-2 pl-10 pr-4 text-app-main bg-app-subtle border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all duration-300 sm:w-32 md:w-40"
                   aria-label="Cari artikel"
                 />
               </div>
@@ -85,7 +85,7 @@ const Header: React.FC = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               type="button"
-              className="bg-gray-100 dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-white hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 dark:focus:ring-offset-gray-800 focus:ring-white"
+              className="bg-app-subtle inline-flex items-center justify-center p-2 rounded-md text-app-muted hover:text-brand hover:bg-brand-subtle focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand"
               aria-controls="mobile-menu"
               aria-expanded={isMenuOpen}
             >
@@ -118,7 +118,7 @@ const Header: React.FC = () => {
                 placeholder="Cari artikel..."
                 value={searchQuery}
                 onChange={handleSearchChange}
-                className="w-full py-2 pl-10 pr-4 text-text-main dark:text-gray-200 bg-gray-100 dark:bg-gray-700 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                className="w-full py-2 pl-10 pr-4 text-app-main bg-app-subtle border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
                 aria-label="Cari artikel"
               />
             </div>

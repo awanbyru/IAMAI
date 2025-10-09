@@ -55,10 +55,10 @@ const GalleryPage: React.FC = () => {
       <Breadcrumbs items={breadcrumbItems} />
       <div className="space-y-8">
         <section className="text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary mb-2">
+          <h1 className="text-3xl sm:text-4xl font-bold text-app-main mb-2">
             Galeri Gambar AI
           </h1>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-app-muted max-w-2xl mx-auto">
             Koleksi gambar premium hasil buatan AI yang telah dikurasi. Klik pada gambar mana pun untuk melihat detail dan prompt yang digunakan.
           </p>
         </section>
@@ -71,8 +71,8 @@ const GalleryPage: React.FC = () => {
               onClick={() => setActiveFilter(category)}
               className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors duration-300 ${
                 activeFilter === category
-                  ? 'bg-secondary text-white'
-                  : 'bg-surface dark:bg-gray-800 text-text-main dark:text-gray-300 hover:bg-secondary/20'
+                  ? 'bg-brand text-white'
+                  : 'bg-app-surface text-app-main hover:bg-app-subtle border border-app-default'
               }`}
             >
               {category}
@@ -104,7 +104,7 @@ const GalleryPage: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-4">
                 <h3 className="text-white font-bold text-lg">{image.title}</h3>
-                <p className="text-secondary text-sm font-semibold">{image.category}</p>
+                <p className="text-brand text-sm font-semibold">{image.category}</p>
               </div>
             </div>
           ))}

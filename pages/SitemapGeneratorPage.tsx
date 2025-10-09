@@ -82,16 +82,16 @@ const SitemapGeneratorPage: React.FC = () => {
         <>
             <MetaTags title="Sitemap Generator" description="Halaman internal untuk membuat sitemap XML." noIndex />
             <Breadcrumbs items={breadcrumbItems} />
-            <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-                <h1 className="text-3xl font-bold mb-4">Sitemap Generator</h1>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">Berikut adalah konten sitemap.xml yang dihasilkan secara dinamis. Gunakan ini untuk memperbarui file `public/sitemap.xml`.</p>
-                <div className="relative bg-gray-100 dark:bg-gray-900/50 p-4 rounded-md border dark:border-gray-700">
-                    <pre className="text-sm font-mono whitespace-pre-wrap overflow-auto max-h-[60vh]">
+            <div className="max-w-4xl mx-auto bg-app-surface p-8 rounded-lg shadow-lg border border-app-default">
+                <h1 className="text-3xl font-bold mb-4 text-app-main">Sitemap Generator</h1>
+                <p className="text-app-muted mb-6">Berikut adalah konten sitemap.xml yang dihasilkan secara dinamis. Gunakan ini untuk memperbarui file `public/sitemap.xml`.</p>
+                <div className="relative bg-app-subtle p-4 rounded-md border border-app-default">
+                    <pre className="text-sm font-mono whitespace-pre-wrap overflow-auto max-h-[60vh] text-app-main">
                         <code>{sitemapContent}</code>
                     </pre>
                     <button
                         onClick={handleCopy}
-                        className="absolute top-2 right-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-secondary/20 hover:text-secondary transition-colors"
+                        className="absolute top-2 right-2 p-2 rounded-full bg-app-surface text-app-muted hover:bg-brand-subtle hover:text-brand transition-colors"
                         aria-label={copyStatus === 'idle' ? 'Salin sitemap' : 'Sitemap disalin'}
                     >
                        {copyStatus === 'idle' ? copyIcon : checkIcon}

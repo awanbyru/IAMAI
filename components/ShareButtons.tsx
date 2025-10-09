@@ -66,7 +66,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ url, title, shareText = "Ba
 
   return (
     <div className="flex items-center flex-wrap gap-2">
-      <h3 className="text-base font-semibold text-text-main dark:text-gray-200 mr-2">{shareText}</h3>
+      <h3 className="text-base font-semibold text-app-main mr-2">{shareText}</h3>
       {socialLinks.map(link => (
         <a
           key={link.name}
@@ -74,7 +74,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ url, title, shareText = "Ba
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Bagikan di ${link.name}`}
-          className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-secondary/20 hover:text-secondary transition-all duration-300"
+          className="flex items-center justify-center w-10 h-10 rounded-full bg-app-subtle text-app-muted hover:bg-brand-subtle hover:text-brand transition-all duration-300"
         >
           <span className="sr-only">Bagikan di {link.name}</span>
           {link.icon}
@@ -83,7 +83,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ url, title, shareText = "Ba
       <button
         onClick={handleCopy}
         aria-label={copyStatus === 'idle' ? 'Salin tautan' : 'Tautan disalin'}
-        className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-secondary/20 hover:text-secondary transition-all duration-300"
+        className="flex items-center justify-center w-10 h-10 rounded-full bg-app-subtle text-app-muted hover:bg-brand-subtle hover:text-brand transition-all duration-300"
       >
         <span className="sr-only">{copyStatus === 'idle' ? 'Salin tautan' : 'Tautan disalin'}</span>
         {copyStatus === 'idle' ? linkIcon : checkIcon}

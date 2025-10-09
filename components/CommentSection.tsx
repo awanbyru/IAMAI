@@ -78,32 +78,32 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
   }
 
   return (
-    <div className="border-t dark:border-gray-700 pt-8">
-      <h2 className="text-2xl font-bold text-text-main dark:text-gray-100 mb-6">Bergabung dalam Diskusi</h2>
+    <div className="border-t border-app-default pt-8">
+      <h2 className="text-2xl font-bold text-app-main mb-6">Bergabung dalam Diskusi</h2>
 
       {/* Comment Form */}
-      <form onSubmit={handleSubmit} className="mb-8 p-6 bg-gray-50 dark:bg-gray-900/50 rounded-lg border dark:border-gray-700 space-y-4">
+      <form onSubmit={handleSubmit} className="mb-8 p-6 bg-app-subtle rounded-lg border border-app-default space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nama Anda</label>
+          <label htmlFor="name" className="block text-sm font-medium text-app-muted mb-1">Nama Anda</label>
           <input
             type="text"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm dark:text-white dark:placeholder-gray-400"
+            className="w-full px-3 py-2 bg-app-surface border border-app-default rounded-md shadow-sm focus:outline-none focus:ring-brand focus:border-brand sm:text-sm"
             placeholder="contoh, Jane Doe"
             required
             aria-required="true"
           />
         </div>
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Komentar Anda</label>
+          <label htmlFor="message" className="block text-sm font-medium text-app-muted mb-1">Komentar Anda</label>
           <textarea
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={4}
-            className="w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm dark:text-white dark:placeholder-gray-400"
+            className="w-full px-3 py-2 bg-app-surface border border-app-default rounded-md shadow-sm focus:outline-none focus:ring-brand focus:border-brand sm:text-sm"
             placeholder="Bagikan pemikiran Anda..."
             required
             aria-required="true"
@@ -114,7 +114,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-secondary hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition-colors disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed"
+            className="inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-brand hover:bg-brand-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand transition-colors disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed"
           >
             {isSubmitting ? 'Mengirim...' : 'Kirim Komentar'}
           </button>
@@ -123,22 +123,22 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
 
       {/* Comments List */}
       <div className="space-y-6">
-        <h3 className="text-xl font-semibold text-text-main dark:text-gray-200">
+        <h3 className="text-xl font-semibold text-app-main">
           {comments.length} {comments.length === 1 ? 'Komentar' : 'Komentar'}
         </h3>
         {comments.length > 0 ? (
           comments.map((comment) => (
-            <div key={comment.id} className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg border dark:border-gray-700/50">
+            <div key={comment.id} className="p-4 bg-app-subtle rounded-lg border border-app-default">
               <div className="flex items-center justify-between mb-2">
-                <p className="font-bold text-text-main dark:text-gray-100">{comment.name}</p>
-                <p className="text-xs text-text-muted dark:text-gray-400">{formatDate(comment.date)}</p>
+                <p className="font-bold text-app-main">{comment.name}</p>
+                <p className="text-xs text-app-muted">{formatDate(comment.date)}</p>
               </div>
-              <p className="text-text-main dark:text-gray-300 whitespace-pre-wrap">{comment.message}</p>
+              <p className="text-app-main whitespace-pre-wrap">{comment.message}</p>
             </div>
           ))
         ) : (
-          <div className="text-center py-8 px-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg border dark:border-gray-700">
-            <p className="text-text-muted dark:text-gray-400">Belum ada komentar. Jadilah yang pertama membagikan pemikiran Anda!</p>
+          <div className="text-center py-8 px-4 bg-app-subtle rounded-lg border border-app-default">
+            <p className="text-app-muted">Belum ada komentar. Jadilah yang pertama membagikan pemikiran Anda!</p>
           </div>
         )}
       </div>

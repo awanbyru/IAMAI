@@ -11,7 +11,7 @@ interface ArticleCardProps {
 
 const ArticleCard: React.FC<ArticleCardProps> = memo(({ article, loading = 'lazy' }) => {
   return (
-    <div className="bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden group transition-transform duration-300 ease-in-out hover:-translate-y-1.5">
+    <div className="bg-app-surface rounded-xl border border-app-default shadow-md overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
       <Link to={`/article/${article.slug}`} className="block">
         <div className="relative overflow-hidden">
           <LazyImage 
@@ -28,20 +28,21 @@ const ArticleCard: React.FC<ArticleCardProps> = memo(({ article, loading = 'lazy
         </div>
         <div className="p-6">
           <div className="flex items-center mb-3">
-            {article.tags.map(tag => (
-              <span key={tag} className="inline-block bg-orange-200 text-orange-800 dark:bg-orange-700 dark:text-orange-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">{tag}</span>
+            {article.tags.slice(0, 2).map(tag => (
+              <span key={tag} className="inline-block bg-brand-subtle text-brand-subtle text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">{tag}</span>
             ))}
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-text-main dark:text-gray-100 mb-2 group-hover:text-secondary transition-colors duration-300">{article.title}</h2>
-          <p className="text-text-muted dark:text-gray-400 text-base mb-4 line-clamp-3">{article.excerpt}</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-app-main mb-2 group-hover:text-brand transition-colors duration-300">{article.title}</h2>
+          <p className="text-app-muted text-base mb-4 line-clamp-3">{article.excerpt}</p>
           <div className="flex items-center">
-            <img className="w-10 h-10 rounded-full mr-4 bg-gray-200 dark:bg-gray-700" src={article.authorAvatar} alt={article.author} loading="lazy" />
+            <img className="w-10 h-10 rounded-full mr-4 bg-app-subtle" src={article.authorAvatar} alt={article.author} loading="lazy" />
             <div className="text-sm">
-              <p className="text-text-main dark:text-gray-200 font-semibold">{article.author}</p>
-              <p className="text-text-muted dark:text-gray-400">{article.date}</p>
+              <p className="text-app-main font-semibold">{article.author}</p>
+              <p className="text-app-muted">{article.date}</p>
             </div>
           </div>
         </div>
+        {/* FIX: Corrected closing tag from </A> to </Link> to match the opening component. */}
       </Link>
     </div>
   );

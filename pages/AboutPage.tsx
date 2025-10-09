@@ -16,11 +16,11 @@ const AboutPage: React.FC = () => {
         canonicalUrl={`${window.location.origin}/about`}
       />
       <Breadcrumbs items={breadcrumbItems} />
-      <div className="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-primary dark:text-gray-100">Tentang IAMAI</h1>
+      <div className="max-w-3xl mx-auto bg-app-surface p-8 rounded-lg shadow-lg border border-app-default">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-app-main">Tentang IAMAI</h1>
         
-        <div className="prose prose-lg dark:prose-invert max-w-none space-y-6">
-          <p className="text-center text-xl text-gray-600 dark:text-gray-300">
+        <div className="prose prose-lg max-w-none space-y-6">
+          <p className="text-center text-xl text-app-muted">
             Menjelajahi batas-batas Kecerdasan Buatan, satu prompt pada satu waktu.
           </p>
 
@@ -45,7 +45,7 @@ const AboutPage: React.FC = () => {
             </p>
           </section>
 
-          <p className="text-center font-semibold pt-4 border-t dark:border-gray-600">
+          <p className="text-center font-semibold pt-4 border-t border-app-default">
               Terima kasih telah bergabung dengan kami dalam petualangan ini.
           </p>
         </div>

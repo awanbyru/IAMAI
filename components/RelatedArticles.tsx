@@ -29,11 +29,11 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ currentArticleSlug, t
   }
 
   return (
-    <div className="border-t dark:border-gray-700 pt-8 mt-8">
-      <h2 className="text-2xl font-bold text-text-main dark:text-gray-100 mb-6">Anda Mungkin Juga Suka</h2>
+    <div className="border-t border-app-default pt-8 mt-8">
+      <h2 className="text-2xl font-bold text-app-main mb-6">Anda Mungkin Juga Suka</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {related.map(article => (
-          <Link key={article.id} to={`/article/${article.slug}`} className="group block bg-gray-50 dark:bg-gray-900/50 rounded-lg overflow-hidden transition-shadow hover:shadow-lg">
+          <Link key={article.id} to={`/article/${article.slug}`} className="group block bg-app-subtle rounded-lg overflow-hidden transition-shadow hover:shadow-lg border border-app-default">
             <LazyImage
               src={article.imageUrl}
               srcset={generateSrcSet(article.imageUrl, [320, 480])}
@@ -43,8 +43,8 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ currentArticleSlug, t
               alt={article.title}
             />
             <div className="p-4">
-              <h3 className="font-bold text-text-main dark:text-gray-200 group-hover:text-secondary transition-colors duration-300 line-clamp-2">{article.title}</h3>
-              <p className="text-sm text-text-muted dark:text-gray-400 mt-2">{article.date}</p>
+              <h3 className="font-bold text-app-main group-hover:text-brand transition-colors duration-300 line-clamp-2">{article.title}</h3>
+              <p className="text-sm text-app-muted mt-2">{article.date}</p>
             </div>
           </Link>
         ))}

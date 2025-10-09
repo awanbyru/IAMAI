@@ -20,14 +20,14 @@ const CookieBanner: React.FC = () => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-primary/90 dark:bg-gray-900/90 backdrop-blur-sm text-white dark:text-gray-200 p-4 z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-app-surface/90 backdrop-blur-sm border-t border-app-default text-app-main p-4 z-50">
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-center sm:text-left">
+        <p className="text-sm text-center sm:text-left text-app-muted">
           Kami menggunakan cookie untuk meningkatkan pengalaman menjelajah Anda dan untuk analitik. Dengan terus menggunakan situs ini, Anda menyetujui penggunaan cookie kami.
         </p>
         <button
           onClick={handleAccept}
-          className="bg-secondary hover:bg-secondary/80 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex-shrink-0"
+          className="bg-brand hover:bg-brand-hover text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 flex-shrink-0"
         >
           Terima
         </button>

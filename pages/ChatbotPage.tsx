@@ -112,21 +112,21 @@ const ChatbotPage: React.FC = () => {
         canonicalUrl={`${window.location.origin}/chatbot`}
       />
       <Breadcrumbs items={breadcrumbItems} />
-      <div className="flex flex-col h-[70vh] max-w-3xl mx-auto bg-surface dark:bg-gray-800 rounded-lg shadow-xl border dark:border-gray-700">
+      <div className="flex flex-col h-[70vh] max-w-3xl mx-auto bg-app-surface shadow-xl border border-app-default rounded-lg">
         {/* Chat history */}
         <div ref={chatContainerRef} className="flex-1 p-6 space-y-4 overflow-y-auto">
           {history.map((msg, index) => (
             <div key={index} className={`flex items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}>
               {msg.role === 'model' && (
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-500 flex items-center justify-center">
                   <BotIcon/>
                 </div>
               )}
-              <div className={`max-w-md p-3 rounded-lg ${msg.role === 'user' ? 'bg-secondary text-white rounded-br-none' : 'bg-gray-200 dark:bg-gray-700 text-text-main dark:text-gray-200 rounded-bl-none'}`}>
+              <div className={`max-w-md p-3 rounded-lg ${msg.role === 'user' ? 'bg-brand text-white rounded-br-none' : 'bg-app-subtle text-app-main rounded-bl-none'}`}>
                 {msg.text ? <p className="whitespace-pre-wrap">{msg.text}</p> : <div className="typing-indicator"><span></span><span></span><span></span></div> }
               </div>
               {msg.role === 'user' && (
-                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
+                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand flex items-center justify-center">
                   <UserIcon />
                 </div>
               )}
@@ -136,7 +136,7 @@ const ChatbotPage: React.FC = () => {
         </div>
 
         {/* Input area */}
-        <div className="p-4 border-t dark:border-gray-700">
+        <div className="p-4 border-t border-app-default">
           <div className="relative">
             <input
               type="text"
@@ -145,18 +145,18 @@ const ChatbotPage: React.FC = () => {
               onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey ? (e.preventDefault(), handleSendMessage()) : null}
               placeholder="Ketik pesan Anda di sini..."
               disabled={isLoading}
-              className="w-full py-3 pl-4 pr-16 bg-gray-100 dark:bg-gray-700 border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300"
+              className="w-full py-3 pl-4 pr-16 bg-app-subtle border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all duration-300"
               aria-label="Pesan obrolan"
             />
             <button
               onClick={handleSendMessage}
               disabled={isLoading || !input.trim()}
-              className="absolute inset-y-1 right-1 flex items-center justify-center w-10 h-10 text-white bg-secondary rounded-full transform transition-transform duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed disabled:scale-100"
+              className="absolute inset-y-1 right-1 flex items-center justify-center w-10 h-10 text-white bg-brand rounded-full transform transition-transform duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed disabled:scale-100"
               aria-label="Kirim pesan"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
+               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+               </svg>
             </button>
           </div>
         </div>
