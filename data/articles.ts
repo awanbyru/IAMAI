@@ -4,6 +4,51 @@ const authorAvatar = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 
 export const articles: Article[] = [
   {
+    id: '31',
+    slug: 'dari-teks-ke-sinema-panduan-video-ai-veo',
+    title: 'Dari Teks ke Sinema: Panduan Praktis Membuat Video Pendek dengan AI Veo',
+    excerpt: 'Pernah bermimpi menjadi sutradara? Kini AI seperti Google Veo bisa mengubah skenario singkat Anda menjadi klip video sinematik. Pelajari cara menulis prompt video yang efektif, dari deskripsi visual hingga kontrol gaya dan gerakan kamera.',
+    summary: 'Tutorial langkah demi langkah tentang cara menggunakan model AI video generatif seperti Google Veo. Artikel ini membedah elemen-elemen kunci dari prompt video yang sukses, termasuk deskripsi adegan, spesifikasi gaya visual (sinematik, animasi), dan perintah gerakan kamera (pan, zoom) untuk menghasilkan klip video pendek berkualitas tinggi dari input teks.',
+    type: 'howto',
+    content: [
+      'Era di mana pembuatan video membutuhkan tim, peralatan mahal, dan waktu berhari-hari akan segera berubah. Selamat datang di revolusi teks-ke-video, di mana imajinasi Anda, yang diungkapkan melalui kata-kata, menjadi satu-satunya prasyarat. Teknologi AI generatif seperti Google Veo kini memungkinkan kita untuk menyutradarai klip sinematik langsung dari sebuah prompt.',
+      'Namun, menulis prompt untuk video berbeda dengan gambar. Kita tidak hanya mendeskripsikan adegan statis; kita mendeskripsikan **gerakan, waktu, dan narasi**. Sebuah prompt video yang hebat adalah gabungan dari skenario, arahan sinematografi, dan penataan gaya visual dalam satu perintah yang ringkas.',
+      '**Anatomi Prompt Video yang Efektif**',
+      'Untuk mengubah ide Anda menjadi klip yang bergerak, prompt Anda harus mencakup beberapa elemen inti:',
+      '1.  **Subjek dan Aksi:** Siapa atau apa tokoh utamanya? Apa yang sedang mereka lakukan? Jadilah sejelas mungkin. "Seekor naga" bagus, tetapi "Seekor naga cyberpunk megah dengan sirkuit neon di sisiknya terbang" jauh lebih baik.',
+      '2.  **Latar dan Lingkungan:** Di mana adegan ini berlangsung? Detail lingkungan memberikan konteks dan kedalaman. "Di sebuah kota" menjadi "melalui kota futuristik di malam hari, gedung pencakar langit yang basah oleh hujan memantulkan lampu kota."',
+      '3.  **Gaya Visual dan Kualitas:** Ini menentukan estetika keseluruhan. Gunakan kata kunci yang kuat seperti `photorealistic`, `8k`, `cinematic`, `anime style`, `claymation`, atau `vintage 35mm film`.',
+      '4.  **Gerakan Kamera (Kunci Utama):** Inilah yang membedakan video dari gambar. Perintah gerakan kamera memberi tahu AI cara "merekam" adegan tersebut. Beberapa perintah penting:',
+      '  - **`Camera slowly pans right`**: Kamera bergerak horizontal ke kanan.',
+      '  - **`Zoom in on the subject`**: Kamera mendekat ke subjek.',
+      '  - **`Drone shot flying over the landscape`**: Pengambilan gambar dari atas seperti drone.',
+      '  - **`Crane shot moving up`**: Kamera bergerak ke atas secara vertikal.',
+      '5.  **Atmosfer dan Pencahayaan:** Bagaimana nuansa adegannya? Gunakan `dramatic lighting`, `eerie atmosphere`, `warm golden hour light` untuk mengatur mood.',
+      'IMG:https://picsum.photos/seed/ai-video-prompt-elements/800/350|Visualisasi elemen-elemen kunci dalam sebuah prompt video: Subjek, Aksi, Latar, dan Gerakan Kamera.',
+      '**Contoh Prompt yang Dipecah:**',
+      'Mari kita gabungkan semua elemen tersebut menjadi satu prompt yang kuat:',
+      `JSON_PROMPT:${'A majestic cyberpunk dragon with neon circuits on its scales is flying through a futuristic city at night. Rain-slicked skyscrapers reflect the vibrant city lights.\n\n**Style:** Photorealistic, 8k, cinematic, high detail.\n**Camera Movement:** The camera slowly pans to the right, following the dragon\'s flight path.\n**Atmosphere:** Moody, atmospheric, Blade Runner inspired.'}`,
+      '**Kesimpulan: Anda adalah Sutradaranya**',
+      'Teknologi teks-ke-video masih dalam tahap awal, tetapi perkembangannya sangat pesat. Dengan memahami cara menyusun prompt yang efektif, Anda tidak lagi hanya menjadi penonton. Anda menjadi penulis, sinematografer, dan sutradara dari cerita visual Anda sendiri. Era baru dalam penceritaan telah dimulai, dan kanvasnya tidak terbatas.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/text-to-video-ai/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '15 Oktober 2025',
+    claps: 120,
+    tags: ['Video Generatif', 'AI Video', 'Veo', 'Prompt Engineering', 'Tutorial'],
+    faq: [
+        {
+          question: "Berapa lama waktu yang dibutuhkan untuk membuat video dengan AI?",
+          answer: "Waktunya dapat bervariasi, mulai dari beberapa menit untuk klip pendek hingga lebih lama untuk adegan yang kompleks atau beresolusi sangat tinggi. Seiring perkembangan teknologi, waktu proses ini terus menjadi lebih cepat."
+        },
+        {
+          question: "Apakah saya bisa menambahkan musik atau suara langsung dari prompt?",
+          answer: "Saat ini, sebagian besar model AI video fokus pada pembuatan visual. Audio, musik, dan efek suara biasanya ditambahkan pada tahap pasca-produksi menggunakan software video editing. Namun, beberapa model eksperimental sudah mulai mengintegrasikan pembuatan suara."
+        }
+    ]
+  },
+  {
     id: '30',
     slug: 'bedah-prompt-lofi-realisme-wajah-dan-surealisme-ruang',
     title: 'Bedah Prompt Lo-Fi: Memadukan Realisme Wajah dan Surealisme Ruang',
@@ -828,7 +873,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
       'Hambatan untuk masuk ke pengembangan perangkat lunak secara tradisional tinggi. AI sedang mengubah paradigma itu. Kami mengujinya: bisakah kami membangun aplikasi seluler fungsional untuk kedai kopi dalam satu jam hanya dengan menggunakan alat AI?',
       'Senjata rahasianya adalah kombinasi model bahasa besar untuk logika dan pembuatan kode, dan pembangun visual AI untuk UI. Kami memulai dengan memberikan prompt sederhana kepada AI: `Design a clean, modern, and intuitive UI for a coffee shop\'s mobile ordering app. The color palette should be earthy tones (browns, greens, creams). Key screens: a welcoming home screen featuring a hero image of artisan coffee, a scrollable menu, and a simple checkout process. Use a sans-serif font like Inter. Provide a component breakdown in Figma style.`',
       'Dalam beberapa menit, kami memiliki desain UI lengkap. Selanjutnya, kami beralih ke logika. `Generate the React Native code using TypeScript and Expo for the screens designed. Use functional components and hooks. The menu data should be fetched from a mock JSON API. The order form state should be managed with \`useState\`. On submission, compile the order details into a JSON object and log it.`',
-      'AI menghasilkan kode dengan akurasi yang luar biasa. Setelah beberapa penyesuaian kecil, kami memiliki prototipe yang berfungsi. Meskipun belum siap produksi, kecepatan dari ide ke produk nyata sangat mencengangkan. Alur kerja ini mewakili masa depan prototipe cepat.'
+      'AI menghasilkan kode dengan akurasi yang luar biasa. Setelah beberapa penyesuian kecil, kami memiliki prototipe yang berfungsi. Meskipun belum siap produksi, kecepatan dari ide ke produk nyata sangat mencengangkan. Alur kerja ini mewakili masa depan prototipe cepat.'
     ],
     imageUrl: 'https://picsum.photos/seed/mobile-app-in-1-hour-ai-trick/800/400',
     author: 'awanbyru',

@@ -42,7 +42,6 @@ const ArticleCard: React.FC<ArticleCardProps> = memo(({ article, loading = 'lazy
             </div>
           </div>
         </div>
-        {/* FIX: Corrected closing tag from </A> to </Link> to match the opening component. */}
       </Link>
     </div>
   );
