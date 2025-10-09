@@ -70,6 +70,11 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
     setTag('meta', 'property', 'og:title', 'content', fullTitle);
     setTag('meta', 'property', 'og:description', 'content', description);
     setTag('meta', 'property', 'og:image', 'content', absoluteImageUrl);
+    if (absoluteImageUrl.startsWith('https://')) {
+      setTag('meta', 'property', 'og:image:secure_url', 'content', absoluteImageUrl);
+    } else {
+      removeTag('meta', 'property', 'og:image:secure_url');
+    }
     setTag('meta', 'property', 'og:image:type', 'content', imageType);
     if (finalImageDimensions) {
         setTag('meta', 'property', 'og:image:width', 'content', finalImageDimensions.width.toString());
