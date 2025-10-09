@@ -1,65 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-    rootMargin?: string;
-    loading?: 'lazy' | 'eager';
-    fetchPriority?: 'high' | 'low' | 'auto';
     placeholderSrc?: string;
 }
 
-const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, rootMargin = '200px', loading = 'lazy', fetchPriority = 'auto', placeholderSrc, ...props }) => {
+const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, loading = 'lazy', placeholderSrc, ...props }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
-    const [imageSrc, setImageSrc] = useState<string | undefined>(loading === 'eager' ? src : undefined);
-    const imageRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        // Reset state for new src and handle eager loading
-        setIsLoaded(false);
-        setHasError(false);
-        setImageSrc(loading === 'eager' ? src : undefined);
-    }, [src, loading]);
-
-    useEffect(() => {
-        if (loading === 'eager' || imageSrc) {
-            return;
-        }
-
-        let observer: IntersectionObserver;
-        const currentRef = imageRef.current;
-
-        if (currentRef) {
-            observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            setImageSrc(src);
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                },
-                { rootMargin }
-            );
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            if (observer && currentRef) {
-                observer.unobserve(currentRef);
-            }
-        };
-    }, [src, imageSrc, rootMargin, loading]);
-    
-    const handleLoad = () => {
-        setIsLoaded(true);
-    };
-    
-    const handleError = () => {
-        setHasError(true);
-    };
+    const handleLoad = () => setIsLoaded(true);
+    const handleError = () => setHasError(true);
 
     return (
-        <div ref={imageRef} className={`${className} relative bg-gray-200 dark:bg-gray-700 overflow-hidden`}>
+        <div className={`${className} relative bg-gray-200 dark:bg-gray-700 overflow-hidden`}>
             {/* Placeholder Layer */}
             {!hasError && !isLoaded && (
                 placeholderSrc ? (
@@ -75,19 +28,16 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, rootMargin =
             )}
 
             {/* Main Image Layer */}
-            {imageSrc && (
-                <img
-                    src={imageSrc}
-                    alt={alt}
-                    onLoad={handleLoad}
-                    onError={handleError}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded && !hasError ? 'opacity-100' : 'opacity-0'}`}
-                    loading={loading}
-                    decoding="async"
-                    fetchPriority={fetchPriority}
-                    {...props}
-                />
-            )}
+            <img
+                src={src}
+                alt={alt}
+                onLoad={handleLoad}
+                onError={handleError}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${isLoaded && !hasError ? 'opacity-100' : 'opacity-0'}`}
+                loading={loading}
+                decoding="async"
+                {...props}
+            />
             
             {/* Error Layer */}
             {hasError && (

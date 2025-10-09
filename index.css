@@ -121,6 +121,7 @@ body {
 .line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 
-/* 3. Full TailwindCSS v3.4.1 - Minified */
-/* A proper build step would purge this to only include used classes. For this simulation, the full library is included. */
-@import "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css";
+/*
+  The full TailwindCSS library is now loaded via <link> in index.html instead of @import here.
+  This allows for asynchronous loading and better performance.
+*/

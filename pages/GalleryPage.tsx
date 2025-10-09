@@ -3,6 +3,7 @@ import { GalleryImage } from '../types';
 import MetaTags from '../components/MetaTags';
 import Breadcrumbs from '../components/Breadcrumbs';
 import LazyImage from '../components/LazyImage';
+import { generateSrcSet } from '../utils/imageUtils';
 
 const ImageModal = lazy(() => import('../components/ImageModal'));
 
@@ -93,6 +94,8 @@ const GalleryPage: React.FC = () => {
             >
               <LazyImage
                 src={image.imageUrl}
+                srcset={generateSrcSet(image.imageUrl, [300, 450, 600])}
+                sizes="(max-width: 639px) 90vw, (max-width: 767px) 45vw, (max-width: 1023px) 30vw, 22vw"
                 alt={image.title} 
                 className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
                 loading={index < 4 ? 'eager' : 'lazy'}

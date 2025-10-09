@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { articles } from '../data/articles';
 import LazyImage from './LazyImage';
-import { generatePlaceholderSrc } from '../utils/imageUtils';
+import { generatePlaceholderSrc, generateSrcSet } from '../utils/imageUtils';
 
 interface RelatedArticlesProps {
   currentArticleSlug: string;
@@ -36,6 +36,8 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ currentArticleSlug, t
           <Link key={article.id} to={`/article/${article.slug}`} className="group block bg-gray-50 dark:bg-gray-900/50 rounded-lg overflow-hidden transition-shadow hover:shadow-lg">
             <LazyImage
               src={article.imageUrl}
+              srcset={generateSrcSet(article.imageUrl, [320, 480])}
+              sizes="(max-width: 639px) 90vw, 45vw"
               placeholderSrc={generatePlaceholderSrc(article.imageUrl)}
               className="w-full h-40 object-cover"
               alt={article.title}

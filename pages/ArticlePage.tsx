@@ -8,7 +8,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import LazyImage from '../components/LazyImage';
 import { parseIndonesianDate } from '../utils/dateUtils';
 import ShareButtons from '../components/ShareButtons';
-import { generatePlaceholderSrc } from '../utils/imageUtils';
+import { generatePlaceholderSrc, generateSrcSet } from '../utils/imageUtils';
 import RelatedArticles from '../components/RelatedArticles';
 
 const ArticlePage: React.FC = () => {
@@ -330,7 +330,9 @@ const ArticlePage: React.FC = () => {
           <article className="bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
             <header>
               <LazyImage 
-                src={article.imageUrl} 
+                src={article.imageUrl}
+                srcset={generateSrcSet(article.imageUrl)}
+                sizes="100vw"
                 alt={article.title} 
                 className="w-full h-64 md:h-96 object-cover"
                 loading="eager"

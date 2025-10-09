@@ -25,3 +25,31 @@ export const generatePlaceholderSrc = (src: string): string | undefined => {
     // For other image sources, we can't generate a placeholder this way.
     return undefined;
 };
+
+export const generateSrcSet = (src: string, widths: number[] = [320, 480, 800, 1200]): string | undefined => {
+    if (src && src.includes('picsum.photos/seed/')) {
+        const parts = src.split('/');
+        if (parts.length > 2) {
+            const widthIndex = parts.length - 2;
+            const heightIndex = parts.length - 1;
+            
+            const originalWidth = parseInt(parts[widthIndex], 10);
+            const originalHeight = parseInt(parts[heightIndex], 10);
+            
+            if (!isNaN(originalWidth) && !isNaN(originalHeight) && originalWidth > 0 && originalHeight > 0) {
+                const aspectRatio = originalHeight / originalWidth;
+                return widths
+                    .filter(w => w <= originalWidth) // Only generate smaller or equal sizes
+                    .map(w => {
+                        const h = Math.round(w * aspectRatio);
+                        const newParts = [...parts];
+                        newParts[widthIndex] = w.toString();
+                        newParts[heightIndex] = h.toString();
+                        return `${newParts.join('/')} ${w}w`;
+                    })
+                    .join(', ');
+            }
+        }
+    }
+    return undefined;
+};

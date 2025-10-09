@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { Article } from '../types';
 import LazyImage from './LazyImage';
-import { generatePlaceholderSrc } from '../utils/imageUtils';
+import { generatePlaceholderSrc, generateSrcSet } from '../utils/imageUtils';
 
 interface ArticleCardProps {
   article: Article;
@@ -16,6 +16,8 @@ const ArticleCard: React.FC<ArticleCardProps> = memo(({ article, loading = 'lazy
         <div className="relative overflow-hidden">
           <LazyImage 
             src={article.imageUrl}
+            srcset={generateSrcSet(article.imageUrl)}
+            sizes="(max-width: 767px) 100vw, 50vw"
             placeholderSrc={generatePlaceholderSrc(article.imageUrl)}
             className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out" 
             alt={article.title}
