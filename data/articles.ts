@@ -4,6 +4,74 @@ const authorAvatar = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 
 export const articles: Article[] = [
   {
+    id: '30',
+    slug: 'bedah-prompt-lofi-realisme-wajah-dan-surealisme-ruang',
+    title: 'Bedah Prompt Lo-Fi: Memadukan Realisme Wajah dan Surealisme Ruang',
+    excerpt: 'Bagaimana cara mempertahankan wajah asli seseorang dalam sebuah karya seni AI yang sureal? Kita akan membedah sebuah prompt canggih dari Winda Azizah yang berhasil mengunci realisme subjek sambil membangun dunia mimpi lo-fi yang melayang di antara awan.',
+    summary: 'Analisis mendalam tentang teknik prompt image-to-image yang menggabungkan instruksi ketat untuk mempertahankan 100% kemiripan subjek dengan foto referensi, sambil menempatkannya dalam lingkungan sureal (bingkai jendela melayang). Artikel ini membahas kontrol estetika lo-fi, pencahayaan pastel, dan peran penting prompt negatif.',
+    type: 'howto',
+    content: [
+      'Dalam dunia seni AI, salah satu tantangan terbesar adalah mengendalikan hasil agar sesuai dengan visi yang sangat spesifik, terutama ketika melibatkan wajah manusia. Kita sering ingin mempertahankan identitas seseorang sambil menempatkan mereka dalam skenario yang imajinatif. Hari ini, kita akan membedah sebuah prompt luar biasa yang ditulis oleh **Winda Azizah** (<a href="https://www.facebook.com/share/168VX2P9YD/" target="_blank" rel="noopener noreferrer">sumber</a>), yang dengan mahir memadukan fotorealisme subjek dengan dunia mimpi yang lembut dan sureal.',
+      'Prompt ini adalah contoh sempurna tentang bagaimana memberikan instruksi berlapis kepada AI untuk menciptakan gambar yang seimbang antara yang nyata dan yang tidak nyata.',
+      '**Prompt Inti: Mengunci Realisme sebagai Jangkar**',
+      'Bagian pertama dari prompt ini adalah yang paling krusial. Ini bertindak sebagai jangkar yang tidak bisa ditawar oleh AI:',
+      '`... a photorealistic hijabi woman based on the uploaded reference photo — her face, outfit, pose, and body must remain 100% accurate and unchanged.`',
+      'Perhatikan ketegasannya: "must remain 100% accurate and unchanged". Ini adalah perintah absolut. Saat menggunakan gambar referensi (image-to-image), instruksi seperti ini memberi tahu AI bahwa prioritas utamanya adalah mempertahankan integritas subjek. Tanpa perintah sekuat ini, AI mungkin akan mengambil "inspirasi" dari wajah tersebut dan mengubahnya agar sesuai dengan estetika keseluruhan, yang seringkali tidak kita inginkan.',
+      '**Membangun Dunia Sureal: Bingkai Jendela di Langit**',
+      'Setelah jangkar realisme ditetapkan, prompt mulai membangun elemen sureal di sekitarnya:',
+      '`She is sitting naturally on the edge of a floating window frame... as if resting in mid-air among the clouds.`',
+      'Di sinilah kejeniusan prompt ini terlihat. Ia menciptakan kontras yang indah: seorang wanita yang sangat nyata dalam pose yang santai, ditempatkan dalam situasi yang mustahil. Detail tentang warna bingkai (`lavender purple with soft pastel pink undertones`) dan awan (`light pink and white clouds`) mulai membangun palet warna mimpi yang akan mendominasi gambar.',
+      '**Menyutradarai Estetika dan Atmosfer**',
+      'Sebuah prompt yang hebat tidak hanya memberi tahu AI *apa* yang harus digambar, tetapi juga *bagaimana* rasanya. Perhatikan kata kunci yang membangun suasana:',
+      '  - **Estetika Umum:** `minimalist lo-fi art photography`, `cinematic pastel palette`.',
+      '  - **Pencahayaan:** `diffused and warm`, `dreamy, ethereal atmosphere`.',
+      '  - **Tekstur:** `faint film grain and hazy texture for the lo-fi aesthetic`.',
+      'Kata-kata ini adalah kuas sang seniman. Mereka mengarahkan AI untuk tidak hanya membuat gambar, tetapi juga untuk menciptakan mood yang spesifik—tenang, lembut, dan sedikit nostalgia, yang merupakan ciri khas estetika lo-fi.',
+      'IMG:https://picsum.photos/seed/lofi-window-dream/800/350|Visualisasi suasana lo-fi dengan palet warna pastel dan tekstur grainy.',
+      '**Integrasi Halus dan Prompt Negatif**',
+      'Untuk membuat komposisi terasa padu, prompt menambahkan detail halus: `Soft reflections of purple light from the window frame touch the edge of her outfit and hijab`. Ini adalah instruksi tingkat lanjut yang meminta AI untuk memikirkan bagaimana cahaya berinteraksi antar elemen, membuat subjek terasa benar-benar "berada" di dalam adegan sureal tersebut.',
+      'Terakhir, prompt negatif bertindak sebagai penjaga kualitas:',
+      '`**Negative Prompt:** distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh lighting...`',
+      'Ini adalah jaring pengaman. Ini secara eksplisit melarang AI melakukan kesalahan umum seperti mengubah pakaian, membuka rambut, atau menggunakan pencahayaan yang salah, yang semakin memperkuat instruksi utama.',
+      '**Prompt Lengkap:**',
+      `JSON_PROMPT:${`A minimalist lo-fi art photography scene featuring a **photorealistic hijabi woman** based on the uploaded reference photo — her **face, outfit, pose, and body must remain 100% accurate and unchanged**.
+She is **sitting naturally on the edge of a floating window frame**, her posture relaxed and balanced, one leg slightly bent and the other gently extended outside the frame, as if resting in mid-air among the clouds.
+The **window frame** is elegant **lavender purple with soft pastel pink undertones**, harmonizing with the soft sky background.
+Surround the window with **light pink and white clouds**, glowing softly with cinematic pastel light.
+
+The woman’s hijab fully covers her hair, and her outfit exactly matches the reference image — modest, detailed, and realistic in texture.
+Her expression remains gentle and contemplative, looking outward toward a tranquil blue-and-lavender sky.
+
+Lighting is diffused and warm, creating a dreamy, ethereal atmosphere.
+Add faint film grain and hazy texture for the lo-fi aesthetic.
+Soft reflections of purple light from the window frame touch the edge of her outfit and hijab, blending her naturally into the dreamy environment.
+
+**Style:** minimalist lo-fi aesthetic photography, pastel cinematic palette, ultra-realistic lighting and texture, fine-art 8K quality, serene atmosphere, balanced composition.
+
+🩵 **Negative Prompt (recommended):**
+
+distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh lighting, unrealistic proportion, blurry face, body alteration, oversaturation, cartoon effect.`}`,
+      '**Kesimpulan: Harmoni antara Realitas dan Imajinasi**',
+      'Prompt ini adalah masterclass dalam kontrol. Ia mengajarkan kita bahwa untuk menciptakan surealisme yang berdampak, kita seringkali membutuhkan jangkar realitas yang kuat. Dengan memberikan perintah yang tegas untuk mempertahankan subjek, lalu dengan hati-hati membangun dunia imajinatif di sekitarnya dan menyempurnakannya dengan estetika yang spesifik, kita dapat memandu AI untuk menghasilkan karya seni yang personal, indah, dan benar-benar unik. Terima kasih kepada Winda Azizah yang telah membagikan proses kreatifnya.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/bedah-prompt-lofi-hijab/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '09 Oktober 2025',
+    claps: 189,
+    tags: ['Prompt Engineering', 'Lo-Fi', 'Image to Image', 'Surealisme', 'Tutorial'],
+    faq: [
+        {
+          question: "Apa itu prompt 'image-to-image'?",
+          answer: "Prompt image-to-image adalah teknik di mana Anda memberikan gambar referensi kepada AI sebagai titik awal, selain prompt teks. Ini memungkinkan AI untuk menggunakan komposisi, warna, atau subjek dari gambar Anda dan mengubahnya berdasarkan instruksi teks, seperti mengubah gaya atau menambahkan elemen baru."
+        },
+        {
+          question: "Mengapa penting untuk memberikan instruksi '100% akurat' saat menggunakan foto wajah?",
+          answer: "Tanpa instruksi yang sangat spesifik dan tegas seperti '100% akurat dan tidak berubah', banyak model AI cenderung 'menginterpretasikan' wajah referensi. Mereka mungkin mengubah fitur agar lebih sesuai dengan gaya artistik yang diminta. Perintah tegas memastikan AI memprioritaskan pelestarian identitas subjek di atas segalanya."
+        }
+    ]
+  },
+  {
     id: '29',
     slug: 'bedah-prompt-json-legenda-roro-mendhut',
     title: 'Bedah Prompt JSON: Membangkitkan Legenda Roro Mendhut dengan Struktur dan Surealisme',

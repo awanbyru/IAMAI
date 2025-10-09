@@ -2,6 +2,29 @@ import { Prompt } from '../types';
 
 export const prompts: Prompt[] = [
   {
+    id: 'p41',
+    title: 'Wanita Hijab Lo-fi di Jendela Terapung',
+    description: 'Menciptakan adegan sureal seorang wanita hijab fotorealistik yang duduk di bingkai jendela melayang di antara awan, dengan estetika lo-fi dan palet pastel. Mempertahankan 100% kemiripan wajah dari foto referensi.',
+    prompt: `A minimalist lo-fi art photography scene featuring a **photorealistic hijabi woman** based on the uploaded reference photo — her **face, outfit, pose, and body must remain 100% accurate and unchanged**.
+She is **sitting naturally on the edge of a floating window frame**, her posture relaxed and balanced, one leg slightly bent and the other gently extended outside the frame, as if resting in mid-air among the clouds.
+The **window frame** is elegant **lavender purple with soft pastel pink undertones**, harmonizing with the soft sky background.
+Surround the window with **light pink and white clouds**, glowing softly with cinematic pastel light.
+
+The woman’s hijab fully covers her hair, and her outfit exactly matches the reference image — modest, detailed, and realistic in texture.
+Her expression remains gentle and contemplative, looking outward toward a tranquil blue-and-lavender sky.
+
+Lighting is diffused and warm, creating a dreamy, ethereal atmosphere.
+Add faint film grain and hazy texture for the lo-fi aesthetic.
+Soft reflections of purple light from the window frame touch the edge of her outfit and hijab, blending her naturally into the dreamy environment.
+
+**Style:** minimalist lo-fi aesthetic photography, pastel cinematic palette, ultra-realistic lighting and texture, fine-art 8K quality, serene atmosphere, balanced composition.
+
+🩵 **Negative Prompt (recommended):**
+
+distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh lighting, unrealistic proportion, blurry face, body alteration, oversaturation, cartoon effect.`,
+    category: 'Seni',
+  },
+  {
     id: 'p40',
     title: 'Konsep Seni Makhluk Fantasi',
     description: 'Merancang konsep seni yang detail untuk makhluk fantasi orisinal, cocok untuk inspirasi game atau cerita.',
