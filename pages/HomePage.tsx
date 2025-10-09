@@ -1,14 +1,11 @@
-import React, { useMemo, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
+import React, { useMemo } from 'react';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import { useSearch } from '../context/SearchContext';
 import { articles } from '../data/articles';
 import MetaTags from '../components/MetaTags';
 import LazyImage from '../components/LazyImage';
-import { parseIndonesianDate } from '../utils/dateUtils';
-import { generatePlaceholderSrc } from '../utils/imageUtils';
-
 
 const HomePage: React.FC = () => {
   const { searchQuery } = useSearch();
@@ -25,108 +22,46 @@ const HomePage: React.FC = () => {
     );
   }, [searchQuery]);
 
-  const showHero = !searchQuery.trim() && displayedArticles.length > 0;
-  const heroArticle = showHero ? displayedArticles[0] : null;
-  const articlesForGrid = showHero ? displayedArticles.slice(1) : displayedArticles;
-
-  useEffect(() => {
-    if (heroArticle) {
-      const scriptId = 'hero-article-schema';
-      let script = document.getElementById(scriptId) as HTMLScriptElement;
-      if (!script) {
-          script = document.createElement('script');
-          script.id = scriptId;
-          script.type = 'application/ld+json';
-          document.head.appendChild(script);
-      }
-
-      const articleSchema = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": heroArticle.title,
-        "author": {
-            "@type": "Person",
-            "name": heroArticle.author
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "IAMAI - awanbyru",
-          "logo": {
-              "@type": "ImageObject",
-              "url": `${window.location.origin}/icon-512.png`
-          }
-        },
-        "image": heroArticle.imageUrl,
-        "datePublished": parseIndonesianDate(heroArticle.date).toISOString(),
-        "description": heroArticle.excerpt,
-        "mainEntityOfPage": `${window.location.origin}/article/${heroArticle.slug}`
-      };
-
-      script.textContent = JSON.stringify(articleSchema);
-
-      return () => {
-        const scriptElement = document.getElementById(scriptId);
-        if (scriptElement) {
-            scriptElement.remove();
-        }
-      }
-    }
-  }, [heroArticle]);
-
   return (
     <>
       <MetaTags
-        title={heroArticle ? heroArticle.title : "IAMAI - awanbyru"}
-        description={heroArticle ? heroArticle.excerpt : "Jelajahi dunia AI dan rekayasa prompt. Temukan artikel menarik, koleksi gambar AI premium, dan panduan ahli untuk meningkatkan kreativitas dan produktivitas Anda."}
+        title="IAMAI - awanbyru | Blog AI & Prompting"
+        description="Jelajahi dunia AI dan rekayasa prompt. Temukan artikel menarik, koleksi gambar AI premium, dan panduan ahli untuk meningkatkan kreativitas dan produktivitas Anda."
         canonicalUrl={`${window.location.origin}/`}
-        imageUrl={heroArticle?.imageUrl}
-        imageDimensions={heroArticle ? { width: 800, height: 400 } : undefined}
+        imageUrl="/hero-bg.png"
+        imageDimensions={{ width: 1280, height: 720 }}
       />
       <div className="space-y-12">
-        {/* Hero Section */}
-        {heroArticle && (
-          <section className="group">
-            <Link to={`/article/${heroArticle.slug}`}>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center bg-surface dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-shadow hover:shadow-2xl">
-                <div className="relative h-64 lg:h-full">
+        {/* New Hero Section */}
+        {!searchQuery.trim() && (
+          <section className="relative rounded-xl shadow-lg overflow-hidden text-white text-center py-20 px-6">
+              <div className="absolute inset-0">
                   <LazyImage 
-                    src={heroArticle.imageUrl} 
-                    alt={heroArticle.title} 
-                    className="absolute h-full w-full object-cover"
-                    loading="eager"
-                    fetchPriority="high"
-                    placeholderSrc={generatePlaceholderSrc(heroArticle.imageUrl)}
+                      src="/hero-bg.png" 
+                      alt="awanbyru Blog AI & Prompting" 
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                      fetchPriority="high"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
-                </div>
-                <div className="p-6 md:p-10 order-first lg:order-last">
-                  <span className="inline-block bg-secondary text-white text-xs font-semibold mb-2 px-2.5 py-1 rounded-full">
-                    Unggulan
-                  </span>
-                  <h2 className="text-3xl sm:text-4xl font-bold text-text-main dark:text-gray-100 group-hover:text-secondary transition-colors duration-300 mb-4">
-                    {heroArticle.title}
-                  </h2>
-                  <p className="text-text-muted dark:text-gray-400 text-lg line-clamp-3 mb-6">
-                    {heroArticle.excerpt}
-                  </p>
-                  <div className="flex items-center">
-                    <img className="w-12 h-12 rounded-full mr-4 bg-gray-200" src={heroArticle.authorAvatar} alt={heroArticle.author} loading="lazy" />
-                    <div>
-                      <p className="font-semibold text-text-main dark:text-gray-200">{heroArticle.author}</p>
-                      <p className="text-sm text-text-muted dark:text-gray-400">{heroArticle.date}</p>
-                    </div>
-                  </div>
-                </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
               </div>
-            </Link>
+              <div className="relative z-10">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                      IAMAI - awanbyru
+                  </h1>
+                  <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+                      Menjelajahi batas-batas Kecerdasan Buatan, satu prompt pada satu waktu.
+                  </p>
+              </div>
           </section>
         )}
+
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {articlesForGrid.map((article, index) => (
+              {displayedArticles.map((article, index) => (
                 <ArticleCard 
                   key={article.id} 
                   article={article} 
