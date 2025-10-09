@@ -1,4 +1,5 @@
 
+
 import React, { useMemo } from 'react';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
@@ -28,8 +29,8 @@ const HomePage: React.FC = () => {
         title="IAMAI - awanbyru | Blog AI & Prompting"
         description="Jelajahi dunia AI dan rekayasa prompt. Temukan artikel menarik, koleksi gambar AI premium, dan panduan ahli untuk meningkatkan kreativitas dan produktivitas Anda."
         canonicalUrl={`${window.location.origin}/`}
-        imageUrl="/hero-bg.png"
-        imageDimensions={{ width: 1280, height: 720 }}
+        imageUrl="/icon-512.png"
+        imageDimensions={{ width: 512, height: 512 }}
       />
       <div className="space-y-12">
         {/* New Hero Section */}
@@ -37,7 +38,7 @@ const HomePage: React.FC = () => {
           <section className="relative rounded-xl shadow-lg overflow-hidden text-white text-center py-20 px-6">
               <div className="absolute inset-0">
                   <LazyImage 
-                      src="/hero-bg.png" 
+                      src="/icon-512.png" 
                       alt="awanbyru Blog AI & Prompting" 
                       className="w-full h-full object-cover"
                       loading="eager"
