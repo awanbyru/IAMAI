@@ -83,6 +83,7 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
         removeTag('meta', 'property', 'og:image:width');
         removeTag('meta', 'property', 'og:image:height');
     }
+    setTag('meta', 'property', 'og:image:alt', 'content', title);
     setTag('meta', 'property', 'og:url', 'content', finalCanonicalUrl);
     setTag('meta', 'property', 'og:site_name', 'content', siteName);
     setTag('meta', 'property', 'og:type', 'content', ogType);
