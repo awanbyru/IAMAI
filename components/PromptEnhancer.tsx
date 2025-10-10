@@ -13,13 +13,19 @@ const PromptEnhancer: React.FC = () => {
             setError('Silakan masukkan ide prompt Anda.');
             return;
         }
+
+        if (!process.env.API_KEY) {
+            setError('Kunci API tidak dikonfigurasi. Fitur ini tidak tersedia saat ini.');
+            return;
+        }
+        
         setIsLoading(true);
         setError('');
         setGeneratedJson('');
         setCopyStatus('idle');
 
         try {
-            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
             const systemInstruction = "You are an expert prompt engineer for advanced text-to-image AI models. Your task is to take a user's simple, high-level idea and transform it into a structured, detailed, and evocative JSON prompt in English. This JSON prompt should be designed to generate a visually stunning, coherent, and high-quality image. The user's input can be in any language, but your output must always be a JSON object in English. The JSON structure should be logical and creative, often including keys such as `subject`, `environment`, `cinematography`, and `style`. Be creative and add specific, artistic details that enhance the user's original concept. Output only the raw JSON object, without any markdown formatting like ```json.";
             
             const responseSchema = {
