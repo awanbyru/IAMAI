@@ -1,7 +1,7 @@
 {
   "short_name": "IAMAI",
   "name": "IAMAI - awanbyru",
-  "description": "A modern web blog focused on AI and prompting, featuring engaging articles, premium AI image collections, and expert prompt guides. Designed for the AI enthusiast community.",
+  "description": "Sebuah blog web modern yang berfokus pada AI dan prompting, menampilkan artikel menarik, koleksi gambar AI premium, dan panduan prompt ahli. Dirancang untuk komunitas penggemar AI.",
   "icons": [
     {
       "src": "/icon-192.png",
@@ -16,6 +16,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#D24400",
+  "theme_color": "#3B82F6",
   "background_color": "#F7F7F7"
 }
