@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { GoogleGenAI, Type } from '@google/genai';
 
 const PromptEnhancer: React.FC = () => {
     const [userInput, setUserInput] = useState('');
@@ -8,11 +7,9 @@ const PromptEnhancer: React.FC = () => {
     const [error, setError] = useState('');
     const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
 
-    const isApiConfigured = !!process.env.API_KEY;
-
     const handleGenerate = async () => {
-        if (!userInput.trim() || !isApiConfigured) {
-            return; // Exit if button is clicked while disabled or input is empty
+        if (!userInput.trim()) {
+            return;
         }
         
         setIsLoading(true);
@@ -21,60 +18,24 @@ const PromptEnhancer: React.FC = () => {
         setCopyStatus('idle');
 
         try {
-            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-            const systemInstruction = "You are an expert prompt engineer for advanced text-to-image AI models. Your task is to take a user's simple, high-level idea and transform it into a structured, detailed, and evocative JSON prompt in English. This JSON prompt should be designed to generate a visually stunning, coherent, and high-quality image. The user's input can be in any language, but your output must always be a JSON object in English. The JSON structure should be logical and creative, often including keys such as `subject`, `environment`, `cinematography`, and `style`. Be creative and add specific, artistic details that enhance the user's original concept. Output only the raw JSON object, without any markdown formatting like ```json.";
-            
-            const responseSchema = {
-                type: Type.OBJECT,
-                properties: {
-                    scene_description: { type: Type.STRING, description: "A detailed overall description of the scene." },
-                    subject: {
-                        type: Type.OBJECT,
-                        properties: {
-                            description: { type: Type.STRING, description: "Detailed description of the main subject." },
-                            action: { type: Type.STRING, description: "The action the subject is performing." }
-                        }
-                    },
-                    environment: {
-                        type: Type.OBJECT,
-                        properties: {
-                            setting: { type: Type.STRING, description: "The primary setting or location." },
-                            details: { type: Type.ARRAY, items: { type: Type.STRING }, description: "Specific environmental details." }
-                        }
-                    },
-                    cinematography: {
-                        type: Type.OBJECT,
-                        properties: {
-                            shot_type: { type: Type.STRING, description: "e.g., Close-up, Wide shot, Drone shot." },
-                            camera_movement: { type: Type.STRING, description: "e.g., Panning, Tilting, Static." },
-                            lighting: { type: Type.STRING, description: "Description of the lighting style, e.g., Cinematic, Moody, Golden Hour." }
-                        }
-                    },
-                    style: {
-                        type: Type.OBJECT,
-                        properties: {
-                            visual_style: { type: Type.STRING, description: "e.g., Photorealistic, Anime, Abstract." },
-                            quality: { type: Type.STRING, description: "e.g., 8k, high detail, masterpiece." },
-                            mood: { type: Type.STRING, description: "The emotional tone of the image." }
-                        }
-                    }
-                }
-            };
-
-            const response = await ai.models.generateContent({
-                model: 'gemini-2.5-flash',
-                contents: userInput,
-                config: {
-                    systemInstruction: systemInstruction,
-                    responseMimeType: "application/json",
-                    responseSchema: responseSchema,
+            const apiResponse = await fetch('/api/enhance-prompt', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
                 },
+                body: JSON.stringify({ userInput }),
             });
 
-            const rawJsonText = response.text.trim();
+            const data = await apiResponse.json();
+
+            if (!apiResponse.ok) {
+                throw new Error(data.error || `Permintaan gagal dengan status ${apiResponse.status}`);
+            }
+
+            const rawJsonText = data.result.trim();
+            
             let jsonStringToParse = rawJsonText;
 
-            // The model might still wrap the JSON in markdown backticks, so we extract it.
             const jsonMatch = rawJsonText.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
             if (jsonMatch && jsonMatch[1]) {
                 jsonStringToParse = jsonMatch[1].trim();
@@ -86,12 +47,12 @@ const PromptEnhancer: React.FC = () => {
             } catch (parseError) {
                 console.error("Gagal mem-parsing JSON, respons mentah:", rawJsonText);
                 setError('Gagal mem-parsing respons JSON dari AI. Ini mungkin respons teks biasa. Menampilkan hasil mentah.');
-                setGeneratedJson(rawJsonText); // Show the raw text for debugging or if it's just text
+                setGeneratedJson(rawJsonText);
             }
 
         } catch (e) {
             console.error(e);
-            const errorMessage = e instanceof Error ? e.message : 'An unknown error occurred.';
+            const errorMessage = e instanceof Error ? e.message : 'Terjadi kesalahan yang tidak diketahui.';
             setError(`Terjadi kesalahan saat membuat prompt: ${errorMessage}. Silakan coba lagi.`);
             setGeneratedJson('');
         } finally {
@@ -143,9 +104,9 @@ const PromptEnhancer: React.FC = () => {
                 <div className="text-center">
                     <button
                         onClick={handleGenerate}
-                        disabled={isLoading || !userInput.trim() || !isApiConfigured}
+                        disabled={isLoading || !userInput.trim()}
                         className="inline-flex items-center justify-center py-3 px-8 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-brand hover:bg-brand-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand transition-colors disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed"
-                        aria-disabled={!isApiConfigured || !userInput.trim() || isLoading}
+                        aria-disabled={!userInput.trim() || isLoading}
                     >
                         {isLoading ? (
                             <>
@@ -157,15 +118,10 @@ const PromptEnhancer: React.FC = () => {
                             </>
                         ) : 'Tingkatkan Prompt'}
                     </button>
-                    {!isApiConfigured && (
-                        <p className="text-sm text-app-muted mt-2" role="status">
-                           Fitur Peningkat Prompt saat ini tidak tersedia.
-                        </p>
-                    )}
                 </div>
                 {error && <p role="alert" className="text-sm text-center text-red-600 dark:text-red-400 mt-2">{error}</p>}
                 
-                {(generatedJson || isLoading) && isApiConfigured && (
+                {(generatedJson || isLoading) && (
                     <div className="mt-6">
                         <label className="block text-sm font-medium text-app-muted mb-1">Prompt JSON yang Dihasilkan</label>
                         <div className="relative bg-app-subtle p-4 rounded-md border border-app-default min-h-[10rem]">
