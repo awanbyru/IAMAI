@@ -8,15 +8,11 @@ const PromptEnhancer: React.FC = () => {
     const [error, setError] = useState('');
     const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
 
-    const handleGenerate = async () => {
-        if (!userInput.trim()) {
-            setError('Silakan masukkan ide prompt Anda.');
-            return;
-        }
+    const isApiConfigured = !!process.env.API_KEY;
 
-        if (!process.env.API_KEY) {
-            setError('Kunci API tidak dikonfigurasi. Fitur ini tidak tersedia saat ini.');
-            return;
+    const handleGenerate = async () => {
+        if (!userInput.trim() || !isApiConfigured) {
+            return; // Exit if button is clicked while disabled or input is empty
         }
         
         setIsLoading(true);
@@ -147,8 +143,9 @@ const PromptEnhancer: React.FC = () => {
                 <div className="text-center">
                     <button
                         onClick={handleGenerate}
-                        disabled={isLoading || !userInput.trim()}
+                        disabled={isLoading || !userInput.trim() || !isApiConfigured}
                         className="inline-flex items-center justify-center py-3 px-8 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-brand hover:bg-brand-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand transition-colors disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed"
+                        aria-disabled={!isApiConfigured || !userInput.trim() || isLoading}
                     >
                         {isLoading ? (
                             <>
@@ -160,10 +157,15 @@ const PromptEnhancer: React.FC = () => {
                             </>
                         ) : 'Tingkatkan Prompt'}
                     </button>
+                    {!isApiConfigured && (
+                        <p className="text-sm text-app-muted mt-2" role="status">
+                           Fitur Peningkat Prompt saat ini tidak tersedia.
+                        </p>
+                    )}
                 </div>
                 {error && <p role="alert" className="text-sm text-center text-red-600 dark:text-red-400 mt-2">{error}</p>}
                 
-                {(generatedJson || isLoading) && (
+                {(generatedJson || isLoading) && isApiConfigured && (
                     <div className="mt-6">
                         <label className="block text-sm font-medium text-app-muted mb-1">Prompt JSON yang Dihasilkan</label>
                         <div className="relative bg-app-subtle p-4 rounded-md border border-app-default min-h-[10rem]">
