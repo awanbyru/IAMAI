@@ -16,6 +16,7 @@ const PromptEnhancer: React.FC = () => {
         setIsLoading(true);
         setError('');
         setGeneratedJson('');
+        setCopyStatus('idle');
 
         try {
             const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
@@ -69,12 +70,27 @@ const PromptEnhancer: React.FC = () => {
             });
 
             const rawJsonText = response.text.trim();
-            const parsedJson = JSON.parse(rawJsonText);
-            setGeneratedJson(JSON.stringify(parsedJson, null, 2));
+            let jsonStringToParse = rawJsonText;
+
+            // The model might still wrap the JSON in markdown backticks, so we extract it.
+            const jsonMatch = rawJsonText.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+            if (jsonMatch && jsonMatch[1]) {
+                jsonStringToParse = jsonMatch[1].trim();
+            }
+
+            try {
+                const parsedJson = JSON.parse(jsonStringToParse);
+                setGeneratedJson(JSON.stringify(parsedJson, null, 2));
+            } catch (parseError) {
+                console.error("Gagal mem-parsing JSON, respons mentah:", rawJsonText);
+                setError('Gagal mem-parsing respons JSON dari AI. Ini mungkin respons teks biasa. Menampilkan hasil mentah.');
+                setGeneratedJson(rawJsonText); // Show the raw text for debugging or if it's just text
+            }
 
         } catch (e) {
             console.error(e);
-            setError('Terjadi kesalahan saat membuat prompt. Silakan coba lagi.');
+            const errorMessage = e instanceof Error ? e.message : 'An unknown error occurred.';
+            setError(`Terjadi kesalahan saat membuat prompt: ${errorMessage}. Silakan coba lagi.`);
             setGeneratedJson('');
         } finally {
             setIsLoading(false);
@@ -119,6 +135,7 @@ const PromptEnhancer: React.FC = () => {
                         value={userInput}
                         onChange={(e) => setUserInput(e.target.value)}
                         disabled={isLoading}
+                        aria-label="Ide Prompt Anda"
                     />
                 </div>
                 <div className="text-center">
@@ -138,22 +155,38 @@ const PromptEnhancer: React.FC = () => {
                         ) : 'Tingkatkan Prompt'}
                     </button>
                 </div>
-                {error && <p className="text-sm text-center text-red-600 dark:text-red-400 mt-2">{error}</p>}
+                {error && <p role="alert" className="text-sm text-center text-red-600 dark:text-red-400 mt-2">{error}</p>}
                 
-                {generatedJson && (
+                {(generatedJson || isLoading) && (
                     <div className="mt-6">
                         <label className="block text-sm font-medium text-app-muted mb-1">Prompt JSON yang Dihasilkan</label>
-                        <div className="relative bg-app-subtle p-4 rounded-md border border-app-default max-h-96 overflow-auto">
-                            <pre className="text-app-main text-sm font-mono whitespace-pre-wrap">
-                                <code>{generatedJson}</code>
-                            </pre>
-                            <button
-                                onClick={handleCopy}
-                                className="absolute top-2 right-2 p-2 rounded-full bg-app-surface text-app-muted hover:bg-brand-subtle hover:text-brand transition-colors"
-                                aria-label={copyStatus === 'idle' ? 'Salin prompt' : 'Prompt disalin'}
-                            >
-                                {copyStatus === 'idle' ? copyIcon : checkIcon}
-                            </button>
+                        <div className="relative bg-app-subtle p-4 rounded-md border border-app-default min-h-[10rem]">
+                            {isLoading && !generatedJson && (
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="flex items-center space-x-2 text-app-muted">
+                                        <div className="typing-indicator">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <span className="text-sm">AI sedang berpikir...</span>
+                                    </div>
+                                </div>
+                            )}
+                            {generatedJson && (
+                                <>
+                                <pre className="text-app-main text-sm font-mono whitespace-pre-wrap max-h-96 overflow-auto">
+                                    <code>{generatedJson}</code>
+                                </pre>
+                                <button
+                                    onClick={handleCopy}
+                                    className="absolute top-2 right-2 p-2 rounded-full bg-app-surface text-app-muted hover:bg-brand-subtle hover:text-brand transition-colors"
+                                    aria-label={copyStatus === 'idle' ? 'Salin prompt' : 'Prompt disalin'}
+                                >
+                                    {copyStatus === 'idle' ? copyIcon : checkIcon}
+                                </button>
+                                </>
+                            )}
                         </div>
                     </div>
                 )}
