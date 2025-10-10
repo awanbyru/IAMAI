@@ -108,6 +108,60 @@ Camera Angle: Top-down view, looking directly at the recursive faces from above.
     ]
   },
   {
+    id: '33',
+    slug: 'panduan-prompting-sora-2-sinematik-ai',
+    title: 'Menyutradarai Mimpi: Panduan Prompting Mendalam untuk Sora 2',
+    excerpt: 'Sora 2 telah tiba, mengubah kata menjadi dunia sinematik. Namun, kekuatan sesungguhnya terletak pada prompt. Pelajari cara berpikir seperti sutradara, sinematografer, dan editor untuk menciptakan video AI yang menakjubkan.',
+    summary: 'Panduan komprehensif tentang rekayasa prompt untuk model video generatif Sora 2. Artikel ini membedah teknik-teknik penting, mulai dari membangun adegan dasar, mengontrol gerakan kamera sinematik (dolly zoom, tracking shot), hingga menyutradarai emosi melalui pencahayaan dan palet warna. Pelajari cara menggunakan struktur prompt yang efektif untuk mengubah ide sederhana menjadi narasi visual yang kuat dan koheren.',
+    type: 'howto',
+    content: [
+      'Sora 2 bukan sekadar generator video; ia adalah studio film di dalam kotak. Ia tidak hanya merespons kata-kata Anda, ia menginterpretasikan visi Anda. Perbedaan antara klip yang biasa-biasa saja dan sebuah mahakarya sinematik terletak pada satu hal: kualitas prompt Anda. Lupakan deskripsi sederhana. Untuk menguasai Sora 2, Anda harus berpikir seperti seorang sutradara.',
+      'Prompt video yang hebat bukanlah satu kalimat, melainkan sebuah naskah mini. Ia memiliki struktur, ritme, dan yang terpenting, niat. Kunci utamanya adalah memecah visi Anda menjadi empat pilar sinematik: Subjek, Latar, Sinematografi, dan Gaya.',
+      '**Pilar 1: Subjek & Aksi (Siapa dan Apa)**',
+      'Ini adalah inti dari narasi Anda. Jadilah spesifik. Jangan hanya mengatakan "seorang wanita berjalan". Katakan: `Seorang detektif wanita yang letih, mengenakan mantel parit basah, berjalan dengan tergesa-gesa menyusuri trotoar yang ramai, mencengkeram sebuah map tua dengan erat.` Perhatikan perbedaannya? Setiap kata menambahkan lapisan cerita.',
+      '**Pilar 2: Latar & Pembangunan Dunia (Di Mana dan Kapan)**',
+      'Latar Anda lebih dari sekadar latar belakang; ia adalah karakter. Gunakan detail sensorik untuk menghidupkannya. `Sebuah kota cyberpunk yang disiram hujan neon pada malam hari. Refleksi dari papan reklame holografik berkilauan di genangan air kotor di jalanan.`',
+      '**Pilar 3: Sinematografi (Bagaimana Difilmkan)**',
+      'Inilah bagian di mana Anda benar-benar menjadi sutradara. Di sinilah Anda mengontrol kamera AI. Kuasai istilah-istilah ini:',
+      '  - **`Tracking shot`**: `Kamera mengikuti subjek dari samping saat mereka bergerak.` Ini menciptakan gerakan yang dinamis dan imersif.',
+      '  - **`Dolly zoom`**: `Kamera bergerak maju sementara lensa melakukan zoom out (atau sebaliknya).` Ini menciptakan efek vertigo yang membingungkan, bagus untuk momen-momen realisasi yang dramatis.',
+      '  - **`Crane shot`**: `Kamera bergerak naik atau turun secara vertikal.` Digunakan untuk mengungkapkan skala adegan atau untuk transisi.',
+      '  - **`Handheld shaky cam`**: `Kamera dipegang dengan tangan, menciptakan getaran yang realistis.` Sempurna untuk adegan aksi yang intens atau momen dokumenter yang intim.',
+      '  - **`Slow motion`**: `Aksi diperlambat secara dramatis.` Menekankan dampak emosional atau keindahan sebuah gerakan.',
+      'IMG:https://picsum.photos/seed/sora-2-camera-moves/800/350|Visualisasi berbagai gerakan kamera sinematik seperti tracking shot dan dolly zoom.',
+      '**Pilar 4: Gaya & Suasana (Bagaimana Rasanya)**',
+      'Ini adalah lapisan akhir dari cat emosional Anda. Gunakan pencahayaan dan palet warna untuk mengatur suasana hati.',
+      '  - **Pencahayaan:** `Hard cinematic lighting` menciptakan bayangan yang tajam dan dramatis. `Golden hour lighting` menghasilkan suasana yang hangat dan nostalgia. `Moody neon noir lighting` sempurna untuk misteri cyberpunk.',
+      '  - **Palet Warna:** `Desaturated and muted color palette` memberikan nuansa yang suram dan realistis. `Vibrant technicolor palette` terasa seperti mimpi atau fantasi.',
+      '**Menyatukan Semuanya: Contoh Prompt Master**',
+      'Mari kita gabungkan semua pilar ini menjadi satu prompt yang kuat:',
+      `JSON_PROMPT:${`A cinematic, ultra-realistic video in slow motion.
+
+**Subject:** A lone astronaut in a sleek, white spacesuit taking a hesitant first step onto a new world.
+**Environment:** A desolate alien planet with crimson-red sand and two suns setting on the horizon, casting long, dramatic shadows. Strange, crystalline flora glows faintly in the twilight.
+**Cinematography:** The scene begins with a low-angle tracking shot, following the astronaut's boots as they crunch on the alien soil. As they lift their head, the camera executes a crane shot, rising smoothly to reveal the vast, alien landscape before them.
+**Style:** Photorealistic 8K render, shot on 35mm film with subtle grain. The lighting is golden hour from the two suns, creating a breathtaking and lonely atmosphere. The color palette is a mix of deep reds, oranges, and the faint blue glow of the crystals.`}`,
+      '**Kesimpulan: Visi Anda, Kanvas AI**',
+      'Sora 2 adalah alat yang luar biasa, tetapi ia membutuhkan seorang visioner di belakang kemudi. Dengan memecah ide-ide Anda ke dalam pilar-pilar sinematik dan menggunakan bahasa penyutradaraan yang tepat, Anda tidak lagi hanya menghasilkan video. Anda sedang menciptakan dunia, menceritakan kisah, dan menyutradarai mimpi. Kanvasnya tidak terbatas. Ambil kamera AI Anda, dan mulailah berkarya.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/sora-2-cinematic-guide/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '11 Oktober 2025',
+    claps: 150,
+    tags: ['Sora 2', 'Video Generatif', 'AI Video', 'Prompt Engineering', 'Tutorial'],
+    faq: [
+        {
+          question: "Bisakah Sora 2 menciptakan karakter yang konsisten di beberapa klip?",
+          answer: "Konsistensi karakter adalah salah satu tantangan terbesar dalam video AI, tetapi terus membaik. Untuk hasil terbaik, berikan deskripsi karakter yang sangat detail dan spesifik dalam setiap prompt. Menggunakan nama karakter yang unik juga dapat membantu AI mempertahankan beberapa fitur, meskipun variasi masih bisa terjadi."
+        },
+        {
+          question: "Berapa durasi video yang bisa dihasilkan oleh Sora 2?",
+          answer: "Saat ini, Sora 2 biasanya menghasilkan klip video pendek, seringkali hingga satu menit. Untuk narasi yang lebih panjang, para kreator sering menggunakan teknik 'prompt chaining', di mana mereka membuat beberapa klip yang saling berhubungan dan kemudian mengeditnya bersama dalam perangkat lunak pengeditan video tradisional."
+        }
+    ]
+  },
+  {
     id: '30',
     slug: 'bedah-prompt-lofi-realisme-wajah-dan-surealisme-ruang',
     title: 'Bedah Prompt Lo-Fi: Memadukan Realisme Wajah dan Surealisme Ruang',
