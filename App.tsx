@@ -16,7 +16,6 @@ const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const SitemapGeneratorPage = lazy(() => import('./pages/SitemapGeneratorPage'));
 const PromptLibraryPage = lazy(() => import('./pages/PromptLibraryPage'));
-const ChatbotPage = lazy(() => import('./pages/ChatbotPage'));
 
 const Layout: React.FC = () => {
   return (
@@ -92,7 +91,6 @@ const App: React.FC = () => {
               <Route path="/article/:slug" element={<ArticlePage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/prompts" element={<PromptLibraryPage />} />
-              <Route path="/chatbot" element={<ChatbotPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/about" element={<AboutPage />} />
