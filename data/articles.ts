@@ -4,6 +4,69 @@ const authorAvatar = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 
 export const articles: Article[] = [
   {
+    id: '32',
+    slug: 'bedah-prompt-horor-voronoi-rekursif',
+    title: 'Bedah Prompt Horor Voronoi: Menciptakan Pusaran Teror Rekursif dengan IMAGEN 4',
+    excerpt: 'Bagaimana cara menciptakan horor yang detail, psikedelik, dan terstruktur secara matematis? Kita akan membedah prompt canggih dari Yogi Arfi Prompts yang menggunakan teknik `hypervoronoi` dan `lattice reality` untuk menghasilkan pusaran teror yang tak berujung.',
+    summary: 'Analisis mendalam tentang prompt AI untuk menciptakan adegan horor maksimalis menggunakan teknik `hypervoronoi` dan `lattice reality`. Artikel ini memecah cara kerja rekursi wajah, fragmentasi sel voronoi, dan sudut kamera top-down untuk menghasilkan visual yang glossy, psikedelik, dan sangat detail.',
+    type: 'howto',
+    content: [
+      'Seni horor dalam AI generatif sering kali bermain dengan citra yang sudah dikenal: monster, hantu, atau suasana gelap. Namun, untuk mencapai tingkat horor yang benar-benar baru—yang terasa abstrak, matematis, dan tak terhindarkan—diperlukan pendekatan yang lebih canggih. Inilah yang kita temukan dalam sebuah prompt luar biasa yang dibagikan oleh **Yogi Arfi Prompts** (<a href="https://www.facebook.com/share/1EvgPWCkcf/" target="_blank" rel="noopener noreferrer">sumber</a>), sebuah mahakarya dalam rekayasa visual yang dihasilkan dengan IMAGEN 4.',
+      'Prompt ini tidak hanya meminta gambar horor; ia membangun sebuah mesin visual psikedelik yang menyeret kita ke dalam pusaran teror rekursif. Mari kita bedah lapis demi lapis.',
+      '**Fondasi: Suasana Maksimalis dan Psikedelik**',
+      'Prompt ini dibuka dengan menetapkan panggung atmosfer yang jelas:',
+      '`A hyper-detailed maximalist horror scene, glossy and psychedelic...`',
+      '  - **`hyper-detailed maximalist`**: Ini adalah perintah untuk memenuhi kanvas. AI tidak boleh menyisakan ruang kosong. Setiap piksel harus diisi dengan informasi visual yang rumit, menciptakan perasaan yang luar biasa dan klaustrofobik.',
+      '  - **`glossy and psychedelic`**: Kata kunci ini mendefinisikan tekstur dan palet warna. `Glossy` memberikan tampilan yang basah, licin, dan reflektif, sering diasosiasikan dengan horor tubuh (body horror). `Psychedelic` mengarahkan AI untuk menggunakan warna-warna neon yang bergetar dan tidak wajar, meningkatkan disorientasi.',
+      '**Struktur Visual Inti: `Hypervoronoi` dan `Lattice Reality`**',
+      'Inilah jantung teknis dari prompt ini:',
+      '`...rendered in hypervoronoi and lattice reality style.`',
+      '  - **`Hypervoronoi`**: Diagram Voronoi adalah partisi ruang menjadi wilayah-wilayah berdasarkan jarak ke titik-titik tertentu. Dalam seni AI, ini menciptakan pola seluler yang organik namun matematis. `Hypervoronoi` meningkatkannya ke tingkat yang lebih kompleks, menghasilkan fragmentasi yang sangat detail dan tak terbatas.',
+      '  - **`Lattice reality`**: Ini menginstruksikan AI untuk membangun realitas gambar di atas struktur seperti kisi atau jaring (`lattice`). Ini memberikan kerangka kerja geometris pada kekacauan, membuat adegan terasa terstruktur dan tak terhindarkan.',
+      'IMG:https://picsum.photos/seed/voronoi-horror-style/800/350|Visualisasi gaya Hypervoronoi dan Lattice yang menciptakan pola seluler dan kisi yang terfragmentasi.',
+      '**Narasi Pusat: Pusaran Wajah yang Menjerit**',
+      'Setelah fondasi gaya ditetapkan, prompt memberikan inti naratifnya:',
+      '`The central figure is a recursive chain of screaming faces: one hyper-realistic human face... and inside the mouth another screaming face, repeating endlessly like a spiral vortex of agony.`',
+      'Ini adalah konsep yang mengerikan. **`Recursive chain`** adalah instruksi yang sangat kuat. AI diminta untuk mengulang sebuah elemen (wajah menjerit) di dalam dirinya sendiri, menciptakan efek fraktal dari penderitaan. Detail seperti `slick and glossy, drenched in sweat, oil, or tears` memperkuat estetika `glossy` yang ditetapkan di awal.',
+      '**Fragmentasi dan Koneksi: Dari Wajah ke Sel**',
+      'Prompt kemudian dengan cerdas menghubungkan narasi dengan gaya visual:',
+      '`The screaming faces fragment into glowing voronoi cells... Lattice grids stretch between faces...`',
+      'Di sinilah kejeniusannya. Wajah-wajah tersebut tidak hanya ada; mereka secara aktif *terpecah* menjadi pola `voronoi` yang diminta. Kisi-kisi `lattice` tidak hanya menjadi latar belakang; mereka *menghubungkan* wajah-wajah tersebut. Ini menciptakan adegan yang dinamis di mana setiap elemen terhubung secara logis.',
+      '**Arahan Sutradara: Sudut Kamera**',
+      'Terakhir, prompt ini bertindak sebagai sutradara, mengunci perspektif yang paling efektif:',
+      '`Camera Angle: Top-down view, looking directly at the recursive faces from above.`',
+      'Sudut pandang dari atas ke bawah ini sangat penting. Ini mengubah adegan menjadi sebuah pusaran (`vortex`) yang menarik mata pemirsa ke tengah rekursi yang tak berujung, memperkuat perasaan vertigo dan ketakutan.',
+      '**Prompt Lengkap:**',
+      `JSON_PROMPT:${`A hyper-detailed maximalist horror scene, glossy and psychedelic, rendered in hypervoronoi and lattice reality style.
+
+The central figure is a recursive chain of screaming faces: one hyper-realistic human face frozen in terror, mouth wide open, and inside the mouth another screaming face, repeating endlessly like a spiral vortex of agony. Each face is slick and glossy, drenched in sweat, oil, or tears. The recursion spirals inward, each layer more distorted, reflective, and surreal.
+
+The screaming faces fragment into glowing voronoi cells, their skin splitting into thousands of polygonal shards reflecting neon colors. Lattice grids stretch between faces, glowing like shattered glass webs. Neon liquid flows through the lattice veins, dripping into voronoi cracks.
+
+Background surfaces ripple into infinite hypervoronoi tessellations, each cell filled with fragments of distorted eyes, mouths, and reflections. Neon liquid and shards spiral downward toward the vortex center, creating a hypnotic, chaotic flow.
+
+Camera Angle: Top-down view, looking directly at the recursive faces from above. Faces, lattice grids, and voronoi shards form a spiral vortex descending into infinite recursion. Neon reflections and glossy textures exaggerate depth, chaos, and psychedelic overload.`}`,
+      '**Kesimpulan: Horor sebagai Arsitektur**',
+      'Prompt ini adalah contoh cemerlang tentang bagaimana rekayasa prompt tingkat lanjut lebih mirip arsitektur daripada sekadar deskripsi. Dengan membangun fondasi gaya (`hypervoronoi`), mendefinisikan narasi inti (`recursive faces`), dan menyatukannya dengan dinamika visual (`fragmentation`) serta arahan sinematik (`top-down view`), Yogi Arfi Prompts telah menciptakan cetak biru untuk horor yang cerdas, terstruktur, dan benar-benar meresahkan.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/recursive-horror-vortex/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '16 Oktober 2025',
+    claps: 112,
+    tags: ['Prompt Engineering', 'IMAGEN 4', 'Horor AI', 'Voronoi', 'Tutorial'],
+    faq: [
+        {
+          question: "Apa itu gaya 'hypervoronoi' dalam seni AI?",
+          answer: "Hypervoronoi adalah istilah yang digunakan untuk menginstruksikan AI agar menciptakan pola yang sangat kompleks dan detail berdasarkan diagram Voronoi. Ini menghasilkan gambar yang terfragmentasi menjadi banyak sel atau wilayah geometris, memberikan tampilan yang organik namun matematis, sering digunakan dalam seni abstrak atau sureal."
+        },
+        {
+          question: "Mengapa 'rekursi' menjadi teknik yang kuat dalam prompt AI?",
+          answer: "Rekursi (mengulang sebuah elemen di dalam dirinya sendiri) adalah instruksi yang sangat efektif karena menciptakan pola fraktal yang menarik secara visual dan konseptual. Dalam konteks horor, ini bisa menghasilkan perasaan tak terbatas atau tak terhindarkan, seperti dalam prompt wajah menjerit yang tak berujung, yang secara signifikan meningkatkan dampak psikologis dari gambar tersebut."
+        }
+    ]
+  },
+  {
     id: '31',
     slug: 'dari-teks-ke-sinema-panduan-video-ai-veo',
     title: 'Dari Teks ke Sinema: Panduan Praktis Membuat Video Pendek dengan AI Veo',
@@ -585,7 +648,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
       '  - **Untuk Suara:** `the sound of a cello, visualized as smooth, flowing ribbons of deep burgundy and polished wood grain texture.`',
       '  - **Untuk Ide:** `a visual metaphor for "innovation", represented by a complex, glowing crystalline structure growing and branching out in unexpected directions.`',
       '**3. Fokus pada Material dan Dinamika Fluida:** Seni abstrak sering kali tentang interaksi material. Gunakan prompt yang berfokus pada dinamika ini untuk hasil yang menakjubkan. `Macro shot of iridescent liquid metal and colorful ink swirling together in a chaotic yet beautiful dance`, atau `an explosion of geometric shapes made of shattered glass and glowing energy`.',
-      '**4. Sebutkan Gaya Seni Abstrak:** Jika Anda memiliki gaya tertentu dalam pikiran, sebutkan. `An abstract oil painting in the style of Wassily Kandinsky, focusing on geometric harmony and chaotic color`, atau `a minimalist abstract sculpture in the style of Constantin Brân-cuși, smooth, clean lines, organic form`.',
+      '**4. Sebutkan Gaya Seni Abstrak:** Jika Anda memiliki gaya tertentu dalam pikiran, sebutkan. `An abstract oil painting in the style of Wassily Kandinsky, focusing on geometric harmony and chaotic color`, atau `a minimalist abstract sculpture in the style of Constantin Brân-cu-și, smooth, clean lines, organic form`.',
       '**Prompt Contoh:** `Vibrant, abstract generative art representing the feeling of "euphoria". A dynamic explosion of warm, glowing colors like gold, magenta, and orange. The forms are fluid, energetic, and expanding outwards. A sense of weightlessness and pure joy. High resolution, intricate details.`',
       'Jangan takut untuk menjadi puitis dan eksperimental. Dalam dunia seni abstrak dengan AI, tidak ada prompt yang salah. Semakin unik visi Anda, semakin orisinal hasilnya.'
     ],

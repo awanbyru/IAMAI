@@ -2,6 +2,21 @@ import { Prompt } from '../types';
 
 export const prompts: Prompt[] = [
   {
+    id: 'p42',
+    title: 'Horor Voronoi Rekursif',
+    description: 'Menciptakan adegan horor maksimalis yang psikedelik dengan rekursi wajah menjerit, difragmentasi menjadi sel-sel hypervoronoi dan kisi-kisi realitas.',
+    prompt: `A hyper-detailed maximalist horror scene, glossy and psychedelic, rendered in hypervoronoi and lattice reality style.
+
+The central figure is a recursive chain of screaming faces: one hyper-realistic human face frozen in terror, mouth wide open, and inside the mouth another screaming face, repeating endlessly like a spiral vortex of agony. Each face is slick and glossy, drenched in sweat, oil, or tears. The recursion spirals inward, each layer more distorted, reflective, and surreal.
+
+The screaming faces fragment into glowing voronoi cells, their skin splitting into thousands of polygonal shards reflecting neon colors. Lattice grids stretch between faces, glowing like shattered glass webs. Neon liquid flows through the lattice veins, dripping into voronoi cracks.
+
+Background surfaces ripple into infinite hypervoronoi tessellations, each cell filled with fragments of distorted eyes, mouths, and reflections. Neon liquid and shards spiral downward toward the vortex center, creating a hypnotic, chaotic flow.
+
+Camera Angle: Top-down view, looking directly at the recursive faces from above. Faces, lattice grids, and voronoi shards form a spiral vortex descending into infinite recursion. Neon reflections and glossy textures exaggerate depth, chaos, and psychedelic overload.`,
+    category: 'Surealisme',
+  },
+  {
     id: 'p41',
     title: 'Wanita Hijab Lo-fi di Jendela Terapung',
     description: 'Menciptakan adegan sureal seorang wanita hijab fotorealistik yang duduk di bingkai jendela melayang di antara awan, dengan estetika lo-fi dan palet pastel. Mempertahankan 100% kemiripan wajah dari foto referensi.',
