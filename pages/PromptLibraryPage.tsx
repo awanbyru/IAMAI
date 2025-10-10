@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import MetaTags from '../components/MetaTags';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { Prompt } from '../types';
+import PromptEnhancer from '../components/PromptEnhancer';
 
 const PromptCard: React.FC<{ prompt: Prompt }> = ({ prompt }) => {
     const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
@@ -34,7 +35,7 @@ const PromptCard: React.FC<{ prompt: Prompt }> = ({ prompt }) => {
                 <h3 className="text-xl font-bold text-app-main mb-2">{prompt.title}</h3>
                 <p className="text-app-muted text-sm mb-4">{prompt.description}</p>
             </div>
-            <div className="relative bg-app-subtle p-4 rounded-md border border-app-default">
+            <div className="relative bg-app-subtle p-4 rounded-md border border-app-default max-h-80 overflow-auto">
                 <pre className="text-app-main text-sm font-mono whitespace-pre-wrap overflow-x-auto">
                     <code>{prompt.prompt}</code>
                 </pre>
@@ -53,7 +54,7 @@ const PromptCard: React.FC<{ prompt: Prompt }> = ({ prompt }) => {
 
 const PromptLibraryPage: React.FC = () => {
     const [prompts, setPrompts] = useState<Prompt[]>([]);
-    const [activeFilter, setActiveFilter] = useState('Semua');
+    const [activeFilter, setActiveFilter] = useState('Peningkat Prompt');
 
     useEffect(() => {
         import('../data/prompts').then(module => {
@@ -62,8 +63,8 @@ const PromptLibraryPage: React.FC = () => {
     }, []);
 
     const categories = useMemo(() => {
-        if (prompts.length === 0) return [];
-        return ['Semua', ...new Set(prompts.map(p => p.category))];
+        if (prompts.length === 0) return ['Peningkat Prompt', 'Semua'];
+        return ['Peningkat Prompt', 'Semua', ...new Set(prompts.map(p => p.category))];
     }, [prompts]);
 
     const filteredPrompts = useMemo(() => {
@@ -92,7 +93,7 @@ const PromptLibraryPage: React.FC = () => {
                         Pustaka Prompt
                     </h1>
                     <p className="text-base sm:text-lg text-app-muted max-w-2xl mx-auto">
-                        Koleksi prompt AI ahli yang siap pakai. Klik tombol salin untuk langsung menggunakannya dalam proyek Anda.
+                        Jelajahi koleksi prompt ahli, atau gunakan Peningkat Prompt untuk mengubah ide Anda menjadi mahakarya terstruktur.
                     </p>
                 </section>
 
@@ -111,12 +112,18 @@ const PromptLibraryPage: React.FC = () => {
                         </button>
                     ))}
                 </div>
-
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredPrompts.map(prompt => (
-                        <PromptCard key={prompt.id} prompt={prompt} />
-                    ))}
-                </section>
+                
+                {activeFilter === 'Peningkat Prompt' ? (
+                     <section>
+                        <PromptEnhancer />
+                    </section>
+                ) : (
+                    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {filteredPrompts.map(prompt => (
+                            <PromptCard key={prompt.id} prompt={prompt} />
+                        ))}
+                    </section>
+                )}
             </div>
         </>
     );
