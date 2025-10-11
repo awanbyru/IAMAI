@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     placeholderSrc?: string;
@@ -7,18 +7,53 @@ interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, loading = 'lazy', placeholderSrc, ...props }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
+    const [isInView, setIsInView] = useState(false);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // Atur ulang status muat/kesalahan saat src berubah
         setIsLoaded(false);
         setHasError(false);
     }, [src]);
+    
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // Perbarui status kita saat callback observer dipanggil
+                if (entry.isIntersecting) {
+                    setIsInView(true);
+                    // Hentikan pengamatan setelah masuk ke dalam tampilan
+                    if (containerRef.current) {
+                        observer.unobserve(containerRef.current);
+                    }
+                }
+            },
+            {
+                // Mulai memuat saat gambar berjarak 200px dari viewport
+                rootMargin: '200px 0px',
+            }
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => {
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current);
+            }
+        };
+    }, []); // Array kosong memastikan efek hanya berjalan saat mount dan unmount
 
     const handleLoad = () => setIsLoaded(true);
     const handleError = () => setHasError(true);
+    
+    // Sumber sebenarnya untuk tag gambar. Ini hanya diatur saat komponen berada dalam tampilan untuk memicu unduhan.
+    const imageSrc = isInView ? src : undefined;
 
     return (
-        <div className={`${className} relative bg-gray-200 dark:bg-gray-700 overflow-hidden`}>
-            {/* Placeholder Layer */}
+        <div ref={containerRef} className={`${className} relative bg-gray-200 dark:bg-gray-700 overflow-hidden`}>
+            {/* Lapisan Placeholder */}
             {!hasError && !isLoaded && (
                 placeholderSrc ? (
                     <img 
@@ -32,9 +67,9 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, loading = 'l
                 )
             )}
 
-            {/* Main Image Layer */}
+            {/* Lapisan Gambar Utama */}
             <img
-                src={src}
+                src={imageSrc}
                 alt={alt}
                 onLoad={handleLoad}
                 onError={handleError}
@@ -44,7 +79,7 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, loading = 'l
                 {...props}
             />
             
-            {/* Error Layer */}
+            {/* Lapisan Kesalahan */}
             {hasError && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700">
                     <svg
