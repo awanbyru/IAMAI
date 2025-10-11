@@ -257,7 +257,7 @@ const ArticlePage: React.FC = () => {
             <LazyImage
               src={src}
               alt={alt || 'Gambar artikel'}
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md aspect-video"
               placeholderSrc={generatePlaceholderSrc(src)}
             />
             {alt && <figcaption>{alt}</figcaption>}
@@ -338,7 +338,7 @@ const ArticlePage: React.FC = () => {
                 srcset={generateSrcSet(article.imageUrl)}
                 sizes="100vw"
                 alt={article.title} 
-                className="w-full h-64 md:h-96 object-cover"
+                className="w-full aspect-video object-cover"
                 loading="eager"
                 fetchPriority="high"
                 placeholderSrc={generatePlaceholderSrc(article.imageUrl)}

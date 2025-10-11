@@ -97,9 +97,9 @@ const GalleryPage: React.FC = () => {
                 srcset={generateSrcSet(image.imageUrl, [300, 450, 600])}
                 sizes="(max-width: 639px) 90vw, (max-width: 767px) 45vw, (max-width: 1023px) 30vw, 22vw"
                 alt={image.title} 
-                className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
-                loading={index < 4 ? 'eager' : 'lazy'}
-                fetchPriority={index < 4 ? 'high' : 'auto'}
+                className="w-full aspect-square object-cover transform group-hover:scale-105 transition-transform duration-300"
+                loading={index < 8 ? 'eager' : 'lazy'}
+                fetchPriority={index < 8 ? 'high' : 'auto'}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-4">
