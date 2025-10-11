@@ -250,22 +250,6 @@ const ArticlePage: React.FC = () => {
         return;
       }
 
-      if (paragraph.startsWith('IMG:')) {
-        const [src, alt] = paragraph.substring(4).split('|');
-        elements.push(
-          <figure key={`fig-${index}`} className="my-6">
-            <LazyImage
-              src={src}
-              alt={alt || 'Gambar artikel'}
-              className="rounded-lg shadow-md aspect-video"
-              placeholderSrc={generatePlaceholderSrc(src)}
-            />
-            {alt && <figcaption>{alt}</figcaption>}
-          </figure>
-        );
-        return;
-      }
-
       const headingMatch = paragraph.match(/^\*\*(.*?)\*\*(.*)/s);
       if (headingMatch) {
         const [, headingText, restOfParagraph] = headingMatch;
@@ -338,7 +322,7 @@ const ArticlePage: React.FC = () => {
                 srcset={generateSrcSet(article.imageUrl)}
                 sizes="100vw"
                 alt={article.title} 
-                className="w-full aspect-video object-cover"
+                className="w-full aspect-2-1 object-cover"
                 loading="eager"
                 fetchPriority="high"
                 placeholderSrc={generatePlaceholderSrc(article.imageUrl)}

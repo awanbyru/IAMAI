@@ -13,7 +13,7 @@ const HeroArticle: React.FC<{ article: Article }> = ({ article }) => (
   <section className="mb-12 group">
     <Link to={`/article/${article.slug}`} className="block">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-app-surface rounded-xl border border-app-default shadow-md overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg hover:border-brand/50">
-        <div className="relative overflow-hidden aspect-video md:aspect-auto md:h-full md:rounded-l-xl">
+        <div className="relative overflow-hidden aspect-2-1 md:aspect-auto md:h-full md:rounded-l-xl">
           <LazyImage
             src={article.imageUrl}
             srcset={generateSrcSet(article.imageUrl)}

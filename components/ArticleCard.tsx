@@ -19,7 +19,7 @@ const ArticleCard: React.FC<ArticleCardProps> = memo(({ article, loading = 'lazy
             srcset={generateSrcSet(article.imageUrl)}
             sizes="(max-width: 767px) 100vw, 50vw"
             placeholderSrc={generatePlaceholderSrc(article.imageUrl)}
-            className="w-full aspect-video object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out" 
+            className="w-full aspect-2-1 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out" 
             alt={article.title}
             loading={loading}
             fetchPriority={loading === 'eager' ? 'high' : 'auto'}
