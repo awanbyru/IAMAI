@@ -69,15 +69,20 @@ const Header: React.FC = () => {
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* Left side: Title + Main Nav Links */}
-            <div className="flex items-center">
-              <Link to="/" className="flex-shrink-0">
+            {/* Left side: Title */}
+            <div className="flex-shrink-0">
+              <Link to="/">
                 <h1 className="text-xl font-bold text-brand">
                   IAMAI - awanbyru
                 </h1>
               </Link>
+            </div>
+
+            {/* Right side: Nav + Controls */}
+            <div className="flex items-center">
+              {/* Main Nav Links (Desktop) */}
               <div className="hidden md:block">
-                <div className="ml-10 flex items-center space-x-4">
+                <div className="flex items-center space-x-4">
                   <NavLink to="/" className={navLinkClasses}>
                     Beranda
                   </NavLink>
@@ -98,43 +103,43 @@ const Header: React.FC = () => {
                   </NavLink>
                 </div>
               </div>
-            </div>
 
-            {/* Right side: Desktop Controls */}
-            <div className="hidden md:flex items-center space-x-1">
-                <button
-                    onClick={() => setIsSearchOpen(true)}
-                    className="p-2 rounded-full text-app-muted hover:text-app-main hover:bg-app-subtle transition-colors"
-                    aria-label="Buka pencarian"
-                >
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </button>
+              {/* Desktop Controls */}
+              <div className="hidden md:flex items-center space-x-1 ml-6">
+                  <button
+                      onClick={() => setIsSearchOpen(true)}
+                      className="p-2 rounded-full text-app-muted hover:text-app-main hover:bg-app-subtle transition-colors"
+                      aria-label="Buka pencarian"
+                  >
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                  </button>
+                  <ThemeControls />
+              </div>
+              
+              {/* Mobile Menu Button Container */}
+              <div className="-mr-2 flex md:hidden items-center space-x-2 ml-2">
                 <ThemeControls />
-            </div>
-            
-            {/* Mobile Menu Button Container */}
-            <div className="-mr-2 flex md:hidden items-center space-x-2">
-              <ThemeControls />
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                type="button"
-                className="bg-app-subtle inline-flex items-center justify-center p-2 rounded-md text-app-muted hover:text-brand hover:bg-brand-subtle focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand"
-                aria-controls="mobile-menu"
-                aria-expanded={isMenuOpen}
-              >
-                <span className="sr-only">Buka menu utama</span>
-                {isMenuOpen ? (
-                  <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                ) : (
-                  <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                )}
-              </button>
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  type="button"
+                  className="bg-app-subtle inline-flex items-center justify-center p-2 rounded-md text-app-muted hover:text-brand hover:bg-brand-subtle focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand"
+                  aria-controls="mobile-menu"
+                  aria-expanded={isMenuOpen}
+                >
+                  <span className="sr-only">Buka menu utama</span>
+                  {isMenuOpen ? (
+                    <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  ) : (
+                    <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </nav>
