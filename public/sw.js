@@ -1,4 +1,4 @@
-const CACHE_NAME = 'iamai-awanbyru-v1';
+const CACHE_NAME = 'iamai-awanbyru-v2';
 const urlsToCache = [
   '/',
   '/index.html',
