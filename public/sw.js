@@ -1,14 +1,17 @@
-const CACHE_NAME = 'iamai-awanbyru-v5';
+const CACHE_NAME = 'iamai-awanbyru-v6';
 const urlsToCache = [
   '/',
   '/index.html',
+  '/index.tsx',
   '/index.css',
-  'https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css',
+  'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
+  'https://aistudiocdn.com/react@^19.2.0',
+  'https://aistudiocdn.com/react-dom@^19.2.0',
+  'https://aistudiocdn.com/react-router-dom@^6.24.1',
+  'https://aistudiocdn.com/@google/genai@^1.24.0',
   '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png',
-  'https://awanbyru.com/favicon.svg'
+  '/icon-512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -17,6 +20,9 @@ self.addEventListener('install', event => {
       .then(cache => {
         console.log('Opened cache');
         return cache.addAll(urlsToCache);
+      })
+      .catch(error => {
+        console.error('Failed to cache during install:', error);
       })
   );
 });
@@ -57,8 +63,8 @@ self.addEventListener('fetch', event => {
                     return networkResponse;
                 });
 
-                // Return cached response immediately if available, and fetch in background (stale-while-revalidate)
-                // Or, for cache-first, just return response || fetchPromise;
+                // Stale-while-revalidate strategy: Return cached response immediately if available, 
+                // and fetch in background to update the cache for next time.
                 return response || fetchPromise;
             });
         })

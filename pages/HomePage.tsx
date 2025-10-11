@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
@@ -7,6 +7,7 @@ import { Article } from '../types';
 import MetaTags from '../components/MetaTags';
 import LazyImage from '../components/LazyImage';
 import { generatePlaceholderSrc, generateSrcSet } from '../utils/imageUtils';
+import Pagination from '../components/Pagination';
 
 
 const HeroArticle: React.FC<{ article: Article }> = ({ article }) => (
@@ -52,12 +53,20 @@ const HeroArticle: React.FC<{ article: Article }> = ({ article }) => (
 const HomePage: React.FC = () => {
   const { searchQuery } = useSearch();
   const [articles, setArticles] = useState<Article[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesGridRef = useRef<HTMLDivElement>(null);
+  
+  const ARTICLES_PER_PAGE = 9;
 
   useEffect(() => {
     import('../data/articles').then(module => {
       setArticles(module.articles);
     });
   }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery]);
 
   const filteredArticles = useMemo(() => {
     if (articles.length === 0) {
@@ -75,10 +84,24 @@ const HomePage: React.FC = () => {
   }, [searchQuery, articles]);
 
   const hasSearchResults = searchQuery.trim().length > 0;
+  
+  const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
+  const paginatedArticles = useMemo(() => {
+      const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+      return filteredArticles.slice(startIndex, startIndex + ARTICLES_PER_PAGE);
+  }, [currentPage, filteredArticles]);
 
-  const heroArticle = !hasSearchResults && filteredArticles.length > 0 ? filteredArticles[0] : null;
-  const otherArticles = hasSearchResults ? filteredArticles : (filteredArticles.length > 1 ? filteredArticles.slice(1, 9) : []);
+
+  const heroArticle = !hasSearchResults && currentPage === 1 && paginatedArticles.length > 0 ? paginatedArticles[0] : null;
+  const gridArticles = heroArticle ? paginatedArticles.slice(1) : paginatedArticles;
   const articleCardSizes = "(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw";
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    if (articlesGridRef.current) {
+        articlesGridRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -97,10 +120,10 @@ const HomePage: React.FC = () => {
         )}
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12" ref={articlesGridRef}>
           <div className="lg:col-span-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {otherArticles.map((article, index) => (
+              {gridArticles.map((article, index) => (
                 <ArticleCard 
                   key={article.id} 
                   article={article} 
@@ -117,6 +140,14 @@ const HomePage: React.FC = () => {
                     <h3 className="mt-2 text-xl font-medium text-app-main">Tidak Ada Artikel yang Ditemukan</h3>
                     <p className="mt-1 text-sm text-app-muted">Coba kata kunci pencarian yang berbeda.</p>
                 </div>
+            )}
+
+            {totalPages > 1 && (
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                />
             )}
           </div>
           <Sidebar />
