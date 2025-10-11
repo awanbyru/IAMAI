@@ -2,6 +2,38 @@ import { Prompt } from '../types';
 
 export const prompts: Prompt[] = [
   {
+    id: 'p43',
+    title: 'Ilusi Kaca Fraktal Escher',
+    description: 'Menciptakan ilusi digital hiper-maksimalis seorang wanita sureal sebagai kekosongan rekursif di tengah dunia kaca fraktal yang dinamis.',
+    prompt: `{
+  "scene_description": "A hypermaximalist digital illusion reminiscent of Escher, depicting a profound sense of stillness and solitude amidst dynamically swirling fractal transparent material glass forms. The scene features a surreal young woman as a recursive void, delicately carved from vibrant, sculptural color fields, embraced by the rich, active transparent glass world.",
+  "subject": {
+    "description": "A young woman, rendered as an illusion of recursive emptiness, a soft negative space etched from vibrant, almost sculptural color planes. Her form is subtly defined by the contrast between dense pigments and the surrounding void, ethereal and profound, appearing as an 'air body'.",
+    "action": "Emerging from and being embraced by the tumultuous landscape, standing in profound stillness, her presence a focal point of quietude within the dynamic environment."
+  },
+  "environment": {
+    "setting": "A tumultuous, hypermaximalist landscape constructed entirely from transparent fractal glass materials.",
+    "details": [
+      "Swirling fractal shapes with three-dimensional textured crystal forms, creating a vivid sense of depth and movement.",
+      "Transparent warm ocher, transparent terracotta red, transparent burnt purple, and transparent ivory white hues blend seamlessly, interweaving into complex patterns.",
+      "Light dances across the peaks and valleys of the fractal structures, emphasizing refractions and reflections, creating dynamic visual energy.",
+      "The landscape itself feels like a living, breathing entity of crystalized light and color."
+    ]
+  },
+  "cinematography": {
+    "shot_type": "Medium wide shot, allowing full appreciation of both the subject and the intricate environment.",
+    "camera_movement": "Static, allowing the viewer to absorb the complex details and the interplay of stillness and dynamism.",
+    "lighting": "Dramatic, ethereal lighting with volumetric light rays emphasizing the transparency and refractions of the glass. Strong backlighting illuminates the edges of the fractal forms and highlights the woman's void-like presence, creating high contrast and a sense of otherworldliness. Gloomy, moody atmosphere with pockets of brilliant light."
+  },
+  "style": {
+    "visual_style": "Hypermaximalist digital illusion, Escher-esque, fractal art, intricate geometric patterns, transparent material rendering, surrealism.",
+    "quality": "8k, ultra high detail, photorealistic transparency, cinematic quality, masterpiece, award-winning, ray tracing.",
+    "mood": "Profound stillness, solitude, contemplative, ethereal, dynamic, paradoxical, sublime."
+  }
+}`,
+    category: 'Surealisme',
+  },
+  {
     id: 'p42',
     title: 'Horor Voronoi Rekursif',
     description: 'Menciptakan adegan horor maksimalis yang psikedelik dengan rekursi wajah menjerit, difragmentasi menjadi sel-sel hypervoronoi dan kisi-kisi realitas.',
@@ -43,7 +75,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     id: 'p40',
     title: 'Konsep Seni Makhluk Fantasi',
     description: 'Merancang konsep seni yang detail untuk makhluk fantasi orisinal, cocok untuk inspirasi game atau cerita.',
-    prompt: 'Detailed concept art of a majestic "Griffin of the Sun". Its front half is a giant eagle with feathers made of golden light, and its back half is a powerful lion with a mane of fire. The creature is perched on a mountaintop at sunrise. Dynamic pose, epic scale, cinematic lighting, style of fantasy concept art, hyper-detailed, ArtStation HQ.',
+    prompt: 'Detailed concept art of a majestic "Griffin of the Sun". Its front half is a giant eagle with feathers made of golden light, and its back half is a powerful lion with a mane of fire. The creature is perched on a mountop at sunrise. Dynamic pose, epic scale, cinematic lighting, style of fantasy concept art, hyper-detailed, ArtStation HQ.',
     category: 'Seni',
   },
   {
