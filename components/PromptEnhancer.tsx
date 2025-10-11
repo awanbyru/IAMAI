@@ -59,12 +59,20 @@ const PromptEnhancer: React.FC = () => {
                 body: JSON.stringify({ userInput }),
             });
 
-            const data = await apiResponse.json();
-
             if (!apiResponse.ok) {
-                throw new Error(data.error || `Permintaan gagal dengan status ${apiResponse.status}`);
+                let errorMsg = `Permintaan gagal dengan status ${apiResponse.status}`;
+                try {
+                    // Try to parse a JSON error response from the server
+                    const errorData = await apiResponse.json();
+                    errorMsg = errorData.error || errorMsg;
+                } catch (e) {
+                    // If the response isn't JSON, use the status text or the generic message
+                    errorMsg = apiResponse.statusText ? `${errorMsg}: ${apiResponse.statusText}` : errorMsg;
+                }
+                throw new Error(errorMsg);
             }
 
+            const data = await apiResponse.json();
             const rawJsonText = data.result;
             
             try {
