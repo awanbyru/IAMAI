@@ -77,7 +77,7 @@ const HomePage: React.FC = () => {
   const hasSearchResults = searchQuery.trim().length > 0;
 
   const heroArticle = !hasSearchResults && filteredArticles.length > 0 ? filteredArticles[0] : null;
-  const otherArticles = hasSearchResults ? filteredArticles : (filteredArticles.length > 1 ? filteredArticles.slice(1) : []);
+  const otherArticles = hasSearchResults ? filteredArticles : (filteredArticles.length > 1 ? filteredArticles.slice(1, 9) : []);
 
   return (
     <>
