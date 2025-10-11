@@ -133,3 +133,8 @@ body {
 .json-number { color: #B5CEA8; }
 .json-boolean { color: #569CD6; }
 .json-null { color: #569CD6; }
+
+/* Custom utility class for article image aspect ratio */
+.aspect-2-1 {
+  aspect-ratio: 2 / 1;
+}
