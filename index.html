@@ -9,7 +9,6 @@
     <meta name="author" content="awanbyru" />
     <meta name="keywords" content="AI, Kecerdasan Buatan, Rekayasa Prompt, AI Generatif, Seni AI, Produktivitas AI" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://awanbyru.com/" />
     <meta property="og:title" content="IAMAI - awanbyru" />
@@ -21,7 +20,6 @@
     <meta property="og:site_name" content="IAMAI - awanbyru" />
     <meta property="og:locale" content="id_ID" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://awanbyru.com/" />
     <meta name="twitter:title" content="IAMAI - awanbyru" />
@@ -31,40 +29,16 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#3B82F6">
 
-    <!-- Preload LCP Image for Homepage -->
     <link rel="preload" as="image" href="https://picsum.photos/seed/recursive-horror-vortex/800/400" fetchpriority="high">
 
-    <!-- Font & CDN Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://esm.sh" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
     
-    <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
-    "react-router-dom": "https://esm.sh/react-router-dom@6.23.1",
-    "@google/genai": "https://esm.sh/@google/genai@0.14.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
-  }
-}
-</script>
-    
-    <!-- In-browser transpiler for JSX/TSX -->
-    <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css"></noscript>
 
-    <!-- CSS Optimization: Load Tailwind asynchronously -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"></noscript>
-    
-    <!-- Inlined Critical CSS -->
     <style>
       /* 1. Custom Theme Implementation */
       :root {
@@ -174,9 +148,21 @@
       .aspect-square { aspect-ratio: 1 / 1; }
       .aspect-2-1 { aspect-ratio: 2 / 1; }
     </style>
-  </head>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.24.0"
+  }
+}
+</script>
+</head>
   <body>
     <div id="root"></div>
-    <script type="text/babel" data-presets="react,typescript" data-type="module" src="/index.tsx"></script>
+    
+    <script type="module" src="/index.tsx"></script> 
   </body>
 </html>
