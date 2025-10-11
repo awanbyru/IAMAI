@@ -7,9 +7,10 @@ import { generatePlaceholderSrc, generateSrcSet } from '../utils/imageUtils';
 interface ArticleCardProps {
   article: Article;
   loading?: 'lazy' | 'eager';
+  sizes?: string;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = memo(({ article, loading = 'lazy' }) => {
+const ArticleCard: React.FC<ArticleCardProps> = memo(({ article, loading = 'lazy', sizes }) => {
   return (
     <div className="bg-app-surface rounded-xl border border-app-default shadow-md overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:border-brand/50">
       <Link to={`/article/${article.slug}`} className="block">
@@ -17,7 +18,7 @@ const ArticleCard: React.FC<ArticleCardProps> = memo(({ article, loading = 'lazy
           <LazyImage 
             src={article.imageUrl}
             srcset={generateSrcSet(article.imageUrl)}
-            sizes="(max-width: 767px) 100vw, 50vw"
+            sizes={sizes || "(max-width: 767px) 100vw, 50vw"}
             placeholderSrc={generatePlaceholderSrc(article.imageUrl)}
             className="w-full aspect-2-1 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out" 
             alt={article.title}

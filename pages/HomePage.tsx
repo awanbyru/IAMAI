@@ -78,6 +78,7 @@ const HomePage: React.FC = () => {
 
   const heroArticle = !hasSearchResults && filteredArticles.length > 0 ? filteredArticles[0] : null;
   const otherArticles = hasSearchResults ? filteredArticles : (filteredArticles.length > 1 ? filteredArticles.slice(1, 9) : []);
+  const articleCardSizes = "(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw";
 
   return (
     <>
@@ -104,6 +105,7 @@ const HomePage: React.FC = () => {
                   key={article.id} 
                   article={article} 
                   loading={index < 2 ? 'eager' : 'lazy'}
+                  sizes={articleCardSizes}
                 />
               ))}
             </div>
