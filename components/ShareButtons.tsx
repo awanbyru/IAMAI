@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 interface ShareButtonsProps {
   url: string;
@@ -8,6 +8,15 @@ interface ShareButtonsProps {
 
 const ShareButtons: React.FC<ShareButtonsProps> = ({ url, title, shareText = "Bagikan:" }) => {
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
+  const copyTimeoutRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (copyTimeoutRef.current) {
+        clearTimeout(copyTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
@@ -46,7 +55,10 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ url, title, shareText = "Ba
     if (navigator.clipboard) {
       navigator.clipboard.writeText(url).then(() => {
         setCopyStatus('copied');
-        setTimeout(() => setCopyStatus('idle'), 2000);
+        if (copyTimeoutRef.current) {
+            clearTimeout(copyTimeoutRef.current);
+        }
+        copyTimeoutRef.current = window.setTimeout(() => setCopyStatus('idle'), 2000);
       });
     }
   };

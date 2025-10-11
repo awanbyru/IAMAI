@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import MetaTags from '../components/MetaTags';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { parseIndonesianDate, formatDateForSitemap } from '../utils/dateUtils';
@@ -7,6 +7,7 @@ import { Article } from '../types';
 const SitemapGeneratorPage: React.FC = () => {
     const [sitemapContent, setSitemapContent] = useState('Generating sitemap...');
     const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
+    const copyTimeoutRef = useRef<number | null>(null);
 
     useEffect(() => {
       import('../data/articles').then(module => {
@@ -53,13 +54,22 @@ const SitemapGeneratorPage: React.FC = () => {
         };
         setSitemapContent(generateSitemap().trim());
       });
+      
+      return () => {
+          if (copyTimeoutRef.current) {
+              clearTimeout(copyTimeoutRef.current);
+          }
+      };
     }, []);
 
     const handleCopy = () => {
         if (navigator.clipboard) {
             navigator.clipboard.writeText(sitemapContent).then(() => {
                 setCopyStatus('copied');
-                setTimeout(() => setCopyStatus('idle'), 2000);
+                if (copyTimeoutRef.current) {
+                    clearTimeout(copyTimeoutRef.current);
+                }
+                copyTimeoutRef.current = window.setTimeout(() => setCopyStatus('idle'), 2000);
             });
         }
     };

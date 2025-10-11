@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Article } from '../types';
 import Sidebar from '../components/Sidebar';
@@ -17,6 +17,7 @@ const ArticlePage: React.FC = () => {
   const [claps, setClaps] = useState(0);
   const [clapped, setClapped] = useState(false);
   const [isClapping, setIsClapping] = useState(false);
+  const clappingTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,6 +38,11 @@ const ArticlePage: React.FC = () => {
       }
     });
 
+    return () => {
+      if (clappingTimeoutRef.current) {
+        clearTimeout(clappingTimeoutRef.current);
+      }
+    };
   }, [slug]);
   
   const extractStepsFromContent = (content: string[]) => {
@@ -192,7 +198,10 @@ const ArticlePage: React.FC = () => {
       localStorage.setItem(`clapped_${slug}`, 'true');
 
       setIsClapping(true);
-      setTimeout(() => setIsClapping(false), 500);
+      if (clappingTimeoutRef.current) {
+        clearTimeout(clappingTimeoutRef.current);
+      }
+      clappingTimeoutRef.current = window.setTimeout(() => setIsClapping(false), 500);
     }
   }, [clapped, slug, claps]);
   

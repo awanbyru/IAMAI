@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Comment } from '../types';
 
 interface CommentSectionProps {
@@ -11,6 +11,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const submitTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     try {
@@ -23,6 +24,12 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
       console.error("Gagal mem-parsing komentar dari localStorage", e);
       setComments([]);
     }
+
+    return () => {
+        if (submitTimeoutRef.current) {
+            clearTimeout(submitTimeoutRef.current);
+        }
+    };
   }, [articleSlug]);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -43,7 +50,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({ articleSlug }) => {
       date: new Date().toISOString(),
     };
 
-    setTimeout(() => {
+    submitTimeoutRef.current = window.setTimeout(() => {
         try {
             const allCommentsJSON = localStorage.getItem('article_comments');
             const allComments = allCommentsJSON ? JSON.parse(allCommentsJSON) : {};

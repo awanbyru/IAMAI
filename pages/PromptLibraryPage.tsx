@@ -1,16 +1,28 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import MetaTags from '../components/MetaTags';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { Prompt } from '../types';
 
 const PromptCard: React.FC<{ prompt: Prompt }> = ({ prompt }) => {
     const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
+    const copyTimeoutRef = useRef<number | null>(null);
+
+    useEffect(() => {
+        return () => {
+            if (copyTimeoutRef.current) {
+                clearTimeout(copyTimeoutRef.current);
+            }
+        };
+    }, []);
 
     const handleCopy = () => {
         if (navigator.clipboard) {
             navigator.clipboard.writeText(prompt.prompt).then(() => {
                 setCopyStatus('copied');
-                setTimeout(() => setCopyStatus('idle'), 2000);
+                if (copyTimeoutRef.current) {
+                    clearTimeout(copyTimeoutRef.current);
+                }
+                copyTimeoutRef.current = window.setTimeout(() => setCopyStatus('idle'), 2000);
             });
         }
     };

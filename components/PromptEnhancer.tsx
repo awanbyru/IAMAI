@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 
 // Memoized component for syntax highlighting
 const JsonHighlighter = React.memo(({ jsonString }: { jsonString: string }) => {
@@ -34,6 +34,15 @@ const PromptEnhancer: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
     const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
+    const copyTimeoutRef = useRef<number | null>(null);
+
+    useEffect(() => {
+        return () => {
+            if (copyTimeoutRef.current) {
+                clearTimeout(copyTimeoutRef.current);
+            }
+        };
+    }, []);
 
     const handleGenerate = async () => {
         if (!userInput.trim()) return;
@@ -79,7 +88,10 @@ const PromptEnhancer: React.FC = () => {
         if (navigator.clipboard && generatedJson) {
             navigator.clipboard.writeText(generatedJson).then(() => {
                 setCopyStatus('copied');
-                setTimeout(() => setCopyStatus('idle'), 2000);
+                if (copyTimeoutRef.current) {
+                    clearTimeout(copyTimeoutRef.current);
+                }
+                copyTimeoutRef.current = window.setTimeout(() => setCopyStatus('idle'), 2000);
             });
         }
     };

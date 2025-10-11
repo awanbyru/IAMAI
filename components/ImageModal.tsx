@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { GalleryImage } from '../types';
 import ShareButtons from './ShareButtons';
 
@@ -6,6 +6,7 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
   const [activeImage, setActiveImage] = useState<GalleryImage | null>(null);
   const [show, setShow] = useState(false);
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
+  const copyTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (image) {
@@ -42,6 +43,9 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
       return () => {
         document.body.style.overflow = 'auto';
         window.removeEventListener('keydown', handleKeyDown);
+        if (copyTimeoutRef.current) {
+          clearTimeout(copyTimeoutRef.current);
+        }
       };
     }
   }, [activeImage, onClose]);
@@ -54,7 +58,10 @@ const ImageModal: React.FC<{ image: GalleryImage | null; onClose: () => void }> 
     if (navigator.clipboard && activeImage) {
       navigator.clipboard.writeText(activeImage.prompt).then(() => {
         setCopyStatus('copied');
-        setTimeout(() => setCopyStatus('idle'), 2000);
+        if (copyTimeoutRef.current) {
+            clearTimeout(copyTimeoutRef.current);
+        }
+        copyTimeoutRef.current = window.setTimeout(() => setCopyStatus('idle'), 2000);
       });
     }
   };
