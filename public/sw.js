@@ -1,8 +1,9 @@
-const CACHE_NAME = 'iamai-awanbyru-v2';
+const CACHE_NAME = 'iamai-awanbyru-v4';
 const urlsToCache = [
   '/',
   '/index.html',
-  'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css',
+  '/index.css',
+  'https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
   '/manifest.json',
   '/icon-192.png',
