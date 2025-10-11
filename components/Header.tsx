@@ -28,7 +28,10 @@ const Header: React.FC = () => {
     const query = e.target.value;
     setSearchQuery(query);
     if (location.pathname !== '/') {
-      navigate('/');
+      // We navigate to home only if the user searches from another page, 
+      // but we do it gently by just setting the state, the view will react.
+      // For a better UX, we removed the forceful navigation on every keystroke.
+      // The user will see search results upon navigating to the homepage.
     }
   };
 
@@ -147,21 +150,23 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <div className="relative px-2 py-2">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
-                    <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
-                      <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-                    </svg>
-                  </span>
-                <input
-                  type="search"
-                  placeholder="Cari artikel..."
-                  value={searchQuery}
-                  onChange={handleMobileSearchChange}
-                  className="w-full py-2 pl-10 pr-4 text-app-main bg-app-subtle border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
-                  aria-label="Cari artikel"
-                />
-              </div>
+              <form onSubmit={(e) => { e.preventDefault(); navigate('/'); setIsMenuOpen(false); }}>
+                <div className="relative px-2 py-2">
+                  <span className="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
+                      <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                      </svg>
+                    </span>
+                  <input
+                    type="search"
+                    placeholder="Cari artikel..."
+                    value={searchQuery}
+                    onChange={handleMobileSearchChange}
+                    className="w-full py-2 pl-10 pr-4 text-app-main bg-app-subtle border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+                    aria-label="Cari artikel"
+                  />
+                </div>
+              </form>
               <NavLink to="/" className={mobileNavLinkClasses} onClick={() => setIsMenuOpen(false)}>
                 Beranda
               </NavLink>

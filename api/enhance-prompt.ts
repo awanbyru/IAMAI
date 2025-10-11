@@ -73,6 +73,8 @@ export default async function handler(req: any, res: any) {
         },
     });
 
+    // The response.text is guaranteed to be a JSON string due to the config.
+    // No need to parse markdown.
     const rawJsonText = response.text;
     
     return res.status(200).json({ result: rawJsonText });

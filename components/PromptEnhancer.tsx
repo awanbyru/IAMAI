@@ -32,17 +32,10 @@ const PromptEnhancer: React.FC = () => {
                 throw new Error(data.error || `Permintaan gagal dengan status ${apiResponse.status}`);
             }
 
-            const rawJsonText = data.result.trim();
+            const rawJsonText = data.result;
             
-            let jsonStringToParse = rawJsonText;
-
-            const jsonMatch = rawJsonText.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
-            if (jsonMatch && jsonMatch[1]) {
-                jsonStringToParse = jsonMatch[1].trim();
-            }
-
             try {
-                const parsedJson = JSON.parse(jsonStringToParse);
+                const parsedJson = JSON.parse(rawJsonText);
                 setGeneratedJson(JSON.stringify(parsedJson, null, 2));
             } catch (parseError) {
                 console.error("Gagal mem-parsing JSON, respons mentah:", rawJsonText);

@@ -14,16 +14,7 @@ const SitemapGeneratorPage: React.FC = () => {
         const generateSitemap = () => {
             const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://www.awanbyru.com';
             const today = new Date().toISOString().split('T')[0];
-          
-            const staticPages = [
-              { loc: '/', lastmod: today, changefreq: 'weekly', priority: '1.0' },
-              { loc: '/gallery', lastmod: today, changefreq: 'weekly', priority: '0.8' },
-              { loc: '/prompts', lastmod: today, changefreq: 'weekly', priority: '0.8' },
-              { loc: '/about', lastmod: '2024-05-21', changefreq: 'yearly', priority: '0.6' },
-              { loc: '/contact', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.5' },
-              { loc: '/privacy-policy', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.3' },
-            ];
-          
+            
             const articlePages = [...articles]
               .sort((a, b) => parseIndonesianDate(b.date).getTime() - parseIndonesianDate(a.date).getTime())
               .map(article => ({
@@ -32,6 +23,18 @@ const SitemapGeneratorPage: React.FC = () => {
                 changefreq: 'monthly',
                 priority: '0.9',
               }));
+
+            const latestPostDate = articlePages.length > 0 ? articlePages[0].lastmod : today;
+          
+            const staticPages = [
+              { loc: '/', lastmod: latestPostDate, changefreq: 'weekly', priority: '1.0' },
+              { loc: '/gallery', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+              { loc: '/prompts', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+              { loc: '/enhancer', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+              { loc: '/about', lastmod: '2024-05-21', changefreq: 'yearly', priority: '0.6' },
+              { loc: '/contact', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.5' },
+              { loc: '/privacy-policy', lastmod: '2023-10-26', changefreq: 'yearly', priority: '0.3' },
+            ];
       
             const allPages = [...staticPages, ...articlePages];
       
