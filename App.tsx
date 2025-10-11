@@ -16,6 +16,7 @@ const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const SitemapGeneratorPage = lazy(() => import('./pages/SitemapGeneratorPage'));
 const PromptLibraryPage = lazy(() => import('./pages/PromptLibraryPage'));
+const PromptEnhancerPage = lazy(() => import('./pages/PromptEnhancerPage'));
 
 const Layout: React.FC = () => {
   return (
@@ -91,6 +92,7 @@ const App: React.FC = () => {
               <Route path="/article/:slug" element={<ArticlePage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/prompts" element={<PromptLibraryPage />} />
+              <Route path="/enhancer" element={<PromptEnhancerPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/about" element={<AboutPage />} />

@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect } from 'react';
 import MetaTags from '../components/MetaTags';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { Prompt } from '../types';
-import PromptEnhancer from '../components/PromptEnhancer';
 
 const PromptCard: React.FC<{ prompt: Prompt }> = ({ prompt }) => {
     const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
@@ -54,7 +53,7 @@ const PromptCard: React.FC<{ prompt: Prompt }> = ({ prompt }) => {
 
 const PromptLibraryPage: React.FC = () => {
     const [prompts, setPrompts] = useState<Prompt[]>([]);
-    const [activeFilter, setActiveFilter] = useState('Peningkat Prompt');
+    const [activeFilter, setActiveFilter] = useState('Semua');
 
     useEffect(() => {
         import('../data/prompts').then(module => {
@@ -63,8 +62,8 @@ const PromptLibraryPage: React.FC = () => {
     }, []);
 
     const categories = useMemo(() => {
-        if (prompts.length === 0) return ['Peningkat Prompt', 'Semua'];
-        return ['Peningkat Prompt', 'Semua', ...new Set(prompts.map(p => p.category))];
+        if (prompts.length === 0) return ['Semua'];
+        return ['Semua', ...new Set(prompts.map(p => p.category))];
     }, [prompts]);
 
     const filteredPrompts = useMemo(() => {
@@ -93,7 +92,7 @@ const PromptLibraryPage: React.FC = () => {
                         Pustaka Prompt
                     </h1>
                     <p className="text-base sm:text-lg text-app-muted max-w-2xl mx-auto">
-                        Jelajahi koleksi prompt ahli, atau gunakan Peningkat Prompt untuk mengubah ide Anda menjadi mahakarya terstruktur.
+                        Jelajahi koleksi prompt ahli yang telah dikurasi untuk berbagai kebutuhan. Salin dan gunakan untuk meningkatkan produktivitas dan kreativitas Anda.
                     </p>
                 </section>
 
@@ -113,17 +112,11 @@ const PromptLibraryPage: React.FC = () => {
                     ))}
                 </div>
                 
-                {activeFilter === 'Peningkat Prompt' ? (
-                     <section>
-                        <PromptEnhancer />
-                    </section>
-                ) : (
-                    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {filteredPrompts.map(prompt => (
-                            <PromptCard key={prompt.id} prompt={prompt} />
-                        ))}
-                    </section>
-                )}
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredPrompts.map(prompt => (
+                        <PromptCard key={prompt.id} prompt={prompt} />
+                    ))}
+                </section>
             </div>
         </>
     );
