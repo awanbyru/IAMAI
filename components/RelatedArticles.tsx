@@ -39,7 +39,7 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ currentArticleSlug, t
               srcset={generateSrcSet(article.imageUrl, [320, 480])}
               sizes="(max-width: 639px) 90vw, 45vw"
               placeholderSrc={generatePlaceholderSrc(article.imageUrl)}
-              className="w-full h-40 object-cover"
+              className="w-full h-40"
               alt={article.title}
             />
             <div className="p-4">

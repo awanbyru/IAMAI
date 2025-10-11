@@ -19,7 +19,7 @@ const HeroArticle: React.FC<{ article: Article }> = ({ article }) => (
             srcset={generateSrcSet(article.imageUrl)}
             sizes="(max-width: 767px) 100vw, 50vw"
             placeholderSrc={generatePlaceholderSrc(article.imageUrl)}
-            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="w-full h-full transform group-hover:scale-105 transition-transform duration-500 ease-out"
             alt={article.title}
             loading="eager"
             fetchPriority="high"

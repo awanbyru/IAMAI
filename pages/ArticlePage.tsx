@@ -331,7 +331,7 @@ const ArticlePage: React.FC = () => {
                 srcset={generateSrcSet(article.imageUrl)}
                 sizes="100vw"
                 alt={article.title} 
-                className="w-full aspect-2-1 object-cover"
+                className="w-full aspect-2-1"
                 loading="eager"
                 fetchPriority="high"
                 placeholderSrc={generatePlaceholderSrc(article.imageUrl)}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     placeholderSrc?: string;
@@ -7,6 +7,11 @@ interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, loading = 'lazy', placeholderSrc, ...props }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [hasError, setHasError] = useState(false);
+
+    useEffect(() => {
+        setIsLoaded(false);
+        setHasError(false);
+    }, [src]);
 
     const handleLoad = () => setIsLoaded(true);
     const handleError = () => setHasError(true);
