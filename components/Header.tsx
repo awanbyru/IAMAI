@@ -68,47 +68,53 @@ const Header: React.FC = () => {
       <header className="bg-app-surface/80 backdrop-blur-sm border-b border-app-default sticky top-0 z-40">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
+            
+            {/* Left side: Title + Main Nav Links */}
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0">
                 <h1 className="text-xl font-bold text-brand">
                   IAMAI - awanbyru
                 </h1>
               </Link>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-center space-x-4">
-                <NavLink to="/" className={navLinkClasses}>
-                  Beranda
-                </NavLink>
-                <NavLink to="/gallery" className={navLinkClasses}>
-                  Galeri
-                </NavLink>
-                <NavLink to="/prompts" className={navLinkClasses}>
-                  Prompt
-                </NavLink>
-                <NavLink to="/enhancer" className={navLinkClasses}>
-                  Peningkat
-                </NavLink>
-                <NavLink to="/about" className={navLinkClasses}>
-                  Tentang
-                </NavLink>
-                <NavLink to="/contact" className={navLinkClasses}>
-                  Kontak
-                </NavLink>
-                <div className="flex items-center space-x-1">
-                    <button
-                        onClick={() => setIsSearchOpen(true)}
-                        className="p-2 rounded-full text-app-muted hover:text-app-main hover:bg-app-subtle transition-colors"
-                        aria-label="Buka pencarian"
-                    >
-                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </button>
-                    <ThemeControls />
+              <div className="hidden md:block">
+                <div className="ml-10 flex items-center space-x-4">
+                  <NavLink to="/" className={navLinkClasses}>
+                    Beranda
+                  </NavLink>
+                  <NavLink to="/gallery" className={navLinkClasses}>
+                    Galeri
+                  </NavLink>
+                  <NavLink to="/prompts" className={navLinkClasses}>
+                    Prompt
+                  </NavLink>
+                  <NavLink to="/enhancer" className={navLinkClasses}>
+                    Peningkat
+                  </NavLink>
+                  <NavLink to="/about" className={navLinkClasses}>
+                    Tentang
+                  </NavLink>
+                  <NavLink to="/contact" className={navLinkClasses}>
+                    Kontak
+                  </NavLink>
                 </div>
               </div>
             </div>
+
+            {/* Right side: Desktop Controls */}
+            <div className="hidden md:flex items-center space-x-1">
+                <button
+                    onClick={() => setIsSearchOpen(true)}
+                    className="p-2 rounded-full text-app-muted hover:text-app-main hover:bg-app-subtle transition-colors"
+                    aria-label="Buka pencarian"
+                >
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <ThemeControls />
+            </div>
+            
+            {/* Mobile Menu Button Container */}
             <div className="-mr-2 flex md:hidden items-center space-x-2">
               <ThemeControls />
               <button
