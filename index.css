@@ -77,11 +77,18 @@ body {
   width: 8px;
   float: left;
   margin: 0 1px;
-  background-color: var(--color-text-muted);
+  background-color: #94A3B8; /* slate-400 */
   display: block;
   border-radius: 50%;
   opacity: 0.4;
   animation: typing 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: .2s;
+}
+.typing-indicator span:nth-child(3) {
+    animation-delay: .4s;
 }
 
 /* Custom pulse animation for clap button */
@@ -119,3 +126,10 @@ body {
 
 .line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+
+/* JSON Syntax Highlighting */
+.json-key { color: #9CDCFE; }
+.json-string { color: #CE9178; }
+.json-number { color: #B5CEA8; }
+.json-boolean { color: #569CD6; }
+.json-null { color: #569CD6; }
