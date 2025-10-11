@@ -11,7 +11,7 @@ interface ArticleCardProps {
 
 const ArticleCard: React.FC<ArticleCardProps> = memo(({ article, loading = 'lazy' }) => {
   return (
-    <div className="bg-app-surface rounded-xl border border-app-default shadow-md overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
+    <div className="bg-app-surface rounded-xl border border-app-default shadow-md overflow-hidden group transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 hover:border-brand/50">
       <Link to={`/article/${article.slug}`} className="block">
         <div className="relative overflow-hidden">
           <LazyImage 

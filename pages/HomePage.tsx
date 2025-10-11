@@ -1,10 +1,53 @@
 import React, { useMemo, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ArticleCard from '../components/ArticleCard';
 import Sidebar from '../components/Sidebar';
 import { useSearch } from '../context/SearchContext';
 import { Article } from '../types';
 import MetaTags from '../components/MetaTags';
 import LazyImage from '../components/LazyImage';
+import { generatePlaceholderSrc, generateSrcSet } from '../utils/imageUtils';
+
+
+const HeroArticle: React.FC<{ article: Article }> = ({ article }) => (
+  <section className="mb-12 group">
+    <Link to={`/article/${article.slug}`} className="block">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-app-surface rounded-xl border border-app-default shadow-md overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg hover:border-brand/50">
+        <div className="relative overflow-hidden h-64 md:h-full md:rounded-l-xl">
+          <LazyImage
+            src={article.imageUrl}
+            srcset={generateSrcSet(article.imageUrl)}
+            sizes="(max-width: 767px) 100vw, 50vw"
+            placeholderSrc={generatePlaceholderSrc(article.imageUrl)}
+            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+            alt={article.title}
+            loading="eager"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-opacity duration-300"></div>
+        </div>
+        <div className="p-8">
+          <div className="flex items-center mb-4">
+            <span className="inline-block bg-brand-subtle text-brand-subtle text-xs font-bold mr-3 px-3 py-1.5 rounded-full uppercase tracking-wider">Terbaru</span>
+            {article.tags.slice(0, 1).map(tag => (
+              <span key={tag} className="text-app-muted text-xs font-medium">{tag}</span>
+            ))}
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold text-app-main mb-3 leading-tight group-hover:text-brand transition-colors duration-300">{article.title}</h2>
+          <p className="text-app-muted text-base mb-6 line-clamp-3">{article.excerpt}</p>
+          <div className="flex items-center">
+            <img className="w-11 h-11 rounded-full mr-4 bg-app-subtle" src={article.authorAvatar} alt={article.author} loading="lazy" />
+            <div className="text-sm">
+              <p className="text-app-main font-semibold">{article.author}</p>
+              <p className="text-app-muted">{article.date}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Link>
+  </section>
+);
+
 
 const HomePage: React.FC = () => {
   const { searchQuery } = useSearch();
@@ -16,7 +59,7 @@ const HomePage: React.FC = () => {
     });
   }, []);
 
-  const displayedArticles = useMemo(() => {
+  const filteredArticles = useMemo(() => {
     if (articles.length === 0) {
       return [];
     }
@@ -31,6 +74,11 @@ const HomePage: React.FC = () => {
     );
   }, [searchQuery, articles]);
 
+  const hasSearchResults = searchQuery.trim().length > 0;
+
+  const heroArticle = !hasSearchResults && filteredArticles.length > 0 ? filteredArticles[0] : null;
+  const otherArticles = hasSearchResults ? filteredArticles : (filteredArticles.length > 1 ? filteredArticles.slice(1) : []);
+
   return (
     <>
       <MetaTags
@@ -41,11 +89,17 @@ const HomePage: React.FC = () => {
         imageDimensions={{ width: 512, height: 512 }}
       />
       <div>
+        {heroArticle && <HeroArticle article={heroArticle} />}
+
+        {hasSearchResults && filteredArticles.length > 0 && (
+          <h2 className="text-2xl font-bold text-app-main mb-8">Hasil Pencarian ({filteredArticles.length})</h2>
+        )}
+
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {displayedArticles.map((article, index) => (
+              {otherArticles.map((article, index) => (
                 <ArticleCard 
                   key={article.id} 
                   article={article} 
@@ -53,7 +107,7 @@ const HomePage: React.FC = () => {
                 />
               ))}
             </div>
-             {articles.length > 0 && displayedArticles.length === 0 && (
+             {filteredArticles.length === 0 && (
                 <div className="md:col-span-2 text-center py-16 px-6 bg-app-surface rounded-lg shadow-md border border-app-default">
                     <svg className="mx-auto h-12 w-12 text-app-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

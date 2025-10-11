@@ -16,6 +16,7 @@ const ArticlePage: React.FC = () => {
   const [article, setArticle] = useState<Article | null | undefined>(undefined);
   const [claps, setClaps] = useState(0);
   const [clapped, setClapped] = useState(false);
+  const [isClapping, setIsClapping] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -189,6 +190,9 @@ const ArticlePage: React.FC = () => {
       setClapped(true);
       localStorage.setItem(`claps_${slug}`, newClaps.toString());
       localStorage.setItem(`clapped_${slug}`, 'true');
+
+      setIsClapping(true);
+      setTimeout(() => setIsClapping(false), 500);
     }
   }, [clapped, slug, claps]);
   
@@ -355,7 +359,12 @@ const ArticlePage: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex items-center space-x-2">
-                     <button onClick={handleClap} className={`flex items-center space-x-2 p-2 rounded-full transition-colors duration-200 ${clapped ? 'text-brand bg-brand-subtle' : 'text-app-muted hover:bg-app-subtle'}`} aria-label="Tepuk tangan untuk artikel ini" disabled={clapped}>
+                     <button 
+                        onClick={handleClap} 
+                        className={`flex items-center space-x-2 p-2 rounded-full transition-all duration-200 ${clapped ? 'text-brand bg-brand-subtle' : 'text-app-muted hover:bg-app-subtle'} ${isClapping ? 'animate-pulse-once' : ''}`} 
+                        aria-label="Tepuk tangan untuk artikel ini" 
+                        disabled={clapped}
+                      >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill={clapped ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9A2 2 0 0020 4h-4" /></svg>
                         <span className="font-semibold">{claps}</span>
                      </button>

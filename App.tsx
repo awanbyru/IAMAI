@@ -6,6 +6,7 @@ import CookieBanner from './components/CookieBanner';
 import { SearchProvider } from './context/SearchContext';
 import { ThemeProvider } from './context/ThemeContext';
 import LoadingSpinner from './components/LoadingSpinner';
+import BackToTopButton from './components/BackToTopButton';
 
 // Lazy load page components
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -20,7 +21,7 @@ const PromptEnhancerPage = lazy(() => import('./pages/PromptEnhancerPage'));
 
 const Layout: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen font-sans">
+    <div className="flex flex-col min-h-screen font-sans bg-app-background">
       <Header />
       <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
         <Suspense fallback={<LoadingSpinner />}>
@@ -29,6 +30,7 @@ const Layout: React.FC = () => {
       </main>
       <Footer />
       <CookieBanner />
+      <BackToTopButton />
     </div>
   );
 };
