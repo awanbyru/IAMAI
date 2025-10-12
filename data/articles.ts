@@ -106,6 +106,68 @@ Camera Angle: Top-down view, looking directly at the recursive faces from above.
     ]
   },
   {
+    id: '34',
+    slug: 'desain-interior-ai-ciptakan-ruang-impian',
+    title: 'Dari Mimpi ke Realitas: Mendesain Interior Ruangan dengan AI dalam 5 Langkah',
+    excerpt: 'Punya kamar yang ingin diubah tapi bingung mulai dari mana? Lupakan moodboard yang rumit. Pelajari cara mengubah foto ruangan Anda menjadi lusinan konsep desain interior profesional—dari Skandinavia hingga Industrial—hanya dengan kekuatan AI dan prompt yang tepat.',
+    summary: 'Panduan praktis ini mengajarkan cara menggunakan AI generatif untuk desain interior. Pelajari teknik image-to-image, cara menulis prompt yang efektif untuk gaya desain (Skandinavia, Industrial, dll.), dan kontrol pencahayaan untuk memvisualisasikan ruang impian Anda dari sebuah foto.',
+    type: 'howto',
+    content: [
+      'Anda menatap sebuah ruangan di rumah Anda—kamar tidur, ruang tamu, atau bahkan sudut kerja yang membosankan. Anda tahu ruangan itu punya potensi, tetapi Anda terjebak. Di mana harus memulai? Warna apa yang cocok? Gaya apa yang Anda inginkan? Secara tradisional, ini adalah titik di mana Anda mulai mengumpulkan gambar-gambar inspirasi yang tak terhitung jumlahnya atau bahkan menyewa seorang desainer interior yang mahal.',
+      'Sekarang, lupakan semua itu. Selamat datang di era desain interior yang didemokratisasi, di mana satu-satunya yang Anda butuhkan adalah foto ruangan Anda dan kekuatan AI generatif. Dengan teknik yang benar, Anda dapat mengubah foto "sebelum" yang sederhana menjadi lusinan konsep "sesudah" yang menakjubkan dalam hitungan menit. Mari kita bedah prosesnya langkah demi langkah.',
+      '**Langkah 1: Fondasi - Foto "Sebelum" yang Sempurna**',
+      'Setiap proyek desain yang hebat dimulai dengan fondasi yang kuat. Dalam kasus ini, itu adalah foto ruangan Anda. Meskipun AI bisa sangat pemaaf, foto yang bagus akan memberikan hasil yang jauh lebih baik. Ikuti tips ini:',
+      '  - **Pencahayaan Baik:** Ambil foto pada siang hari dengan cahaya alami sebanyak mungkin. Buka tirai dan nyalakan lampu jika perlu.',
+      '  - **Sudut Lebar:** Berdirilah di sudut ruangan untuk menangkap sebanyak mungkin ruang. Jika ponsel Anda memiliki lensa sudut lebar (ultrawide), gunakan itu.',
+      '  - **Jelas dan Fokus:** Pastikan fotonya tajam. AI perlu "melihat" arsitektur ruangan—di mana jendela, pintu, dan dinding berada.',
+      'Jangan khawatir tentang kekacauan. AI cukup pintar untuk mengabaikan barang-barang yang berserakan dan fokus pada struktur ruangan itu sendiri.',
+      '**Langkah 2: Prompt Inti - Formula Ajaib**',
+      'Sekarang, saatnya memberi tahu AI apa yang harus dilakukan. Ini adalah proses *image-to-image*, yang berarti kita memberikan gambar sebagai konteks visual dan prompt teks sebagai arahan kreatif. Struktur prompt yang efektif terlihat seperti ini:',
+      '`A professional interior design photograph of the provided room, transformed into a [GAYA DESAIN] style. The room features [ELEMEN KUNCI]. The lighting is [GAYA PENCAHAYAAN]. Photorealistic, 8K, high detail.`',
+      'Formula ini memberi AI semua informasi yang dibutuhkannya: konteks (foto), gaya, detail spesifik, dan kualitas yang diinginkan.',
+      '**Langkah 3: Mendefinisikan Gaya Anda - Kata Kunci Estetika**',
+      'Ini adalah bagian yang paling menyenangkan. Dengan mengubah beberapa kata, Anda bisa menjelajahi dunia gaya desain yang berbeda. Berikut adalah beberapa kata kunci populer untuk memulai:',
+      '  - **Skandinavia:** `minimalist, clean lines, neutral color palette (whites, greys, light wood), cozy textiles (wool, linen), abundant natural light.`',
+      '  - **Industrial:** `exposed brick walls, metal pipes, concrete floors, high ceilings, large windows, vintage furniture, neutral tones with black accents.`',
+      '  - **Bohemian (Boho):** `eclectic mix of patterns, textures, and colors, layered rugs, macrame wall hangings, lots of plants, natural materials like rattan and wood.`',
+      '  - **Japandi:** `a fusion of Japanese and Scandinavian design, minimalist, functional, natural materials, muted colors, focus on craftsmanship and clean lines.`',
+      '  - **Modern Abad Pertengahan (Mid-Century Modern):** `organic shapes, simple forms, iconic furniture (like the Eames chair), tapered legs, wood tones mixed with pops of color (mustard yellow, teal).`',
+      'Cukup masukkan deskripsi gaya ini ke dalam bagian `[GAYA DESAIN]` dari prompt inti Anda.',
+      '**Langkah 4: Mengontrol Suasana - Pencahayaan adalah Segalanya**',
+      'Pencahayaan dapat secara drastis mengubah nuansa sebuah ruangan. Jadilah spesifik tentang atmosfer yang ingin Anda ciptakan di bagian `[GAYA PENCAHAYAAN]`:',
+      '  - Untuk tampilan yang bersih dan segar: `bright and airy with abundant natural sunlight streaming through the windows.`',
+      '  - Untuk suasana yang hangat dan nyaman: `warm and cozy with soft ambient lighting from a floor lamp and candles.`',
+      '  - Untuk nuansa yang dramatis dan mewah: `dramatic cinematic lighting with focused spotlights and deep shadows.`',
+      '**Langkah 5: Menyatukan Semuanya - Contoh Lengkap**',
+      'Mari kita gabungkan semuanya. Katakanlah kita memiliki foto ruang tamu dan kita ingin melihatnya dalam gaya Japandi yang tenang.',
+      `JSON_PROMPT:${`A professional interior design photograph of the provided living room, completely transformed into a **Japandi style**.
+
+The room should feature **minimalist furniture with clean lines, natural light wood finishes, and functional simplicity**. The color palette is **muted and neutral, with shades of beige, cream, and soft grey**. Include **subtle Japanese elements like a shoji screen partition and a low-profile coffee table**. The space should feel **uncluttered, serene, and harmonious**.
+
+The lighting is **soft, diffused, and abundant natural light**, creating a calm and peaceful atmosphere.
+
+**Style:** Photorealistic, 8K, high detail, interior design magazine quality.`}`,
+      '**Kesimpulan: Desainer Interior Pribadi Anda**',
+      'Dengan teknik ini, Anda tidak lagi hanya menebak-nebak. Anda menjadi kurator visi Anda sendiri, mampu menjelajahi puluhan kemungkinan sebelum mengangkat kuas cat atau membeli satu pun perabot. AI generatif telah membuka pintu ke dunia di mana desain interior yang indah dapat diakses oleh semua orang. Jadi, ambil foto itu, mulailah bereksperimen, dan bangun ruang impian Anda, satu prompt pada satu waktu.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/ai-interior-design-guide/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '12 Oktober 2025',
+    claps: 135,
+    tags: ['Desain Interior', 'AI Image Generator', 'Image to Image', 'Prompt Engineering', 'Tutorial'],
+    faq: [
+        {
+          question: "Apakah saya harus membersihkan ruangan saya sebelum mengambil foto?",
+          answer: "Tidak harus! AI cukup pintar untuk mengabaikan kekacauan dan fokus pada struktur ruangan. Namun, foto yang lebih bersih dapat memberikan hasil yang lebih fokus pada desain, bukan pada 'memperbaiki' ruangan."
+        },
+        {
+          question: "Bisakah AI mempertahankan furnitur saya yang sudah ada?",
+          answer: "Bisa, tetapi butuh prompt yang lebih spesifik. Anda bisa menambahkan instruksi seperti '...while keeping the existing brown leather sofa and wooden coffee table'. Namun, untuk eksplorasi desain total, lebih baik membiarkan AI berimajinasi dengan bebas terlebih dahulu."
+        }
+    ]
+  },
+  {
     id: '33',
     slug: 'panduan-prompting-sora-2-sinematik-ai',
     title: 'Menyutradarai Mimpi: Panduan Prompting Mendalam untuk Sora 2',
