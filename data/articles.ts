@@ -1,6 +1,6 @@
 import { Article } from '../types';
 
-const authorAvatar = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzAzNkFGNSIvPjwvc3ZnPg==';
+const authorAvatar = '/icon.svg';
 
 export const articles: Article[] = [
   {

@@ -109,8 +109,7 @@ const HomePage: React.FC = () => {
         title="IAMAI - awanbyru | Blog AI & Prompting"
         description="Jelajahi dunia AI dan rekayasa prompt. Temukan artikel menarik, koleksi gambar AI premium, dan panduan ahli untuk meningkatkan kreativitas dan produktivitas Anda."
         canonicalUrl={`${window.location.origin}/`}
-        imageUrl="/icon-512.png"
-        imageDimensions={{ width: 512, height: 512 }}
+        imageUrl="/icon.svg"
       />
       <div>
         {heroArticle && <HeroArticle article={heroArticle} />}

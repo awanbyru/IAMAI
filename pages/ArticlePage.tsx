@@ -87,7 +87,7 @@ const ArticlePage: React.FC = () => {
                 "name": "IAMAI - awanbyru",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": `${window.location.origin}/icon-512.png`
+                    "url": `${window.location.origin}/icon.svg`
                 }
             },
             "datePublished": parseIndonesianDate(article.date).toISOString(),
