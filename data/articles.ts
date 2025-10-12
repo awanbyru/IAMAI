@@ -150,7 +150,7 @@ The lighting is **soft, diffused, and abundant natural light**, creating a calm 
       '**Kesimpulan: Desainer Interior Pribadi Anda**',
       'Dengan teknik ini, Anda tidak lagi hanya menebak-nebak. Anda menjadi kurator visi Anda sendiri, mampu menjelajahi puluhan kemungkinan sebelum mengangkat kuas cat atau membeli satu pun perabot. AI generatif telah membuka pintu ke dunia di mana desain interior yang indah dapat diakses oleh semua orang. Jadi, ambil foto itu, mulailah bereksperimen, dan bangun ruang impian Anda, satu prompt pada satu waktu.'
     ],
-    imageUrl: 'https://picsum.photos/seed/ai-interior-design-guide/800/400',
+    imageUrl: 'https://picsum.photos/seed/elegant-interior-designer-room/800/400',
     author: 'awanbyru',
     authorAvatar,
     date: '12 Oktober 2025',
