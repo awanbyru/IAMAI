@@ -738,7 +738,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
   {
     id: '15',
     slug: 'merancang-arsitektur-fantasi-dengan-ai',
-    title: 'Arsitektur Fantasi: Cara Merancang Bangunan Mustil dan Kota Impian dengan AI',
+    title: 'Arsitektur Fantasi: Cara Merancang Bangunan Mustahil dan Kota Impian dengan AI',
     excerpt: 'Bangun dunia impian Anda dari nol. Panduan ini memberikan prompt untuk menciptakan arsitektur fantasi yang megah, mulai dari kastil di atas awan hingga kota bawah laut yang bercahaya.',
     summary: 'Untuk merancang arsitektur fantasi dengan AI, gunakan prompt yang merinci gaya arsitektur (misalnya, gothic-futuristic), material unik (kristal bercahaya), lingkungan yang mustahil (pulau melayang), serta skala dan detail yang megah.',
     type: 'standard',
