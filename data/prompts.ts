@@ -2,6 +2,42 @@ import { Prompt } from '../types';
 
 export const prompts: Prompt[] = [
   {
+    id: 'p44',
+    title: 'Badut Melankolis di Persimpangan Sepi',
+    description: 'Sebuah prompt JSON sinematik yang menangkap pemandangan udara yang sunyi di persimpangan Jakarta, menampilkan badut melankolis di bawah lampu merah.',
+    prompt: `{
+  "scene_description": "An evocative aerial view capturing a profoundly desolate Jakarta intersection, where the overwhelming silence and emptiness starkly contrast with the city's usual chaotic energy. The scene hints at a past vibrancy now reduced to an ethereal illusion, creating a surreal and haunting atmosphere.",
+  "subject": {
+    "description": "A solitary, grotesque clown, his once vibrant costume now faded, torn, and grimy, reflecting years of neglect and wear. His painted smile is cracked, accentuating a deep sense of despair. Beside him rests a vintage, scuffed speaker box, upon which a heavily ripped and dirty teddy bear, missing an eye and with stuffing spilling out, is perched.",
+    "action": "Sitting forlornly on the cracked asphalt, directly beneath the stark, singular glow of a red traffic light, his head slightly bowed in profound loneliness."
+  },
+  "environment": {
+    "setting": "A deserted urban intersection in Jakarta, Indonesia.",
+    "details": [
+      "Overgrown cracks in the asphalt road and sidewalks",
+      "Flickering, malfunctioning streetlights in the distant background, hinting at decay",
+      "Stark, intense red glow of the traffic light casting long, dramatic shadows across the empty street",
+      "No visible vehicles, pedestrians, or any signs of life; an uncanny, absolute emptiness",
+      "Subtle, humid haze in the air, suggesting the lingering tropical heat and a sense of stagnation",
+      "Faint dust swirling on the vacant streets, disturbed only by an unseen, hot wind",
+      "Distorted, weathered building facades lining the intersection, appearing abandoned and silent",
+      "Faded road markings barely visible beneath the grime"
+    ]
+  },
+  "cinematography": {
+    "shot_type": "High-angle drone shot, wide-angle perspective capturing the vast, eerie emptiness of the intersection.",
+    "camera_movement": "Static, maintaining a steady, panoramic view to emphasize stillness and the overwhelming sense of desolation.",
+    "lighting": "Moody, low-key lighting with a dominant stark red glow emanating from the traffic light, creating dramatic, elongated shadows and highlighting the subject. Overcast sky with diffuse ambient light, accentuating the desolation and dulling all other colors."
+  },
+  "style": {
+    "visual_style": "Photorealistic, with a melancholic and eerie artistic filter, reminiscent of a dystopian dreamscape.",
+    "quality": "8k, ultra high detail, cinematic quality, masterpiece, award-winning photography, highly textured.",
+    "mood": "Profoundly lonely, melancholic, eerie, desolate, and strangely poignant, evoking a sense of forgotten time and existential dread."
+  }
+}`,
+    category: 'Surealisme',
+  },
+  {
     id: 'p43',
     title: 'Ilusi Kaca Fraktal Escher',
     description: 'Menciptakan ilusi digital hiper-maksimalis seorang wanita sureal sebagai kekosongan rekursif di tengah dunia kaca fraktal yang dinamis.',
