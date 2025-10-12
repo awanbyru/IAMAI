@@ -4,9 +4,9 @@
   "description": "Sebuah blog web modern yang berfokus pada AI dan prompting, menampilkan artikel menarik, koleksi gambar AI premium, dan panduan prompt ahli. Dirancang untuk komunitas penggemar AI.",
   "icons": [
     {
-      "src": "/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
     }
   ],
   "start_url": ".",

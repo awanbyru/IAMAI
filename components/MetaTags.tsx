@@ -52,15 +52,15 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
     document.title = fullTitle;
 
     const finalCanonicalUrl = canonicalUrl || window.location.href;
-    const defaultImage = `${window.location.origin}/icon-512.png`;
+    const defaultImage = `${window.location.origin}/icon.svg`;
     const finalImageUrl = imageUrl || defaultImage;
     const absoluteImageUrl = finalImageUrl.startsWith('http') ? finalImageUrl : new URL(finalImageUrl, window.location.origin).href;
     
     let finalImageDimensions = imageDimensions;
     let imageType = 'image/jpeg'; // Default for articles/picsum
     if (!imageUrl) {
-      finalImageDimensions = { width: 512, height: 512 };
-      imageType = 'image/png';
+      finalImageDimensions = undefined; // SVGs don't need explicit dimensions for OG tags
+      imageType = 'image/svg+xml';
     }
 
     setTag('meta', 'name', 'description', 'content', description);
