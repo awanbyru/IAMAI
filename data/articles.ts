@@ -36,7 +36,8 @@ export const articles: Article[] = [
       '`Camera Angle: Top-down view, looking directly at the recursive faces from above.`',
       'Sudut pandang dari atas ke bawah ini sangat penting. Ini mengubah adegan menjadi sebuah pusaran (`vortex`) yang menarik mata pemirsa ke tengah rekursi yang tak berujung, memperkuat perasaan vertigo dan ketakutan.',
       '**Prompt Lengkap:**',
-      `JSON_PROMPT:${`A hyper-detailed maximalist horror scene, glossy and psychedelic, rendered in hypervoronoi and lattice reality style.
+      // FIX: Removed invalid nested template literal syntax.
+      `JSON_PROMPT:A hyper-detailed maximalist horror scene, glossy and psychedelic, rendered in hypervoronoi and lattice reality style.
 
 The central figure is a recursive chain of screaming faces: one hyper-realistic human face frozen in terror, mouth wide open, and inside the mouth another screaming face, repeating endlessly like a spiral vortex of agony. Each face is slick and glossy, drenched in sweat, oil, or tears. The recursion spirals inward, each layer more distorted, reflective, and surreal.
 
@@ -44,7 +45,7 @@ The screaming faces fragment into glowing voronoi cells, their skin splitting in
 
 Background surfaces ripple into infinite hypervoronoi tessellations, each cell filled with fragments of distorted eyes, mouths, and reflections. Neon liquid and shards spiral downward toward the vortex center, creating a hypnotic, chaotic flow.
 
-Camera Angle: Top-down view, looking directly at the recursive faces from above. Faces, lattice grids, and voronoi shards form a spiral vortex descending into infinite recursion. Neon reflections and glossy textures exaggerate depth, chaos, and psychedelic overload.`}`,
+Camera Angle: Top-down view, looking directly at the recursive faces from above. Faces, lattice grids, and voronoi shards form a spiral vortex descending into infinite recursion. Neon reflections and glossy textures exaggerate depth, chaos, and psychedelic overload.`,
       '**Kesimpulan: Horor sebagai Arsitektur**',
       'Prompt ini adalah contoh cemerlang tentang bagaimana rekayasa prompt tingkat lanjut lebih mirip arsitektur daripada sekadar deskripsi. Dengan membangun fondasi gaya (`hypervoronoi`), mendefinisikan narasi inti (`recursive faces`), dan menyatukannya dengan dinamika visual (`fragmentation`) serta arahan sinematik (`top-down view`), Yogi Arfi Prompts telah menciptakan cetak biru untuk horor yang cerdas, terstruktur, dan benar-benar meresahkan.'
     ],
@@ -84,7 +85,7 @@ Camera Angle: Top-down view, looking directly at the recursive faces from above.
       '- **`style`**: Menentukan estetika keseluruhan. Ini mencakup `visual_style` (photorealistic, anime), `quality` (8k, high detail), dan `mood` yang ingin dicapai.',
       '**Contoh Prompt dalam Format JSON:**',
       'Mari kita terjemahkan ide "naga cyberpunk" ke dalam format JSON yang terstruktur ini. Perhatikan bagaimana setiap instruksi memiliki tempatnya sendiri, menciptakan cetak biru yang sangat jelas untuk AI.',
-      `JSON_PROMPT:{\n  "scene_description": "A majestic cyberpunk dragon with neon circuits on its scales flies through a futuristic, rain-slicked city at night, with skyscrapers reflecting vibrant city lights.",\n  "subject": {\n    "description": "A majestic cyberpunk dragon with neon circuits integrated into its scales.",\n    "action": "Flying through the city, following a clear flight path."\n  },\n  "environment": {\n    "setting": "A futuristic city at night.",\n    "details": [\n      "Rain-slicked skyscrapers",\n      "Vibrant city lights reflecting off wet surfaces",\n      "Blade Runner inspired atmosphere"\n    ]\n  },\n  "cinematography": {\n    "camera_movement": "The camera slowly pans to the right, following the dragon's flight path.",\n    "shot_type": "Medium tracking shot",\n    "lighting": {\n      "style": "Cinematic, moody, high contrast",\n      "sources": [\n        "Neon signs",\n        "Reflections"\n      ]\n    }\n  },\n  "style": {\n    "visual_style": "Photorealistic",\n    "quality": "8k, high detail",\n    "mood": "Atmospheric and intense"\n  }\n}`,
+      `JSON_PROMPT:{\n  "scene_description": "A majestic cyberpunk dragon with neon circuits on its scales flies through a futuristic, rain-slicked city at night, with skyscrapers reflecting vibrant city lights.",\n  "subject": {\n    "description": "A majestic cyberpunk dragon with neon circuits integrated into its scales.",\n    "action": "Flying through the city, following a clear flight path."\n  },\n  "environment": {\n    "setting": "A futuristic city at night.",\n    "details": [\n      "Rain-slicked skyscrapers",\n      "Vibrant city lights reflecting off wet surfaces",\n      "Blade Runner inspired atmosphere"\n    ]\n  },\n  "cinematography": {\n    "camera_movement": "The camera slowly pans to the right, following the dragon's flight path.",\n    "shot_type": "Medium tracking shot",\n    "lighting": {\n      "style": "Cinematic, moody, high contrast",\n      "sources": [\n        "Neon signs",\n        "Reflections"\n      ]\n    }\n  },\n  "style": {\n    "visual_style": "Photorealistic",\n    "quality": "8k resolution, high detail",\n    "mood": "Atmospheric and intense"\n  }\n}`,
       '**Kesimpulan: Anda adalah Sutradara Digital**',
       'Teknologi teks-ke-video berkembang pesat. Dengan beralih dari kalimat sederhana ke prompt terstruktur seperti JSON, Anda tidak lagi hanya menjadi penonton. Anda menjadi sutradara, penulis skenario, dan sinematografer digital. Anda memegang kendali penuh atas visi Anda, dan AI menjadi kru produksi Anda yang patuh. Era baru dalam penceritaan visual telah dimulai.'
     ],
@@ -102,6 +103,68 @@ Camera Angle: Top-down view, looking directly at the recursive faces from above.
         {
           question: "Apakah saya bisa menambahkan musik atau suara langsung dari prompt?",
           answer: "Saat ini, sebagian besar model AI video fokus pada pembuatan visual. Audio, musik, dan efek suara biasanya ditambahkan pada tahap pasca-produksi menggunakan software video editing. Namun, beberapa model eksperimental sudah mulai mengintegrasikan pembuatan suara."
+        }
+    ]
+  },
+  {
+    id: '35',
+    slug: 'bedah-prompt-ghibli-realism',
+    title: 'Bedah Prompt: Menciptakan \'Ghibli Realism\' - Perpaduan Keajaiban Animasi dan Fotografi Sinematik',
+    excerpt: 'Bagaimana cara memadukan keajaiban hangat dari Studio Ghibli dengan detail tajam fotografi sinematik? Bedah prompt ini akan menjelajahi seni "Ghibli Realism", sebuah gaya yang menangkap jiwa animasi di dalam dunia fotorealistik yang nyata.',
+    summary: 'Analisis mendalam tentang rekayasa prompt untuk "Ghibli Realism", sebuah gaya hibrida yang memadukan estetika Studio Ghibli dengan fotorealisme. Tutorial ini mengurai komponen kunci prompt: desain karakter, penceritaan lingkungan melalui "beautiful decay", teknik pencahayaan sinematik seperti "dappled light", dan penggunaan istilah lensa kamera spesifik untuk mencapai visual yang nyata, nostalgia, dan magis.',
+    type: 'howto',
+    content: [
+      'Studio Ghibli tidak hanya menciptakan film; mereka membangun dunia yang terasa seperti kenangan masa kecil yang hangat. Dari Totoro yang menunggu di halte bus hingga kastil yang berjalan di atas perbukitan, setiap adegan dipenuhi dengan keajaiban, nostalgia, dan rasa takjub yang tulus. Tantangan bagi seniman AI adalah: bagaimana kita bisa menangkap perasaan itu, tetapi menerjemahkannya ke dalam medium yang sama sekali berbeda—fotorealisme sinematik?',
+      'Jawabannya terletak pada gaya hibrida yang bisa kita sebut "Ghibli Realism". Tujuannya bukan untuk meniru gaya gambar tangan Ghibli, melainkan untuk menyaring esensinya—kehangatan, keajaiban dalam keseharian, dan keindahan alam yang subur—dan menyajikannya seolah-olah itu adalah adegan dari sebuah film live-action yang hilang. Mari kita bedah resep promptnya.',
+      '**Pilar 1: Jiwa - Desain Karakter yang Ekspresif**',
+      'Karakter Ghibli memiliki pesona yang sederhana namun mendalam. Mereka tidak hiper-realistis, tetapi emosi mereka sangat nyata. Untuk menerjemahkannya, kita harus fokus pada ekspresi yang lembut.',
+      '`A young girl with slightly rounded features, large expressive brown eyes filled with wonder...`',
+      '  - **`Slightly rounded features`**: Menghindari ketajaman fotorealisme yang berlebihan dan memberikan sentuhan kelembutan seperti animasi.',
+      '  - **`Large expressive eyes`**: Mata adalah jendela jiwa dalam film Ghibli. Ini adalah instruksi langsung untuk menjadikan mata sebagai pusat emosi karakter.',
+      '**Pilar 2: Dunia - Lingkungan & "Beautiful Decay"**',
+      'Dunia Ghibli subur, hidup, tetapi tidak pernah steril. Selalu ada tanda-tanda waktu dan alam yang mengambil kembali ruangnya. Saya menyebutnya "beautiful decay" (pembusukan yang indah).',
+      '`... in an abandoned, overgrown greenhouse. Sunlight streams through broken glass panes. The environment shows signs of beautiful decay: moss-covered stone paths, rusted ironwork, and wildflowers growing wild.`',
+      '  - **`Overgrown`, `moss-covered`, `rusted`**: Kata kunci ini membangun narasi visual. Tempat ini memiliki sejarah. Ini menciptakan dunia yang terasa hidup dan bernapas, bukan sekadar latar belakang.',
+      '**Pilar 3: Atmosfer - Pencahayaan Sinematik & Nostalgia**',
+      'Pencahayaan adalah kuas yang melukiskan emosi Ghibli. Kita harus meniru kehangatan dan kelembutan cahaya alami.',
+      '`Atmosphere is nostalgic and magical. Soft, dappled sunlight filters through the leaves and broken glass, creating pockets of light and shadow. Soft volumetric light rays are visible in the humid air.`',
+      '  - **`Dappled sunlight`**: Cahaya belang-belang yang menembus dedaunan. Ini adalah ciri khas visual Ghibli yang menciptakan kedalaman dan dinamisme.',
+      '  - **`Volumetric light rays`**: Membuat cahaya terasa nyata, seperti partikel debu atau uap air yang menari di udara.',
+      '**Pilar 4: Lensa - Realitas yang Nyata**',
+      'Untuk membumikan keajaiban ini dalam realitas, kita harus berpikir seperti seorang sinematografer. Istilah teknis kamera adalah kuncinya.',
+      '`Style: Cinematic, photorealistic, shot on 35mm film with subtle film grain. Use a 50mm lens for a natural field of view. Golden hour lighting.`',
+      '  - **`Shot on 35mm film`**: Menambahkan tekstur dan kehangatan analog, menjauhkan gambar dari tampilan digital yang dingin.',
+      '  - **`50mm lens`**: Meniru perspektif mata manusia, membuat adegan terasa intim dan nyata.',
+      '**Prompt Lengkap:**',
+      // FIX: Removed invalid nested template literal syntax.
+      `JSON_PROMPT:A cinematic, photorealistic scene in the style of "Ghibli Realism".
+
+**Subject:** A young girl, around 10 years old, with slightly rounded features and large, expressive brown eyes filled with wonder. She is gently touching a tiny, glowing forest spirit resting on a leaf.
+
+**Environment:** An abandoned, overgrown Victorian greenhouse. The structure shows signs of beautiful decay: rusted ironwork, broken glass panes, and moss-covered stone paths. Wildflowers and lush ferns grow uncontrollably inside.
+
+**Cinematography:** The scene is captured with a 50mm lens, creating a natural field of view with a shallow depth of field, making the background softly blurred. The camera angle is at the girl's eye level.
+
+**Lighting:** Soft, dappled golden hour sunlight filters through the leaves and broken glass, creating beautiful pockets of light and shadow. Soft volumetric light rays are visible in the humid, dusty air. The atmosphere is nostalgic, magical, and serene.
+
+**Style:** Photorealistic 8K, shot on 35mm film with subtle film grain to add warmth and texture. The color palette is rich and natural, inspired by Studio Ghibli films.`,
+      '**Kesimpulan: Menangkap Perasaan, Bukan Gaya**',
+      'Ghibli Realism adalah tentang keseimbangan. Ini adalah tarian antara yang fantastis dan yang nyata, antara keajaiban animasi dan kebenaran fotografi. Dengan memikirkan karakter, dunia, cahaya, dan lensa, kita bisa berhenti meniru gaya dan mulai menangkap perasaan—dan itulah keajaiban yang sesungguhnya.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/ghibli-realism-prompt/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '14 Oktober 2025',
+    claps: 145,
+    tags: ['Prompt Engineering', 'Ghibli', 'Seni AI', 'Tutorial', 'Sinematik'],
+    faq: [
+        {
+          question: "Apakah AI bisa meniru gaya Ghibli dengan sempurna?",
+          answer: "AI sangat baik dalam meniru estetika visual Ghibli—seperti palet warna dan desain karakter. Namun, 'jiwa' Ghibli, yang berasal dari penceritaan dan animasi tangan Hayao Miyazaki, adalah sesuatu yang unik. Tujuan 'Ghibli Realism' bukan untuk meniru secara sempurna, melainkan untuk menangkap esensi nostalgia, keajaiban, dan kehangatan itu dalam medium fotorealistik yang baru."
+        },
+        {
+          question: "Mengapa menggunakan istilah 'shot on 35mm film' penting untuk gaya ini?",
+          answer: "Istilah seperti 'shot on 35mm film' dan 'subtle film grain' sangat penting karena mereka menambahkan lapisan ketidaksempurnaan organik yang membuat gambar terasa seperti kenangan atau mimpi. Ini menggeser gambar dari citra digital yang terlalu bersih menjadi sesuatu yang lebih hangat, lebih nyata, dan lebih nostalgia, yang merupakan inti dari perasaan Ghibli."
         }
     ]
   },
@@ -140,13 +203,14 @@ Camera Angle: Top-down view, looking directly at the recursive faces from above.
       '  - Untuk nuansa yang dramatis dan mewah: `dramatic cinematic lighting with focused spotlights and deep shadows.`',
       '**Langkah 5: Menyatukan Semuanya - Contoh Lengkap**',
       'Mari kita gabungkan semuanya. Katakanlah kita memiliki foto ruang tamu dan kita ingin melihatnya dalam gaya Japandi yang tenang.',
-      `JSON_PROMPT:${`A professional interior design photograph of the provided living room, completely transformed into a **Japandi style**.
+      // FIX: Removed invalid nested template literal syntax.
+      `JSON_PROMPT:A professional interior design photograph of the provided living room, completely transformed into a **Japandi style**.
 
 The room should feature **minimalist furniture with clean lines, natural light wood finishes, and functional simplicity**. The color palette is **muted and neutral, with shades of beige, cream, and soft grey**. Include **subtle Japanese elements like a shoji screen partition and a low-profile coffee table**. The space should feel **uncluttered, serene, and harmonious**.
 
 The lighting is **soft, diffused, and abundant natural light**, creating a calm and peaceful atmosphere.
 
-**Style:** Photorealistic, 8K, high detail, interior design magazine quality.`}`,
+**Style:** Photorealistic, 8K, high detail, interior design magazine quality.`,
       '**Kesimpulan: Desainer Interior Pribadi Anda**',
       'Dengan teknik ini, Anda tidak lagi hanya menebak-nebak. Anda menjadi kurator visi Anda sendiri, mampu menjelajahi puluhan kemungkinan sebelum mengangkat kuas cat atau membeli satu pun perabot. AI generatif telah membuka pintu ke dunia di mana desain interior yang indah dapat diakses oleh semua orang. Jadi, ambil foto itu, mulailah bereksperimen, dan bangun ruang impian Anda, satu prompt pada satu waktu.'
     ],
@@ -194,12 +258,13 @@ The lighting is **soft, diffused, and abundant natural light**, creating a calm 
       '  - **Palet Warna:** `Desaturated and muted color palette` memberikan nuansa yang suram dan realistis. `Vibrant technicolor palette` terasa seperti mimpi atau fantasi.',
       '**Menyatukan Semuanya: Contoh Prompt Master**',
       'Mari kita gabungkan semua pilar ini menjadi satu prompt yang kuat:',
-      `JSON_PROMPT:${`A cinematic, ultra-realistic video in slow motion.
+      // FIX: Removed invalid nested template literal syntax.
+      `JSON_PROMPT:A cinematic, ultra-realistic video in slow motion.
 
 **Subject:** A lone astronaut in a sleek, white spacesuit taking a hesitant first step onto a new world.
 **Environment:** A desolate alien planet with crimson-red sand and two suns setting on the horizon, casting long, dramatic shadows. Strange, crystalline flora glows faintly in the twilight.
 **Cinematography:** The scene begins with a low-angle tracking shot, following the astronaut's boots as they crunch on the alien soil. As they lift their head, the camera executes a crane shot, rising smoothly to reveal the vast, alien landscape before them.
-**Style:** Photorealistic 8K render, shot on 35mm film with subtle grain. The lighting is golden hour from the two suns, creating a breathtaking and lonely atmosphere. The color palette is a mix of deep reds, oranges, and the faint blue glow of the crystals.`}`,
+**Style:** Photorealistic 8K render, shot on 35mm film with subtle grain. The lighting is golden hour from the two suns, creating a breathtaking and lonely atmosphere. The color palette is a mix of deep reds, oranges, and the faint blue glow of the crystals.`,
       '**Kesimpulan: Visi Anda, Kanvas AI**',
       'Sora 2 adalah alat yang luar biasa, tetapi ia membutuhkan seorang visioner di belakang kemudi. Dengan memecah ide-ide Anda ke dalam pilar-pilar sinematik dan menggunakan bahasa penyutradaraan yang tepat, Anda tidak lagi hanya menghasilkan video. Anda sedang menciptakan dunia, menceritakan kisah, dan menyutradarai mimpi. Kanvasnya tidak terbatas. Ambil kamera AI Anda, dan mulailah berkarya.'
     ],
@@ -250,7 +315,8 @@ The lighting is **soft, diffused, and abundant natural light**, creating a calm 
       '`**Negative Prompt:** distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh lighting...`',
       'Ini adalah jaring pengaman. Ini secara eksplisit melarang AI melakukan kesalahan umum seperti mengubah pakaian, membuka rambut, atau menggunakan pencahayaan yang salah, yang semakin memperkuat instruksi utama.',
       '**Prompt Lengkap:**',
-      `JSON_PROMPT:${`A minimalist lo-fi art photography scene featuring a **photorealistic hijabi woman** based on the uploaded reference photo — her **face, outfit, pose, and body must remain 100% accurate and unchanged**.
+      // FIX: Removed invalid nested template literal syntax.
+      `JSON_PROMPT:A minimalist lo-fi art photography scene featuring a **photorealistic hijabi woman** based on the uploaded reference photo — her **face, outfit, pose, and body must remain 100% accurate and unchanged**.
 She is **sitting naturally on the edge of a floating window frame**, her posture relaxed and balanced, one leg slightly bent and the other gently extended outside the frame, as if resting in mid-air among the clouds.
 The **window frame** is elegant **lavender purple with soft pastel pink undertones**, harmonizing with the soft sky background.
 Surround the window with **light pink and white clouds**, glowing softly with cinematic pastel light.
@@ -266,7 +332,7 @@ Soft reflections of purple light from the window frame touch the edge of her out
 
 🩵 **Negative Prompt (recommended):**
 
-distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh lighting, unrealistic proportion, blurry face, body alteration, oversaturation, cartoon effect.`}`,
+distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh lighting, unrealistic proportion, blurry face, body alteration, oversaturation, cartoon effect.`,
       '**Kesimpulan: Harmoni antara Realitas dan Imajinasi**',
       'Prompt ini adalah masterclass dalam kontrol. Ia mengajarkan kita bahwa untuk menciptakan surealisme yang berdampak, kita seringkali membutuhkan jangkar realitas yang kuat. Dengan memberikan perintah yang tegas untuk mempertahankan subjek, lalu dengan hati-hati membangun dunia imajinatif di sekitarnya dan menyempurnakannya dengan estetika yang spesifik, kita dapat memandu AI untuk menghasilkan karya seni yang personal, indah, dan benar-benar unik. Terima kasih kepada Winda Azizah yang telah membagikan proses kreatifnya.'
     ],
@@ -304,7 +370,8 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
       '- **Menciptakan Kontras:** Menerapkan gaya yang berbeda (misalnya, 2D vs. 3D) pada elemen yang berbeda dalam gambar yang sama.',
       '- **Mengurangi Ambiguitas:** AI menerima instruksi yang jelas dan terorganisir, bukan satu paragraf panjang yang bisa disalahartikan.',
       'Sekarang, mari kita bedah prompt tersebut bagian per bagian.',
-      `JSON_PROMPT:${`{
+      // FIX: Removed invalid nested template literal syntax.
+      `JSON_PROMPT:{
   "size": "9:16",
   "medium": "Surreal gouache sketch with strong abstract influence",
   "subject": {
@@ -344,7 +411,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
   },
   "overall_feeling": "dreamlike, oppressive, emotionally intense — with a rebellious undertone",
   "visual_tension": "between naive 2D-sketch village woman, hyperreal theatrical heads, fragrant tobacco-and-clove chaos, and overwhelming abstract environment"
-}`}`,
+}`,
       '**Bagian 1: Pengaturan Dasar (`size` dan `medium`)**',
       'Prompt ini dimulai dengan dasar-dasar teknis: `size: "9:16"` langsung menetapkan rasio aspek vertikal, ideal untuk tampilan seluler. Kemudian, `medium: "Surreal gouache sketch..."` tidak hanya mendefinisikan media (sketsa guas), tetapi juga nuansa sureal dan abstraknya. Ini adalah fondasi visual kita.',
       '**Bagian 2: Inti Cerita (`subject`)**',
