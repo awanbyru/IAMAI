@@ -4,12 +4,5 @@
       "source": "/((?!api/|.*\\.ts$|.*\\.tsx$|icon\\.svg|robots\\.txt|manifest\\.json|sitemap\\.xml|sw\\.js).*)",
       "destination": "/index.html"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "/",
-      "permanent": false
-    }
   ]
 }
