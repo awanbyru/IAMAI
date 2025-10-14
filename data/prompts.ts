@@ -2,6 +2,77 @@ import { Prompt } from '../types';
 
 export const prompts: Prompt[] = [
   {
+    id: 'p53',
+    title: 'Pencuri Prompt Brutalis',
+    description: 'Seorang pria pencuri prompt dengan latar belakang arsitektur brutalis hitam-putih.',
+    prompt: `A man (attach image) with wet hair and leftover shampoo foam on his head, wearing a white sleeveless singlet and tight pink leggings. A large DSLR camera with an extremely long telephoto lens hangs from his neck. He is carrying a big cloth bundle labeled in Indonesian text “kumpulan” and “Prompt.” His body language looks sneaky, like a thief who has just stolen something.
+Background: a striking black-and-white architectural photograph of a brutalist concrete building, featuring strong geometric lines and dramatic chiaroscuro shadows. The sky is stark and clear. Shot with a tilt-shift lens for perfectly straight perspective. High contrast, fine art photography style.`,
+    category: 'Om DagD',
+  },
+  {
+    id: 'p52',
+    title: 'Sketsa Wajah Abstrak Rafflesia Arnoldi',
+    description: 'Sketsa abstrak wajah pria dengan struktur kompleks garis dan bentuk geometris yang menyerupai bunga Rafflesia Arnoldi.',
+    prompt: `Abstract sketch of man face (attach image detailed line art:1.2), a complex structure of intersecting lines and geometric shapes, creating an illusion of depth and form, vertical composition, set against a glossy and shinny, textured background, sharp, precise lines defining various structures, some resembling rafflesia arnoldi and others more organic, a sense of movement and dynamism, the lines vary in thickness, suggesting shadow and texture, a few small, scattered elements, digital art style, high contrast photography style.`,
+    category: 'Om DagD',
+  },
+  {
+    id: 'p51',
+    title: 'Ilusi Gravitasi 90 Derajat',
+    description: 'Ilusi fotografi sureal di mana gravitasi tampak berputar 90 derajat, menampilkan seorang pria bersandar di dinding marmer seolah-olah itu adalah lantai.',
+    prompt: `Photographic illusion perspective, side view portrait. A man (attach image) with wet hair still covered in leftover shampoo foam, wearing a white singlet and pink leggings, holding a DSLR camera with a long telephoto lens. He wears only one shoe. The man leans casually against an elegant Italian marble wall — one bare leg bent with his foot pressing naturally against the wall, as if gravity has rotated 90 degrees. 
+
+Above his head, a cheap Indonesian plastic chair sticks to the marble wall. Beside his face sticks a jumbo glass of iced tea (es teh jumbo), and slightly below it, a single shoe also sticks to the wall — all appearing perfectly natural as if the wall were the ground, as if gravity has rotated 90 degrees. 
+
+The marble wall and floor share the same elegant Italian marble pattern, seamlessly connected to enhance the illusion. The background shows a blurred modern foyer with cinematic lighting. 
+
+Style: hyperrealistic photography, 85mm lens, f/1.4 bokeh, shallow depth of field, surreal photographic illusion, comedic aesthetic.`,
+    category: 'Om DagD',
+  },
+  {
+    id: 'p50',
+    title: 'Mengintip dari Planet Brutalis Zodiak',
+    description: 'Pemandangan hiper-maksimalis sebuah planet mustahil yang terdiri dari gedung pencakar langit brutalis yang saling terkait dengan ikonografi zodiak, di mana seorang pria mengintip dari balik dinding.',
+    prompt: `Hypermaximalism, an impossible planet composed of towering brutalist skyscrapers interlocked with intricate zodiac iconography. Each building surface is carved with hyper-detailed zodiac reliefs, metallic engravings, and recursive geometric seams that spiral across the architecture like sacred constellations. The skyline bends in impossible geometry — colossal towers curving inward, bridges suspended upside-down, and DSLR cameras with massive telephoto lenses seamlessly built into the structures, functioning as monumental observatories. The materials blend raw concrete, polished steel, and liquid glass reflecting cosmic light and golden haze. Between these surreal towers, a man (attach image) peeks out naturally from behind a wall — only his wet face and one hand visible, hair damp with traces of white shampoo foam. He wears a white singlet and pink leggings, though only hinted by subtle reflections. His gaze is curious yet calm, as if observing from another dimension. The atmosphere glows with ambient living light and reflective mist, creating a sense of cosmic scale and intimate humanity within the impossible brutalist planet.`,
+    category: 'Om DagD',
+  },
+  {
+    id: 'p49',
+    title: 'Penerbang Origami di Planet Brutalis',
+    description: 'Seorang pria terbang di atas planet brutalis dengan burung origami raksasa, memotret kota sureal di bawahnya.',
+    prompt: `Hypermaximalism, an impossible planet covered with monumental brutalist towers interlocked with intricate zodiac iconography. The architecture bends and spirals in impossible geometry — colossal towers, floating bridges, and telescopic observatories built from raw concrete and metallic zodiac engravings. In the cosmic sky above this impossible planet, a man (attach image) flies gracefully on a giant origami bird made of paper patterned with interlocking zodiac symbols. The origami bird glows softly, its folded wings reflecting cosmic light and liquid chrome hues. The man has wet hair with traces of white shampoo foam, wearing a white singlet and pink leggings. He holds a large DSLR camera with an extremely long telephoto lens, aiming downward as if photographing the surreal city below. The sky is illuminated with glowing zodiac constellations, forming subtle and intricate star patterns that echo the icons on the buildings and origami bird. The angle is cinematic and dramatic — low angle, capturing both the vast brutalist landscape and the soaring figure in mid-flight, backlit by iridescent starlight. The lighting is surreal, with cosmic reflections, golden mist, and shimmering particles that give the entire scene a dreamlike atmosphere of divine absurdity and wonder.`,
+    category: 'Om DagD',
+  },
+  {
+    id: 'p48',
+    title: 'Relief Indiana Jones dan Benda Lokal',
+    description: 'Pemandangan sureal seorang pria mengamati relief dinding bergaya patung grafiti yang terinspirasi oleh Indiana Jones, lengkap dengan benda-benda absurd Indonesia.',
+    prompt: `A dimly lit, damp underground room with a wet, puddled floor. In the center stands a man with wet hair still covered in leftover shampoo foam. He wears a white sleeveless singlet and tight pink leggings. Around his waist is coiled a lasso rope, and slung across his body hangs a DSLR camera with an extremely long telephoto lens. He is intently observing an uneven wall featuring a dramatic “GRAFITI SCULPTURE RELIEF WALL.”
+
+The relief forms a surreal montage inspired by “Indiana Jones: The Temple of Doom,” and includes the iconic main character of Indiana Jones carved into the relief itself, complete with his signature fedora hat, rugged leather jacket, whip at his side, and satchel. Surrounding him within the relief are other unusual objects also sculpted into the wall: cheap Indonesian plastic chairs (kursi plastik murahan), a charcoal iron (setrika arang), an oversized iced tea in a jumbo plastic cup (esteh jumbo), a lacy bra (kutang berenda), a small green gas canister (tabung gas melon), and mysterious geometric markings reminiscent of secret society symbols.
+
+In the shadowy back corner of the room, outside the relief and barely visible in the darkness, a real hen is quietly brooding on a nest.`,
+    category: 'Om DagD',
+  },
+  {
+    id: 'p47',
+    title: 'Relief Kuil Kiamat Indonesia',
+    description: 'Pemandangan sureal seorang pria di ruang bawah tanah yang mengamati relief dinding bergaya patung grafiti yang terinspirasi dari Indiana Jones, menampilkan benda-benda sehari-hari Indonesia.',
+    prompt: `A dimly lit, damp underground room with a wet, puddled floor. In the center stands a man with wet hair still covered in leftover shampoo foam. He wears a white sleeveless singlet and tight pink leggings. Around his waist is coiled a lasso rope, and slung across his body hangs a DSLR camera with an extremely long telephoto lens. He is intently observing an uneven wall featuring a dramatic “GRAFITI SCULPTURE RELIEF WALL.” The relief forms a surreal montage of scenes reminiscent of “Indiana Jones: The Temple of Doom.” Embedded in the relief are random Indonesian everyday objects: cheap plastic chairs (kursi plastik murahan), a charcoal iron (setrika arang), an oversized iced tea in a jumbo plastic cup (esteh jumbo), a lacy bra (kutang berenda), a small green gas canister (tabung gas melon), and mysterious geometric markings like those of a secret society. In the shadowy back corner of the room, barely visible, a hen is quietly brooding on a nest.`,
+    category: 'Om DagD',
+  },
+  {
+    id: 'p46',
+    title: 'Menikmati Musik Deni Caknan',
+    description: 'Seorang pria menikmati musik dari Deni Caknan di radio kaset Compo besar dengan suasana studio Spotify yang sinematik.',
+    prompt: `A man (face exactly same as uploaded photo) wet hair with leftover shampoo foam, wears a white singlet and pink leggings and swallow sandal, sitting on a big Compo Radio Cassete.
+
+Headphones on, hands up, enjoying music. From headphones, glowing 3D symbols float out.
+
+Behind him, a playlist wall shows songs by Deni Caknan(s), Full studio in green spotify brand Color tones, cinematic vibe.`,
+    category: 'Om DagD',
+  },
+  {
     id: 'p45',
     title: 'Gouache Sureal Pasar Jawa Kuno',
     description: 'Prompt JSON hiper-maksimalis yang menciptakan kembali suasana pasar tradisional Jawa kuno yang ramai dengan gaya sketsa gouache sureal, penuh dengan detail budaya.',
@@ -362,7 +433,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
   {
     id: 'p12',
     title: 'Potret Musim Dingin Beku',
-    description: 'Potret atmosferik di mana setelan subjek menyatu dengan lanskap musim dingin yang beku, menciptakan kehadiran puitis seperti hantu.',
+    description: 'Potret atmosferik di mana setelan subjek menyatu dengan lanskap musim winter yang beku, menciptakan kehadiran puitis seperti hantu.',
     prompt: 'A vertical 9:16 atmospheric outdoor portrait of (attach image), wearing sleek black rectangular glasses and a tailored suit textured with the same pale, powdery surface and muted gray tones of the frozen winter riverbank. His suit subtly blends with the frosted landscape, crafted to mirror the delicate ice layering on the shoreline and the subtle mist veiling the background. His clothing appears soft and natural, like condensed frost formed into fabric, evoking a ghostlike presence in the fog.\nThe image is captured using a virtual 50mm lens with a wide aperture setting around f/1.8, creating a gentle bokeh that allows the softly silhouetted trees in the background to recede dreamily into the dense fog. The light is overcast and diffuse, creating a subdued palette with desaturated hues and no harsh shadows. The man stands still, calm and contemplative, his eyes looking off-frame as though drawn into the quiet void of the frozen woods. The surface of the river remains partially thawed, casting a faint reflection of his silhouette.\nThere is no lens distortion, and the pacing of the scene is completely still, as if time has slowed to a frozen breath. A serene silence envelops the entire composition, and the man becomes both distinct and camouflaged in the landscape. This is a portrait of elegant isolation, a poetic blend of man and nature forged in frost.',
     category: 'OM DagD',
   },
