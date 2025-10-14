@@ -2,6 +2,62 @@ import { Prompt } from '../types';
 
 export const prompts: Prompt[] = [
   {
+    id: 'p45',
+    title: 'Gouache Sureal Pasar Jawa Kuno',
+    description: 'Prompt JSON hiper-maksimalis yang menciptakan kembali suasana pasar tradisional Jawa kuno yang ramai dengan gaya sketsa gouache sureal, penuh dengan detail budaya.',
+    prompt: `{
+  "size": "9:16",
+  "medium": "Surreal gouache sketch with strong abstract influence",
+  "setting": {
+    "location": "ancient Javanese traditional market",
+    "era": "early Mataram period or earlier",
+    "density": "hypermaximalist — completely packed, no empty space, every area filled with people, animals, activities, and visual details"
+  },
+  "visual_focus": {
+    "figures": {
+      "style": "mix of naive 2D-sketch and semi-realist, rough raw imperfect lines",
+      "crowd_scale": "dozens to hundreds of figures spread across the entire frame",
+      "activities": [
+        "women carrying tampah trays filled with traditional market snacks on their heads",
+        "a jamu herbal drink seller sitting cross-legged beneath a large banyan tree",
+        "many men crowding around the jamu seller, squatting or standing",
+        "men leading goats through the busy pathways",
+        "a group of men holding cockfights in a market corner",
+        "bartering and trading activities for cloth, tobacco, vegetables, and produce",
+        "children running or peeking between adult legs",
+        "floor vendors arranging goods on woven mats"
+      ],
+      "attire": {
+        "men": [
+          "bare-chested with cloth wrapped around the waist",
+          "simple headwraps made of lurik or plain fabric",
+          "shirts draped over shoulders or tied at the waist"
+        ],
+        "women": [
+          "simple kemben chest-wraps with plain cloth skirts",
+          "thin shawls over the shoulders or waist",
+          "no jewelry or noticeable accessories"
+        ]
+      }
+    }
+  },
+  "background": {
+    "style": "dense, layered, almost no breathing space",
+    "elements": [
+      "a large banyan tree with sprawling roots and branches",
+      "parang and kawung batik motifs embedded in fabric stalls and abstract background layers",
+      "shadowy wayang-like silhouettes fused into the crowd and textures",
+      "scattered tobacco leaves and clove flowers drifting in the air",
+      "kretek smoke spirals morphing into faces and surreal symbols"
+    ],
+    "energy": "colliding and flowing visual intensity, dreamlike yet alive"
+  },
+  "overall_feeling": "noisy, crowded, dreamlike yet grounded in the life of common folk",
+  "visual_tension": "between the concrete bustle of the market, overlapping human figures, batik-wayang textures, and surreal symbols seeping into every corner"
+}`,
+    category: 'Surealisme',
+  },
+  {
     id: 'p44',
     title: 'Badut Melankolis di Persimpangan Sepi',
     description: 'Sebuah prompt JSON sinematik yang menangkap pemandangan udara yang sunyi di persimpangan Jakarta, menampilkan badut melankolis di bawah lampu merah.',
