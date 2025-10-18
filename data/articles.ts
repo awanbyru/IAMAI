@@ -4,6 +4,66 @@ const authorAvatar = '/icon.svg';
 
 export const articles: Article[] = [
   {
+    id: '36',
+    slug: 'rahasia-membuat-poster-film-sinematik-dengan-ai',
+    title: 'Bedah Prompt: Rahasia Membuat Poster Film Sinematik yang Epik dengan AI',
+    excerpt: 'AI bisa membuat gambar, tapi bisakah ia membuat poster film yang bercerita? Tentu saja. Kuncinya adalah berhenti memberi perintah dan mulai menyutradarai. Bedah prompt ini akan mengungkap cara menggabungkan komposisi, pencahayaan, dan tipografi untuk menciptakan poster film yang dramatis dan profesional.',
+    summary: 'Tutorial mendalam tentang rekayasa prompt untuk membuat poster film sinematik menggunakan AI. Artikel ini membedah elemen-elemen kunci, termasuk membangun konsep naratif, mengarahkan visual utama, menggunakan bahasa sinematografi seperti pencahayaan tiga titik dan suar anamorfik, serta strategi untuk mengintegrasikan tipografi secara efektif.',
+    type: 'howto',
+    content: [
+      'Membuat gambar dengan AI itu mudah. Anda ketik "ksatria melawan naga", dan Anda mendapatkannya. Tetapi membuat *poster film*? Itu adalah tantangan yang berbeda. Poster film bukan hanya gambar; itu adalah janji, sebuah cerita yang diringkas dalam satu frame. Ia harus membangkitkan emosi, membangun ketegangan, dan yang terpenting, membuat Anda ingin menonton filmnya.',
+      'Banyak pengguna AI terjebak menghasilkan gambar yang indah secara teknis tetapi hampa secara naratif. Rahasianya adalah mengubah pola pikir Anda dari seorang pemberi perintah menjadi seorang sutradara, desainer grafis, dan sinematografer sekaligus. Mari kita bedah resep prompt untuk menciptakan poster film yang tidak hanya terlihat bagus, tetapi juga terasa "benar".',
+      '**Pilar 1: Fondasi - Konsep, Genre, dan Judul**',
+      'Setiap poster hebat dimulai dengan ide yang kuat. Sebelum Anda menulis satu kata pun dari prompt, tanyakan pada diri Anda:',
+      '  - **Apa genre film ini?** Sci-fi, horor, komedi romantis, drama sejarah? Genre akan menentukan palet warna, pencahayaan, dan mood keseluruhan.',
+      '  - **Apa ceritanya dalam satu kalimat?** "Seorang detektif kesepian memburu android pemberontak di kota yang diguyur hujan neon." Ini adalah inti naratif Anda.',
+      '  - **Apa judulnya?** Bahkan judul fiksi seperti `ECHOES OF NEON` akan membantu AI memahami fokus tematik.',
+      '**Pilar 2: Visual Utama - Sutradarai Aktor Anda**',
+      'Poster membutuhkan titik fokus yang menarik. Ini biasanya adalah karakter utama. Jangan hanya mendeskripsikan penampilan mereka; sutradarai mereka.',
+      '  - **Pose & Ekspresi:** Alih-alih `seorang wanita`, coba `seorang wanita dengan ekspresi waspada, menatap ke kejauhan, bahunya tegang`.',
+      '  - **Interaksi:** Bagaimana mereka berhubungan dengan lingkungan? `Dia memegang artefak bercahaya yang menjadi satu-satunya sumber cahaya di ruangan yang gelap.`',
+      '  - **Penempatan:** `Close-up potret dramatis` akan terasa personal, sementara `full body shot, karakter terlihat kecil di hadapan pemandangan kota yang masif` akan menekankan skala epik.',
+      '**Pilar 3: Bahasa Sinematik - Cahaya, Lensa, dan Komposisi**',
+      'Di sinilah keajaiban sinematik terjadi. Gunakan istilah teknis untuk memberi tahu AI cara "memfilmkan" adegan Anda.',
+      '  - **Pencahayaan:** `Dramatic three-point lighting`, `moody chiaroscuro` (kontras tinggi antara terang dan gelap), `soft golden hour light`.',
+      '  - **Lensa & Efek:** `Anamorphic lens flare` (suar lensa horizontal yang sinematik), `shallow depth of field` (latar belakang kabur), `shot on 35mm film` (untuk tekstur grainy).',
+      '  - **Komposisi:** `Centered composition` untuk dampak ikonik, `rule of thirds` untuk keseimbangan dinamis.',
+      '**Pilar 4: Tipografi - Tantangan Terbesar**',
+      'AI terkenal buruk dalam menghasilkan teks yang koheren. Meskipun model terbaru semakin baik, pendekatan terbaik adalah pendekatan hibrida:',
+      '1.  **Hasilkan Gambar Utama:** Buat poster Anda dengan sengaja meninggalkan ruang negatif (area kosong) di bagian atas atau bawah untuk judul dan kredit.',
+      '2.  **Tambahkan Teks di Luar AI:** Gunakan editor gambar sederhana seperti Canva atau Photoshop untuk menambahkan tipografi Anda. Ini memberi Anda kendali penuh.',
+      'Prompt Anda harus mencerminkan ini: `...dengan ruang negatif yang cukup di bagian bawah untuk teks judul film.`',
+      '**Prompt Lengkap: Fiksi Ilmiah "CHRONOS VEIL"**',
+      `JSON_PROMPT:A cinematic, photorealistic movie poster for a sci-fi thriller titled "CHRONOS VEIL".
+
+**Subject:** A dramatic medium close-up of a female scientist in her late 30s. She has a determined yet fearful expression, with one eye reflecting complex data streams. Rain streaks down her face, mingling with tears.
+
+**Environment:** A gritty, rain-slicked futuristic city at night. Towering neon-lit skyscrapers create a claustrophobic background.
+
+**Cinematography:** The scene is captured with a shallow depth of field, making the background beautifully blurred with bokeh. The lighting is moody and dramatic chiaroscuro, primarily lit by the cold blue and magenta glow of the neon signs. A subtle anamorphic lens flare cuts across the frame.
+
+**Style:** Photorealistic 8K, shot on 35mm film with visible film grain to add texture. The overall mood is tense, mysterious, and melancholic. The composition intentionally leaves significant negative space at the bottom for the movie title and credits.`,
+      '**Kesimpulan: Anda adalah Visioner**',
+      'Membuat poster film yang hebat dengan AI adalah tentang memberikan visi yang jelas dan terstruktur. Dengan menggabungkan narasi, penyutradaraan karakter, bahasa sinematik, dan strategi tipografi, Anda dapat mengubah ide sederhana menjadi sebuah konsep visual yang siap untuk menghiasi bioskop impian Anda. AI adalah kru film Anda; Anda adalah sutradaranya.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/sci-fi-movie-poster-ai/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '17 Oktober 2025',
+    claps: 98,
+    tags: ['Poster Film', 'Sinematik', 'Prompt Engineering', 'Seni AI', 'Tutorial'],
+    faq: [
+        {
+          question: "Apakah AI bisa menghasilkan teks yang sempurna untuk poster?",
+          answer: "Saat ini, sebagian besar model AI gambar masih kesulitan menghasilkan teks yang konsisten dan akurat. Pendekatan terbaik adalah membuat gambar dengan ruang kosong yang sengaja disisakan (negative space), lalu menambahkan judul, taglines, dan kredit menggunakan perangkat lunak pengeditan gambar untuk kontrol penuh dan hasil yang profesional."
+        },
+        {
+          question: "Bagaimana cara membuat poster dengan gaya artistik tertentu, seperti poster film retro 80-an?",
+          answer: "Sangat bisa! Tambahkan deskriptor gaya yang spesifik ke dalam prompt Anda. Misalnya, untuk gaya retro 80-an, Anda bisa menambahkan kata kunci seperti '80s sci-fi movie poster style', 'airbrushed art', 'vibrant neon colors', 'retro typography', dan 'subtle paper texture' untuk meniru estetika pada masa itu."
+        }
+    ]
+  },
+  {
     id: '32',
     slug: 'bedah-prompt-horor-voronoi-rekursif',
     title: 'Bedah Prompt Horor Voronoi: Menciptakan Pusaran Teror Rekursif dengan IMAGEN 4',
@@ -202,7 +262,6 @@ Camera Angle: Top-down view, looking directly at the recursive faces from above.
       '  - Untuk suasana yang hangat dan nyaman: `warm and cozy with soft ambient lighting from a floor lamp and candles.`',
       '  - Untuk nuansa yang dramatis dan mewah: `dramatic cinematic lighting with focused spotlights and deep shadows.`',
       '**Langkah 5: Menyatukan Semuanya - Contoh Lengkap**',
-      'Mari kita gabungkan semuanya. Katakanlah kita memiliki foto ruang tamu dan kita ingin melihatnya dalam gaya Japandi yang tenang.',
       // FIX: Removed invalid nested template literal syntax.
       `JSON_PROMPT:A professional interior design photograph of the provided living room, completely transformed into a **Japandi style**.
 
@@ -257,7 +316,6 @@ The lighting is **soft, diffused, and abundant natural light**, creating a calm 
       '  - **Pencahayaan:** `Hard cinematic lighting` menciptakan bayangan yang tajam dan dramatis. `Golden hour lighting` menghasilkan suasana yang hangat dan nostalgia. `Moody neon noir lighting` sempurna untuk misteri cyberpunk.',
       '  - **Palet Warna:** `Desaturated and muted color palette` memberikan nuansa yang suram dan realistis. `Vibrant technicolor palette` terasa seperti mimpi atau fantasi.',
       '**Menyatukan Semuanya: Contoh Prompt Master**',
-      'Mari kita gabungkan semua pilar ini menjadi satu prompt yang kuat:',
       // FIX: Removed invalid nested template literal syntax.
       `JSON_PROMPT:A cinematic, ultra-realistic video in slow motion.
 
