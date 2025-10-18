@@ -2,6 +2,105 @@ import { Prompt } from '../types';
 
 export const prompts: Prompt[] = [
   {
+    id: 'p56',
+    title: 'Siren Monokromatik Bibir Psikedelik',
+    description: 'Pemandangan sureal dan indah yang menampilkan sirene monokromatik dengan semburan warna psikedelik yang cerah di bibirnya.',
+    prompt: `{
+  "scene_description": "A hauntingly beautiful and surreal scene featuring a monochromatic siren emerging from the depths, her mesmerizing gaze amplified by a single, vibrant burst of psychedelic color on her lips. The overall image maintains a grayscale aesthetic, emphasizing the dramatic contrast and artistic focus on her face.",
+  "subject": {
+    "description": "A graceful, ethereal siren with translucent, alabaster skin rendered in perfect monochromatic tones. Her long, flowing hair and intricate fish-like scales also adhere to the grayscale palette. Delicate, subtle veins are visible just beneath her skin, adding a fragile realism. One of her eyes is obscured by a tattered, ancient, dark gray cloth eyepatch, adding an air of mystery. Her lips, however, are a breathtaking explosion of vibrant, swirling, iridescent psychedelic colors, captivating and hypnotic.",
+    "action": "Gazing with an intense, alluring, and slightly melancholic expression directly at the viewer, her head slightly tilted, one hand gently reaching towards the surface of the water or a piece of ancient debris."
+  },
+  "environment": {
+    "setting": "A deep, ethereal underwater grotto or cavern.",
+    "details": [
+      "Ancient, moss-covered stone ruins partially submerged in the background",
+      "Subtle, monochromatic bioluminescent flora emitting soft glows in the distance",
+      "Whisps of underwater currents creating gentle movement around her",
+      "Slightly murky, dreamlike water visibility adding depth and mystery",
+      "Sunken artifacts or coral structures forming a natural frame"
+    ]
+  },
+  "cinematography": {
+    "shot_type": "Medium close-up, focusing on the siren's upper body and face.",
+    "camera_movement": "Static, with a soft, cinematic focus pull emphasizing the psychedelic lips.",
+    "lighting": "Dramatic, moody underwater lighting. Soft, diffused rays of light pierce the water from above, casting subtle highlights on her features and hair. A strong, artistic rim light outlines her form against the dark background, enhancing her ethereal presence."
+  },
+  "style": {
+    "visual_style": "Dark fantasy photorealism with a surreal and artistic twist.",
+    "quality": "8k, ultra detailed, volumetric lighting, cinematic, masterpiece, highly intricate, octane render, film noir aesthetic.",
+    "mood": "Mysterious, alluring, haunting, melancholic, surreal, dreamlike."
+  }
+}`,
+    category: 'Surealisme',
+  },
+  {
+    id: 'p55',
+    title: 'Potret Abstrak Wajah Tie-Dye',
+    description: 'Potret abstrak dan sureal dari beberapa wajah manusia yang saling terkait, larut satu sama lain dalam warna-warni psikedelik.',
+    prompt: `{
+  "scene_description": "A deeply surreal and abstract portrait, pulsating with vibrant, psychedelic tie-dye tones. The composition is a chaotic, mesmerizing tapestry of multiple human faces intricately intertwined, dissolving into one another, each distinct yet part of a larger, evolving whole. The overall impression is one of visual and emotional intensity.",
+  "subject": {
+    "description": "Multiple, ethereal human faces, rendered in an abstract and fluid manner. Their features are soft and indistinct at the edges, flowing into the next, creating a continuous, interwoven pattern. Each face visibly expresses a different, profound emotion: some scream silently, others weep, some gaze in serene contemplation, while others contort in despair or euphoria. The faces are semi-transparent, allowing the underlying tie-dye patterns to shine through.",
+    "action": "Intertwining, overlapping, and melting into a chaotic yet harmonious pattern, each face expressing a distinct and powerful emotion."
+  },
+  "environment": {
+    "setting": "An boundless, amorphous void, serving as a canvas for the abstract forms.",
+    "details": [
+      "Swirling, kaleidoscopic patterns in vibrant neon greens, electric blues, fiery oranges, and deep purples.",
+      "Organic, fluid lines that mimic smoke or liquid, creating a sense of movement and depth.",
+      "Subtle, ethereal glows emanating from within the abstract forms.",
+      "No discernible background elements, emphasizing the pure abstraction of the faces and colors."
+    ]
+  },
+  "cinematography": {
+    "shot_type": "Close-up portrait shot, capturing the intricate details and emotional nuances of the intertwined faces.",
+    "camera_movement": "Static, allowing the viewer to absorb the complexity and depth of the psychedelic artwork.",
+    "lighting": "Luminous, high-contrast, and deeply saturated, emanating from within the tie-dye patterns themselves, creating a glowing, otherworldly effect. Soft, diffuse backlighting highlights the contours of the faces."
+  },
+  "style": {
+    "visual_style": "Abstract surrealism, psychedelic art, digital painting with tie-dye aesthetics, reminiscent of a visionary art piece.",
+    "quality": "8k, ultra high detail, intricate, masterpiece, hyperrealism of textures on an abstract subject, highly detailed textures and patterns, award-winning.",
+    "mood": "Chaotic, mesmerizing, emotional, dreamlike, introspective, hallucinatory."
+  }
+}`,
+    category: 'Surealisme',
+  },
+  {
+    id: 'p54',
+    title: 'Pertunjukan Dangdut Jalanan 80-an',
+    description: 'Fotografi jalanan vintage tahun 80-an yang menangkap pertunjukan dangdut di gang kecil Indonesia, dicetak di atas kertas film murah.',
+    prompt: `{
+  "scene_description": "A vibrant, low-budget street photography scene capturing an 80s vintage dangdut street performance in a humble Indonesian small town alley, printed on cheap film paper, documenting the lively fringe community life.",
+  "subject": {
+    "description": "A lively 80s dangdut street band ('Orkes Melayu Moro Mangan') consisting of two female vocalists (biduan), one male MC, a guitarist, a bassist, a tamborine player, a flute player, and a unique dangdut kendang player. They are dressed in low-class 80s fashion: flare pants (celana cutbray), unbuttoned shirts, and big, curly afro hairstyles (rambut kribo mengembang). Their musical equipment, including speakers, guitar amp, bass amp, and keyboard amp, is stacked on a pushcart with a gaudy banner displaying 'OM. Moro Mangan'.",
+    "action": "They are actively performing and parading down a narrow alley, serenading in front of a simple brick-walled house. Several local residents, including children and adults, are engrossed in watching and joyfully dancing to the dangdut rhythm, captured in candid, energetic poses."
+  },
+  "environment": {
+    "setting": "A narrow, bustling alleyway in a small Indonesian town during the 1980s.",
+    "details": [
+      "Simple, humble brick-walled houses line the alley, with exposed red bricks and weathered plaster.",
+      "Clotheslines stretched across, adorned with drying laundry, adding a touch of everyday life.",
+      "Chickens and goats roaming freely on the dusty ground, typical of a rural-urban fringe.",
+      "The pushcart (gerobak dorong) with the 'OM. Moro Mangan' banner, acting as a mobile stage, adorned with hand-painted, slightly faded typography.",
+      "Modest potted plants dotting the entryways of homes.",
+      "Visible cracks and imperfections on the alley ground, reflecting an authentic, lived-in environment."
+    ]
+  },
+  "cinematography": {
+    "shot_type": "Medium wide shot, slightly eye-level, capturing the full interaction between the band and the immediate audience.",
+    "camera_movement": "Static, mimicking a raw, candid documentary-style snapshot, emphasizing the authenticity of the moment.",
+    "lighting": "Natural, unfiltered daylight, harsh but authentic, creating strong contrasts and deep shadows, reminiscent of 80s cheap film stock, giving a slightly desaturated and raw feel."
+  },
+  "style": {
+    "visual_style": "Gritty, analog street photography, reminiscent of 80s Indonesian documentary photography, with a slightly desaturated color palette, pronounced film grain, and subtle color shifts typical of aging film.",
+    "quality": "Lo-fi aesthetic, high detail on textures like clothing fabric, weathered brick, and dusty ground, authentic film look, masterpiece in capturing cultural authenticity and period accuracy.",
+    "mood": "Joyful, nostalgic, authentic, vibrant, communal, slightly chaotic, a genuine slice-of-life from 1980s Indonesian fringe society."
+  }
+}`,
+    category: 'Fotografi',
+  },
+  {
     id: 'p53',
     title: 'Pencuri Prompt Brutalis',
     description: 'Seorang pria pencuri prompt dengan latar belakang arsitektur brutalis hitam-putih.',
