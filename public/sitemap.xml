@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.awanbyru.com/</loc>
-    <lastmod>2025-10-16</lastmod>
+    <lastmod>2025-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.awanbyru.com/gallery</loc>
-    <lastmod>2025-10-16</lastmod>
+    <lastmod>2025-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.awanbyru.com/prompts</loc>
-    <lastmod>2025-10-16</lastmod>
+    <lastmod>2025-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.awanbyru.com/enhancer</loc>
-    <lastmod>2025-10-16</lastmod>
+    <lastmod>2025-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -43,6 +43,18 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.awanbyru.com/article/revolusi-konten-ai-untuk-trafik-seo</loc>
+    <lastmod>2025-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.awanbyru.com/article/rahasia-membuat-poster-film-sinematik-dengan-ai</loc>
+    <lastmod>2025-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.awanbyru.com/article/bedah-prompt-horor-voronoi-rekursif</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -51,6 +63,12 @@
   <url>
     <loc>https://www.awanbyru.com/article/dari-teks-ke-sinema-panduan-video-ai-veo</loc>
     <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.awanbyru.com/article/bedah-prompt-ghibli-realism</loc>
+    <lastmod>2025-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
