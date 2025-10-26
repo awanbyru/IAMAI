@@ -4,6 +4,50 @@ const authorAvatar = '/icon.svg';
 
 export const articles: Article[] = [
   {
+    id: '38',
+    slug: 'cetak-biru-guru-modern-prompt-ai-kurikulum-merdeka',
+    title: 'Cetak Biru Guru Modern: 20+ Prompt AI Siap Pakai untuk Kurikulum Merdeka & Pembelajaran Inovatif',
+    excerpt: 'Berhenti menghabiskan waktu berjam-jam untuk administrasi. Panduan ini memberikan lebih dari 20 prompt AI praktis yang dirancang khusus untuk guru Indonesia, mulai dari membuat RPP Kurikulum Merdeka hingga merancang asesmen P5 yang menarik.',
+    summary: 'Panduan komprehensif bagi guru Indonesia untuk mengintegrasikan AI ke dalam pengajaran sehari-hari. Mencakup rekayasa prompt untuk membuat Rencana Pelaksanaan Pembelajaran (RPP) Kurikulum Merdeka, soal HOTS, materi ajar diferensiasi, dan asesmen untuk Proyek Penguatan Profil Pelajar Pancasila (P5).',
+    type: 'howto',
+    content: [
+      'Sebagai seorang pendidik di era digital, beban administrasi seringkali terasa tak ada habisnya, menyita waktu berharga yang seharusnya bisa digunakan untuk berinovasi di dalam kelas. Namun, bagaimana jika Anda memiliki asisten pribadi yang cerdas, siap membantu 24/7 untuk merancang RPP, membuat soal, hingga memberikan ide proyek yang menarik? Asisten itu kini ada dalam bentuk Kecerdasan Buatan (AI).',
+      'Kunci untuk membuka potensi penuh AI bukanlah dengan bertanya secara umum, melainkan dengan memberikan perintah atau "prompt" yang tepat. Panduan ini adalah cetak biru Anda untuk menjadi seorang "arsitek pembelajaran" yang mahir menggunakan AI, khususnya dalam konteks Kurikulum Merdeka.',
+      '**Mengapa Prompting Penting untuk Guru Kurikulum Merdeka?**',
+      'Kurikulum Merdeka menekankan pada pembelajaran yang berpusat pada murid, fleksibel, dan relevan. AI, jika dipandu dengan benar, dapat menjadi alat yang luar biasa untuk:',
+      '  - **Personalisasi Pembelajaran:** Membuat materi ajar untuk tingkat pemahaman yang berbeda.',
+      '  - **Menghemat Waktu Administrasi:** Mengotomatiskan pembuatan RPP, rubrik, dan soal.',
+      '  - **Memicu Kreativitas:** Menghasilkan ide-ide segar untuk Proyek Penguatan Profil Pelajar Pancasila (P5).',
+      '**1. Prompt Fondasi: Membuat RPP Kurikulum Merdeka dalam Hitungan Menit**',
+      'Ini adalah prompt paling kuat yang bisa Anda miliki. Alih-alih meminta "buatkan RPP", berikan AI peran dan struktur yang jelas. Gunakan prompt terstruktur dalam format JSON untuk hasil terbaik.',
+      `JSON_PROMPT:{\n  "role": "Ahli Perancangan Kurikulum Merdeka",\n  "task": "Buat Rencana Pelaksanaan Pembelajaran (RPP) lengkap untuk satu pertemuan.",\n  "topic": "Siklus Air dan Dampaknya pada Kehidupan",\n  "grade_level": "Fase C (Kelas 5 SD)",\n  "subject": "IPAS",\n  "duration": "2 x 35 menit",\n  "learning_objectives": [\n    "Siswa mampu mengidentifikasi tahapan siklus air (evaporasi, kondensasi, presipitasi).",\n    "Siswa mampu menjelaskan dampak siklus air bagi makhluk hidup melalui diagram sederhana."\n  ],\n  "pancasila_profile_dimensions": ["Bernalar Kritis", "Kreatif"],\n  "activities": {\n    "opening": "Apersepsi dengan pertanyaan pemantik: 'Dari mana datangnya hujan?' dan menonton video singkat tentang awan.",\n    "main_activity": "Pembelajaran berdiferensiasi: 1. Kelompok visual membuat diagram siklus air. 2. Kelompok kinestetik melakukan eksperimen sederhana siklus air dalam toples. 3. Kelompok auditori berdiskusi dan merekam penjelasan tentang dampak siklus air.",\n    "closing": "Presentasi hasil kerja kelompok dan refleksi bersama tentang pentingnya air."\n  },\n  "assessment": {\n    "formative": "Observasi saat diskusi kelompok dan penilaian presentasi singkat.",\n    "summative": "Tugas menggambar dan memberi label pada diagram siklus air di akhir sesi."\n  }\n}`,
+      '**2. Prompt untuk Asesmen: Membuat Soal HOTS (High Order Thinking Skills)**',
+      '`Bertindaklah sebagai spesialis evaluasi pendidikan. Buat 3 soal esai tipe HOTS (C4-Menganalisis, C5-Mengevaluasi, C6-Mencipta) berdasarkan tujuan pembelajaran: "Siswa mampu menganalisis hubungan antara kegiatan manusia dengan kelestarian ekosistem laut". Sertakan kunci jawaban dan pedoman penskoran untuk setiap soal.`',
+      '**3. Prompt untuk P5: Ideasi Proyek yang Kontekstual**',
+      '`Anda adalah fasilitator Proyek Penguatan Profil Pelajar Pancasila (P5). Berikan 5 ide proyek inovatif untuk tema "Gaya Hidup Berkelanjutan" yang cocok untuk siswa SMP di daerah pesisir. Setiap ide harus mencakup: judul proyek, dimensi Profil Pelajar Pancasila yang ditargetkan, dan contoh aktivitas nyata.`',
+      '**4. Prompt untuk Diferensiasi: Materi Ajar yang Adaptif**',
+      '`Saya mengajar materi tentang "Kerajaan Hindu-Buddha di Indonesia" untuk kelas 4 SD. Buatkan tiga versi paragraf pengantar untuk materi ini yang disesuaikan untuk tiga tingkat pemahaman siswa: (1) Siswa dengan pemahaman dasar, (2) Siswa dengan pemahaman rata-rata, dan (3) Siswa dengan pemahaman tinggi yang butuh tantangan.`',
+      '**Kesimpulan: Anda adalah Pilotnya, AI Co-Pilot Anda**',
+      'Menguasai rekayasa prompt tidak berarti menggantikan peran guru. Sebaliknya, ini memberdayakan Anda untuk fokus pada aspek yang paling penting: interaksi, empati, dan bimbingan langsung kepada siswa. Anggaplah AI sebagai co-pilot cerdas yang menangani navigasi dan tugas rutin, sementara Anda, sebagai pilot utama, tetap memegang kendali penuh atas arah dan tujuan pembelajaran di kelas Anda.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/ai-for-indonesian-teachers/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '26 Oktober 2025',
+    claps: 157,
+    tags: ['Kurikulum Merdeka', 'Prompt Engineering', 'AI untuk Pendidikan', 'RPP AI', 'Tutorial Guru'],
+    faq: [
+      {
+        question: "Apakah aman menggunakan AI untuk membuat RPP dan soal ujian?",
+        answer: "Sangat aman dan sangat dianjurkan sebagai draf awal. Kunci utamanya adalah verifikasi dan personalisasi. AI menyediakan kerangka kerja yang solid, tetapi Anda, sebagai guru, harus selalu meninjau, menyesuaikan konten agar relevan dengan konteks siswa Anda, dan memastikan akurasi informasi. Anggap AI sebagai asisten, bukan pengganti."
+      },
+      {
+        question: "Model atau alat AI apa yang gratis dan terbaik untuk guru?",
+        answer: "Anda tidak perlu alat berbayar. Model seperti Gemini dari Google sangat kuat dan dapat diakses secara gratis melalui platform seperti Google AI Studio. Fokuslah pada penguasaan teknik prompting yang dijelaskan di artikel ini. Keterampilan Anda dalam memberi perintah jauh lebih berharga daripada alat spesifik yang Anda gunakan."
+      }
+    ]
+  },
+  {
     id: '37',
     slug: 'revolusi-konten-ai-untuk-trafik-seo',
     title: 'Revolusi Konten: Cara Menggunakan AI untuk Mendominasi Peringkat SEO dan Meledakkan Trafik',
