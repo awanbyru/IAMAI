@@ -18,15 +18,96 @@ export const articles: Article[] = [
       '  - **Personalisasi Pembelajaran:** Membuat materi ajar untuk tingkat pemahaman yang berbeda.',
       '  - **Menghemat Waktu Administrasi:** Mengotomatiskan pembuatan RPP, rubrik, dan soal.',
       '  - **Memicu Kreativitas:** Menghasilkan ide-ide segar untuk Proyek Penguatan Profil Pelajar Pancasila (P5).',
-      '**1. Prompt Fondasi: Membuat RPP Kurikulum Merdeka dalam Hitungan Menit**',
-      'Ini adalah prompt paling kuat yang bisa Anda miliki. Alih-alih meminta "buatkan RPP", berikan AI peran dan struktur yang jelas. Gunakan prompt terstruktur dalam format JSON untuk hasil terbaik.',
-      `JSON_PROMPT:{\n  "role": "Ahli Perancangan Kurikulum Merdeka",\n  "task": "Buat Rencana Pelaksanaan Pembelajaran (RPP) lengkap untuk satu pertemuan.",\n  "topic": "Siklus Air dan Dampaknya pada Kehidupan",\n  "grade_level": "Fase C (Kelas 5 SD)",\n  "subject": "IPAS",\n  "duration": "2 x 35 menit",\n  "learning_objectives": [\n    "Siswa mampu mengidentifikasi tahapan siklus air (evaporasi, kondensasi, presipitasi).",\n    "Siswa mampu menjelaskan dampak siklus air bagi makhluk hidup melalui diagram sederhana."\n  ],\n  "pancasila_profile_dimensions": ["Bernalar Kritis", "Kreatif"],\n  "activities": {\n    "opening": "Apersepsi dengan pertanyaan pemantik: 'Dari mana datangnya hujan?' dan menonton video singkat tentang awan.",\n    "main_activity": "Pembelajaran berdiferensiasi: 1. Kelompok visual membuat diagram siklus air. 2. Kelompok kinestetik melakukan eksperimen sederhana siklus air dalam toples. 3. Kelompok auditori berdiskusi dan merekam penjelasan tentang dampak siklus air.",\n    "closing": "Presentasi hasil kerja kelompok dan refleksi bersama tentang pentingnya air."\n  },\n  "assessment": {\n    "formative": "Observasi saat diskusi kelompok dan penilaian presentasi singkat.",\n    "summative": "Tugas menggambar dan memberi label pada diagram siklus air di akhir sesi."\n  }\n}`,
-      '**2. Prompt untuk Asesmen: Membuat Soal HOTS (High Order Thinking Skills)**',
-      '`Bertindaklah sebagai spesialis evaluasi pendidikan. Buat 3 soal esai tipe HOTS (C4-Menganalisis, C5-Mengevaluasi, C6-Mencipta) berdasarkan tujuan pembelajaran: "Siswa mampu menganalisis hubungan antara kegiatan manusia dengan kelestarian ekosistem laut". Sertakan kunci jawaban dan pedoman penskoran untuk setiap soal.`',
-      '**3. Prompt untuk P5: Ideasi Proyek yang Kontekstual**',
-      '`Anda adalah fasilitator Proyek Penguatan Profil Pelajar Pancasila (P5). Berikan 5 ide proyek inovatif untuk tema "Gaya Hidup Berkelanjutan" yang cocok untuk siswa SMP di daerah pesisir. Setiap ide harus mencakup: judul proyek, dimensi Profil Pelajar Pancasila yang ditargetkan, dan contoh aktivitas nyata.`',
-      '**4. Prompt untuk Diferensiasi: Materi Ajar yang Adaptif**',
-      '`Saya mengajar materi tentang "Kerajaan Hindu-Buddha di Indonesia" untuk kelas 4 SD. Buatkan tiga versi paragraf pengantar untuk materi ini yang disesuaikan untuk tiga tingkat pemahaman siswa: (1) Siswa dengan pemahaman dasar, (2) Siswa dengan pemahaman rata-rata, dan (3) Siswa dengan pemahaman tinggi yang butuh tantangan.`',
+      '**Koleksi 20+ Prompt Siap Pakai**',
+      'Berikut adalah kumpulan prompt yang telah kami rancang untuk mencakup berbagai kebutuhan Anda sehari-hari. Salin, modifikasi sesuai kebutuhan Anda, dan lihat bagaimana AI dapat mempercepat pekerjaan Anda. Seluruh prompt ini kami kumpulkan dalam satu blok agar mudah Anda salin.',
+      `JSON_PROMPT:# A. Perencanaan Pembelajaran
+
+## 1. RPP Kurikulum Merdeka (JSON Lengkap)
+{
+  "role": "Ahli Perancangan Kurikulum Merdeka",
+  "task": "Buat Rencana Pelaksanaan Pembelajaran (RPP) lengkap untuk satu pertemuan.",
+  "topic": "Siklus Air dan Dampaknya pada Kehidupan",
+  "grade_level": "Fase C (Kelas 5 SD)",
+  "subject": "IPAS",
+  "duration": "2 x 35 menit",
+  "learning_objectives": [
+    "Siswa mampu mengidentifikasi tahapan siklus air (evaporasi, kondensasi, presipitasi).",
+    "Siswa mampu menjelaskan dampak siklus air bagi makhluk hidup melalui diagram sederhana."
+  ],
+  "pancasila_profile_dimensions": ["Bernalar Kritis", "Kreatif"],
+  "activities": {
+    "opening": "Apersepsi dengan pertanyaan pemantik: 'Dari mana datangnya hujan?' dan menonton video singkat tentang awan.",
+    "main_activity": "Pembelajaran berdiferensiasi: 1. Kelompok visual membuat diagram siklus air. 2. Kelompok kinestetik melakukan eksperimen sederhana siklus air dalam toples. 3. Kelompok auditori berdiskusi dan merekam penjelasan tentang dampak siklus air.",
+    "closing": "Presentasi hasil kerja kelompok dan refleksi bersama tentang pentingnya air."
+  },
+  "assessment": {
+    "formative": "Observasi saat diskusi kelompok dan penilaian presentasi singkat.",
+    "summative": "Tugas menggambar dan memberi label pada diagram siklus air di akhir sesi."
+  }
+}
+
+## 2. Draf Modul Ajar P5
+Anda adalah seorang ahli Kurikulum Merdeka. Buatkan draf Modul Ajar Proyek Penguatan Profil Pelajar Pancasila (P5) untuk Fase D (SMP) dengan tema "Kearifan Lokal". Proyek ini akan berlangsung selama 3 minggu. Tentukan tujuan, alur kegiatan per minggu, dan jenis asesmen formatif yang relevan.
+
+## 3. Ide Kegiatan Ice Breaking
+Berikan 5 ide ice breaking yang kreatif dan singkat (kurang dari 5 menit) untuk memulai pelajaran Matematika kelas 7 agar siswa lebih bersemangat dan fokus. Setiap ide harus relevan dengan konsep matematika dasar.
+
+## 4. Pemetaan Tujuan Pembelajaran dari CP
+Saya memiliki Capaian Pembelajaran (CP) berikut untuk mata pelajaran Bahasa Indonesia Fase E (Kelas 10): "[Salin CP di sini]". Uraikan CP ini menjadi 5 Tujuan Pembelajaran (TP) yang spesifik, terukur, dan dapat dicapai dalam satu semester.
+
+## 5. Menyusun Alur Tujuan Pembelajaran (ATP)
+Berdasarkan 5 Tujuan Pembelajaran (TP) berikut: [Sebutkan 5 TP], susunlah menjadi Alur Tujuan Pembelajaran (ATP) yang logis dan berurutan untuk satu semester.
+
+# B. Pembuatan Materi Ajar
+
+## 6. Materi Ajar Berdiferensiasi
+Saya mengajar materi tentang "Kerajaan Hindu-Buddha di Indonesia" untuk kelas 4 SD. Buatkan tiga versi paragraf pengantar untuk materi ini yang disesuaikan untuk tiga tingkat pemahaman siswa: (1) Siswa dengan pemahaman dasar, (2) Siswa dengan pemahaman rata-rata, dan (3) Siswa dengan pemahaman tinggi yang butuh tantangan.
+
+## 7. Studi Kasus Kontekstual
+Buat sebuah studi kasus singkat (sekitar 200 kata) tentang masalah pencemaran sampah plastik di lingkungan sekitar sekolah. Studi kasus ini ditujukan untuk siswa kelas 5 SD mata pelajaran IPAS dan harus mengandung pertanyaan pemantik untuk diskusi kelompok.
+
+## 8. Naskah Video Pembelajaran
+Tuliskan naskah untuk video pembelajaran berdurasi 3 menit dengan topik "Peran Indonesia dalam ASEAN" untuk siswa SMA. Naskah harus mencakup bagian pembuka yang menarik, isi yang informatif, dan penutup berupa rangkuman.
+
+## 9. Lembar Kerja Siswa (LKS)
+Buat Lembar Kerja Siswa (LKS) interaktif untuk materi "Fotosintesis" kelas 8. LKS harus berisi 3 bagian: (1) Isian singkat untuk label diagram, (2) 2 pertanyaan analisis, dan (3) 1 kegiatan eksperimen sederhana yang bisa dilakukan di rumah.
+
+## 10. Cerita Pendek untuk Pembelajaran Karakter
+Tuliskan sebuah cerita pendek (sekitar 300 kata) untuk anak SD yang mengandung nilai moral tentang kejujuran. Tokoh utamanya adalah seekor hewan.
+
+# C. Penilaian dan Asesmen
+
+## 11. Soal HOTS (High Order Thinking Skills)
+Bertindaklah sebagai spesialis evaluasi pendidikan. Buat 3 soal esai tipe HOTS (C4-Menganalisis, C5-Mengevaluasi, C6-Mencipta) berdasarkan tujuan pembelajaran: "Siswa mampu menganalisis hubungan antara kegiatan manusia dengan kelestarian ekosistem laut". Sertakan kunci jawaban dan pedoman penskoran untuk setiap soal.
+
+## 12. Rubrik Penilaian Proyek
+Buat rubrik penilaian yang komprehensif untuk proyek presentasi kelompok tentang "Pahlawan Nasional". Rubrik harus mencakup 4 kriteria: (1) Konten Materi, (2) Keterampilan Presentasi, (3) Kerjasama Tim, dan (4) Kreativitas. Setiap kriteria memiliki 4 level skor (Sangat Baik, Baik, Cukup, Perlu Bimbingan).
+
+## 13. Umpan Balik Konstruktif Otomatis
+Saya memiliki jawaban esai siswa berikut ini tentang penyebab Perang Dunia I: "[Salin jawaban siswa di sini]". Berikan umpan balik yang konstruktif dan positif. Fokus pada 2 hal yang sudah baik dan 2 hal yang bisa ditingkatkan, beserta saran perbaikannya.
+
+## 14. Soal Kuis Cepat (Kahoot/Quizziz)
+Buat 5 soal pilihan ganda yang menyenangkan untuk kuis cepat (seperti Kahoot) tentang topik "Tata Surya" untuk kelas 6 SD. Sertakan satu jawaban benar dan tiga jawaban pengecoh yang masuk akal untuk setiap soal.
+
+## 15. Asesmen Diagnostik Awal
+Rancang 3 pertanyaan asesmen diagnostik non-kognitif untuk mengetahui gaya belajar dan minat siswa kelas 10 di awal tahun ajaran baru.
+
+# D. Komunikasi dan Administrasi
+
+## 16. Email kepada Orang Tua
+Tulis draf email yang informatif dan ramah kepada orang tua siswa kelas 4 untuk menginformasikan tentang kegiatan outing class ke museum. Email harus mencakup informasi tentang tujuan, tanggal, biaya, dan barang bawaan yang diperlukan.
+
+## 17. Menyusun Notulen Rapat
+Saya memiliki rekaman audio rapat dewan guru. Berikut adalah poin-poin utamanya: [Sebutkan poin-poin utama]. Susunlah menjadi notulen rapat yang ringkas dan terstruktur, mencakup agenda, hasil diskusi, dan tindak lanjut (action items).
+
+## 18. Ide Caption Media Sosial Sekolah
+Berikan 3 ide caption menarik untuk postingan Instagram sekolah yang menampilkan kegiatan ekstrakurikuler Pramuka. Caption harus energik dan mengajak siswa lain untuk bergabung.
+
+## 19. Kerangka Proposal Kegiatan
+Buat kerangka proposal untuk kegiatan "Pekan Literasi" di sekolah. Kerangka harus mencakup bagian: Latar Belakang, Tujuan Kegiatan, Bentuk Kegiatan, Sasaran, dan Estimasi Anggaran.
+
+## 20. Draf Surat Rekomendasi Siswa
+Tulis draf surat rekomendasi untuk seorang siswa bernama [Nama Siswa] yang mendaftar beasiswa. Siswa ini unggul dalam bidang akademik (khususnya IPA) dan aktif dalam organisasi OSIS. Tonjolkan kualitas kepemimpinan dan rasa ingin tahunya yang tinggi.`,
       '**Kesimpulan: Anda adalah Pilotnya, AI Co-Pilot Anda**',
       'Menguasai rekayasa prompt tidak berarti menggantikan peran guru. Sebaliknya, ini memberdayakan Anda untuk fokus pada aspek yang paling penting: interaksi, empati, dan bimbingan langsung kepada siswa. Anggaplah AI sebagai co-pilot cerdas yang menangani navigasi dan tugas rutin, sementara Anda, sebagai pilot utama, tetap memegang kendali penuh atas arah dan tujuan pembelajaran di kelas Anda.'
     ],
@@ -35,7 +116,7 @@ export const articles: Article[] = [
     authorAvatar,
     date: '26 Oktober 2025',
     claps: 157,
-    tags: ['Kurikulum Merdeka', 'Prompt Engineering', 'AI untuk Pendidikan', 'RPP AI', 'Tutorial Guru'],
+    tags: ['Kurikulum Merdeka', 'Prompt Engineering', 'AI untuk Pendidikan', 'RPP AI', 'Tutorial'],
     faq: [
       {
         question: "Apakah aman menggunakan AI untuk membuat RPP dan soal ujian?",
