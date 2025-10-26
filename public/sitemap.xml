@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.awanbyru.com/</loc>
-    <lastmod>2025-10-25</lastmod>
+    <lastmod>2025-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -41,6 +41,12 @@
     <lastmod>2023-10-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.awanbyru.com/article/cetak-biru-guru-modern-prompt-ai-kurikulum-merdeka</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.awanbyru.com/article/revolusi-konten-ai-untuk-trafik-seo</loc>

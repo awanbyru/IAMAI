@@ -91,7 +91,8 @@ const ArticlePage: React.FC = () => {
                 }
             },
             "datePublished": parseIndonesianDate(article.date).toISOString(),
-            "dateModified": parseIndonesianDate(article.date).toISOString()
+            "dateModified": parseIndonesianDate(article.date).toISOString(),
+            "keywords": article.tags.join(', ')
         };
         script.textContent = JSON.stringify(articleSchema);
 
