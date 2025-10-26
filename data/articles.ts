@@ -19,11 +19,11 @@ export const articles: Article[] = [
       '  - **Menghemat Waktu Administrasi:** Mengotomatiskan pembuatan RPP, rubrik, dan soal.',
       '  - **Memicu Kreativitas:** Menghasilkan ide-ide segar untuk Proyek Penguatan Profil Pelajar Pancasila (P5).',
       '**Koleksi 20+ Prompt Siap Pakai**',
-      'Berikut adalah kumpulan prompt yang telah kami rancang untuk mencakup berbagai kebutuhan Anda sehari-hari. Salin, modifikasi sesuai kebutuhan Anda, dan lihat bagaimana AI dapat mempercepat pekerjaan Anda. Seluruh prompt ini kami kumpulkan dalam satu blok agar mudah Anda salin.',
-      `JSON_PROMPT:# A. Perencanaan Pembelajaran
-
-## 1. RPP Kurikulum Merdeka (JSON Lengkap)
-{
+      'Berikut adalah kumpulan prompt yang telah kami rancang untuk mencakup berbagai kebutuhan Anda sehari-hari. Salin, modifikasi sesuai kebutuhan Anda, dan lihat bagaimana AI dapat mempercepat pekerjaan Anda.',
+      '**A. Perencanaan Pembelajaran**',
+      '**1. RPP Kurikulum Merdeka (JSON Lengkap)**',
+      'Prompt ini akan menghasilkan Rencana Pelaksanaan Pembelajaran (RPP) yang lengkap dan terstruktur dalam format JSON. Cukup sesuaikan topik, jenjang, dan tujuan pembelajaran, dan AI akan menyusun kerangka kerja yang solid untuk satu pertemuan, lengkap dengan kegiatan berdiferensiasi dan asesmen.',
+      `JSON_PROMPT:{
   "role": "Ahli Perancangan Kurikulum Merdeka",
   "task": "Buat Rencana Pelaksanaan Pembelajaran (RPP) lengkap untuk satu pertemuan.",
   "topic": "Siklus Air dan Dampaknya pada Kehidupan",
@@ -44,70 +44,67 @@ export const articles: Article[] = [
     "formative": "Observasi saat diskusi kelompok dan penilaian presentasi singkat.",
     "summative": "Tugas menggambar dan memberi label pada diagram siklus air di akhir sesi."
   }
-}
-
-## 2. Draf Modul Ajar P5
-Anda adalah seorang ahli Kurikulum Merdeka. Buatkan draf Modul Ajar Proyek Penguatan Profil Pelajar Pancasila (P5) untuk Fase D (SMP) dengan tema "Kearifan Lokal". Proyek ini akan berlangsung selama 3 minggu. Tentukan tujuan, alur kegiatan per minggu, dan jenis asesmen formatif yang relevan.
-
-## 3. Ide Kegiatan Ice Breaking
-Berikan 5 ide ice breaking yang kreatif dan singkat (kurang dari 5 menit) untuk memulai pelajaran Matematika kelas 7 agar siswa lebih bersemangat dan fokus. Setiap ide harus relevan dengan konsep matematika dasar.
-
-## 4. Pemetaan Tujuan Pembelajaran dari CP
-Saya memiliki Capaian Pembelajaran (CP) berikut untuk mata pelajaran Bahasa Indonesia Fase E (Kelas 10): "[Salin CP di sini]". Uraikan CP ini menjadi 5 Tujuan Pembelajaran (TP) yang spesifik, terukur, dan dapat dicapai dalam satu semester.
-
-## 5. Menyusun Alur Tujuan Pembelajaran (ATP)
-Berdasarkan 5 Tujuan Pembelajaran (TP) berikut: [Sebutkan 5 TP], susunlah menjadi Alur Tujuan Pembelajaran (ATP) yang logis dan berurutan untuk satu semester.
-
-# B. Pembuatan Materi Ajar
-
-## 6. Materi Ajar Berdiferensiasi
-Saya mengajar materi tentang "Kerajaan Hindu-Buddha di Indonesia" untuk kelas 4 SD. Buatkan tiga versi paragraf pengantar untuk materi ini yang disesuaikan untuk tiga tingkat pemahaman siswa: (1) Siswa dengan pemahaman dasar, (2) Siswa dengan pemahaman rata-rata, dan (3) Siswa dengan pemahaman tinggi yang butuh tantangan.
-
-## 7. Studi Kasus Kontekstual
-Buat sebuah studi kasus singkat (sekitar 200 kata) tentang masalah pencemaran sampah plastik di lingkungan sekitar sekolah. Studi kasus ini ditujukan untuk siswa kelas 5 SD mata pelajaran IPAS dan harus mengandung pertanyaan pemantik untuk diskusi kelompok.
-
-## 8. Naskah Video Pembelajaran
-Tuliskan naskah untuk video pembelajaran berdurasi 3 menit dengan topik "Peran Indonesia dalam ASEAN" untuk siswa SMA. Naskah harus mencakup bagian pembuka yang menarik, isi yang informatif, dan penutup berupa rangkuman.
-
-## 9. Lembar Kerja Siswa (LKS)
-Buat Lembar Kerja Siswa (LKS) interaktif untuk materi "Fotosintesis" kelas 8. LKS harus berisi 3 bagian: (1) Isian singkat untuk label diagram, (2) 2 pertanyaan analisis, dan (3) 1 kegiatan eksperimen sederhana yang bisa dilakukan di rumah.
-
-## 10. Cerita Pendek untuk Pembelajaran Karakter
-Tuliskan sebuah cerita pendek (sekitar 300 kata) untuk anak SD yang mengandung nilai moral tentang kejujuran. Tokoh utamanya adalah seekor hewan.
-
-# C. Penilaian dan Asesmen
-
-## 11. Soal HOTS (High Order Thinking Skills)
-Bertindaklah sebagai spesialis evaluasi pendidikan. Buat 3 soal esai tipe HOTS (C4-Menganalisis, C5-Mengevaluasi, C6-Mencipta) berdasarkan tujuan pembelajaran: "Siswa mampu menganalisis hubungan antara kegiatan manusia dengan kelestarian ekosistem laut". Sertakan kunci jawaban dan pedoman penskoran untuk setiap soal.
-
-## 12. Rubrik Penilaian Proyek
-Buat rubrik penilaian yang komprehensif untuk proyek presentasi kelompok tentang "Pahlawan Nasional". Rubrik harus mencakup 4 kriteria: (1) Konten Materi, (2) Keterampilan Presentasi, (3) Kerjasama Tim, dan (4) Kreativitas. Setiap kriteria memiliki 4 level skor (Sangat Baik, Baik, Cukup, Perlu Bimbingan).
-
-## 13. Umpan Balik Konstruktif Otomatis
-Saya memiliki jawaban esai siswa berikut ini tentang penyebab Perang Dunia I: "[Salin jawaban siswa di sini]". Berikan umpan balik yang konstruktif dan positif. Fokus pada 2 hal yang sudah baik dan 2 hal yang bisa ditingkatkan, beserta saran perbaikannya.
-
-## 14. Soal Kuis Cepat (Kahoot/Quizziz)
-Buat 5 soal pilihan ganda yang menyenangkan untuk kuis cepat (seperti Kahoot) tentang topik "Tata Surya" untuk kelas 6 SD. Sertakan satu jawaban benar dan tiga jawaban pengecoh yang masuk akal untuk setiap soal.
-
-## 15. Asesmen Diagnostik Awal
-Rancang 3 pertanyaan asesmen diagnostik non-kognitif untuk mengetahui gaya belajar dan minat siswa kelas 10 di awal tahun ajaran baru.
-
-# D. Komunikasi dan Administrasi
-
-## 16. Email kepada Orang Tua
-Tulis draf email yang informatif dan ramah kepada orang tua siswa kelas 4 untuk menginformasikan tentang kegiatan outing class ke museum. Email harus mencakup informasi tentang tujuan, tanggal, biaya, dan barang bawaan yang diperlukan.
-
-## 17. Menyusun Notulen Rapat
-Saya memiliki rekaman audio rapat dewan guru. Berikut adalah poin-poin utamanya: [Sebutkan poin-poin utama]. Susunlah menjadi notulen rapat yang ringkas dan terstruktur, mencakup agenda, hasil diskusi, dan tindak lanjut (action items).
-
-## 18. Ide Caption Media Sosial Sekolah
-Berikan 3 ide caption menarik untuk postingan Instagram sekolah yang menampilkan kegiatan ekstrakurikuler Pramuka. Caption harus energik dan mengajak siswa lain untuk bergabung.
-
-## 19. Kerangka Proposal Kegiatan
-Buat kerangka proposal untuk kegiatan "Pekan Literasi" di sekolah. Kerangka harus mencakup bagian: Latar Belakang, Tujuan Kegiatan, Bentuk Kegiatan, Sasaran, dan Estimasi Anggaran.
-
-## 20. Draf Surat Rekomendasi Siswa
-Tulis draf surat rekomendasi untuk seorang siswa bernama [Nama Siswa] yang mendaftar beasiswa. Siswa ini unggul dalam bidang akademik (khususnya IPA) dan aktif dalam organisasi OSIS. Tonjolkan kualitas kepemimpinan dan rasa ingin tahunya yang tinggi.`,
+}`,
+      '**2. Draf Modul Ajar P5**',
+      'Gunakan prompt ini untuk membuat kerangka Modul Ajar Proyek Penguatan Profil Pelajar Pancasila (P5). AI akan membantu Anda menentukan tujuan, alur kegiatan mingguan, dan jenis asesmen yang relevan untuk proyek dengan tema spesifik.',
+      'JSON_PROMPT:Anda adalah seorang ahli Kurikulum Merdeka. Buatkan draf Modul Ajar Proyek Penguatan Profil Pelajar Pancasila (P5) untuk Fase D (SMP) dengan tema "Kearifan Lokal". Proyek ini akan berlangsung selama 3 minggu. Tentukan tujuan, alur kegiatan per minggu, dan jenis asesmen formatif yang relevan.',
+      '**3. Ide Kegiatan Ice Breaking**',
+      'Butuh cara cepat untuk menyegarkan suasana kelas? Prompt ini akan memberikan lima ide ice breaking yang kreatif, singkat, dan relevan dengan mata pelajaran Anda untuk meningkatkan semangat dan fokus siswa.',
+      'JSON_PROMPT:Berikan 5 ide ice breaking yang kreatif dan singkat (kurang dari 5 menit) untuk memulai pelajaran Matematika kelas 7 agar siswa lebih bersemangat dan fokus. Setiap ide harus relevan dengan konsep matematika dasar.',
+      '**4. Pemetaan Tujuan Pembelajaran dari CP**',
+      'Merasa kesulitan mengurai Capaian Pembelajaran (CP) yang kompleks? Cukup salin CP Anda ke dalam prompt ini, dan AI akan membantu memetakannya menjadi beberapa Tujuan Pembelajaran (TP) yang lebih spesifik dan terukur.',
+      'JSON_PROMPT:Saya memiliki Capaian Pembelajaran (CP) berikut untuk mata pelajaran Bahasa Indonesia Fase E (Kelas 10): "[Salin CP di sini]". Uraikan CP ini menjadi 5 Tujuan Pembelajaran (TP) yang spesifik, terukur, dan dapat dicapai dalam satu semester.',
+      '**5. Menyusun Alur Tujuan Pembelajaran (ATP)**',
+      'Setelah memiliki daftar Tujuan Pembelajaran (TP), gunakan prompt ini untuk menyusunnya menjadi Alur Tujuan Pembelajaran (ATP) yang logis dan berurutan untuk satu semester penuh.',
+      'JSON_PROMPT:Berdasarkan 5 Tujuan Pembelajaran (TP) berikut: [Sebutkan 5 TP], susunlah menjadi Alur Tujuan Pembelajaran (ATP) yang logis dan berurutan untuk satu semester.',
+      '**B. Pembuatan Materi Ajar**',
+      '**6. Materi Ajar Berdiferensiasi**',
+      'Prompt ini sangat berguna untuk personalisasi. AI akan membuat tiga versi materi ajar yang sama, disesuaikan untuk tiga tingkat pemahaman siswa yang berbeda: dasar, rata-rata, dan tinggi.',
+      'JSON_PROMPT:Saya mengajar materi tentang "Kerajaan Hindu-Buddha di Indonesia" untuk kelas 4 SD. Buatkan tiga versi paragraf pengantar untuk materi ini yang disesuaikan untuk tiga tingkat pemahaman siswa: (1) Siswa dengan pemahaman dasar, (2) Siswa dengan pemahaman rata-rata, dan (3) Siswa dengan pemahaman tinggi yang butuh tantangan.',
+      '**7. Studi Kasus Kontekstual**',
+      'Buat pembelajaran lebih relevan dengan studi kasus yang kontekstual. AI akan menghasilkan narasi singkat tentang masalah nyata di lingkungan sekitar siswa, lengkap dengan pertanyaan pemantik untuk memicu diskusi.',
+      'JSON_PROMPT:Buat sebuah studi kasus singkat (sekitar 200 kata) tentang masalah pencemaran sampah plastik di lingkungan sekitar sekolah. Studi kasus ini ditujukan untuk siswa kelas 5 SD mata pelajaran IPAS dan harus mengandung pertanyaan pemantik untuk diskusi kelompok.',
+      '**8. Naskah Video Pembelajaran**',
+      'Percepat proses pembuatan konten video Anda. Prompt ini akan menghasilkan naskah video pembelajaran berdurasi singkat yang terstruktur, mulai dari pembuka yang menarik hingga rangkuman yang efektif.',
+      'JSON_PROMPT:Tuliskan naskah untuk video pembelajaran berdurasi 3 menit dengan topik "Peran Indonesia dalam ASEAN" untuk siswa SMA. Naskah harus mencakup bagian pembuka yang menarik, isi yang informatif, dan penutup berupa rangkuman.',
+      '**9. Lembar Kerja Siswa (LKS)**',
+      'Buat LKS yang interaktif dalam hitungan menit. AI akan merancang lembar kerja yang berisi berbagai jenis kegiatan, seperti isian singkat, pertanyaan analisis, dan eksperimen sederhana.',
+      'JSON_PROMPT:Buat Lembar Kerja Siswa (LKS) interaktif untuk materi "Fotosintesis" kelas 8. LKS harus berisi 3 bagian: (1) Isian singkat untuk label diagram, (2) 2 pertanyaan analisis, dan (3) 1 kegiatan eksperimen sederhana yang bisa dilakukan di rumah.',
+      '**10. Cerita Pendek untuk Pembelajaran Karakter**',
+      'Integrasikan pendidikan karakter melalui cerita. Gunakan prompt ini untuk menghasilkan cerita pendek yang mengandung nilai moral spesifik, cocok untuk siswa sekolah dasar.',
+      'JSON_PROMPT:Tuliskan sebuah cerita pendek (sekitar 300 kata) untuk anak SD yang mengandung nilai moral tentang kejujuran. Tokoh utamanya adalah seekor hewan.',
+      '**C. Penilaian dan Asesmen**',
+      '**11. Soal HOTS (High Order Thinking Skills)**',
+      'Tingkatkan level soal Anda. Dengan prompt ini, AI akan bertindak sebagai spesialis evaluasi untuk membuat soal esai tipe HOTS (C4-C6) berdasarkan tujuan pembelajaran, lengkap dengan kunci jawaban dan pedoman penskoran.',
+      'JSON_PROMPT:Bertindaklah sebagai spesialis evaluasi pendidikan. Buat 3 soal esai tipe HOTS (C4-Menganalisis, C5-Mengevaluasi, C6-Mencipta) berdasarkan tujuan pembelajaran: "Siswa mampu menganalisis hubungan antara kegiatan manusia dengan kelestarian ekosistem laut". Sertakan kunci jawaban dan pedoman penskoran untuk setiap soal.',
+      '**12. Rubrik Penilaian Proyek**',
+      'Hemat waktu dalam membuat instrumen penilaian. Prompt ini akan menghasilkan rubrik penilaian yang komprehensif untuk tugas proyek, mencakup beberapa kriteria dan level skor yang jelas.',
+      'JSON_PROMPT:Buat rubrik penilaian yang komprehensif untuk proyek presentasi kelompok tentang "Pahlawan Nasional". Rubrik harus mencakup 4 kriteria: (1) Konten Materi, (2) Keterampilan Presentasi, (3) Kerjasama Tim, dan (4) Kreativitas. Setiap kriteria memiliki 4 level skor (Sangat Baik, Baik, Cukup, Perlu Bimbingan).',
+      '**13. Umpan Balik Konstruktif Otomatis**',
+      'Berikan umpan balik yang personal dan cepat. Salin jawaban esai siswa ke dalam prompt ini, dan AI akan memberikan analisis konstruktif, menyoroti hal yang sudah baik dan area yang perlu ditingkatkan.',
+      'JSON_PROMPT:Saya memiliki jawaban esai siswa berikut ini tentang penyebab Perang Dunia I: "[Salin jawaban siswa di sini]". Berikan umpan balik yang konstruktif dan positif. Fokus pada 2 hal yang sudah baik dan 2 hal yang bisa ditingkatkan, beserta saran perbaikannya.',
+      '**14. Soal Kuis Cepat (Kahoot/Quizziz)**',
+      'Buat kuis interaktif dengan mudah. AI akan menghasilkan soal-soal pilihan ganda yang menyenangkan, lengkap dengan jawaban benar dan pilihan pengecoh yang masuk akal.',
+      'JSON_PROMPT:Buat 5 soal pilihan ganda yang menyenangkan untuk kuis cepat (seperti Kahoot) tentang topik "Tata Surya" untuk kelas 6 SD. Sertakan satu jawaban benar dan tiga jawaban pengecoh yang masuk akal untuk setiap soal.',
+      '**15. Asesmen Diagnostik Awal**',
+      'Pahami siswa Anda lebih dalam sejak awal. Gunakan prompt ini untuk merancang pertanyaan asesmen diagnostik non-kognitif untuk mengetahui gaya belajar dan minat siswa baru.',
+      'JSON_PROMPT:Rancang 3 pertanyaan asesmen diagnostik non-kognitif untuk mengetahui gaya belajar dan minat siswa kelas 10 di awal tahun ajaran baru.',
+      '**D. Komunikasi dan Administrasi**',
+      '**16. Email kepada Orang Tua**',
+      'Komunikasi dengan orang tua menjadi lebih mudah. Prompt ini membantu Anda menyusun draf email yang informatif dan ramah untuk berbagai keperluan, seperti pemberitahuan kegiatan sekolah.',
+      'JSON_PROMPT:Tulis draf email yang informatif dan ramah kepada orang tua siswa kelas 4 untuk menginformasikan tentang kegiatan outing class ke museum. Email harus mencakup informasi tentang tujuan, tanggal, biaya, dan barang bawaan yang diperlukan.',
+      '**17. Menyusun Notulen Rapat**',
+      'Ubah rekaman atau poin-poin rapat menjadi notulen yang terstruktur. Cukup berikan poin utamanya, dan AI akan menyusunnya menjadi dokumen yang ringkas dan profesional.',
+      'JSON_PROMPT:Saya memiliki rekaman audio rapat dewan guru. Berikut adalah poin-poin utamanya: [Sebutkan poin-poin utama]. Susunlah menjadi notulen rapat yang ringkas dan terstruktur, mencakup agenda, hasil diskusi, dan tindak lanjut (action items).',
+      '**18. Ide Caption Media Sosial Sekolah**',
+      'Tingkatkan engagement media sosial sekolah Anda. Dapatkan ide-ide caption yang menarik dan energik untuk berbagai kegiatan sekolah dengan prompt ini.',
+      'JSON_PROMPT:Berikan 3 ide caption menarik untuk postingan Instagram sekolah yang menampilkan kegiatan ekstrakurikuler Pramuka. Caption harus energik dan mengajak siswa lain untuk bergabung.',
+      '**19. Kerangka Proposal Kegiatan**',
+      'Percepat proses pembuatan proposal. AI akan membantu Anda menyusun kerangka proposal yang logis, mencakup semua bagian penting mulai dari latar belakang hingga estimasi anggaran.',
+      'JSON_PROMPT:Buat kerangka proposal untuk kegiatan "Pekan Literasi" di sekolah. Kerangka harus mencakup bagian: Latar Belakang, Tujuan Kegiatan, Bentuk Kegiatan, Sasaran, dan Estimasi Anggaran.',
+      '**20. Draf Surat Rekomendasi Siswa**',
+      'Tulis surat rekomendasi yang kuat dan personal. Berikan informasi kunci tentang siswa, dan AI akan menyusun draf surat yang menonjolkan kualitas dan pencapaian terbaik mereka.',
+      'JSON_PROMPT:Tulis draf surat rekomendasi untuk seorang siswa bernama [Nama Siswa] yang mendaftar beasiswa. Siswa ini unggul dalam bidang akademik (khususnya IPA) dan aktif dalam organisasi OSIS. Tonjolkan kualitas kepemimpinan dan rasa ingin tahunya yang tinggi.',
       '**Kesimpulan: Anda adalah Pilotnya, AI Co-Pilot Anda**',
       'Menguasai rekayasa prompt tidak berarti menggantikan peran guru. Sebaliknya, ini memberdayakan Anda untuk fokus pada aspek yang paling penting: interaksi, empati, dan bimbingan langsung kepada siswa. Anggaplah AI sebagai co-pilot cerdas yang menangani navigasi dan tugas rutin, sementara Anda, sebagai pilot utama, tetap memegang kendali penuh atas arah dan tujuan pembelajaran di kelas Anda.'
     ],
@@ -1135,7 +1132,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
       '**1. Memahami Struktur Prompt:** AI telah dilatih dengan jutaan gambar yang diberi label, termasuk karya-karya seniman terkenal dan berbagai gaya seni. Dengan memanggil nama mereka, Anda menginstruksikan AI untuk menerapkan karakteristik visual yang terkait dengan karya mereka—seperti palet warna, goresan kuas, komposisi, dan subjek.',
       '**2. Fusi Klasik dan Modern:** Cobalah menggabungkan subjek modern dengan gaya klasik untuk menciptakan sesuatu yang benar-benar unik. Misalnya, `a portrait of a cyberpunk robot in the style of Rembrandt` akan menghasilkan perpaduan pencahayaan dramatis khas Rembrandt dengan elemen fiksi ilmiah. Atau, `a bustling New York City street scene in the style of Vincent van Gogh` akan mengubah pemandangan kota menjadi pusaran warna dan energi.',
       '**3. Menjelajahi Berbagai Gaya:** Jangan terbatas pada pelukis saja. Anda bisa meniru gaya dari medium lain:',
-      '  - **Seni Grafis Jepang:** `A futuristic metropolis at night in the style of Ukiyo-e woodblock prints by Hokusai.`',
+      '  - **Seni Grafis Jepang:** `A futuristic metropolis at night, re-imagined in the style of Ukiyo-e woodblock prints by Hokusai.`',
       '  - **Animasi Ikonik:** `A magical fantasy forest in the style of Studio Ghibli.`',
       '  - **Fotografer Terkenal:** `A black and white portrait of a young musician in the style of Ansel Adams.`',
       '**4. Menggabungkan Beberapa Gaya:** Anda bahkan bisa menjadi lebih eksperimental dengan meminta AI untuk menggabungkan beberapa gaya. `A fantasy castle that is a mix of Art Nouveau architecture and the style of HR Giger.` Hasilnya bisa jadi sangat tak terduga dan orisinal.',
