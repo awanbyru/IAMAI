@@ -2,6 +2,55 @@ import { Prompt } from '../types';
 
 export const prompts: Prompt[] = [
   {
+    id: 'p63',
+    title: 'RPP Kurikulum Merdeka',
+    description: 'Membuat Rencana Pelaksanaan Pembelajaran (RPP) lengkap untuk Kurikulum Merdeka menggunakan AI.',
+    prompt: '{\n  "role": "Ahli Perancangan Kurikulum Merdeka",\n  "task": "Buat Rencana Pelaksanaan Pembelajaran (RPP) lengkap untuk satu pertemuan.",\n  "topic": "Siklus Air dan Dampaknya pada Kehidupan",\n  "grade_level": "Fase C (Kelas 5 SD)",\n  "subject": "IPAS",\n  "duration": "2 x 35 menit",\n  "learning_objectives": [\n    "Siswa mampu mengidentifikasi tahapan siklus air (evaporasi, kondensasi, presipitasi).",\n    "Siswa mampu menjelaskan dampak siklus air bagi makhluk hidup melalui diagram sederhana."\n  ],\n  "pancasila_profile_dimensions": ["Bernalar Kritis", "Kreatif"],\n  "activities": {\n    "opening": "Apersepsi dengan pertanyaan pemantik: \'Dari mana datangnya hujan?\' dan menonton video singkat tentang awan.",\n    "main_activity": "Pembelajaran berdiferensiasi: 1. Kelompok visual membuat diagram siklus air. 2. Kelompok kinestetik melakukan eksperimen sederhana siklus air dalam toples. 3. Kelompok auditori berdiskusi dan merekam penjelasan tentang dampak siklus air.",\n    "closing": "Presentasi hasil kerja kelompok dan refleksi bersama tentang pentingnya air."\n  },\n  "assessment": {\n    "formative": "Observasi saat diskusi kelompok dan penilaian presentasi singkat.",\n    "summative": "Tugas menggambar dan memberi label pada diagram siklus air di akhir sesi."\n  }\n}',
+    category: 'Pendidikan',
+  },
+  {
+    id: 'p62',
+    title: 'Kerangka Artikel SEO',
+    description: 'Menghasilkan kerangka artikel blog yang komprehensif dan dioptimalkan untuk SEO menggunakan AI.',
+    prompt: '{\n  "task": "Generate a comprehensive blog post outline",\n  "primary_keyword": "AI for SEO content",\n  "target_audience": "Digital marketers and bloggers",\n  "content_goals": {\n    "main_objective": "To teach readers how to use AI to create SEO-optimized content.",\n    "key_takeaways": [\n      "AI for keyword research",\n      "AI for content outlining and drafting",\n      "The importance of human editing"\n    ]\n  },\n  "outline_structure": {\n    "introduction": "Hook readers with the problem of content creation scalability and introduce AI as the solution.",\n    "section_1": {\n      "title": "Step 1: AI-Powered Keyword Research",\n      "points": ["Finding long-tail keywords", "Analyzing competitor keywords"]\n    },\n    "section_2": {\n      "title": "Step 2: Generating Compelling Outlines",\n      "points": ["Creating structured outlines", "Generating multiple title ideas"]\n    },\n    "section_3": {\n      "title": "Step 3: Drafting Content with AI as a Co-pilot",\n      "points": ["Generating first drafts", "The critical role of human editing and fact-checking", "Adding unique voice and experience"]\n    },\n    "conclusion": "Summarize the AI-assisted workflow and emphasize AI as a partner, not a replacement."\n  }\n}',
+    category: 'Pemasaran',
+  },
+  {
+    id: 'p61',
+    title: 'Poster Film Fiksi Ilmiah Sinematik',
+    description: 'Membuat poster film fiksi ilmiah yang fotorealistik dan sinematik dengan ruang negatif untuk teks.',
+    prompt: 'A cinematic, photorealistic movie poster for a sci-fi thriller titled "CHRONOS VEIL".\n\n**Subject:** A dramatic medium close-up of a female scientist in her late 30s. She has a determined yet fearful expression, with one eye reflecting complex data streams. Rain streaks down her face, mingling with tears.\n\n**Environment:** A gritty, rain-slicked futuristic city at night. Towering neon-lit skyscrapers create a claustrophobic background.\n\n**Cinematography:** The scene is captured with a shallow depth of field, making the background beautifully blurred with bokeh. The lighting is moody and dramatic chiaroscuro, primarily lit by the cold blue and magenta glow of the neon signs. A subtle anamorphic lens flare cuts across the frame.\n\n**Style:** Photorealistic 8K, shot on 35mm film with visible film grain to add texture. The overall mood is tense, mysterious, and melancholic. The composition intentionally leaves significant negative space at the bottom for the movie title and credits.',
+    category: 'Seni Sinematik',
+  },
+  {
+    id: 'p60',
+    title: 'Video AI Naga Cyberpunk',
+    description: 'Prompt JSON terstruktur untuk membuat video AI pendek dari seekor naga cyberpunk terbang di kota futuristik.',
+    prompt: '{\n  "scene_description": "A majestic cyberpunk dragon with neon circuits on its scales flies through a futuristic, rain-slicked city at night, with skyscrapers reflecting vibrant city lights.",\n  "subject": {\n    "description": "A majestic cyberpunk dragon with neon circuits integrated into its scales.",\n    "action": "Flying through the city, following a clear flight path."\n  },\n  "environment": {\n    "setting": "A futuristic city at night.",\n    "details": [\n      "Rain-slicked skyscrapers",\n      "Vibrant city lights reflecting off wet surfaces",\n      "Blade Runner inspired atmosphere"\n    ]\n  },\n  "cinematography": {\n    "camera_movement": "The camera slowly pans to the right, following the dragon\'s flight path.",\n    "shot_type": "Medium tracking shot",\n    "lighting": {\n      "style": "Cinematic, moody, high contrast",\n      "sources": [\n        "Neon signs",\n        "Reflections"\n      ]\n    }\n  },\n  "style": {\n    "visual_style": "Photorealistic",\n    "quality": "8k resolution, high detail",\n    "mood": "Atmospheric and intense"\n  }\n}',
+    category: 'Video',
+  },
+  {
+    id: 'p59',
+    title: 'Adegan "Ghibli Realism" Sinematik',
+    description: 'Menciptakan adegan fotorealistik sinematik yang terinspirasi oleh estetika Studio Ghibli.',
+    prompt: 'A cinematic, photorealistic scene in the style of "Ghibli Realism".\n\n**Subject:** A young girl, around 10 years old, with slightly rounded features and large, expressive brown eyes filled with wonder. She is gently touching a tiny, glowing forest spirit resting on a leaf.\n\n**Environment:** An abandoned, overgrown Victorian greenhouse. The structure shows signs of beautiful decay: rusted ironwork, broken glass panes, and moss-covered stone paths. Wildflowers and lush ferns grow uncontrollably inside.\n\n**Cinematography:** The scene is captured with a 50mm lens, creating a natural field of view with a shallow depth of field, making the background softly blurred. The camera angle is at the girl\'s eye level.\n\n**Lighting:** Soft, dappled golden hour sunlight filters through the leaves and broken glass, creating beautiful pockets of light and shadow. Soft volumetric light rays are visible in the humid, dusty air. The atmosphere is nostalgic, magical, and serene.\n\n**Style:** Photorealistic 8K, shot on 35mm film with subtle film grain to add warmth and texture. The color palette is rich and natural, inspired by Studio Ghibli films.',
+    category: 'Seni Sinematik',
+  },
+  {
+    id: 'p58',
+    title: 'Desain Interior Gaya Japandi',
+    description: 'Mengubah foto ruangan menjadi konsep desain interior profesional dengan gaya Japandi (Jepang-Skandinavia).',
+    prompt: 'A professional interior design photograph of the provided living room, completely transformed into a Japandi style.\n\nThe room should feature minimalist furniture with clean lines, natural light wood finishes, and functional simplicity. The color palette is muted and neutral, with shades of beige, cream, and soft grey. Include subtle Japanese elements like a shoji screen partition and a low-profile coffee table. The space should feel uncluttered, serene, and harmonious.\n\nThe lighting is soft, diffused, and abundant natural light, creating a calm and peaceful atmosphere.\n\nStyle: Photorealistic, 8K, high detail, interior design magazine quality.',
+    category: 'Desain Interior',
+  },
+  {
+    id: 'p57',
+    title: 'Video AI Sinematik: Astronot di Planet Asing',
+    description: 'Prompt video sinematik untuk model seperti Sora 2, menggambarkan astronot di planet asing dengan detail sinematografi.',
+    prompt: 'A cinematic, ultra-realistic video in slow motion.\n\n**Subject:** A lone astronaut in a sleek, white spacesuit taking a hesitant first step onto a new world.\n**Environment:** A desolate alien planet with crimson-red sand and two suns setting on the horizon, casting long, dramatic shadows. Strange, crystalline flora glows faintly in the twilight.\n**Cinematography:** The scene begins with a low-angle tracking shot, following the astronaut\'s boots as they crunch on the alien soil. As they lift their head, the camera executes a crane shot, rising smoothly to reveal the vast, alien landscape before them.\n**Style:** Photorealistic 8K render, shot on 35mm film with subtle grain. The lighting is golden hour from the two suns, creating a breathtaking and lonely atmosphere. The color palette is a mix of deep reds, oranges, and the faint blue glow of the crystals.',
+    category: 'Video',
+  },
+  {
     id: 'p56',
     title: 'Siren Monokromatik Bibir Psikedelik',
     description: 'Pemandangan sureal dan indah yang menampilkan sirene monokromatik dengan semburan warna psikedelik yang cerah di bibirnya.',
