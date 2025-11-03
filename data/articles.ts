@@ -4,6 +4,263 @@ const authorAvatar = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53
 
 export const articles: Article[] = [
   {
+    id: '35',
+    slug: 'revolusi-bisnis-kecil-prompt-ai-praktis',
+    title: 'Revolusi Bisnis Kecil: 5 Prompt AI Praktis untuk Pemasaran, Layanan Pelanggan, dan Ide Produk',
+    excerpt: 'AI bukan lagi hanya untuk perusahaan besar. Pelajari cara bisnis kecil dapat memanfaatkan AI dengan 5 prompt praktis ini untuk menghasilkan ide konten media sosial, menulis email pelanggan yang efektif, dan bahkan merancang konsep produk baru.',
+    summary: 'Artikel ini menyajikan lima prompt AI yang mudah diadaptasi untuk membantu pemilik bisnis kecil dalam berbagai tugas, termasuk membuat kalender konten media sosial, merespons ulasan pelanggan, dan melakukan brainstorming ide produk baru, sehingga meningkatkan efisiensi dan kreativitas.',
+    type: 'howto',
+    content: [
+      'Di era digital saat ini, persaingan bisnis semakin ketat. Usaha kecil dan menengah (UKM) seringkali harus bersaing dengan sumber daya yang terbatas. Namun, kini ada sekutu baru yang kuat dan terjangkau: Kecerdasan Buatan (AI). AI bukan lagi teknologi eksklusif untuk korporasi raksasa. Dengan prompt yang tepat, AI bisa menjadi manajer pemasaran, spesialis layanan pelanggan, dan bahkan direktur inovasi produk Anda.',
+      'Berikut adalah 5 prompt praktis yang dirancang khusus untuk membantu pemilik bisnis kecil mendongkrak operasi mereka.',
+      '**1. Membuat Kalender Konten Media Sosial**',
+      '**Tantangan:** Sulit konsisten memposting konten yang menarik di media sosial.',
+      '**Prompt:** `Bertindaklah sebagai manajer media sosial untuk sebuah [jenis bisnis, misal: kedai kopi artisan] bernama "[Nama Bisnis]". Target audiens kami adalah [deskripsi audiens, misal: profesional muda usia 25-35 tahun]. Buat kalender konten Instagram untuk satu minggu (Senin-Jumat). Untuk setiap hari, berikan ide postingan (termasuk jenis: Foto, Reel, atau Story), draf caption yang menarik, dan 5 hashtag yang relevan.`',
+      '**Mengapa ini efektif:** Prompt ini memberikan peran, target audiens, dan format output yang jelas, memungkinkan AI menghasilkan rencana yang terstruktur dan siap pakai.',
+      '**2. Merespons Ulasan Pelanggan (Positif & Negatif)**',
+      '**Tantangan:** Menanggapi ulasan online memakan waktu dan membutuhkan nada yang tepat.',
+      '**Prompt:** `Anda adalah seorang spesialis layanan pelanggan. Berikan dua templat respons untuk ulasan pelanggan. Templat pertama untuk ulasan positif bintang 5 yang memuji [aspek positif, misal: "kualitas kopi dan suasana nyaman"]. Templat kedua untuk ulasan negatif bintang 2 yang mengeluhkan [aspek negatif, misal: "waktu pelayanan yang lama saat jam sibuk"]. Kedua respons harus profesional, empatik, dan menjaga citra merek yang positif.`',
+      '**Mengapa ini efektif:** Dengan meminta templat, Anda mendapatkan kerangka respons yang bisa diadaptasi dengan cepat, memastikan konsistensi dan profesionalisme.',
+      'IMG:https://picsum.photos/seed/ai-customer-service/800/350|Ilustrasi AI membantu merespons ulasan pelanggan.',
+      '**3. Menulis Deskripsi Produk yang Persuasif**',
+      '**Tantangan:** Membuat deskripsi produk yang menjual dan informatif.',
+      '**Prompt:** `Tulis deskripsi produk yang persuasif (sekitar 100 kata) untuk produk baru kami: [nama produk, misal: "Biji Kopi Gayo Honey Process"]. Sorot tiga fitur utamanya: [fitur 1, misal: "rasa manis alami seperti madu"], [fitur 2, misal: "aroma floral yang khas"], dan [fitur 3, misal: "diproses secara etis oleh petani lokal"]. Gunakan bahasa yang menggugah selera dan akhiri dengan ajakan untuk mencoba.`',
+      '**Mengapa ini efektif:** Prompt ini fokus pada manfaat dan fitur spesifik, menghasilkan teks yang berorientasi pada penjualan dan bukan hanya deskripsi teknis.',
+      '**4. Brainstorming Ide Produk Baru**',
+      '**Tantangan:** Menemukan ide produk baru yang inovatif dan sesuai tren.',
+      '**Prompt:** `Saya memiliki sebuah [jenis bisnis, misal: toko kue]. Berdasarkan tren kuliner saat ini, berikan 5 ide produk baru yang inovatif. Untuk setiap ide, berikan nama produk yang menarik, deskripsi singkat, dan siapa target pasarnya.`',
+      '**Mengapa ini efektif:** Prompt ini memanfaatkan pengetahuan luas AI tentang tren saat ini untuk memberikan ide-ide segar yang mungkin tidak terpikirkan oleh Anda.',
+      '**Kesimpulan: AI Sebagai Mitra Pertumbuhan**',
+      'Mengintegrasikan AI ke dalam operasi bisnis kecil bukan lagi sebuah pilihan, melainkan sebuah strategi cerdas. Dengan prompt yang tepat, Anda dapat mengotomatiskan tugas-tugas rutin, meningkatkan kualitas komunikasi, dan membuka sumber kreativitas baru—semuanya tanpa perlu anggaran besar. Mulailah dengan lima prompt ini dan saksikan bagaimana AI dapat menjadi mitra pertumbuhan bisnis Anda yang paling berharga.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/ai-for-small-business/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '03 November 2025',
+    claps: 412,
+    tags: ['Bisnis Kecil', 'Pemasaran AI', 'Produktivitas', 'Prompt Engineering', 'Wirausaha'],
+    faq: [
+        {
+          question: "Apakah menggunakan AI untuk bisnis memerlukan biaya mahal?",
+          answer: "Tidak selalu. Banyak alat AI, termasuk model bahasa besar seperti Gemini, menawarkan tingkat penggunaan gratis yang cukup untuk kebutuhan bisnis kecil. Kuncinya adalah menggunakan prompt yang efisien untuk mendapatkan hasil maksimal dari setiap interaksi."
+        },
+        {
+          question: "Apakah AI dapat menggantikan peran manusia dalam bisnis saya?",
+          answer: "AI sebaiknya dilihat sebagai asisten atau co-pilot, bukan pengganti. AI sangat baik dalam mempercepat tugas-tugas seperti penulisan draf atau brainstorming, tetapi sentuhan manusia, strategi, dan empati tetap tak tergantikan untuk membangun hubungan pelanggan yang kuat dan pengambilan keputusan akhir."
+        }
+    ]
+  },
+  {
+    id: '34',
+    slug: 'cetak-biru-guru-modern-prompt-ai-kurikulum-merdeka',
+    title: 'Cetak Biru Guru Modern: Kumpulan Prompt AI Wajib untuk Kurikulum Merdeka',
+    excerpt: 'Kurikulum Merdeka menuntut kreativitas dan personalisasi. AI bisa menjadi asisten pengajar terbaik Anda. Dari membuat RPP hingga merancang soal HOTS, temukan kumpulan prompt siap pakai yang dirancang khusus untuk guru di Indonesia.',
+    summary: 'Artikel ini menyediakan kumpulan prompt AI praktis yang disesuaikan untuk kebutuhan guru dalam mengimplementasikan Kurikulum Merdeka. Ini mencakup prompt untuk membuat RPP, materi ajar berdiferensiasi, soal HOTS, dan modul proyek P5.',
+    type: 'standard',
+    content: [
+      'Kurikulum Merdeka membuka ruang luas bagi guru untuk berinovasi, namun di sisi lain juga menuntut persiapan yang lebih personal dan mendalam. Di sinilah Kecerdasan Buatan (AI) dapat berperan sebagai asisten pengajar yang tak ternilai, membantu meringankan beban administratif dan memicu ide-ide kreatif. Berikut adalah kumpulan prompt AI praktis yang dirancang khusus untuk kebutuhan guru dalam mengimplementasikan Kurikulum Merdeka.',
+      '**1. Membuat Draf RPP/Modul Ajar Lengkap**',
+      '**Tantangan:** Menyusun RPP atau Modul Ajar yang komprehensif dan sesuai dengan prinsip Kurikulum Merdeka memakan waktu.',
+      '**Prompt:** Gunakan prompt JSON terstruktur untuk hasil terbaik. Cukup ubah nilai-nilai seperti `topic`, `grade_level`, dan lainnya sesuai kebutuhan Anda.',
+      `JSON_PROMPT:${`{
+  "role": "Ahli Perancangan Kurikulum Merdeka",
+  "task": "Buat Rencana Pelaksanaan Pembelajaran (RPP) lengkap untuk satu pertemuan.",
+  "topic": "Siklus Air dan Dampaknya pada Kehidupan",
+  "grade_level": "Fase C (Kelas 5 SD)",
+  "subject": "IPAS",
+  "duration": "2 x 35 menit",
+  "learning_objectives": [
+    "Siswa mampu mengidentifikasi tahapan siklus air (evaporasi, kondensasi, presipitasi).",
+    "Siswa mampu menjelaskan dampak siklus air bagi makhluk hidup melalui diagram sederhana."
+  ],
+  "pancasila_profile_dimensions": ["Bernalar Kritis", "Kreatif"],
+  "activities": {
+    "opening": "Apersepsi dengan pertanyaan pemantik: 'Dari mana datangnya hujan?' dan menonton video singkat tentang awan.",
+    "main_activity": "Pembelajaran berdiferensiasi: 1. Kelompok visual membuat diagram siklus air. 2. Kelompok kinestetik melakukan eksperimen sederhana siklus air dalam toples. 3. Kelompok auditori berdiskusi dan merekam penjelasan tentang dampak siklus air.",
+    "closing": "Presentasi hasil kerja kelompok dan refleksi bersama tentang pentingnya air."
+  },
+  "assessment": {
+    "formative": "Observasi saat diskusi kelompok dan penilaian presentasi singkat.",
+    "summative": "Tugas menggambar dan memberi label pada diagram siklus air di akhir sesi."
+  }
+}`}`,
+      '**2. Merancang Materi Ajar Berdiferensiasi**',
+      '**Tantangan:** Menyesuaikan materi untuk berbagai tingkat pemahaman siswa.',
+      '**Prompt:** `Saya mengajar materi tentang [Topik Anda, misal: "Kerajaan Hindu-Buddha di Indonesia"] untuk kelas [Kelas Anda]. Buatkan tiga versi paragraf pengantar untuk materi ini yang disesuaikan untuk tiga tingkat pemahaman siswa: (1) Siswa dengan pemahaman dasar, (2) Siswa dengan pemahaman rata-rata, dan (3) Siswa dengan pemahaman tinggi yang butuh tantangan.`',
+      'IMG:https://picsum.photos/seed/ai-differentiated-learning/800/350|Visualisasi AI membantu guru membuat materi untuk berbagai tingkat pemahaman siswa.',
+      '**3. Membuat Soal HOTS (High Order Thinking Skills)**',
+      '**Tantangan:** Merancang soal yang benar-benar menguji kemampuan berpikir tingkat tinggi (C4-C6).',
+      '**Prompt:** `Bertindaklah sebagai spesialis evaluasi pendidikan. Buat 3 soal esai tipe HOTS (C4-Menganalisis, C5-Mengevaluasi, C6-Mencipta) berdasarkan tujuan pembelajaran: "[Salin Tujuan Pembelajaran di sini]". Sertakan kunci jawaban dan pedoman penskoran untuk setiap soal.`',
+      '**4. Membuat Draf Modul Proyek P5**',
+      '**Tantangan:** Mengembangkan modul Proyek Penguatan Profil Pelajar Pancasila (P5) yang terstruktur.',
+      '**Prompt:** `Anda adalah seorang ahli Kurikulum Merdeka. Buatkan draf Modul Ajar Proyek P5 untuk Fase [Fase, misal: D (SMP)] dengan tema "[Tema P5, misal: Kearifan Lokal]". Proyek ini akan berlangsung selama 3 minggu. Tentukan tujuan, alur kegiatan per minggu, dan jenis asesmen formatif yang relevan.`',
+      '**Masa Depan Pendidikan yang Didukung AI**',
+      'Dengan memanfaatkan AI, guru dapat mengalihkan fokus dari tugas administratif yang berulang ke esensi pengajaran: berinteraksi dengan siswa, memfasilitasi diskusi, dan memberikan umpan balik yang personal. Prompt-prompt ini hanyalah titik awal. Jangan ragu untuk menyesuaikannya sesuai dengan mata pelajaran dan konteks kelas Anda.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/ai-kurikulum-merdeka/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '26 Oktober 2025',
+    claps: 355,
+    tags: ['Pendidikan', 'Kurikulum Merdeka', 'Prompt AI', 'Guru', 'Produktivitas'],
+    faq: [
+      {
+        question: "Apakah saya bisa menggunakan prompt ini untuk mata pelajaran lain?",
+        answer: "Tentu saja. Semua prompt di atas dirancang sebagai templat. Anda hanya perlu mengganti bagian dalam tanda kurung siku [...] dengan informasi yang relevan untuk mata pelajaran, topik, dan jenjang kelas yang Anda ajar."
+      },
+      {
+        question: "Apakah hasil dari AI selalu akurat dan bisa langsung digunakan?",
+        answer: "AI adalah asisten yang sangat baik untuk membuat draf awal, tetapi peran guru sebagai ahli materi tetap krusial. Selalu tinjau, validasi, dan sesuaikan kembali output dari AI agar benar-benar sesuai dengan konteks kelas dan tujuan pembelajaran Anda. Anggap AI sebagai partner brainstorming, bukan sebagai sumber kebenaran absolut."
+      }
+    ]
+  },
+  {
+    id: '33',
+    slug: 'revolusi-konten-ai-untuk-trafik-seo',
+    title: 'Revolusi Konten: Cetak Biru Lengkap Menggunakan AI untuk Mendominasi Peringkat SEO',
+    excerpt: 'Dari riset kata kunci hingga penulisan artikel yang dioptimalkan, AI kini menjadi co-pilot SEO terbaik. Panduan ini memberikan alur kerja langkah demi langkah untuk menciptakan konten berkualitas yang disukai Google dan pembaca.',
+    summary: 'Panduan komprehensif tentang cara menggunakan AI untuk seluruh alur kerja pembuatan konten SEO, termasuk riset kata kunci, pembuatan outline, penulisan draf, dan optimisasi on-page. Artikel ini menekankan peran manusia sebagai editor dan ahli strategi.',
+    type: 'howto',
+    content: [
+      'Membuat konten yang berhasil menduduki peringkat teratas di Google adalah perpaduan antara seni dan sains. Anda membutuhkan kreativitas untuk menarik pembaca dan pemahaman teknis untuk memuaskan algoritma. Di masa lalu, ini adalah proses yang panjang dan melelahkan. Kini, dengan AI, kita dapat mempercepat seluruh alur kerja tanpa mengorbankan kualitas. Berikut adalah cetak biru lengkapnya.',
+      '**Langkah 1: Riset Kata Kunci Berbasis Persona dengan AI**',
+      'Lupakan alat SEO yang rumit. Mulailah dengan memahami audiens Anda. Gunakan AI untuk berpikir seperti mereka.',
+      '**Prompt:** `Bertindaklah sebagai seorang ahli strategi SEO. Target audiens saya adalah [deskripsi audiens, misal: "pemula dalam berkebun di rumah"]. Berdasarkan audiens ini, hasilkan 20 ide kata kunci long-tail yang mereka mungkin cari. Kelompokkan kata kunci ini ke dalam 3 kategori topik utama.`',
+      '**Hasil:** AI akan memberikan Anda daftar kata kunci yang terorganisir, memberikan titik awal yang kuat untuk pilar konten Anda.',
+      '**Langkah 2: Membuat Kerangka Artikel yang SEO-Friendly**',
+      'Setelah Anda memilih kata kunci utama (misalnya, "cara memulai berkebun hidroponik"), gunakan AI untuk membangun strukturnya.',
+      '**Prompt:** `Buat kerangka artikel blog yang komprehensif untuk kata kunci utama "[kata kunci Anda]". Kerangka harus mencakup judul (H1) yang menarik, beberapa subjudul (H2) yang relevan, dan poin-poin penting (H3) di bawah setiap subjudul. Pastikan untuk menyertakan bagian FAQ di akhir.`',
+      '**Hasil:** Anda mendapatkan struktur artikel yang logis dan kaya akan subtopik, yang disukai oleh mesin pencari karena kedalamannya.',
+      'IMG:https://picsum.photos/seed/ai-seo-outline/800/350|Visualisasi kerangka artikel yang dihasilkan oleh AI.',
+      '**Langkah 3: Menulis Draf Pertama dengan Cepat**',
+      'Dengan kerangka yang sudah ada, proses penulisan menjadi jauh lebih mudah. Anda bisa meminta AI untuk menulis draf per bagian.',
+      '**Prompt:** `Berdasarkan kerangka artikel ini [tempelkan kerangka dari Langkah 2], tulis draf untuk bagian "[nama subjudul H2]". Gunakan nada yang [pilih nada, misal: "informatif dan ramah untuk pemula"]. Jelaskan konsepnya dengan analogi sederhana.`',
+      '**Langkah 4: Peran Krusial Manusia - Penyuntingan dan Otoritas (E-E-A-T)**',
+      'Inilah langkah yang paling penting. Draf dari AI adalah titik awal, bukan produk akhir. Peran Anda sebagai ahli adalah:',
+      '- **Menambahkan Pengalaman Pribadi:** Sisipkan cerita, studi kasus, atau anekdot unik Anda. Ini adalah sesuatu yang tidak bisa dilakukan AI.',
+      '- **Memverifikasi Fakta:** Pastikan semua data dan klaim akurat.',
+      '- **Menyempurnakan Nada:** Sesuaikan gaya bahasa agar benar-benar terdengar seperti suara merek Anda.',
+      '- **Optimisasi Lanjutan:** Tambahkan tautan internal ke artikel lain di situs Anda dan tautan eksternal ke sumber yang kredibel.',
+      '**Kesimpulan: AI sebagai Akselerator, Bukan Pengganti**',
+      'Alur kerja ini mengubah AI dari sekadar "penulis artikel" menjadi "asisten peneliti dan penyusun draf". Dengan membiarkan AI menangani pekerjaan berat di awal (riset dan strukturisasi), Anda dapat memfokuskan energi Anda pada apa yang paling penting: menambahkan keahlian, pengalaman, dan sentuhan manusiawi yang akan membuat konten Anda benar-benar menonjol di tengah persaingan.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/revolusi-konten-ai-untuk-trafik-seo/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '25 Oktober 2025',
+    claps: 205,
+    tags: ['SEO', 'Konten AI', 'Prompt Engineering', 'Pemasaran Digital', 'Tutorial'],
+    faq: [
+      {
+        question: "Apakah konten yang sepenuhnya ditulis oleh AI baik untuk SEO?",
+        answer: "Konten yang 100% dihasilkan AI tanpa sentuhan manusia cenderung bersifat generik dan kurang memiliki keahlian atau pengalaman otentik (prinsip E-E-A-T Google). Google lebih menghargai konten yang bermanfaat dan kredibel. Oleh karena itu, menggunakan AI sebagai asisten untuk membuat draf dan kemudian menyempurnakannya dengan wawasan manusia adalah pendekatan terbaik."
+      },
+      {
+        question: "Bagaimana cara menghindari plagiarisme saat menggunakan AI?",
+        answer: "Model AI modern dilatih untuk menghasilkan konten orisinal. Namun, cara terbaik untuk memastikan keunikan adalah dengan menggunakan output AI sebagai draf pertama. Saat Anda menyunting, menambahkan pengalaman pribadi, dan menyusun ulang kalimat agar sesuai dengan gaya Anda, hasilnya akan menjadi karya yang unik milik Anda."
+      }
+    ]
+  },
+  {
+    id: '32',
+    slug: 'rahasia-membuat-poster-film-sinematik-dengan-ai',
+    title: 'Rahasia di Balik Poster Film Sinematik: Bedah Prompt untuk Visual Selevel Hollywood',
+    excerpt: 'Sebuah poster film yang bagus menceritakan sebuah kisah bahkan sebelum film dimulai. Pelajari cara merekayasa prompt yang menggabungkan komposisi, pencahayaan, tipografi, dan emosi untuk menghasilkan poster film fiksi yang menakjubkan dengan AI.',
+    summary: 'Tutorial ini membedah prompt AI yang dirancang khusus untuk membuat poster film fiksi ilmiah. Ini mencakup elemen-elemen kunci seperti komposisi subjek, sinematografi (pencahayaan, depth of field), dan penggunaan ruang negatif yang strategis untuk teks.',
+    type: 'howto',
+    content: [
+      'Poster film adalah bentuk seni yang unik. Dalam satu gambar, ia harus mampu menangkap esensi cerita, membangkitkan emosi, dan memikat audiens. Dengan AI, kita bisa bereksperimen dengan pembuatan poster film fiksi kita sendiri. Kuncinya bukan hanya mendeskripsikan sebuah adegan, tetapi berpikir seperti seorang desainer dan sinematografer. Mari kita bedah prompt yang dirancang untuk menciptakan poster film fiksi ilmiah yang dramatis.',
+      `JSON_PROMPT:${`A cinematic, photorealistic movie poster for a sci-fi thriller titled "CHRONOS VEIL".
+
+**Subject:** A dramatic medium close-up of a female scientist in her late 30s. She has a determined yet fearful expression, with one eye reflecting complex data streams. Rain streaks down her face, mingling with tears.
+
+**Environment:** A gritty, rain-slicked futuristic city at night. Towering neon-lit skyscrapers create a claustrophobic background.
+
+**Cinematography:** The scene is captured with a shallow depth of field, making the background beautifully blurred with bokeh. The lighting is moody and dramatic chiaroscuro, primarily lit by the cold blue and magenta glow of the neon signs. A subtle anamorphic lens flare cuts across the frame.
+
+**Style:** Photorealistic 8K, shot on 35mm film with visible film grain to add texture. The overall mood is tense, mysterious, and melancholic. The composition intentionally leaves significant negative space at the bottom for the movie title and credits.`}`,
+      '**1. Subjek: Fokus pada Emosi dan Cerita**',
+      'Prompt ini tidak hanya mengatakan "seorang ilmuwan wanita". Ia memberikan detail naratif: `determined yet fearful expression`, `one eye reflecting complex data streams`, `rain streaks mingling with tears`. Ini adalah instruksi yang kaya akan cerita. AI tidak hanya menggambar wajah, tetapi juga emosi dan konflik internal karakter.',
+      '**2. Sinematografi: Mengatur Panggung seperti Sutradara**',
+      'Bagian ini adalah yang paling penting untuk nuansa "film". Perhatikan istilah-istilah teknisnya:',
+      '- **`Shallow depth of field`:** Meminta AI untuk mengaburkan latar belakang, memaksa fokus pada ekspresi karakter.',
+      '- **`Chiaroscuro lighting`:** Ini adalah istilah seni klasik untuk kontras dramatis antara terang dan gelap, menciptakan suasana yang moody.',
+      '- **`Anamorphic lens flare`:** Efek suar lensa horizontal yang langsung memberikan nuansa sinematik layar lebar.',
+      'IMG:https://picsum.photos/seed/cinematic-lighting-poster/800/350|Contoh pencahayaan chiaroscuro dengan anamorphic lens flare.',
+      '**3. Gaya: Menentukan Tekstur dan Mood**',
+      'Prompt ini menentukan estetika akhir. `Shot on 35mm film with visible film grain` adalah instruksi untuk menghindari tampilan digital yang terlalu bersih dan menambahkan tekstur organik. Kata-kata seperti `tense, mysterious, and melancholic` berfungsi sebagai arahan emosional bagi AI.',
+      '**4. Komposisi Strategis: Ruang untuk Teks**',
+      'Ini adalah langkah jenius yang sering dilupakan. `The composition intentionally leaves significant negative space at the bottom for the movie title and credits.` Dengan instruksi ini, Anda tidak hanya mendapatkan gambar yang indah, tetapi juga kanvas yang fungsional dan siap untuk ditambahkan elemen desain grafis. Ini menunjukkan pemikiran seorang desainer, bukan hanya seorang pembuat gambar.',
+      '**Kesimpulan: Berpikir dalam Lapisan**',
+      'Membuat poster film yang efektif dengan AI memerlukan pemikiran berlapis. Anda harus bertindak sebagai penulis (untuk cerita karakter), sutradara (untuk sinematografi), dan desainer (untuk komposisi). Dengan memecah permintaan Anda ke dalam kategori-kategori ini, Anda memberikan cetak biru yang sangat jelas kepada AI, memungkinkannya untuk mengeksekusi visi kompleks Anda dengan presisi yang menakjubkan.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/poster-film-sinematik-ai/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '17 Oktober 2025',
+    claps: 228,
+    tags: ['Seni Sinematik', 'Poster Film', 'Prompt Engineering', 'Desain Grafis', 'Tutorial'],
+    faq: [
+      {
+        question: "Apa itu 'chiaroscuro' dalam konteks AI?",
+        answer: "'Chiaroscuro' adalah istilah seni yang merujuk pada penggunaan kontras kuat antara terang dan gelap. Dalam prompt AI, ini menginstruksikan model untuk menciptakan pencahayaan yang dramatis, dengan bayangan yang dalam dan sorotan yang tajam, mirip dengan lukisan Rembrandt atau film noir."
+      },
+      {
+        question: "Mengapa penting untuk meminta 'ruang negatif' dalam prompt desain?",
+        answer: "Meminta 'ruang negatif' (negative space) secara eksplisit sangat penting untuk desain grafis karena ini memastikan ada area kosong yang cukup pada gambar untuk menempatkan teks (seperti judul atau logo) tanpa mengganggu elemen visual utama. Ini membuat gambar lebih fungsional sebagai aset desain."
+      }
+    ]
+  },
+  {
+    id: '31',
+    slug: 'bedah-prompt-horor-voronoi-rekursif',
+    title: 'Bedah Prompt: Anatomi Horor Voronoi Rekursif—Menggabungkan Matematika dan Teror',
+    excerpt: 'Bagaimana cara menciptakan gambar yang benar-benar meresahkan dan kompleks secara visual? Kita akan membedah sebuah prompt tingkat lanjut yang menggabungkan konsep matematika (Voronoi, rekursi) dengan horor psikologis untuk hasil yang tak terlupakan.',
+    summary: 'Analisis mendalam tentang prompt AI yang kompleks untuk menciptakan seni horor. Artikel ini memecah konsep "rekursi," "hypervoronoi," dan "lattice reality" dan menjelaskan bagaimana istilah-istilah ini memandu AI untuk menghasilkan gambar yang terfragmentasi, tak terbatas, dan mengerikan secara visual.',
+    type: 'howto',
+    content: [
+      'Seni AI terbaik seringkali lahir dari persilangan disiplin ilmu yang tak terduga. Dalam kasus ini, kita akan menjelajahi bagaimana konsep dari matematika dan komputasi grafis dapat digunakan untuk menciptakan gambar horor yang benar-benar unik dan meresahkan. Mari kita bedah prompt di balik "Horor Voronoi Rekursif".',
+      `JSON_PROMPT:${`A hyper-detailed maximalist horror scene, glossy and psychedelic, rendered in hypervoronoi and lattice reality style.
+
+The central figure is a recursive chain of screaming faces: one hyper-realistic human face frozen in terror, mouth wide open, and inside the mouth another screaming face, repeating endlessly like a spiral vortex of agony. Each face is slick and glossy, drenched in sweat, oil, or tears. The recursion spirals inward, each layer more distorted, reflective, and surreal.
+
+The screaming faces fragment into glowing voronoi cells, their skin splitting into thousands of polygonal shards reflecting neon colors. Lattice grids stretch between faces, glowing like shattered glass webs. Neon liquid flows through the lattice veins, dripping into voronoi cracks.
+
+Background surfaces ripple into infinite hypervoronoi tessellations, each cell filled with fragments of distorted eyes, mouths, and reflections. Neon liquid and shards spiral downward toward the vortex center, creating a hypnotic, chaotic flow.
+
+Camera Angle: Top-down view, looking directly at the recursive faces from above. Faces, lattice grids, and voronoi shards form a spiral vortex descending into infinite recursion. Neon reflections and glossy textures exaggerate depth, chaos, and psychedelic overload.`}`,
+      '**1. Konsep Inti: Rekursi (Recursion)**',
+      'Jantung dari prompt ini adalah `a recursive chain of screaming faces`. Rekursi adalah ide di mana sesuatu mengandung versi yang lebih kecil dari dirinya sendiri. Dalam hal ini, mulut yang terbuka berisi wajah lain yang juga berteriak, menciptakan efek spiral tak berujung yang secara visual mewakili penderitaan abadi. Ini adalah konsep horor psikologis yang kuat.',
+      '**2. Estetika Matematika: Voronoi dan Lattice**',
+      'Di sinilah prompt menjadi sangat teknis dan unik.',
+      '- **`Hypervoronoi`:** Diagram Voronoi adalah cara mempartisi sebuah bidang menjadi wilayah-wilayah berdasarkan jarak ke titik-titik tertentu. Dalam seni AI, menggunakan kata `voronoi` atau `hypervoronoi` meminta model untuk memecah permukaan menjadi sel-sel atau pecahan-pecahan poligonal. Ini menciptakan efek fragmentasi yang indah namun meresahkan, seolah-olah realitas itu sendiri retak.',
+      '- **`Lattice Reality`:** `Lattice` berarti kisi-kisi atau jaring. Istilah ini menginstruksikan AI untuk menghubungkan fragmen-fragmen ini dengan struktur seperti jaring atau jaring laba-laba, memperkuat gagasan tentang realitas yang terfragmentasi namun terhubung dalam sebuah sistem yang mengerikan.',
+      'IMG:https://picsum.photos/seed/voronoi-fracture/800/350|Visualisasi tekstur yang terfragmentasi oleh pola Voronoi.',
+      '**3. Tekstur dan Atmosfer: Glossy, Psychedelic, Neon**',
+      'Untuk meningkatkan kengerian, prompt ini menambahkan lapisan estetika yang kontras. `Glossy and psychedelic` membuat adegan terasa seperti mimpi buruk yang demam. Penggunaan `neon liquid` yang mengalir melalui retakan memberikan nuansa horor tubuh (body horror) yang dicampur dengan fiksi ilmiah, seolah-olah ini adalah sistem biologis atau mekanis yang aneh.',
+      '**4. Arahan Kamera: Top-Down View**',
+      'Pilihan sudut kamera `top-down view` sangat cerdas. Ini memungkinkan kita untuk melihat langsung ke dalam "vortex penderitaan" yang rekursif, memaksimalkan efek hipnotis dan klaustrofobia dari spiral tak berujung tersebut.',
+      '**Kesimpulan: Kosakata Baru untuk Kreativitas**',
+      'Prompt ini adalah contoh cemerlang tentang bagaimana memperluas kosakata kreatif kita dapat membuka hasil yang sama sekali baru. Dengan meminjam istilah dari matematika dan sains komputer, kita dapat memberikan instruksi kepada AI yang melampaui deskripsi visual sederhana, memungkinkan kita untuk merekayasa tekstur, struktur, dan konsep yang mendalam.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/horor-voronoi-rekursif/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '16 Oktober 2025',
+    claps: 173,
+    tags: ['Prompt Engineering', 'Seni Horor', 'Surealisme', 'Voronoi', 'Tutorial'],
+    faq: [
+      {
+        question: "Apa itu diagram Voronoi?",
+        answer: "Diagram Voronoi adalah partisi matematis dari sebuah bidang menjadi beberapa wilayah. Dalam seni AI, menggunakan kata kunci 'voronoi' atau 'hypervoronoi' akan menghasilkan efek visual di mana permukaan gambar terpecah menjadi sel-sel atau fragmen-fragmen poligonal, menciptakan tampilan yang terfragmentasi dan seringkali organik."
+      },
+      {
+        question: "Apa yang dimaksud dengan 'rekursi' dalam seni AI?",
+        answer: "Rekursi (recursion) dalam seni AI adalah teknik di mana sebuah gambar mengandung versi yang lebih kecil dari dirinya sendiri, menciptakan efek pengulangan tak terbatas atau spiral. Ini sering digunakan untuk menciptakan pola yang kompleks, fraktal, atau seperti dalam prompt ini, untuk memvisualisasikan konsep tak terbatas seperti penderitaan abadi."
+      }
+    ]
+  },
+  {
     id: '30',
     slug: 'bedah-prompt-lofi-realisme-wajah-dan-surealisme-ruang',
     title: 'Bedah Prompt Lo-Fi: Memadukan Realisme Wajah dan Surealisme Ruang',
@@ -871,7 +1128,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
       '2. **Potret Melamun:** `Extreme close-up portrait of a mysterious woman, eyes reflecting the city lights, dreamy bokeh background, anamorphic lens flare creating a horizontal streak, shot on 35mm film, moody and atmospheric.` Untuk potret yang penuh dengan emosi.',
       '3. **Detail Hiper-Realistis:** `Macro photography of a dewdrop on a spider\'s web, capturing the refracted world within, intricate details of the silk threads, hyper-realistic, 8K resolution, focus stacking.` Lihat lebih dekat untuk mengungkap dunia yang seringkali tak terlihat oleh mata telanjang.',
       '4. **Fusi Artistik:** `A bustling futuristic metropolis skyline at night, re-imagined in the style of Ukiyo-e woodblock prints, elegant lines, flat color planes with modern gradients, cherry blossom petals drifting in the foreground.` Padukan seni klasik Jepang dengan pemandangan kota futuristik.',
-      'Ini baru permulaan. Dengan bereksperimen dengan kombinasi gaya artistik, teknik kamera, dan bahasa deskriptif yang spesifik, Anda dapat memandu AI untuk membuat gambar yang tidak hanya dihasilkan, tetapi benar-benar artistik. Selamat mencoba!'
+      'Ini baru permulaan. Dengan bereksperimen dengan kombinasi gaya artistik, teknik kamera, dan bahasa deskriptif yang spesifik, Anda dapat memandu AI untuk membuat gambar yang tidak hanya dihasilkan, tetapi juga benar-benar artistik. Selamat mencoba!'
     ],
     imageUrl: 'https://picsum.photos/seed/unlock-premium-ai-images-10-prompts/800/400',
     author: 'awanbyru',
