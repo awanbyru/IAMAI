@@ -2,6 +2,41 @@ import { Prompt } from '../types';
 
 export const prompts: Prompt[] = [
   {
+    id: 'p87',
+    title: 'Generator Kalender Konten Media Sosial',
+    description: 'Membuat kalender konten media sosial mingguan yang terstruktur untuk platform seperti Instagram, disesuaikan dengan bisnis dan audiens target Anda.',
+    prompt: 'Bertindaklah sebagai manajer media sosial untuk sebuah [jenis bisnis, misal: kedai kopi artisan] bernama "[Nama Bisnis]". Target audiens kami adalah [deskripsi audiens, misal: profesional muda usia 25-35 tahun]. Buat kalender konten Instagram untuk satu minggu (Senin-Jumat). Untuk setiap hari, berikan ide postingan (termasuk jenis: Foto, Reel, atau Story), draf caption yang menarik, dan 5 hashtag yang relevan.',
+    category: 'Pemasaran',
+  },
+  {
+    id: 'p86',
+    title: 'Templat Respons Ulasan Pelanggan',
+    description: 'Menghasilkan templat respons yang profesional dan empatik untuk ulasan pelanggan, baik yang positif maupun negatif.',
+    prompt: 'Anda adalah seorang spesialis layanan pelanggan. Berikan dua templat respons untuk ulasan pelanggan. Templat pertama untuk ulasan positif bintang 5 yang memuji [aspek positif, misal: "kualitas kopi dan suasana nyaman"]. Templat kedua untuk ulasan negatif bintang 2 yang mengeluhkan [aspek negatif, misal: "waktu pelayanan yang lama saat jam sibuk"]. Kedua respons harus profesional, empatik, dan menjaga citra merek yang positif.',
+    category: 'Layanan Pelanggan',
+  },
+  {
+    id: 'p85',
+    title: 'Penulis Deskripsi Produk Persuasif',
+    description: 'Membuat deskripsi produk yang menarik dan berorientasi pada penjualan, dengan menyoroti fitur-fitur utama.',
+    prompt: 'Tulis deskripsi produk yang persuasif (sekitar 100 kata) untuk produk baru kami: [nama produk, misal: "Biji Kopi Gayo Honey Process"]. Sorot tiga fitur utamanya: [fitur 1, misal: "rasa manis alami seperti madu"], [fitur 2, misal: "aroma floral yang khas"], dan [fitur 3, misal: "diproses secara etis oleh petani lokal"]. Gunakan bahasa yang menggugah selera dan akhiri dengan ajakan untuk mencoba.',
+    category: 'Pemasaran',
+  },
+  {
+    id: 'p84',
+    title: 'Generator Ide Produk Inovatif',
+    description: 'Melakukan brainstorming ide produk baru yang inovatif berdasarkan tren pasar saat ini untuk jenis bisnis Anda.',
+    prompt: 'Saya memiliki sebuah [jenis bisnis, misal: toko kue]. Berdasarkan tren kuliner saat ini, berikan 5 ide produk baru yang inovatif. Untuk setiap ide, berikan nama produk yang menarik, deskripsi singkat, dan siapa target pasarnya.',
+    category: 'Bisnis',
+  },
+  {
+    id: 'p83',
+    title: 'Draf Email Tindak Lanjut Profesional',
+    description: 'Menyusun draf email tindak lanjut (follow-up) yang profesional dan efektif setelah pertemuan bisnis atau klien.',
+    prompt: 'Tulis draf email tindak lanjut (follow-up) profesional kepada seorang klien potensial bernama [Nama Klien] setelah pertemuan awal. Sebutkan bahwa Anda menikmati diskusi tentang [Topik Diskusi] dan ingatkan bahwa Anda akan melampirkan [Dokumen yang Relevan, misal: proposal atau portofolio]. Akhiri dengan ajakan untuk langkah selanjutnya yang jelas.',
+    category: 'Bisnis',
+  },
+  {
     id: 'p82',
     title: 'Draf Surat Rekomendasi Siswa',
     description: 'Menulis draf surat rekomendasi yang kuat dan personal untuk siswa yang mendaftar beasiswa atau universitas.',
