@@ -248,6 +248,26 @@ const ArticlePage: React.FC = () => {
 
       flushList();
 
+      const imgMatch = paragraph.match(/^IMG:(.*?)\|(.*)/);
+      if (imgMatch) {
+        const [, src, alt] = imgMatch;
+        elements.push(
+          <figure key={`img-${index}`} className="my-8">
+            <LazyImage
+              src={src}
+              srcset={generateSrcSet(src)}
+              sizes="(max-width: 767px) 100vw, 800px"
+              placeholderSrc={generatePlaceholderSrc(src)}
+              alt={alt}
+              className="w-full aspect-2-1 rounded-lg shadow-md border border-app-default object-cover"
+              loading="lazy"
+            />
+            <figcaption className="mt-3 text-sm text-center text-app-muted italic">{alt}</figcaption>
+          </figure>
+        );
+        return;
+      }
+
       if (paragraph.startsWith('JSON_PROMPT:')) {
         const jsonString = paragraph.substring('JSON_PROMPT:'.length);
         elements.push(
