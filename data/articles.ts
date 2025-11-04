@@ -231,7 +231,7 @@ export const articles: Article[] = [
       'Inilah inti horornya. Rekursi menciptakan perasaan tak terbatas dan tak terhindarkan, sebuah siklus penderitaan yang tak berujung.',
       '`The screaming faces fragment into glowing voronoi cells, their skin splitting into thousands of polygonal shards... Lattice grids stretch between faces, glowing like shattered glass webs.`',
       'Di sini, subjek menyatu dengan gaya. Wajah-wajah itu sendiri hancur menjadi pola Voronoi, mengaburkan batas antara daging dan geometri. Kisi-kisi menambahkan lapisan struktur pada kekacauan.',
-      'IMG:https://picsum.photos/seed/voronoi-fracture-example/800/350|Visualisasi pola fragmentasi Voronoi pada sebuah permukaan.',
+      'IMG:https://ibb.co.com/spV5W4xL|Visualisasi pola fragmentasi Voronoi pada sebuah permukaan.',
       '**Sudut Pandang dan Komposisi**',
       '`Camera Angle: Top-down view, looking directly at the recursive faces from above.`',
       'Pemilihan sudut pandang ini sangat jenius. Dengan melihat ke bawah ke dalam "jurang" wajah-wajah yang menjerit, pemirsa ditarik ke dalam spiral, meningkatkan perasaan pusing dan teror.',
