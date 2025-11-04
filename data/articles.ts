@@ -6,8 +6,8 @@ export const articles: Article[] = [
   {
     id: '5',
     slug: 'revolusi-bisnis-kecil-prompt-ai-praktis',
-    title: 'Revolusi Bisnis Kecil: 5 Prompt AI Praktis untuk Efisiensi Maksimal',
-    excerpt: 'Tidak punya tim pemasaran atau layanan pelanggan yang besar? Tidak masalah. Manfaatkan 5 prompt AI praktis ini untuk mengotomatiskan pembuatan konten media sosial, merespons ulasan pelanggan, dan banyak lagi.',
+    title: 'Revolusi Bisnis Kecil: 5 Prompt AI untuk Pemasaran & Layanan Pelanggan',
+    excerpt: 'Tidak punya tim besar? Manfaatkan 5 prompt AI praktis ini untuk mengotomatiskan pembuatan konten media sosial, merespons ulasan pelanggan, menulis deskripsi produk, dan menyusun email profesional.',
     summary: 'Menyajikan lima prompt AI yang dapat langsung digunakan oleh pemilik bisnis kecil untuk tugas-tugas penting seperti membuat kalender konten, merespons ulasan, menulis deskripsi produk, dan menyusun email tindak lanjut.',
     type: 'standard',
     content: [
@@ -50,7 +50,7 @@ export const articles: Article[] = [
     id: '4',
     slug: 'cetak-biru-guru-modern-prompt-ai-kurikulum-merdeka',
     title: 'Cetak Biru Guru Modern: Prompt AI Esensial untuk Kurikulum Merdeka',
-    excerpt: 'Kurikulum Merdeka menuntut kreativitas dan diferensiasi. Temukan kumpulan prompt AI praktis yang dirancang khusus untuk membantu guru merancang RPP, modul ajar P5, dan asesmen yang inovatif.',
+    excerpt: 'Kurikulum Merdeka menuntut kreativitas. Temukan kumpulan prompt AI praktis yang dirancang khusus untuk membantu guru merancang RPP, modul ajar P5, dan asesmen HOTS yang inovatif dan berdiferensiasi.',
     summary: 'Kumpulan prompt AI yang dirancang untuk membantu guru Indonesia dalam mengimplementasikan Kurikulum Merdeka, mulai dari menyusun RPP, modul P5, hingga membuat soal HOTS dan materi ajar berdiferensiasi.',
     type: 'howto',
     content: [
@@ -78,11 +78,21 @@ export const articles: Article[] = [
     date: '26 Oktober 2025',
     claps: 512,
     tags: ['Pendidikan', 'Kurikulum Merdeka', 'Prompt AI', 'Guru'],
+    faq: [
+        {
+          question: "Apakah prompt ini bisa digunakan di semua platform AI?",
+          answer: "Ya, prompt ini dirancang secara universal dan dapat digunakan di berbagai platform AI generatif seperti Gemini, ChatGPT, atau Copilot. Anda hanya perlu menyesuaikan placeholder agar sesuai dengan kebutuhan spesifik mata pelajaran dan kelas Anda."
+        },
+        {
+          question: "Bagaimana cara terbaik memulai penggunaan AI untuk pengajaran?",
+          answer: "Mulailah dari tugas yang paling memakan waktu, seperti membuat draf RPP atau mencari ide ice breaking. Gunakan prompt yang kami sediakan sebagai titik awal, lalu modifikasi sesuai gaya mengajar Anda. Anggap AI sebagai asisten kreatif untuk meringankan beban kerja administratif."
+        }
+    ]
   },
   {
     id: '3',
     slug: 'revolusi-konten-ai-untuk-trafik-seo',
-    title: 'Revolusi Konten: Memanfaatkan AI untuk Mendominasi Trafik SEO',
+    title: 'Revolusi Konten: Memanfaatkan AI untuk Mendominasi Peringkat SEO',
     excerpt: 'Konten adalah raja, tapi AI adalah pembuat raja. Pelajari cara menggunakan prompt JSON terstruktur untuk membuat kerangka artikel SEO yang komprehensif, mengalahkan pesaing, dan menarik trafik organik.',
     summary: 'Panduan praktis menggunakan prompt AI berformat JSON untuk merancang kerangka artikel yang dioptimalkan untuk SEO, mencakup riset kata kunci, struktur outline, dan tujuan konten untuk meningkatkan peringkat di mesin pencari.',
     type: 'howto',
@@ -140,6 +150,16 @@ export const articles: Article[] = [
     date: '25 Oktober 2025',
     claps: 378,
     tags: ['SEO', 'Pemasaran Konten', 'Prompt Engineering', 'JSON'],
+    faq: [
+        {
+            question: "Mengapa menggunakan format JSON lebih baik daripada prompt biasa untuk SEO?",
+            answer: "Format JSON memberikan struktur yang jelas kepada AI. Ini memungkinkan Anda untuk mendefinisikan setiap bagian artikel (judul, pendahuluan, sub-judul) secara terpisah, memastikan kata kunci ditempatkan secara strategis dan alur artikel menjadi logis. Ini mengurangi ambiguitas dan menghasilkan kerangka yang lebih siap pakai untuk SEO."
+        },
+        {
+            question: "Apakah saya harus tahu cara coding untuk menggunakan prompt JSON?",
+            answer: "Tidak sama sekali. Anda hanya perlu menyalin templat JSON yang kami sediakan dan mengganti teks di dalam tanda kutip dengan topik dan kata kunci Anda. Anggap saja ini seperti mengisi formulir yang sangat detail untuk AI."
+        }
+    ]
   },
   {
     id: '2',
@@ -178,12 +198,22 @@ export const articles: Article[] = [
     date: '17 Oktober 2025',
     claps: 421,
     tags: ['Sinematik', 'Poster Film', 'Prompt Engineering', 'Tutorial'],
+    faq: [
+      {
+        question: "Model AI gambar mana yang paling cocok untuk prompt sinematik?",
+        answer: "Untuk hasil sinematik dan fotorealistik terbaik, model seperti Midjourney, Stable Diffusion (dengan model kustom), atau DALL-E 3 sangat direkomendasikan. Mereka sangat baik dalam memahami istilah sinematografi seperti 'shallow depth of field' dan 'anamorphic lens flare'."
+      },
+      {
+        question: "Apa kesalahan paling umum saat membuat prompt untuk poster film?",
+        answer: "Kesalahan paling umum adalah lupa meminta 'negative space' atau ruang kosong. Tanpa instruksi ini, AI akan mengisi seluruh kanvas dengan detail, tidak menyisakan ruang untuk judul film, kredit, atau elemen desain grafis lainnya."
+      }
+    ]
   },
   {
     id: '1',
     slug: 'bedah-prompt-horor-voronoi-rekursif',
-    title: 'Bedah Prompt: Horor Voronoi Rekursif',
-    excerpt: 'Bagaimana cara menciptakan horor yang benar-benar psikedelik dan tak terbatas? Kita akan membedah prompt "Recursive Voronoi Horror", sebuah mahakarya dalam menciptakan kekacauan visual yang terstruktur.',
+    title: 'Bedah Prompt: Menciptakan Horor Psikedelik dengan Voronoi Rekursif',
+    excerpt: 'Bagaimana cara menciptakan horor yang benar-benar tak terbatas? Kita akan membedah prompt "Recursive Voronoi Horror", sebuah mahakarya dalam menciptakan kekacauan visual yang terstruktur dengan AI.',
     summary: 'Analisis mendalam tentang prompt AI yang menggunakan konsep rekursi, fragmentasi Voronoi, dan kisi-kisi realitas untuk menghasilkan gambar horor psikedelik yang maksimalis dan hipnotis.',
     type: 'howto',
     content: [
@@ -206,7 +236,7 @@ export const articles: Article[] = [
       '`Camera Angle: Top-down view, looking directly at the recursive faces from above.`',
       'Pemilihan sudut pandang ini sangat jenius. Dengan melihat ke bawah ke dalam "jurang" wajah-wajah yang menjerit, pemirsa ditarik ke dalam spiral, meningkatkan perasaan pusing dan teror.',
       '**Kesimpulan: Kekacauan yang Direkayasa**',
-      'Prompt "Recursive Voronoi Horror" adalah contoh utama dari rekayasa prompt tingkat lanjut. Ia tidak hanya mendeskripsikan sebuah adegan, tetapi juga membangun sebuah sistem visual. Dengan menggabungkan konsep rekursi, geometri Voronoi, dan bahasa deskriptif yang kuat, prompt ini memandu AI untuk menciptakan sebuah mahakarya horor yang kompleks, hipnotis, dan benar-benar orisinal.'
+      'Prompt "Recursive Voronoi Horror" adalah contoh utama dari rekayasa prompt tingkat lanjut. Ia tidak hanya mendeskripsikan sebuah adegan, tetapi juga membangun sebuah sistem visual. Dengan menggabungkan konsep rekursi, geometri Voronoi, dan bahasa deskriptif yang kuat, prompt ini memandu AI untuk menciptakan sebuah mahakarya horor yang kompleks, hipnotis, dan benar-benar orisinil.'
     ],
     imageUrl: 'https://picsum.photos/seed/recursive-horror-vortex/800/400',
     author: 'awanbyru',
@@ -214,12 +244,22 @@ export const articles: Article[] = [
     date: '16 Oktober 2025',
     claps: 666,
     tags: ['Prompt Engineering', 'Surealisme', 'Horor', 'Seni AI', 'Tutorial'],
+    faq: [
+      {
+        question: "Apa itu diagram Voronoi dan mengapa ini berguna dalam seni AI?",
+        answer: "Diagram Voronoi adalah cara mempartisi ruang menjadi wilayah berdasarkan jarak ke titik-titik tertentu. Dalam seni AI, ini menciptakan pola seluler yang organik namun geometris, mirip dengan pecahan kaca atau retakan tanah. Ini adalah alat yang ampuh untuk menambahkan tekstur dan kompleksitas visual."
+      },
+      {
+        question: "Apakah saya bisa menggunakan konsep 'rekursi' untuk tema selain horor?",
+        answer: "Tentu saja! Rekursi adalah teknik yang sangat serbaguna. Anda bisa menggunakannya untuk menciptakan pola fraktal yang indah dalam desain abstrak, arsitektur mimpi yang tak terbatas seperti dalam film 'Inception', atau bahkan efek visual yang memukau dalam seni fantasi."
+      }
+    ]
   },
   {
     id: '30',
     slug: 'bedah-prompt-lofi-realisme-wajah-dan-surealisme-ruang',
     title: 'Bedah Prompt Lo-Fi: Memadukan Realisme Wajah dan Surealisme Ruang',
-    excerpt: 'Bagaimana cara mempertahankan wajah asli seseorang dalam sebuah karya seni AI yang sureal? Kita akan membedah sebuah prompt canggih dari Winda Azizah yang berhasil mengunci realisme subjek sambil membangun dunia mimpi lo-fi yang melayang di antara awan.',
+    excerpt: 'Bagaimana cara mempertahankan wajah asli seseorang dalam sebuah karya seni AI yang sureal? Kita akan membedah sebuah prompt canggih yang berhasil mengunci realisme subjek sambil membangun dunia mimpi lo-fi.',
     summary: 'Analisis mendalam tentang teknik prompt image-to-image yang menggabungkan instruksi ketat untuk mempertahankan 100% kemiripan subjek dengan foto referensi, sambil menempatkannya dalam lingkungan sureal (bingkai jendela melayang). Artikel ini membahas kontrol estetika lo-fi, pencahayaan pastel, dan peran penting prompt negatif.',
     type: 'howto',
     content: [
@@ -286,8 +326,8 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
   {
     id: '29',
     slug: 'bedah-prompt-json-legenda-roro-mendhut',
-    title: 'Bedah Prompt JSON: Membangkitkan Legenda Roro Mendhut dengan Struktur dan Surealisme',
-    excerpt: 'Sebuah prompt bukan hanya kalimat. Ia bisa menjadi cetak biru yang kompleks. Kita akan membedah sebuah prompt JSON canggih yang menghidupkan kembali legenda Roro Mendhut, menggabungkan sketsa 2D, realisme 3D, dan simbolisme budaya dalam satu perintah yang presisi.',
+    title: 'Bedah Prompt JSON: Membangkitkan Legenda Roro Mendhut dengan Struktur',
+    excerpt: 'Sebuah prompt bukan hanya kalimat. Ia bisa menjadi cetak biru yang kompleks. Kita akan membedah sebuah prompt JSON canggih yang menghidupkan kembali legenda Roro Mendhut, menggabungkan sketsa 2D dan realisme 3D.',
     summary: 'Tutorial mendalam yang membedah sebuah prompt AI berformat JSON untuk menciptakan karya seni kompleks. Artikel ini menganalisis bagaimana struktur JSON digunakan untuk mengontrol subjek, latar belakang, dan mood secara terpisah, menciptakan visual yang kaya makna tentang legenda Roro Mendhut.',
     type: 'howto',
     content: [
@@ -358,7 +398,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/bedah-prompt-json-legenda-roro-mendhut/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '15 Oktober 2024',
+    date: '15 Oktober 2025',
     claps: 155,
     tags: ['Prompt Engineering', 'JSON', 'Struktur Prompt', 'Seni AI', 'Tutorial'],
     faq: [
@@ -375,8 +415,8 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
   {
     id: '28',
     slug: 'review-ruangriung-ai-image-generator',
-    title: 'Review Ruangriung AI Image Generator: Kreasi Visual Tanpa Batas di Ujung Jari Anda',
-    excerpt: 'Di tengah gempuran alat AI global, muncul sebuah permata lokal: Ruangriung AI Image Generator. Kami mengulas platform gratis dan mudah digunakan ini yang dirancang khusus untuk audiens Indonesia. Apakah ini alat yang Anda butuhkan?',
+    title: 'Review Ruangriung AI Image Generator: Alternatif Lokal yang Gratis & Mudah',
+    excerpt: 'Di tengah gempuran alat AI global, muncul sebuah permata lokal: Ruangriung AI Image Generator. Kami mengulas platform gratis dan mudah digunakan ini yang dirancang khusus untuk audiens Indonesia.',
     summary: 'Ulasan mendalam tentang Ruangriung AI Image Generator, sebuah platform pembuatan gambar berbasis AI yang gratis dan dirancang untuk pengguna Indonesia. Artikel ini membahas fitur-fitur utamanya, termasuk antarmuka yang intuitif, kecepatan, dan pemahaman konteks Bahasa Indonesia yang unggul.',
     type: 'standard',
     content: [
@@ -400,19 +440,29 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/review-ruangriung/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '07 Oktober 2024',
+    date: '07 Oktober 2025',
     claps: 25,
     tags: ['AI Image Generator', 'Ruangriung', 'Ulasan', 'Tools AI'],
+    faq: [
+      {
+        question: "Apakah Ruangriung benar-benar gratis?",
+        answer: "Saat ulasan ini ditulis, Ruangriung sepenuhnya gratis untuk digunakan tanpa batasan kredit yang terlihat. Ini menjadikannya pilihan yang sangat baik bagi pemula atau siapa saja yang ingin bereksperimen dengan AI generatif tanpa komitmen finansial."
+      },
+      {
+        question: "Bagaimana kualitas Ruangriung dibandingkan dengan Midjourney?",
+        answer: "Meskipun Midjourney masih unggul dalam hal fotorealisme dan detail artistik yang sangat kompleks, Ruangriung menawarkan kualitas yang sangat kompetitif untuk penggunaan sehari-hari, terutama mengingat platform ini gratis dan lebih mudah diakses. Keunggulannya terletak pada kemudahan penggunaan dan pemahaman konteks Bahasa Indonesia."
+      }
+    ]
   },
   {
     id: '27',
     slug: 'meta-llama-3-1-konteks-dan-visi',
-    title: 'Meta Llama 3.1: Lompatan Kuantum dalam Pemahaman Konteks dan Visi Komputer',
-    excerpt: 'Meta kembali menaikkan standar dengan Llama 3.1. Bukan sekadar peningkatan, model ini membawa kemampuan pemahaman konteks yang sangat panjang dan integrasi visi komputer yang canggih, menjadikannya pesaing serius di arena AI.',
+    title: 'Meta Llama 3.1: Jendela Konteks 128K & Penalaran Visual Canggih',
+    excerpt: 'Lupakan keterbatasan input. Llama 3.1 dari Meta mengubah permainan dengan jendela konteks 128K token, mampu menganalisis seluruh buku dalam satu perintah, dan \'membaca\' grafik dengan visi AI canggih.',
     summary: 'Artikel ini membahas rilis terbaru Meta, Llama 3.1, yang menonjolkan jendela konteks masif 128K token, kemampuan penalaran visual canggih, dan efisiensi yang ditingkatkan. Ini menjadikannya alat yang sangat kuat untuk analisis dokumen panjang dan aplikasi multi-modal.',
     type: 'standard',
     content: [
-      'Dalam perlombaan AI yang tak kenal lelah, Meta tidak hanya bermain untuk mengejar ketinggalan; mereka secara strategis menargetkan perbatasan berikutnya dari kegunaan AI: pemahaman skala masif. Peluncuran Llama 3.1 bukanlah pembaruan biasa, melainkan sebuah pernyataan. Meta secara agresif berfokus pada dua area yang secara fundamental akan mengubah cara kita berinteraksi dengan AI: memori konteks yang hampir tak terbatas dan kemampuan untuk "menalar" secara visual.',
+      'Dalam perlombaan AI yang tak kenal lelah, Meta tidak hanya bermain untuk mengejar ketinggalan; mereka secara strategis menargetkan perbatasan berikutnya dari kegunaan AI: pemahaman skala masif. Peluncuran Llama 3.1 pada Juli 2024 bukanlah pembaruan biasa, melainkan sebuah pernyataan. Meta secara agresif berfokus pada dua area yang secara fundamental akan mengubah cara kita berinteraksi dengan AI: memori konteks yang hampir tak terbatas dan kemampuan untuk "menalar" secara visual.',
       '**1. Evolusi Memori AI: Jendela Konteks 128K Token**',
       'Fitur utama Llama 3.1 adalah jendela konteksnya yang diperluas hingga 128.000 token. Sederhananya, "token" adalah potongan kata (misalnya, kata "AI" adalah satu token, "kecerdasan" bisa jadi dua token). Jendela 128K berarti model ini dapat "mengingat" dan menganalisis setara dengan sebuah novel tebal dalam satu interaksi.',
       'Ini adalah pergeseran paradigma. Kita beralih dari sekadar "tanya-jawab" menjadi "percakapan dengan seluruh kumpulan data Anda". Kemampuan ini membuka pintu untuk kasus penggunaan yang sebelumnya tidak praktis:',
@@ -439,11 +489,21 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     date: '25 Juli 2024',
     claps: 50,
     tags: ['Llama 3', 'Meta AI', 'Visi Komputer', 'Berita AI'],
+    faq: [
+      {
+        question: "Apa arti 'jendela konteks 128K token' dalam istilah praktis?",
+        answer: "Ini berarti AI dapat 'mengingat' dan memproses sekitar 100.000 kata dalam satu percakapan. Anda bisa mengunggah dokumen PDF setebal 200 halaman dan bertanya tentang isinya, atau menganalisis basis kode yang besar tanpa perlu memecahnya menjadi bagian-bagian kecil."
+      },
+      {
+        question: "Bagaimana 'penalaran visual' Llama 3.1 berbeda dari pengenalan gambar biasa?",
+        answer: "Pengenalan gambar biasa mungkin memberi tahu Anda 'ini adalah grafik batang'. Penalaran visual selangkah lebih maju; ia dapat menginterpretasikan data dalam grafik tersebut dan menjawab pertanyaan seperti, 'Berdasarkan grafik ini, kuartal mana yang memiliki penjualan tertinggi?'"
+      }
+    ]
   },
   {
     id: '26',
     slug: 'gemini-2-5-flash-kecepatan-dan-kecerdasan',
-    title: 'Gemini 2.5 Flash Telah Hadir: Kecepatan Kilat dan Kecerdasan Generasi Berikutnya',
+    title: 'Gemini 2.5 Flash: Kecepatan Kilat untuk Aplikasi AI Real-Time',
     excerpt: 'Google baru saja mengguncang dunia AI dengan peluncuran Gemini 2.5 Flash. Model terbaru ini menjanjikan kecepatan luar biasa tanpa mengorbankan kualitas, membuka pintu untuk aplikasi real-time yang sebelumnya tidak mungkin.',
     summary: 'Artikel ini mengulas peluncuran Gemini 2.5 Flash oleh Google. Model ini dirancang untuk kecepatan dan efisiensi, menjadikannya ideal untuk aplikasi AI real-time, chatbot responsif, dan analisis data skala besar sambil mempertahankan kemampuan penalaran multi-modal yang canggih.',
     type: 'standard',
@@ -463,11 +523,21 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     date: '20 Juli 2024',
     claps: 95,
     tags: ['Gemini', 'Google AI', 'Model Terbaru', 'Berita AI'],
+    faq: [
+      {
+        question: "Untuk jenis aplikasi apa Gemini 2.5 Flash paling cocok?",
+        answer: "Gemini 2.5 Flash sangat ideal untuk aplikasi yang membutuhkan respons cepat (latensi rendah), seperti chatbot layanan pelanggan, asisten virtual, ringkasan teks secara real-time, dan aplikasi yang menangani volume permintaan tinggi dengan biaya efisien."
+      },
+      {
+        question: "Apa perbedaan utama antara Gemini 2.5 Flash dan Gemini 2.5 Pro?",
+        answer: "Perbedaan utamanya adalah keseimbangan antara kecepatan dan kekuatan. Gemini 2.5 Pro adalah model yang lebih besar dan kuat, cocok untuk tugas penalaran yang sangat kompleks. Gemini 2.5 Flash lebih kecil, lebih cepat, dan lebih hemat biaya, dioptimalkan untuk kecepatan tanpa mengorbankan terlalu banyak kemampuan penalaran canggih."
+      }
+    ]
   },
   {
     id: '25',
     slug: 'prompt-chaining-untuk-hasil-kompleks',
-    title: 'Prompt Chaining: Cara Membuat AI Bekerja dalam Beberapa Langkah untuk Hasil Kompleks',
+    title: 'Prompt Chaining: Teknik AI Lanjutan untuk Hasil yang Lebih Akurat',
     excerpt: 'Hentikan penggunaan prompt tunggal. Pelajari teknik \'prompt chaining\' untuk memecah tugas kompleks menjadi langkah-langkah yang dapat dikelola AI, menghasilkan output yang lebih akurat dan mendalam.',
     summary: 'Prompt chaining adalah teknik memecah tugas AI yang kompleks menjadi beberapa langkah berurutan. Output dari satu prompt digunakan sebagai input untuk prompt berikutnya, yang secara signifikan meningkatkan akurasi dan kedalaman hasil.',
     type: 'howto',
@@ -495,15 +565,25 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/prompt-chaining-untuk-hasil-kompleks/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '15 Juli 2024',
+    date: '28 Oktober 2025',
     claps: 188,
     tags: ['Prompt Chaining', 'Alur Kerja AI', 'Teknik Lanjutan', 'Produktivitas'],
+    faq: [
+      {
+        question: "Apa keuntungan utama dari prompt chaining dibandingkan prompt tunggal?",
+        answer: "Keuntungan utamanya adalah akurasi dan kedalaman. Dengan memecah tugas, Anda mengurangi 'beban kognitif' pada AI, memungkinkannya fokus pada satu hal pada satu waktu. Ini mencegah AI mengambil jalan pintas atau memberikan jawaban yang dangkal, menghasilkan output yang jauh lebih terstruktur dan dipikirkan dengan baik."
+      },
+      {
+        question: "Apakah teknik ini hanya untuk tugas penulisan?",
+        answer: "Tidak. Prompt chaining sangat serbaguna. Anda bisa menggunakannya untuk merencanakan strategi bisnis, membuat kode perangkat lunak, merancang sesi pembelajaran, atau bahkan membuat alur cerita yang kompleks. Setiap tugas yang memiliki beberapa langkah logis adalah kandidat yang baik untuk prompt chaining."
+      }
+    ]
   },
   {
     id: '24',
     slug: 'zero-shot-vs-few-shot-prompting',
-    title: 'Zero-Shot vs. Few-Shot Prompting: Memberi Contoh pada AI untuk Kualitas Jawaban Terbaik',
-    excerpt: 'Mengapa AI Anda terkadang salah paham? Temukan perbedaan antara \'zero-shot\' dan \'few-shot\' prompting. Dengan memberikan beberapa contoh, Anda bisa \'mengajari\' AI secara instan untuk meniru format atau gaya yang Anda inginkan.',
+    title: 'Zero-Shot vs. Few-Shot Prompting: Mengajari AI dengan Contoh',
+    excerpt: 'Mengapa AI Anda terkadang salah paham? Temukan perbedaan antara \'zero-shot\' dan \'few-shot\' prompting. Dengan memberikan beberapa contoh, Anda bisa \'mengajari\' AI secara instan untuk meniru format yang Anda inginkan.',
     summary: 'Zero-shot prompting memberikan instruksi langsung ke AI tanpa contoh, sedangkan few-shot prompting menyertakan beberapa contoh input-output untuk memandu AI. Few-shot sangat efektif untuk format output spesifik dan tugas yang ambigu.',
     type: 'standard',
     content: [
@@ -531,9 +611,9 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/zero-shot-vs-few-shot-prompting/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '28 Juni 2024',
+    date: '22 Oktober 2025',
     claps: 231,
-    tags: ['Few-Shot Prompting', 'Contoh Prompt', 'Akurasi AI', 'Tutorial'],
+    tags: ['Few-Shot Prompting', 'Zero-Shot Prompting', 'Akurasi AI', 'Tutorial'],
     faq: [
       {
         question: "Apa itu zero-shot prompting?",
@@ -552,8 +632,8 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
   {
     id: '23',
     slug: 'pola-persona-untuk-jawaban-ahli',
-    title: 'Pola Persona: Cara \'Memerankan\' Ahli untuk Mendapatkan Jawaban Tingkat Pakar dari AI',
-    excerpt: 'Jangan hanya bertanya. Perintahkan AI untuk \'bertindak sebagai\' seorang ahli. Kami akan menunjukkan cara menggunakan pola persona—seperti \'Act as a senior copywriter\'—untuk mengubah jawaban generik menjadi wawasan kelas dunia.',
+    title: 'Pola Persona Prompting: Dapatkan Jawaban Tingkat Pakar dari AI',
+    excerpt: 'Jangan hanya bertanya. Perintahkan AI untuk \'bertindak sebagai\' seorang ahli. Pelajari cara menggunakan Pola Persona untuk mengubah jawaban generik menjadi wawasan kelas dunia yang spesifik dan bernuansa.',
     summary: 'Pola Persona adalah teknik meminta AI untuk bertindak sebagai seorang ahli di bidang tertentu (misalnya, "Bertindaklah sebagai ahli biologi"). Ini memberikan konteks yang kaya pada AI, menghasilkan jawaban yang lebih spesifik, bernuansa, dan berkualitas tinggi.',
     type: 'standard',
     content: [
@@ -572,15 +652,25 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/pola-persona-untuk-jawaban-ahli/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '15 Juni 2024',
+    date: '18 Oktober 2025',
     claps: 310,
     tags: ['Pola Persona', 'Prompt Engineering', 'Jawaban Ahli', 'Role-Playing'],
+    faq: [
+      {
+        question: "Seberapa spesifik persona yang harus saya berikan?",
+        answer: "Semakin spesifik, semakin baik. Daripada hanya mengatakan 'bertindaklah sebagai penulis', katakan 'bertindaklah sebagai penulis novel fiksi ilmiah dengan gaya penulisan yang ringkas dan sinematik seperti Ernest Hemingway'. Detail ini memberikan AI batasan dan gaya yang lebih jelas."
+      },
+      {
+        question: "Apakah Pola Persona berfungsi untuk semua jenis tugas?",
+        answer: "Ya, ini adalah salah satu teknik yang paling serbaguna. Ini sangat efektif untuk tugas-tugas yang membutuhkan keahlian spesifik, seperti menulis, membuat kode, analisis bisnis, atau menjelaskan topik yang kompleks. Ini juga bagus untuk tujuan kreatif, seperti meminta AI untuk bertindak sebagai karakter fiksi."
+      }
+    ]
   },
     {
     id: '10',
     slug: 'build-photo-restoration-app-google-ai-studio',
-    title: 'Dari Kusam Jadi Keren: Buat Aplikasi Restorasi Foto Sendiri di Google AI Studio (Tanpa Koding!)',
-    excerpt: 'Punya foto kenangan yang rusak? Jangan dibuang! Ikuti tutorial langkah demi langkah ini untuk membangun aplikasi restorasi foto canggih dengan Google AI Studio, lengkap dengan prompt andalan kami.',
+    title: 'Buat Aplikasi Restorasi Foto di Google AI Studio (Tanpa Koding!)',
+    excerpt: 'Punya foto kenangan yang rusak? Ikuti tutorial langkah demi langkah ini untuk membangun aplikasi restorasi foto canggih dengan Google AI Studio, lengkap dengan prompt andalan kami untuk hasil terbaik.',
     summary: 'Tutorial ini menunjukkan cara membuat aplikasi restorasi foto menggunakan Google AI Studio tanpa coding. Dengan memberikan prompt yang terperinci, AI dapat diinstruksikan untuk menganalisis, memperbaiki, dan meningkatkan kualitas foto lama secara otomatis.',
     type: 'howto',
     content: [
@@ -596,14 +686,24 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/build-photo-restoration-app-google-ai-studio/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '28 November 2023',
+    date: '04 November 2025',
     claps: 632,
     tags: ['Tutorial', 'Google AI Studio', 'Restorasi Foto', 'Aplikasi AI'],
+    faq: [
+      {
+        question: "Apakah saya memerlukan akun berbayar untuk menggunakan Google AI Studio?",
+        answer: "Saat ini, Google AI Studio menawarkan tingkat penggunaan gratis yang cukup besar, sehingga Anda dapat membangun dan menguji aplikasi ini tanpa biaya. Untuk penggunaan skala besar atau komersial, Anda mungkin perlu memeriksa kebijakan harga terbaru mereka."
+      },
+      {
+        question: "Seberapa baik AI menangani foto yang sangat rusak?",
+        answer: "Hasilnya bisa bervariasi. Untuk kerusakan ringan hingga sedang seperti goresan, warna pudar, dan noise, AI dapat melakukan pekerjaan yang luar biasa. Untuk foto dengan bagian yang hilang sama sekali (misalnya, wajah yang sobek), AI akan mencoba 'menebak' atau merekonstruksi bagian yang hilang, yang hasilnya mungkin tidak selalu 100% akurat secara historis tetapi seringkali mengesankan secara visual."
+      }
+    ]
   },
   {
     id: '22',
     slug: 'mengontrol-kreativitas-ai-temperature-top-p',
-    title: 'Mengontrol Kreativitas AI: Panduan Praktis Menggunakan \'Temperature\' dan \'Top-P\'',
+    title: 'Mengontrol Kreativitas AI: Panduan Menggunakan \'Temperature\' & \'Top-P\'',
     excerpt: 'Pernah merasa hasil AI terlalu acak atau terlalu kaku? Kuasai dua \'kenop\' paling penting: Temperature dan Top-P. Panduan ini menjelaskan cara menggunakannya untuk menyeimbangkan antara kreativitas dan konsistensi.',
     summary: 'Parameter "Temperature" mengontrol keacakan output AI (rendah untuk konsistensi, tinggi untuk kreativitas), sementara "Top-P" membatasi pilihan kata. Menguasai keduanya memungkinkan kontrol presisi atas keseimbangan antara kreativitas dan akurasi model.',
     type: 'standard',
@@ -626,14 +726,24 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/mengontrol-kreativitas-ai-temperature-top-p/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '25 Mei 2024',
+    date: '11 Oktober 2025',
     claps: 275,
     tags: ['Temperature', 'Top-P', 'Kontrol AI', 'Parameter Model'],
+    faq: [
+      {
+        question: "Manakah yang lebih penting, Temperature atau Top-P?",
+        answer: "Keduanya penting, tetapi seringkali lebih mudah untuk memulai dengan menyesuaikan Temperature saja. Sebagian besar ahli merekomendasikan untuk hanya mengubah salah satu pada satu waktu untuk menghindari hasil yang tidak terduga. Temperature adalah 'kenop' yang lebih intuitif untuk mengontrol kreativitas vs. prediktabilitas."
+      },
+      {
+        question: "Nilai Temperature berapa yang ideal untuk menulis fiksi?",
+        answer: "Untuk penulisan fiksi atau brainstorming, nilai Temperature antara 0.7 hingga 0.9 seringkali ideal. Ini memberikan AI cukup kebebasan untuk menghasilkan ide-ide yang mengejutkan dan beragam tanpa menjadi benar-benar tidak koheren. Selalu baik untuk bereksperimen untuk menemukan titik manis Anda."
+      }
+    ]
   },
   {
     id: '21',
     slug: 'chain-of-thought-prompting-untuk-penalaran',
-    title: 'Mendorong AI untuk \'Berpikir\': Teknik \'Chain of Thought\' untuk Soal Logika dan Matematika',
+    title: 'Mendorong AI \'Berpikir\': Teknik \'Chain of Thought\' untuk Soal Logika',
     excerpt: 'AI sering gagal dalam soal penalaran? Triknya adalah memintanya untuk \'berpikir langkah demi langkah\'. Pelajari teknik \'Chain of Thought\' (CoT) yang secara dramatis meningkatkan kemampuan AI dalam memecahkan masalah kompleks.',
     summary: 'Chain of Thought (CoT) adalah teknik prompt di mana AI diminta untuk menjelaskan proses berpikirnya langkah demi langkah sebelum memberikan jawaban akhir. Ini secara signifikan meningkatkan kemampuannya dalam soal logika dan matematika.',
     type: 'standard',
@@ -658,14 +768,24 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/chain-of-thought-prompting-untuk-penalaran/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '12 Mei 2024',
+    date: '05 Oktober 2025',
     claps: 402,
     tags: ['Chain of Thought', 'Penalaran AI', 'Logika', 'Problem Solving'],
+    faq: [
+      {
+        question: "Apakah 'Mari kita berpikir langkah demi langkah' satu-satunya frasa yang berfungsi?",
+        answer: "Meskipun itu adalah frasa yang paling umum dan terbukti, variasi lain juga bisa berfungsi. Anda bisa mencoba, 'Uraikan proses penalaran Anda,' atau 'Tunjukkan pekerjaan Anda selangkah demi selangkah.' Kuncinya adalah secara eksplisit meminta AI untuk mengeksternalisasi proses berpikirnya."
+      },
+      {
+        question: "Apakah CoT memperlambat respons AI?",
+        answer: "Ya, karena AI menghasilkan lebih banyak teks, responsnya akan memakan waktu sedikit lebih lama. Namun, ini adalah pertukaran yang sangat berharga untuk peningkatan akurasi yang signifikan dalam tugas-tugas penalaran."
+      }
+    ]
   },
   {
     id: '20',
     slug: 'menguasai-cahaya-dan-bayangan-di-seni-ai',
-    title: 'Menguasai Cahaya dan Bayangan: Prompt untuk Pencahayaan Dramatis di Seni AI',
+    title: 'Menguasai Cahaya & Bayangan: Prompt untuk Pencahayaan Dramatis di Seni AI',
     excerpt: 'Cahaya adalah jiwa dari sebuah gambar. Pelajari cara menggunakan prompt pencahayaan tingkat lanjut seperti "volumetric lighting" dan "rim lighting" untuk menciptakan kedalaman, emosi, dan drama dalam karya seni AI Anda.',
     summary: 'Artikel ini membahas teknik prompt untuk mengontrol pencahayaan dalam seni AI. Istilah seperti "volumetric lighting," "rim lighting," dan "golden hour" dapat digunakan untuk menciptakan gambar yang lebih dramatis, atmosferik, dan profesional.',
     type: 'standard',
@@ -682,15 +802,25 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/menguasai-cahaya-dan-bayangan-di-seni-ai/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '28 April 2024',
+    date: '28 September 2025',
     claps: 150,
     tags: ['Pencahayaan', 'Sinematik', 'Atmosfer', 'Prompting Lanjutan'],
+    faq: [
+      {
+        question: "Istilah pencahayaan apa lagi yang berguna untuk seni AI?",
+        answer: "Beberapa istilah hebat lainnya termasuk 'chiaroscuro' (kontras tinggi antara terang dan gelap), 'softbox lighting' (untuk potret yang lembut dan rata), 'dappled light' (cahaya belang-belang seperti menembus daun), dan 'backlighting' (cahaya dari belakang subjek untuk menciptakan siluet atau halo)."
+      },
+      {
+        question: "Bagaimana cara menggabungkan beberapa istilah pencahayaan?",
+        answer: "Anda bisa! Contohnya, 'Cinematic shot with golden hour lighting creating long shadows, and volumetric god rays filtering through the trees.' Menggabungkan istilah-istilah ini memberikan AI instruksi yang sangat kaya dan berlapis untuk menciptakan adegan yang kompleks secara visual."
+      }
+    ]
   },
   {
     id: '19',
     slug: 'kekuatan-prompt-negatif-untuk-gambar-ai',
-    title: 'Kekuatan Prompt Negatif: Cara Menghilangkan Elemen yang Tidak Diinginkan di Gambar AI',
-    excerpt: 'Gambar AI Anda punya terlalu banyak jari atau elemen aneh? Kuasai seni prompt negatif untuk memberi tahu AI apa yang TIDAK boleh digambar, menghasilkan gambar yang lebih bersih, akurat, dan profesional.',
+    title: 'Kekuatan Prompt Negatif: Menghilangkan Elemen Tak Diinginkan di Gambar AI',
+    excerpt: 'Gambar AI Anda punya terlalu banyak jari? Kuasai seni prompt negatif untuk memberi tahu AI apa yang TIDAK boleh digambar, menghasilkan gambar yang lebih bersih, akurat, dan profesional.',
     summary: 'Prompt negatif adalah instruksi yang memberi tahu AI apa yang harus dihindari saat membuat gambar. Teknik ini sangat efektif untuk memperbaiki anatomi yang salah, meningkatkan kualitas gambar, dan menghilangkan elemen yang tidak diinginkan.',
     type: 'standard',
     content: [
@@ -709,15 +839,24 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/kekuatan-prompt-negatif-untuk-gambar-ai/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '10 April 2024',
+    date: '21 September 2025',
     claps: 210,
     tags: ['Prompt Negatif', 'Perbaikan Gambar', 'Teknik AI', 'Kualitas'],
+    faq: [
+      {
+        question: "Apakah bobot pada prompt negatif penting?",
+        answer: "Di beberapa platform seperti Stable Diffusion, Anda dapat memberikan bobot pada kata kunci negatif (misalnya, '(deformed hands:1.5)'). Ini memberi tahu AI untuk lebih keras menghindari konsep tersebut. Namun, untuk sebagian besar platform, cukup mencantumkan kata kunci sudah sangat efektif."
+      },
+      {
+        question: "Bisakah prompt negatif membuat gambar menjadi lebih buruk?",
+        answer: "Jarang, tetapi mungkin. Jika Anda terlalu agresif (misalnya, memasukkan 'shadows' atau 'dark' sebagai prompt negatif), Anda bisa mendapatkan gambar yang datar dan tidak menarik. Gunakan prompt negatif secara strategis untuk menghilangkan masalah spesifik, bukan untuk membatasi kreativitas AI secara berlebihan."
+      }
+    ]
   },
-  // Fix: Completed the article object for id '18' which was previously incomplete.
   {
     id: '18',
     slug: 'menciptakan-karakter-konsisten-dengan-ai',
-    title: 'Menciptakan Karakter Konsisten: Trik Menggunakan ‘Seed’ dan Deskripsi Detail',
+    title: 'Menciptakan Karakter Konsisten di AI: Trik ‘Seed’ & Deskripsi Detail',
     excerpt: 'Kesulitan membuat karakter yang sama di berbagai adegan? Panduan ini mengungkap metode untuk menjaga konsistensi karakter menggunakan nomor seed, deskripsi yang sangat detail, dan referensi gaya.',
     summary: 'Untuk menciptakan karakter AI yang konsisten di berbagai gambar, gunakan kombinasi nomor seed yang sama, deskripsi fisik yang sangat detail dan spesifik, nama karakter yang unik, dan referensi gaya visual yang konsisten.',
     type: 'standard',
@@ -736,8 +875,18 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     imageUrl: 'https://picsum.photos/seed/menciptakan-karakter-konsisten-dengan-ai/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '25 Maret 2024',
+    date: '14 September 2025',
     claps: 355,
     tags: ['Karakter Konsisten', 'Seni AI', 'Seed', 'Prompt Engineering'],
+    faq: [
+      {
+        question: "Metode mana yang paling efektif untuk konsistensi karakter?",
+        answer: "Kombinasi adalah yang terbaik. Menggunakan seed yang sama memberikan dasar teknis, tetapi menggabungkannya dengan deskripsi fisik yang sangat detail adalah kuncinya. Deskripsi detail memungkinkan Anda untuk sedikit mengubah pose atau lingkungan sambil tetap mempertahankan fitur inti karakter."
+      },
+      {
+        question: "Apakah fitur 'character reference' di beberapa platform lebih baik daripada metode ini?",
+        answer: "Fitur 'character reference' (seperti di Midjourney) adalah evolusi dari teknik ini dan seringkali lebih mudah digunakan dan lebih kuat. Namun, memahami prinsip-prinsip dasar seperti deskripsi detail dan penggunaan seed tetap penting karena memberikan Anda kontrol yang lebih baik dan berfungsi di semua platform, bahkan yang tidak memiliki fitur referensi karakter khusus."
+      }
+    ]
   },
 ];

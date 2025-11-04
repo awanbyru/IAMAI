@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-app-muted">&copy; {new Date().getFullYear()} IAMAI - awanbyru. Semua Hak Cipta Dilindungi.</p>
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link to="/about" className="text-sm text-app-muted hover:text-brand transition-colors duration-300">
               Tentang
             </Link>
