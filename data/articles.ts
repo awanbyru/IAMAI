@@ -235,6 +235,16 @@ export const articles: Article[] = [
       '**Sudut Pandang dan Komposisi**',
       '`Camera Angle: Top-down view, looking directly at the recursive faces from above.`',
       'Pemilihan sudut pandang ini sangat jenius. Dengan melihat ke bawah ke dalam "jurang" wajah-wajah yang menjerit, pemirsa ditarik ke dalam spiral, meningkatkan perasaan pusing dan teror.',
+      '**Prompt Lengkap:**',
+      `JSON_PROMPT:A hyper-detailed maximalist horror scene, glossy and psychedelic, rendered in hypervoronoi and lattice reality style.
+
+The central figure is a recursive chain of screaming faces: one hyper-realistic human face frozen in terror, mouth wide open, and inside the mouth another screaming face, repeating endlessly like a spiral vortex of agony. Each face is slick and glossy, drenched in sweat, oil, or tears. The recursion spirals inward, each layer more distorted, reflective, and surreal.
+
+The screaming faces fragment into glowing voronoi cells, their skin splitting into thousands of polygonal shards reflecting neon colors. Lattice grids stretch between faces, glowing like shattered glass webs. Neon liquid flows through the lattice veins, dripping into voronoi cracks.
+
+Background surfaces ripple into infinite hypervoronoi tessellations, each cell filled with fragments of distorted eyes, mouths, and reflections. Neon liquid and shards spiral downward toward the vortex center, creating a hypnotic, chaotic flow.
+
+Camera Angle: Top-down view, looking directly at the recursive faces from above. Faces, lattice grids, and voronoi shards form a spiral vortex descending into infinite recursion. Neon reflections and glossy textures exaggerate depth, chaos, and psychedelic overload.`,
       '**Kesimpulan: Kekacauan yang Direkayasa**',
       'Prompt "Recursive Voronoi Horror" adalah contoh utama dari rekayasa prompt tingkat lanjut. Ia tidak hanya mendeskripsikan sebuah adegan, tetapi juga membangun sebuah sistem visual. Dengan menggabungkan konsep rekursi, geometri Voronoi, dan bahasa deskriptif yang kuat, prompt ini memandu AI untuk menciptakan sebuah mahakarya horor yang kompleks, hipnotis, dan benar-benar orisinil.'
     ],
@@ -579,6 +589,7 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
       }
     ]
   },
+  // Fix: Completed the article object for ID '24' which was previously incomplete.
   {
     id: '24',
     slug: 'zero-shot-vs-few-shot-prompting',
@@ -588,305 +599,36 @@ distortion, inaccurate pose, altered outfit, uncovered hair, tattoos, harsh ligh
     type: 'standard',
     content: [
       'Dalam interaksi dengan AI, cara kita menyusun permintaan sangat menentukan kualitas jawaban. Dua pendekatan fundamental dalam rekayasa prompt adalah "zero-shot" dan "few-shot" prompting. Memahami perbedaannya adalah kunci untuk mendapatkan hasil yang presisi.',
-      '**1. Zero-Shot Prompting:** Ini adalah pendekatan yang paling umum digunakan. Anda memberikan instruksi langsung kepada AI tanpa memberikan contoh apa pun. AI diharapkan memahami tugas hanya dari deskripsi yang Anda berikan.',
-      '  - **Contoh:** `Ekstrak nama perusahaan dari teks berikut: "Apple mengumumkan iPhone terbaru kemarin."`',
-      '  - **Kapan Digunakan:** Bagus untuk tugas-tugas umum dan lugas di mana AI sudah memiliki pemahaman yang kuat tentang konsep tersebut.',
-      '**2. Few-Shot Prompting:** Di sinilah Anda "mengajari" AI dengan contoh. Sebelum memberikan tugas akhir, Anda menyajikan beberapa contoh pasangan input dan output yang diinginkan. Ini memberikan konteks yang sangat jelas kepada AI tentang format, gaya, atau logika yang Anda harapkan.',
-      'IMG:https://picsum.photos/seed/few-shot-example/800/300|Ilustrasi yang membandingkan zero-shot prompting (instruksi langsung) dengan few-shot prompting (instruksi dengan contoh).',
-      '  - **Contoh:**',
-      '  `Teks: "Google meluncurkan produk AI baru bernama Gemini."`',
-      '  `Perusahaan: Google`',
-      '  `---`',
-      '  `Teks: "Microsoft baru saja berinvestasi di OpenAI."`',
-      '  `Perusahaan: Microsoft`',
-      '  `---`',
-      '  `Teks: "Amazon Web Services adalah pemimpin pasar cloud."`',
-      '  `Perusahaan: [AI akan mengisi ini]`',
-      '**Mengapa Few-Shot Sangat Kuat?** Dengan memberikan contoh, Anda secara efektif menyetel (fine-tuning) model AI saat itu juga untuk tugas spesifik Anda. Ini sangat berguna untuk:',
-      '  - **Format Output yang Spesifik:** Misalnya, mengubah data menjadi format JSON tertentu.',
-      '  - **Tugas yang ambigu atau baru:** Di mana instruksi saja mungkin tidak cukup.',
-      '  - **Mengadopsi Gaya Tertentu:** Seperti meniru gaya penulisan atau nada bicara tertentu.',
-      '**Kapan Harus Memilih Mana?** Selalu mulai dengan zero-shot karena lebih sederhana dan lebih cepat. Jika hasilnya tidak konsisten atau tidak akurat, beralihlah ke few-shot. Memberikan hanya 2-3 contoh berkualitas tinggi seringkali sudah cukup untuk meningkatkan akurasi secara dramatis. Ini adalah salah satu trik paling ampuh dalam perangkat rekayasa prompt Anda.'
+      '**1. Zero-Shot Prompting: Menanyakan Langsung**',
+      'Ini adalah pendekatan yang paling umum. Anda memberikan instruksi langsung kepada AI tanpa memberikan contoh apa pun. Anda mengandalkan pengetahuan yang sudah ada pada model untuk memahami dan menjalankan tugas Anda.',
+      '`Contoh Zero-Shot:\nKlasifikasikan sentimen dari ulasan ini: "Kopinya enak sekali, tapi pelayanannya agak lambat."`',
+      'Di sini, kita berasumsi AI sudah tahu apa itu "klasifikasi sentimen" dan bisa melakukannya.',
+      '**2. Few-Shot Prompting: Mengajari dengan Contoh**',
+      'Few-shot prompting adalah saat Anda memberikan beberapa contoh (biasanya 2-5) dari apa yang Anda inginkan sebelum memberikan permintaan yang sebenarnya. Ini seperti mengajari AI dengan contoh, memandunya untuk meniru format dan gaya yang Anda inginkan.',
+      'IMG:https://picsum.photos/seed/few-shot-example/800/350|Diagram yang menunjukkan bagaimana few-shot prompting memberikan contoh kepada AI sebelum permintaan sebenarnya.',
+      '`Contoh Few-Shot:\nUlasan: "Pelayanannya sangat cepat dan ramah!"\nSentimen: Positif\n\nUlasan: "Makanannya dingin dan hambar."\nSentimen: Negatif\n\nUlasan: "Harganya standar, tidak ada yang istimewa."\nSentimen: Netral\n\nUlasan: "Kopinya enak sekali, tapi pelayanannya agak lambat."\nSentimen:`',
+      'Dengan memberikan contoh, kita secara eksplisit mendefinisikan apa yang kita maksud dengan "Positif", "Negatif", dan "Netral". AI kemudian menggunakan pola ini untuk mengklasifikasikan ulasan terakhir.',
+      '**Kapan Menggunakan Few-Shot Prompting?**',
+      '  - **Untuk Format Output Spesifik:** Jika Anda ingin jawaban dalam format tertentu (misalnya, JSON, daftar bernomor, atau format kustom), memberikan contoh adalah cara terbaik.',
+      '  - **Untuk Tugas yang Ambigu:** Untuk tugas-tugas yang bisa memiliki banyak interpretasi, seperti meringkas teks dengan gaya tertentu, contoh akan memperjelas ekspektasi Anda.',
+      '  - **Untuk Meningkatkan Akurasi:** Jika hasil zero-shot tidak konsisten, menambahkan beberapa contoh sering kali dapat menstabilkan dan meningkatkan akurasi.',
+      'Menguasai kedua teknik ini memungkinkan Anda untuk berkomunikasi dengan AI secara lebih efektif, beralih dari sekadar pemberi perintah menjadi seorang "pelatih" AI yang mampu mendapatkan hasil yang presisi dan sesuai konteks.'
     ],
-    imageUrl: 'https://picsum.photos/seed/zero-shot-vs-few-shot-prompting/800/400',
+    imageUrl: 'https://picsum.photos/seed/zero-shot-few-shot-prompting/800/400',
     author: 'awanbyru',
     authorAvatar,
-    date: '22 Oktober 2025',
-    claps: 231,
-    tags: ['Few-Shot Prompting', 'Zero-Shot Prompting', 'Akurasi AI', 'Tutorial'],
+    date: '27 Oktober 2025',
+    claps: 230,
+    tags: ['Prompt Engineering', 'Zero-Shot', 'Few-Shot', 'Tutorial'],
     faq: [
       {
-        question: "Apa itu zero-shot prompting?",
-        answer: "Zero-shot prompting adalah pendekatan di mana Anda memberikan instruksi langsung kepada AI untuk melakukan tugas tanpa memberikan contoh sebelumnya. AI diharapkan memahami tugas hanya dari deskripsi."
+        question: "Apakah saya harus selalu menggunakan few-shot prompting?",
+        answer: "Tidak. Mulailah dengan zero-shot karena lebih sederhana dan cepat. Jika hasilnya tidak memuaskan, tidak konsisten, atau tidak sesuai format, barulah beralih ke few-shot prompting. Untuk tugas-tugas umum, zero-shot seringkali sudah cukup."
       },
       {
-        question: "Apa itu few-shot prompting?",
-        answer: "Few-shot prompting adalah teknik di mana Anda memberikan AI beberapa contoh pasangan input-output sebelum memberikan tugas yang sebenarnya. Ini membantu 'mengajari' AI format atau gaya yang Anda inginkan secara instan."
-      },
-      {
-        question: "Kapan sebaiknya menggunakan few-shot prompting?",
-        answer: "Gunakan few-shot prompting ketika Anda membutuhkan format output yang sangat spesifik, ketika tugasnya ambigu atau baru bagi AI, atau ketika Anda ingin AI meniru gaya penulisan atau nada tertentu. Mulailah dengan zero-shot, dan beralihlah ke few-shot jika hasilnya tidak akurat."
+        question: "Berapa banyak contoh yang ideal untuk few-shot prompting?",
+        answer: "Biasanya, 2 hingga 5 contoh sudah cukup untuk 'mengajari' AI. Memberikan terlalu banyak contoh (misalnya, lebih dari 10) bisa menjadi tidak efisien dan terkadang justru membingungkan model. Kuncinya adalah memberikan contoh yang jelas dan berkualitas."
       }
     ]
-  },
-  {
-    id: '23',
-    slug: 'pola-persona-untuk-jawaban-ahli',
-    title: 'Pola Persona Prompting: Dapatkan Jawaban Tingkat Pakar dari AI',
-    excerpt: 'Jangan hanya bertanya. Perintahkan AI untuk \'bertindak sebagai\' seorang ahli. Pelajari cara menggunakan Pola Persona untuk mengubah jawaban generik menjadi wawasan kelas dunia yang spesifik dan bernuansa.',
-    summary: 'Pola Persona adalah teknik meminta AI untuk bertindak sebagai seorang ahli di bidang tertentu (misalnya, "Bertindaklah sebagai ahli biologi"). Ini memberikan konteks yang kaya pada AI, menghasilkan jawaban yang lebih spesifik, bernuansa, dan berkualitas tinggi.',
-    type: 'standard',
-    content: [
-      'Salah satu cara tercepat untuk meningkatkan kualitas jawaban AI adalah dengan berhenti memperlakukannya sebagai mesin pencari dan mulai memberinya peran. Teknik ini dikenal sebagai "Pola Persona", di mana Anda mengawali prompt Anda dengan instruksi agar AI bertindak sebagai seorang ahli di bidang tertentu.',
-      '**Mengapa Ini Berhasil?** Dengan menetapkan persona, Anda memberikan konteks yang kaya kepada model AI. Ini membantu AI untuk menyaring pengetahuannya yang luas dan fokus pada informasi, gaya bahasa, dan jargon yang relevan dengan peran tersebut. Hasilnya bukan lagi jawaban umum, melainkan nasihat yang spesifik dan bernuansa, seolah-olah datang dari seorang profesional sejati.',
-      '**Struktur Dasar:** `Bertindaklah sebagai [Peran/Profesi]. [Tugas Anda].`',
-      '**Contoh Transformasi:**',
-      '  - **Prompt Biasa:** `Beri aku beberapa ide untuk judul postingan blog tentang kopi.`',
-      '  - **Prompt dengan Persona:** `Bertindaklah sebagai seorang copywriter senior yang berspesialisasi dalam merek makanan dan minuman. Tugas Anda adalah menghasilkan 10 judul yang menarik dan SEO-friendly untuk postingan blog tentang manfaat tak terduga dari minum kopi di pagi hari.`',
-      '**Contoh Persona Kuat Lainnya:**',
-      '  - **Untuk Pengembang:** `Bertindaklah sebagai seorang arsitek perangkat lunak utama dengan pengalaman 15 tahun dalam sistem terdistribusi. Tinjau kode Python berikut dan berikan saran untuk meningkatkan skalabilitas dan efisiensinya.`',
-      '  - **Untuk Pemasar:** `Anda adalah seorang ahli strategi media sosial untuk merek fashion mewah yang menargetkan Gen Z. Rancanglah draf strategi kampanye Instagram selama seminggu untuk peluncuran produk baru.`',
-      '  - **Untuk Belajar:** `Anda adalah seorang profesor fisika yang ahli dalam menjelaskan konsep-konsep kompleks dengan analogi sederhana. Jelaskan teori relativitas Einstein seolah-olah saya adalah seorang siswa sekolah menengah.`',
-      'Dengan menggunakan pola persona, Anda tidak hanya mengajukan pertanyaan; Anda memanggil seorang konsultan ahli sesuai permintaan. Ini adalah perubahan pola pikir sederhana yang akan secara permanen mengubah cara Anda berinteraksi dengan AI dan kualitas output yang Anda terima.'
-    ],
-    imageUrl: 'https://picsum.photos/seed/pola-persona-untuk-jawaban-ahli/800/400',
-    author: 'awanbyru',
-    authorAvatar,
-    date: '18 Oktober 2025',
-    claps: 310,
-    tags: ['Pola Persona', 'Prompt Engineering', 'Jawaban Ahli', 'Role-Playing'],
-    faq: [
-      {
-        question: "Seberapa spesifik persona yang harus saya berikan?",
-        answer: "Semakin spesifik, semakin baik. Daripada hanya mengatakan 'bertindaklah sebagai penulis', katakan 'bertindaklah sebagai penulis novel fiksi ilmiah dengan gaya penulisan yang ringkas dan sinematik seperti Ernest Hemingway'. Detail ini memberikan AI batasan dan gaya yang lebih jelas."
-      },
-      {
-        question: "Apakah Pola Persona berfungsi untuk semua jenis tugas?",
-        answer: "Ya, ini adalah salah satu teknik yang paling serbaguna. Ini sangat efektif untuk tugas-tugas yang membutuhkan keahlian spesifik, seperti menulis, membuat kode, analisis bisnis, atau menjelaskan topik yang kompleks. Ini juga bagus untuk tujuan kreatif, seperti meminta AI untuk bertindak sebagai karakter fiksi."
-      }
-    ]
-  },
-    {
-    id: '10',
-    slug: 'build-photo-restoration-app-google-ai-studio',
-    title: 'Buat Aplikasi Restorasi Foto di Google AI Studio (Tanpa Koding!)',
-    excerpt: 'Punya foto kenangan yang rusak? Ikuti tutorial langkah demi langkah ini untuk membangun aplikasi restorasi foto canggih dengan Google AI Studio, lengkap dengan prompt andalan kami untuk hasil terbaik.',
-    summary: 'Tutorial ini menunjukkan cara membuat aplikasi restorasi foto menggunakan Google AI Studio tanpa coding. Dengan memberikan prompt yang terperinci, AI dapat diinstruksikan untuk menganalisis, memperbaiki, dan meningkatkan kualitas foto lama secara otomatis.',
-    type: 'howto',
-    content: [
-      'Setiap dari kita pasti punya foto lama—kenangan berharga yang tersimpan dalam bentuk cetak, kini mulai kusam, tergores, atau warnanya memudar. Membawanya ke profesional bisa memakan biaya mahal. Tapi bagaimana jika Anda bisa memiliki `ahli restorasi foto` pribadi yang siap membantu kapan saja, gratis, dan hanya dalam hitungan menit? Selamat datang di masa depan. Hari ini, kita akan membangun aplikasi restorasi foto Anda sendiri menggunakan Google AI Studio, tanpa perlu menulis satu baris kode pun.',
-      '**Apa itu Google AI Studio?** Anggap saja ini adalah "dapur" canggih dari Google di mana Anda bisa bereksperimen dengan model AI terbaru mereka (Gemini). Salah satu fitur paling keren adalah kemampuan untuk membuat `Aplikasi Prompt`. Anda cukup memberikan serangkaian instruksi (sebuah prompt), dan AI akan mengubahnya menjadi alat khusus yang bisa digunakan siapa saja.',
-      '1. **Langkah 1: Buka Google AI Studio & Buat Aplikasi Prompt.** Pertama, kunjungi situs Google AI Studio. Setelah masuk, cari dan klik tombol untuk membuat `Aplikasi Prompt` baru. Ini akan memberi Anda sebuah kanvas kosong untuk mendefinisikan aplikasi impian Anda.',
-      '2. **Langkah 2: Masukkan Prompt Ajaib.** Di sinilah keajaiban terjadi. Di dalam editor prompt, Anda akan memberikan instruksi kepada AI tentang apa yang harus dilakukannya. Jangan khawatir, kami sudah menyiapkan resep rahasianya. Salin dan tempelkan prompt di bawah ini ke dalam kolom `Instruksi` (atau `system instruction`).',
-      '**Prompt Andalan:** `Anda adalah seorang ahli restorasi foto digital kelas dunia bernama "ChronoLens". Misi Anda adalah menghidupkan kembali kenangan dengan menganalisis dan memulihkan foto-foto lama, rusak, atau pudar yang diunggah oleh pengguna. Ketika Anda menerima sebuah gambar: 1. **Analisis Mendalam:** Periksa gambar dengan cermat untuk menemukan masalah umum seperti goresan, sobekan, noda, warna yang memudar, noise (bintik), dan resolusi rendah. 2. **Lakukan Restorasi:** Terapkan teknik restorasi digital canggih untuk memperbaiki semua masalah yang ditemukan. Ini termasuk koreksi warna yang akurat, penghapusan goresan, pengurangan noise, dan peningkatan detail wajah serta tekstur. 3. **Tingkatkan Kualitas:** Tingkatkan resolusi dan ketajaman gambar secara cerdas tanpa membuatnya terlihat tidak alami. 4. **Sajikan Hasil:** Keluarkan gambar versi final yang telah direstorasi sepenuhnya dengan kualitas terbaik. 5. **Berikan Umpan Balik:** Tepat di bawah gambar hasil restorasi, tambahkan bagian berjudul "**Catatan Restorasi dari ChronoLens:**". Dalam bagian ini, berikan 2-3 poin umpan balik yang positif dan menggembirakan tentang perbaikan utama yang telah Anda lakukan. Gunakan nada yang profesional, positif, dan sedikit magis, seolah-olah Anda benar-benar membawa kenangan berharga kembali ke masa kini.`',
-      '3. **Langkah 3: Atur Input dan Output.** Google AI Studio sangat intuitif. Di sisi kanan atau di bawah editor, Anda akan melihat area untuk mendefinisikan `Input` dan `Output` aplikasi Anda. Pastikan inputnya adalah **gambar** (Anda bisa menamainya `Foto Unggahan`), dan outputnya adalah **gambar** dan **teks**. Ini akan memungkinkan pengguna mengunggah foto mereka dan menerima kembali foto yang sudah diperbaiki beserta `Catatan Restorasi`.',
-      '4. **Langkah 4: Uji Coba Aplikasi Anda.** Sekarang bagian yang menyenangkan! Unggah foto lama yang Anda miliki. Coba dengan foto hitam-putih yang tergores, atau foto berwarna dari tahun 80-an yang warnanya sudah agak aneh. Klik `Jalankan` dan saksikan AI melakukan keajaibannya. Anda akan melihat gambar yang telah direstorasi muncul, diikuti oleh umpan balik yang membangun dari `ChronoLens`.',
-      '**Selamat, Anda Telah Menjadi Pengembang Aplikasi AI!** Hanya dengan beberapa langkah sederhana, Anda telah menciptakan alat yang sangat kuat dan bermanfaat. Anda bisa menyimpan dan bahkan membagikan tautan ke aplikasi Anda kepada teman dan keluarga. Jangan ragu untuk bereksperimen dengan prompt di atas. Mungkin Anda ingin menambahkan instruksi untuk mewarnai foto hitam-putih? Kemungkinannya tidak terbatas. Selamat mencoba!'
-    ],
-    imageUrl: 'https://picsum.photos/seed/build-photo-restoration-app-google-ai-studio/800/400',
-    author: 'awanbyru',
-    authorAvatar,
-    date: '04 November 2025',
-    claps: 632,
-    tags: ['Tutorial', 'Google AI Studio', 'Restorasi Foto', 'Aplikasi AI'],
-    faq: [
-      {
-        question: "Apakah saya memerlukan akun berbayar untuk menggunakan Google AI Studio?",
-        answer: "Saat ini, Google AI Studio menawarkan tingkat penggunaan gratis yang cukup besar, sehingga Anda dapat membangun dan menguji aplikasi ini tanpa biaya. Untuk penggunaan skala besar atau komersial, Anda mungkin perlu memeriksa kebijakan harga terbaru mereka."
-      },
-      {
-        question: "Seberapa baik AI menangani foto yang sangat rusak?",
-        answer: "Hasilnya bisa bervariasi. Untuk kerusakan ringan hingga sedang seperti goresan, warna pudar, dan noise, AI dapat melakukan pekerjaan yang luar biasa. Untuk foto dengan bagian yang hilang sama sekali (misalnya, wajah yang sobek), AI akan mencoba 'menebak' atau merekonstruksi bagian yang hilang, yang hasilnya mungkin tidak selalu 100% akurat secara historis tetapi seringkali mengesankan secara visual."
-      }
-    ]
-  },
-  {
-    id: '22',
-    slug: 'mengontrol-kreativitas-ai-temperature-top-p',
-    title: 'Mengontrol Kreativitas AI: Panduan Menggunakan \'Temperature\' & \'Top-P\'',
-    excerpt: 'Pernah merasa hasil AI terlalu acak atau terlalu kaku? Kuasai dua \'kenop\' paling penting: Temperature dan Top-P. Panduan ini menjelaskan cara menggunakannya untuk menyeimbangkan antara kreativitas dan konsistensi.',
-    summary: 'Parameter "Temperature" mengontrol keacakan output AI (rendah untuk konsistensi, tinggi untuk kreativitas), sementara "Top-P" membatasi pilihan kata. Menguasai keduanya memungkinkan kontrol presisi atas keseimbangan antara kreativitas dan akurasi model.',
-    type: 'standard',
-    content: [
-      'Saat berinteraksi dengan model bahasa besar, Anda mungkin memperhatikan bahwa terkadang jawabannya sangat kreatif, sementara di lain waktu sangat dapat diprediksi. Kontrol di balik perilaku ini seringkali terletak pada dua parameter misterius: `Temperature` dan `Top-P`. Memahaminya memberi Anda kendali seperti seorang sutradara atas output AI.',
-      '**1. Temperature (Suhu): Mengatur Tingkat Kejutan**',
-      '  - **Apa itu?** Temperature mengontrol keacakan (randomness) dalam pemilihan kata. Saat menghasilkan teks, AI memberikan skor probabilitas untuk setiap kata yang mungkin berikutnya. Temperature memodifikasi skor ini.',
-      '  - **Temperature Rendah (misalnya, 0.2):** Membuat AI lebih percaya diri dan deterministik. Ia akan hampir selalu memilih kata dengan probabilitas tertinggi. Hasilnya lebih fokus, dapat diprediksi, dan konsisten. **Baik untuk:** Jawaban berdasarkan fakta, ringkasan, atau ekstraksi data.',
-      '  - **Temperature Tinggi (misalnya, 0.9):** Mendorong AI untuk memilih kata-kata yang kurang mungkin, bahkan jika probabilitasnya lebih rendah. Ini meningkatkan keacakan dan "kreativitas". Hasilnya lebih beragam, tak terduga, dan terkadang aneh. **Baik untuk:** Penulisan kreatif, brainstorming, atau menghasilkan berbagai ide.',
-      '**2. Top-P (Nucleus Sampling): Membatasi Pilihan**',
-      '  - **Apa itu?** Top-P adalah metode sampling alternatif. Alih-alih mempertimbangkan semua kata, AI hanya mempertimbangkan pilihan kata terkecil yang jumlah probabilitasnya mencapai nilai Top-P. ',
-      '  - **Top-P Rendah (misalnya, 0.1):** AI hanya akan memilih dari segelintir kata yang paling mungkin. Ini menghasilkan teks yang sangat aman dan dapat diprediksi. Sangat mirip dengan temperature rendah.',
-      '  - **Top-P Tinggi (misalnya, 0.95):** AI dapat memilih dari kumpulan kata yang jauh lebih luas, memungkinkan lebih banyak variasi dan kreativitas, sambil tetap memotong pilihan yang sangat tidak mungkin.',
-      '**Temperature vs. Top-P: Mana yang Digunakan?**',
-      'Banyak ahli merekomendasikan untuk mengubah **salah satu saja**, tidak keduanya. Aturan praktis yang baik adalah:',
-      '  - **Untuk tugas kreatif:** Mulailah dengan menaikkan `Temperature` (misalnya ke 0.7-0.8) dan biarkan `Top-P` pada nilai default (seringkali 1.0).',
-      '  - **Untuk tugas yang butuh akurasi:** Turunkan `Temperature` (misalnya ke 0.1-0.2).',
-      'Dengan menyesuaikan parameter-parameter ini, Anda dapat menyetel AI untuk menjadi penulis fakta yang kaku, penyair yang kreatif, atau apa pun di antaranya. Eksperimen adalah kuncinya!'
-    ],
-    imageUrl: 'https://picsum.photos/seed/mengontrol-kreativitas-ai-temperature-top-p/800/400',
-    author: 'awanbyru',
-    authorAvatar,
-    date: '11 Oktober 2025',
-    claps: 275,
-    tags: ['Temperature', 'Top-P', 'Kontrol AI', 'Parameter Model'],
-    faq: [
-      {
-        question: "Manakah yang lebih penting, Temperature atau Top-P?",
-        answer: "Keduanya penting, tetapi seringkali lebih mudah untuk memulai dengan menyesuaikan Temperature saja. Sebagian besar ahli merekomendasikan untuk hanya mengubah salah satu pada satu waktu untuk menghindari hasil yang tidak terduga. Temperature adalah 'kenop' yang lebih intuitif untuk mengontrol kreativitas vs. prediktabilitas."
-      },
-      {
-        question: "Nilai Temperature berapa yang ideal untuk menulis fiksi?",
-        answer: "Untuk penulisan fiksi atau brainstorming, nilai Temperature antara 0.7 hingga 0.9 seringkali ideal. Ini memberikan AI cukup kebebasan untuk menghasilkan ide-ide yang mengejutkan dan beragam tanpa menjadi benar-benar tidak koheren. Selalu baik untuk bereksperimen untuk menemukan titik manis Anda."
-      }
-    ]
-  },
-  {
-    id: '21',
-    slug: 'chain-of-thought-prompting-untuk-penalaran',
-    title: 'Mendorong AI \'Berpikir\': Teknik \'Chain of Thought\' untuk Soal Logika',
-    excerpt: 'AI sering gagal dalam soal penalaran? Triknya adalah memintanya untuk \'berpikir langkah demi langkah\'. Pelajari teknik \'Chain of Thought\' (CoT) yang secara dramatis meningkatkan kemampuan AI dalam memecahkan masalah kompleks.',
-    summary: 'Chain of Thought (CoT) adalah teknik prompt di mana AI diminta untuk menjelaskan proses berpikirnya langkah demi langkah sebelum memberikan jawaban akhir. Ini secara signifikan meningkatkan kemampuannya dalam soal logika dan matematika.',
-    type: 'standard',
-    content: [
-      'Model bahasa besar sangat hebat dalam tugas-tugas yang berhubungan dengan bahasa, tetapi seringkali kesulitan dengan masalah yang membutuhkan penalaran logis, seperti soal cerita matematika atau teka-teki logika. Mereka mungkin memberikan jawaban yang salah dengan penuh percaya diri. Solusinya? Minta AI untuk menunjukkan "jalan pikirannya".',
-      '**Apa itu Chain of Thought (CoT) Prompting?** CoT adalah teknik sederhana namun sangat kuat di mana Anda secara eksplisit meminta AI untuk memecah masalah dan menjelaskan penalarannya langkah demi langkah sebelum memberikan jawaban akhir. Frasa ajaibnya seringkali sesederhana: `"Mari kita berpikir langkah demi langkah."`',
-      '**Mengapa Ini Berhasil?** Dengan memaksa AI untuk menghasilkan rantai penalaran, kita meniru cara manusia memecahkan masalah. Ini memberikan alokasi komputasi yang lebih banyak pada masalah tersebut, mengurangi kemungkinan kesalahan karena "terburu-buru", dan seringkali membimbing AI ke jalur yang benar.',
-      '**Contoh Transformasi (Soal Matematika):**',
-      '  - **Prompt Standar:**',
-      '  `Q: Roger punya 5 bola tenis. Dia membeli 2 kaleng bola tenis lagi. Setiap kaleng berisi 3 bola tenis. Berapa banyak bola tenis yang dia miliki sekarang?`',
-      '  `A: 11` (Ini jawaban yang salah, sering terjadi pada model yang lebih kecil).',
-      '  - **Prompt dengan CoT:**',
-      '  `Q: Roger punya 5 bola tenis. Dia membeli 2 kaleng bola tenis lagi. Setiap kaleng berisi 3 bola tenis. Berapa banyak bola tenis yang dia miliki sekarang?`',
-      '  `A: Mari kita berpikir langkah demi langkah. Roger mulai dengan 5 bola. Dia membeli 2 kaleng, dan setiap kaleng berisi 3 bola. Jadi, bola baru yang dia dapatkan adalah 2 kaleng * 3 bola/kaleng = 6 bola. Total bola yang dia miliki sekarang adalah 5 bola awal + 6 bola baru = 11 bola. Jadi, jawabannya adalah 11.` (Dalam kasus ini, AI memperbaiki dirinya sendiri. Dalam kasus yang lebih kompleks, ini mencegah kesalahan awal).',
-      '**Kapan Menggunakan CoT?**',
-      'Teknik ini sangat efektif untuk:',
-      '  - **Soal cerita matematika:** Di mana beberapa langkah perhitungan diperlukan.',
-      '  - **Teka-teki logika:** Yang membutuhkan inferensi dan penalaran deduktif.',
-      '  - **Pertanyaan yang membutuhkan penalaran berbasis akal sehat:** Di mana kesimpulan tidak dapat ditemukan secara langsung dalam data pelatihan.',
-      'Ketika Anda dihadapkan pada masalah yang membutuhkan lebih dari sekadar pengambilan informasi, tambahkan frasa sederhana itu ke prompt Anda. Anda akan terkejut betapa "pintar"-nya AI bisa menjadi saat Anda memberinya ruang untuk berpikir.'
-    ],
-    imageUrl: 'https://picsum.photos/seed/chain-of-thought-prompting-untuk-penalaran/800/400',
-    author: 'awanbyru',
-    authorAvatar,
-    date: '05 Oktober 2025',
-    claps: 402,
-    tags: ['Chain of Thought', 'Penalaran AI', 'Logika', 'Problem Solving'],
-    faq: [
-      {
-        question: "Apakah 'Mari kita berpikir langkah demi langkah' satu-satunya frasa yang berfungsi?",
-        answer: "Meskipun itu adalah frasa yang paling umum dan terbukti, variasi lain juga bisa berfungsi. Anda bisa mencoba, 'Uraikan proses penalaran Anda,' atau 'Tunjukkan pekerjaan Anda selangkah demi selangkah.' Kuncinya adalah secara eksplisit meminta AI untuk mengeksternalisasi proses berpikirnya."
-      },
-      {
-        question: "Apakah CoT memperlambat respons AI?",
-        answer: "Ya, karena AI menghasilkan lebih banyak teks, responsnya akan memakan waktu sedikit lebih lama. Namun, ini adalah pertukaran yang sangat berharga untuk peningkatan akurasi yang signifikan dalam tugas-tugas penalaran."
-      }
-    ]
-  },
-  {
-    id: '20',
-    slug: 'menguasai-cahaya-dan-bayangan-di-seni-ai',
-    title: 'Menguasai Cahaya & Bayangan: Prompt untuk Pencahayaan Dramatis di Seni AI',
-    excerpt: 'Cahaya adalah jiwa dari sebuah gambar. Pelajari cara menggunakan prompt pencahayaan tingkat lanjut seperti "volumetric lighting" dan "rim lighting" untuk menciptakan kedalaman, emosi, dan drama dalam karya seni AI Anda.',
-    summary: 'Artikel ini membahas teknik prompt untuk mengontrol pencahayaan dalam seni AI. Istilah seperti "volumetric lighting," "rim lighting," dan "golden hour" dapat digunakan untuk menciptakan gambar yang lebih dramatis, atmosferik, dan profesional.',
-    type: 'standard',
-    content: [
-      'Dalam seni visual, cahaya adalah segalanya. Ia membentuk subjek, menciptakan suasana, dan memandu mata pemirsa. Dengan AI generatif, Anda memiliki kendali penuh atas pencahayaan, seolah-olah Anda adalah seorang sinematografer di lokasi syuting digital. Kuncinya adalah mengetahui istilah yang tepat untuk digunakan.',
-      '**1. Pencahayaan Sinematik (Cinematic Lighting):** Ini adalah istilah umum yang bagus untuk meminta AI menciptakan suasana yang dramatis dan berkualitas film. Ini sering kali menghasilkan kontras yang lebih tinggi dan palet warna yang lebih terarah.',
-      '**2. Cahaya Volumetrik (Volumetric Lighting / God Rays):** Pernah melihat berkas cahaya matahari yang menembus jendela berdebu atau kanopi hutan? Itulah cahaya volumetrik. Menggunakan `volumetric lighting` atau `god rays` dalam prompt Anda akan menambahkan tekstur dan kedalaman yang nyata pada gambar, membuatnya terasa lebih atmosferik.',
-      '**3. Pencahayaan Tepi (Rim Lighting):** Teknik ini digunakan untuk memisahkan subjek dari latar belakangnya. `Rim lighting` menciptakan garis cahaya tipis di sekitar tepi subjek Anda, memberinya sorotan yang halus namun kuat. Ini sangat efektif untuk potret atau untuk menonjolkan siluet.',
-      '**4. Pencahayaan Jam Emas (Golden Hour Lighting):** Untuk suasana yang hangat, lembut, dan nostalgia, gunakan `golden hour lighting`. Ini meniru cahaya matahari sesaat setelah terbit atau sebelum terbenam, menghasilkan bayangan panjang dan cahaya keemasan yang indah.',
-      '**5. Pencahayaan Neon (Neon Lighting):** Sempurna untuk adegan cyberpunk, futuristik, atau suasana perkotaan malam hari. `Neon lighting` atau `cyberpunk neon glow` akan mengisi adegan Anda dengan warna-warna cerah dan refleksi yang dinamis.',
-      '**Prompt Contoh:** `Cinematic portrait of an old wizard in his study, dramatic volumetric lighting streaming from a high window, dust particles visible in the god rays. A subtle rim light separates him from the dark, cluttered background of ancient books. Moody, atmospheric, 8k.`',
-      'Dengan menguasai prompt pencahayaan ini, Anda dapat mengubah gambar datar menjadi karya yang penuh emosi dan cerita.'
-    ],
-    imageUrl: 'https://picsum.photos/seed/menguasai-cahaya-dan-bayangan-di-seni-ai/800/400',
-    author: 'awanbyru',
-    authorAvatar,
-    date: '28 September 2025',
-    claps: 150,
-    tags: ['Pencahayaan', 'Sinematik', 'Atmosfer', 'Prompting Lanjutan'],
-    faq: [
-      {
-        question: "Istilah pencahayaan apa lagi yang berguna untuk seni AI?",
-        answer: "Beberapa istilah hebat lainnya termasuk 'chiaroscuro' (kontras tinggi antara terang dan gelap), 'softbox lighting' (untuk potret yang lembut dan rata), 'dappled light' (cahaya belang-belang seperti menembus daun), dan 'backlighting' (cahaya dari belakang subjek untuk menciptakan siluet atau halo)."
-      },
-      {
-        question: "Bagaimana cara menggabungkan beberapa istilah pencahayaan?",
-        answer: "Anda bisa! Contohnya, 'Cinematic shot with golden hour lighting creating long shadows, and volumetric god rays filtering through the trees.' Menggabungkan istilah-istilah ini memberikan AI instruksi yang sangat kaya dan berlapis untuk menciptakan adegan yang kompleks secara visual."
-      }
-    ]
-  },
-  {
-    id: '19',
-    slug: 'kekuatan-prompt-negatif-untuk-gambar-ai',
-    title: 'Kekuatan Prompt Negatif: Menghilangkan Elemen Tak Diinginkan di Gambar AI',
-    excerpt: 'Gambar AI Anda punya terlalu banyak jari? Kuasai seni prompt negatif untuk memberi tahu AI apa yang TIDAK boleh digambar, menghasilkan gambar yang lebih bersih, akurat, dan profesional.',
-    summary: 'Prompt negatif adalah instruksi yang memberi tahu AI apa yang harus dihindari saat membuat gambar. Teknik ini sangat efektif untuk memperbaiki anatomi yang salah, meningkatkan kualitas gambar, dan menghilangkan elemen yang tidak diinginkan.',
-    type: 'standard',
-    content: [
-      'Membuat prompt yang bagus bukan hanya tentang memberi tahu AI apa yang harus dibuat, tetapi juga apa yang harus dihindari. Di sinilah prompt negatif berperan. Prompt negatif adalah instruksi yang Anda berikan kepada model AI untuk mengecualikan konsep, gaya, atau objek tertentu dari gambar yang dihasilkan.',
-      '**Mengapa Prompt Negatif Penting?** Model AI terkadang menghasilkan artefak atau detail yang tidak diinginkan, seperti anatomi yang salah (misalnya, 6 jari), teks yang tidak jelas, atau objek yang mengganggu. Dengan prompt negatif, Anda dapat secara proaktif "membersihkan" gambar sebelum dibuat.',
-      '**1. Memperbaiki Anatomi:** Salah satu penggunaan paling umum adalah untuk memperbaiki anatomi manusia. Jika Anda sering mendapatkan hasil dengan tangan atau kaki yang aneh, tambahkan ini ke prompt negatif Anda: `extra limbs, extra fingers, malformed hands, poorly drawn hands, mutated hands, fused fingers`.',
-      '**2. Meningkatkan Kualitas Gambar:** Untuk menghindari hasil yang terlihat buram, berkualitas rendah, atau seperti karya amatir, gunakan prompt negatif seperti: `low quality, worst quality, blurry, jpeg artifacts, low resolution, ugly, deformed`.',
-      '**3. Menghilangkan Elemen yang Mengganggu:** Terkadang AI menambahkan elemen yang tidak Anda inginkan. Misalnya, jika Anda ingin potret bersih tanpa ada teks acak, tambahkan `text, watermark, signature, username, logo` ke prompt negatif Anda. Jika Anda tidak ingin ada manusia dalam lanskap Anda, cukup tambahkan `people, person, crowd`.',
-      '**4. Mengontrol Gaya:** Anda juga dapat menggunakan prompt negatif untuk menyempurnakan gaya. Jika Anda menginginkan foto tetapi hasilnya terlihat seperti lukisan, Anda bisa menambahkan `painting, drawing, illustration, cartoon, anime` ke prompt negatif.',
-      '**Cara Menggunakannya:** Sebagian besar platform seni AI memiliki kolom terpisah untuk "Negative Prompt". Cukup ketik atau tempelkan kata kunci yang ingin Anda hindari, dipisahkan dengan koma.',
-      '**Prompt Contoh:**',
-      '**Prompt Positif:** `Photorealistic portrait of a beautiful elven queen, intricate silver armor, serene forest background, soft natural lighting.`',
-      '**Prompt Negatif:** `3d, cartoon, anime, (ugly), (deformed), (poorly drawn eyes), extra limbs, extra fingers, blurry, low quality.`',
-      'Dengan mengintegrasikan prompt negatif ke dalam alur kerja Anda, Anda akan melihat peningkatan dramatis dalam kualitas dan konsistensi gambar AI Anda.'
-    ],
-    imageUrl: 'https://picsum.photos/seed/kekuatan-prompt-negatif-untuk-gambar-ai/800/400',
-    author: 'awanbyru',
-    authorAvatar,
-    date: '21 September 2025',
-    claps: 210,
-    tags: ['Prompt Negatif', 'Perbaikan Gambar', 'Teknik AI', 'Kualitas'],
-    faq: [
-      {
-        question: "Apakah bobot pada prompt negatif penting?",
-        answer: "Di beberapa platform seperti Stable Diffusion, Anda dapat memberikan bobot pada kata kunci negatif (misalnya, '(deformed hands:1.5)'). Ini memberi tahu AI untuk lebih keras menghindari konsep tersebut. Namun, untuk sebagian besar platform, cukup mencantumkan kata kunci sudah sangat efektif."
-      },
-      {
-        question: "Bisakah prompt negatif membuat gambar menjadi lebih buruk?",
-        answer: "Jarang, tetapi mungkin. Jika Anda terlalu agresif (misalnya, memasukkan 'shadows' atau 'dark' sebagai prompt negatif), Anda bisa mendapatkan gambar yang datar dan tidak menarik. Gunakan prompt negatif secara strategis untuk menghilangkan masalah spesifik, bukan untuk membatasi kreativitas AI secara berlebihan."
-      }
-    ]
-  },
-  {
-    id: '18',
-    slug: 'menciptakan-karakter-konsisten-dengan-ai',
-    title: 'Menciptakan Karakter Konsisten di AI: Trik ‘Seed’ & Deskripsi Detail',
-    excerpt: 'Kesulitan membuat karakter yang sama di berbagai adegan? Panduan ini mengungkap metode untuk menjaga konsistensi karakter menggunakan nomor seed, deskripsi yang sangat detail, dan referensi gaya.',
-    summary: 'Untuk menciptakan karakter AI yang konsisten di berbagai gambar, gunakan kombinasi nomor seed yang sama, deskripsi fisik yang sangat detail dan spesifik, nama karakter yang unik, dan referensi gaya visual yang konsisten.',
-    type: 'standard',
-    content: [
-      'Salah satu tantangan terbesar dalam seni AI adalah menciptakan karakter yang sama berulang kali dalam pose atau adegan yang berbeda. Tanpa konsistensi, sulit untuk menceritakan sebuah kisah visual. Untungnya, ada beberapa teknik yang bisa Anda gunakan untuk "mengingatkan" AI tentang karakter yang ingin Anda buat.',
-      '**1. Menggunakan Nomor Seed yang Sama**',
-      'Nomor seed adalah titik awal acak yang digunakan AI untuk memulai proses pembuatan gambar. Jika Anda menggunakan seed yang sama dengan prompt yang sama, AI akan menghasilkan gambar yang hampir identik. Banyak platform seni AI memungkinkan Anda untuk melihat dan mengatur nomor seed. Saat Anda mendapatkan karakter yang Anda sukai, catat nomor seed-nya. Kemudian, saat Anda ingin menempatkan karakter itu dalam adegan baru, gunakan kembali seed yang sama sambil sedikit mengubah deskripsi adegan. Ini adalah metode yang paling andal secara teknis, meskipun mungkin tidak selalu fleksibel.',
-      '**2. Deskripsi Fisik yang Sangat Detail**',
-      'Ini adalah pendekatan yang paling artistik. Alih-alih mengandalkan teknis, Anda memberikan deskripsi karakter yang sangat rinci dan konsisten di setiap prompt. Jangan hanya mengatakan "seorang wanita dengan rambut pirang." Katakan: "Seorang wanita bernama Elara, dengan rambut pirang madu panjang bergelombang yang dikepang di satu sisi, mata biru safir, tahi lalat kecil di atas bibir kirinya, mengenakan jubah kulit hijau hutan dengan gesper perak berbentuk daun." Semakin spesifik detailnya (nama, fitur unik, pakaian), semakin baik AI dapat merekonstruksi karakter yang sama.',
-      '**3. Memberi Nama Karakter yang Unik**',
-      'Memberi nama karakter Anda (misalnya, "Ksatria Bayangan Zorin" alih-alih "ksatria") terkadang dapat membantu model AI mengasosiasikan serangkaian fitur dengan nama unik tersebut, terutama dalam sesi yang sama atau dengan model yang lebih canggih. Anggap saja ini sebagai cara untuk membuat "file mental" untuk karakter Anda.',
-      '**4. Referensi Gaya Visual yang Konsisten**',
-      'Menjaga gaya visual yang konsisten juga membantu. Jika Anda selalu menambahkan `dalam gaya [nama seniman]` atau `sinematik, 8k, photorealistic` ke prompt Anda, ini membantu AI mempertahankan tampilan dan nuansa yang sama, yang secara tidak langsung berkontribusi pada konsistensi karakter.',
-      'Dengan menggabungkan deskripsi yang kaya dengan penggunaan seed yang cerdas, Anda dapat mengatasi salah satu rintangan terbesar dalam penceritaan visual AI dan membawa karakter Anda dalam petualangan multi-gambar.'
-    ],
-    imageUrl: 'https://picsum.photos/seed/menciptakan-karakter-konsisten-dengan-ai/800/400',
-    author: 'awanbyru',
-    authorAvatar,
-    date: '14 September 2025',
-    claps: 355,
-    tags: ['Karakter Konsisten', 'Seni AI', 'Seed', 'Prompt Engineering'],
-    faq: [
-      {
-        question: "Metode mana yang paling efektif untuk konsistensi karakter?",
-        answer: "Kombinasi adalah yang terbaik. Menggunakan seed yang sama memberikan dasar teknis, tetapi menggabungkannya dengan deskripsi fisik yang sangat detail adalah kuncinya. Deskripsi detail memungkinkan Anda untuk sedikit mengubah pose atau lingkungan sambil tetap mempertahankan fitur inti karakter."
-      },
-      {
-        question: "Apakah fitur 'character reference' di beberapa platform lebih baik daripada metode ini?",
-        answer: "Fitur 'character reference' (seperti di Midjourney) adalah evolusi dari teknik ini dan seringkali lebih mudah digunakan dan lebih kuat. Namun, memahami prinsip-prinsip dasar seperti deskripsi detail dan penggunaan seed tetap penting karena memberikan Anda kontrol yang lebih baik dan berfungsi di semua platform, bahkan yang tidak memiliki fitur referensi karakter khusus."
-      }
-    ]
-  },
+  }
 ];
