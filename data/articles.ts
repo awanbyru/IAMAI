@@ -4,6 +4,46 @@ const authorAvatar = '/icon.svg';
 
 export const articles: Article[] = [
   {
+    id: 'new-2025-12-12',
+    slug: 'slow-prompting-seni-melambat-di-era-ai-instan',
+    title: 'Slow Prompting: Mengapa Para Ahli Justru Melambat di Era AI Instan 2025?',
+    excerpt: 'Di tengah gempuran model AI 2025 yang serba instan, muncul gerakan "Slow Prompting". Ini bukan tentang kecepatan, tapi tentang mengembalikan jiwa, intensi, dan kerajinan tangan ke dalam sintaks digital.',
+    summary: 'Mengeksplorasi tren "Slow Prompting" tahun 2025, di mana prompter elit beralih dari generasi massal ke kurasi mikro yang mendalam, memperlakukan prompt sebagai kerajinan tangan digital.',
+    type: 'standard',
+    content: [
+        'Kita berada di penghujung tahun 2025. Generasi gambar real-time sudah menjadi standar di setiap smartphone. Video AI 8K dibuat semudah mengirim pesan teks. Namun, di tengah kecepatan yang memabukkan ini, saya melihat fenomena menarik di komunitas prompt engineer elit global: mereka melambat.',
+        'Selamat datang di era **"Slow Prompting"**.',
+        '**Apa itu Slow Prompting?**',
+        'Jika 2023-2024 adalah tentang "siapa yang paling cepat membuat konten", akhir 2025 adalah tentang "siapa yang paling *berniat* dalam membuat konten". Slow Prompting adalah antitesis dari generasi massal. Ini adalah filosofi memperlakukan AI bukan sebagai pabrik konten, melainkan sebagai *darkroom* digital atau studio artisan.',
+        'Seorang "Slow Prompter" tidak menulis satu baris perintah dan puas dengan hasil acak. Mereka menghabiskan berjam-jam, terkadang berhari-hari, untuk menyempurnakan satu set parameter JSON atau struktur *chain-of-thought*. Mereka berdebat dengan model tentang nuansa pencahayaan *sub-surface scattering* pada kelopak bunga, atau ritme kadensa dalam sebuah paragraf prosa.',
+        '**Mengapa Melambat di Dunia yang Cepat?**',
+        '1. **Saturasi Kesempurnaan:** Internet 2025 banjir dengan konten AI yang "sempurna" secara teknis tapi membosankan secara emosional. Gambar yang terlalu halus, teks yang terlalu rapi. Slow Prompting memasukkan kembali *ketidaksempurnaan yang terkurasi*—tekstur kasar, asimetri, dan "glitch" manusiawi yang memberikan jiwa pada karya digital.',
+        '2. **Kontrol Arsitektural:** Model baru seperti Gemini 3 Ultra atau GPT-5 memiliki jendela konteks yang masif. Slow Prompting memanfaatkan ini dengan membangun "Prompt Systems"—bukan sekadar kalimat, tapi struktur logika yang kompleks untuk menjaga konsistensi narasi jangka panjang.',
+        '**Contoh Pendekatan Slow Prompting**',
+        'Alih-alih meminta "Wanita cantik di kafe futuristik", seorang Slow Prompter di tahun 2025 menyusun arsitektur emosional seperti ini:',
+        '`JSON_PROMPT:{\n  "meta": {\n    "intention": "Evoke the feeling of solitary comfort, not loneliness",\n    "era": "Neo-Tokyo 2025",\n    "medium": "Digital Oil Painting with Impasto Texture"\n  },\n  "subject": {\n    "focus": "Micro-expression of eyes gazing at rain",\n    "imperfections": ["slightly messy hair bun", "coffee stain on sleeve", "asymmetrical smile"]\n  },\n  "atmosphere": {\n    "lighting": "Bioluminescent rain reflection from window interacting with warm amber interior light",\n    "color_palette": ["muted teal", "warm amber", "deep charcoal"],\n    "sensory_details": "condensation on glass, lo-fi hum of cybernetics"\n  }\n}`',
+        '**Masa Depan adalah Kurasi**',
+        'AI telah mendemokratisasi penciptaan, tetapi "Slow Prompting" mendemokratisasi rasa (taste). Di tahun mendatang, nilai seorang kreator tidak akan diukur dari seberapa banyak yang bisa mereka hasilkan dalam satu jam, tapi seberapa dalam mereka bisa menyelami kolaborasi dengan mesin untuk menghasilkan sesuatu yang benar-benar resonan.',
+        'Jadi, di penghujung 2025 ini, saya mengajak Anda: Tarik napas. Hapus prompt satu baris Anda. Mulailah membangun, bukan sekadar meminta.'
+    ],
+    imageUrl: 'https://picsum.photos/seed/slow-prompting-2025/800/400',
+    author: 'awanbyru',
+    authorAvatar,
+    date: '12 Desember 2025',
+    claps: 124,
+    tags: ['Filosofi AI', 'Tren 2025', 'Prompt Engineering', 'Slow Living'],
+    faq: [
+        {
+          question: "Apakah Slow Prompting berarti saya harus menulis prompt yang panjang?",
+          answer: "Tidak selalu panjang, tapi *padat*. Setiap kata atau parameter dipilih dengan alasan yang kuat. Ini tentang efisiensi makna dan kontrol presisi, bukan sekadar jumlah kata."
+        },
+        {
+          question: "Apakah teknik ini relevan untuk pemula?",
+          answer: "Sangat. Justru pemula yang belajar 'Slow Prompting' akan memahami fundamental cara kerja model AI jauh lebih baik daripada mereka yang hanya mengandalkan keberuntungan dari prompt acak (gacha prompting)."
+        }
+    ]
+  },
+  {
     id: '5',
     slug: 'revolusi-bisnis-kecil-prompt-ai-praktis',
     title: 'Revolusi Bisnis Kecil: 5 Prompt AI untuk Pemasaran & Layanan Pelanggan',
