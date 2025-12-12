@@ -110,6 +110,8 @@ const HomePage: React.FC = () => {
         description="Jelajahi dunia AI dan rekayasa prompt. Temukan artikel menarik, koleksi gambar AI premium, dan panduan ahli untuk meningkatkan kreativitas dan produktivitas Anda."
         canonicalUrl={`${window.location.origin}/`}
         imageUrl="/icon.svg"
+        keywords="AI, Artificial Intelligence, Kecerdasan Buatan, Prompt Engineering, Tutorial AI, Berita Teknologi, Gambar AI"
+        author="awanbyru"
       />
       <div>
         {heroArticle && <HeroArticle article={heroArticle} />}

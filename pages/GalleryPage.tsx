@@ -51,6 +51,7 @@ const GalleryPage: React.FC = () => {
         canonicalUrl={`${window.location.origin}/gallery`}
         imageUrl={galleryImages[0]?.imageUrl}
         imageDimensions={{ width: 600, height: 600 }}
+        keywords="Galeri AI, Gambar AI, Seni Digital, Midjourney, Stable Diffusion, Prompt Art, Fotografi AI"
       />
       <Breadcrumbs items={breadcrumbItems} />
       <div className="space-y-8">

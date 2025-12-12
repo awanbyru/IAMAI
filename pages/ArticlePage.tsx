@@ -129,11 +129,11 @@ const ArticlePage: React.FC = () => {
             },
             "headline": article.title,
             "description": article.excerpt,
-            "image": article.imageUrl,
+            "image": [article.imageUrl],
             "author": {
                 "@type": "Person",
                 "name": article.author,
-                "sameAs": "https://www.linkedin.com/in/awanbyru" // Tautan Otoritas
+                "url": `${window.location.origin}/about`
             },
             "publisher": {
                 "@type": "Organization",
@@ -388,6 +388,8 @@ const ArticlePage: React.FC = () => {
         canonicalUrl={`${window.location.origin}/article/${article.slug}`}
         imageUrl={article.imageUrl}
         ogType="article"
+        keywords={article.tags.join(', ')}
+        author={article.author}
         articleData={articleDataForMeta}
         imageDimensions={{ width: 800, height: 400 }}
       />

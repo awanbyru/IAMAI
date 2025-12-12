@@ -7,6 +7,8 @@ interface MetaTagsProps {
   canonicalUrl?: string;
   noIndex?: boolean;
   ogType?: 'website' | 'article';
+  keywords?: string; // Added keywords prop
+  author?: string;   // Added author prop
   articleData?: {
     publishedTime: string; // ISO string
     authorName: string;
@@ -45,7 +47,18 @@ const removeTag = (tag: 'meta' | 'link', keyName: 'name' | 'property' | 'rel', k
     }
 };
 
-const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canonicalUrl, noIndex = false, ogType = 'website', articleData, imageDimensions }) => {
+const MetaTags: React.FC<MetaTagsProps> = ({ 
+  title, 
+  description, 
+  imageUrl, 
+  canonicalUrl, 
+  noIndex = false, 
+  ogType = 'website', 
+  keywords,
+  author,
+  articleData, 
+  imageDimensions 
+}) => {
   useEffect(() => {
     const siteName = 'IAMAI - awanbyru';
     const fullTitle = `${title} | ${siteName}`;
@@ -65,6 +78,14 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
 
     setTag('meta', 'name', 'description', 'content', description);
     setTag('link', 'rel', 'canonical', 'href', finalCanonicalUrl);
+    
+    // Dynamic Keywords and Author
+    if (keywords) {
+        setTag('meta', 'name', 'keywords', 'content', keywords);
+    }
+    if (author) {
+        setTag('meta', 'name', 'author', 'content', author);
+    }
 
     // Open Graph
     setTag('meta', 'property', 'og:title', 'content', fullTitle);
@@ -115,17 +136,18 @@ const MetaTags: React.FC<MetaTagsProps> = ({ title, description, imageUrl, canon
     if (noIndex) {
         setTag('meta', 'name', 'robots', 'content', 'noindex, nofollow');
     } else {
-        // Ensure no leftover noindex tag from previous pages
-        removeTag('meta', 'name', 'robots');
+        setTag('meta', 'name', 'robots', 'content', 'index, follow, max-image-preview:large');
     }
     
     // Cleanup function to remove noindex tag when component unmounts
     return () => {
+        // We generally don't remove generic tags on unmount to prevent flickering, 
+        // but explicit noindex should be cleared if moving to an indexed page.
         if(noIndex) {
             removeTag('meta', 'name', 'robots');
         }
     };
-  }, [title, description, imageUrl, canonicalUrl, noIndex, ogType, articleData, imageDimensions]);
+  }, [title, description, imageUrl, canonicalUrl, noIndex, ogType, keywords, author, articleData, imageDimensions]);
 
   return null; // This component doesn't render anything
 };

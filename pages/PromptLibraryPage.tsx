@@ -96,6 +96,7 @@ const PromptLibraryPage: React.FC = () => {
                 title="Pustaka Prompt"
                 description="Koleksi prompt AI ahli yang telah dikurasi untuk seni, pengembangan, pemasaran, dan lainnya. Salin dan gunakan untuk meningkatkan produktivitas Anda."
                 canonicalUrl={`${window.location.origin}/prompts`}
+                keywords="Prompt AI, Koleksi Prompt, Prompt Engineering, ChatGPT Prompt, Midjourney Prompt, Tutorial Prompt"
             />
             <Breadcrumbs items={breadcrumbItems} />
             <div className="space-y-8">
